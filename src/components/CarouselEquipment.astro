@@ -1,0 +1,356 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Item{
+  image:string;
+  title:string;
+  href:string;
+  label:string;
+}
+interface Props {
+  items: Item[];
+  interval?: number;
+  isLocation?: boolean;
+}
+
+const { items, interval = 8000, isLocation = false } = Astro.props as Props;
+---
+
+<div class="relative w-full hero-carousel flex flex-col justify-center items-center gap-10" data-interval={interval}>
+  <div class="w-full flex justify-center items-center ">
+    <!-- Prev arrow -->
+    <!-- Viewport -->
+    <div class="overflow-hidden w-full h-full">
+      <div
+        class="flex transition-transform duration-800 ease-in-out hero-carousel-track h-full "
+      >
+        {
+          items.map((item) => (
+            <div class="shrink-0 w-full md:w-1/2 lg:w-1/3 px-3">
+              <div class={`${isLocation ? 'bg-back' : 'bg-white'} w-full p-6 rounded-2xl flex flex-col justify-center items-start relative gap-8`}>
+                <div class="w-full h-auto aspect-344/246 rounded-lg bg-primary-intense"></div>
+                <h3 class="text-paragraph text-[20px] font-medium leading-[140%] text-start">{item.title}</h3>
+                <a href={item.href} class="text-primary text-start text-[12px] font-semibold leading-[133% underline uppercase">
+                  {item.label}
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="flex justify-center items-center gap-4">
+    <button
+      class={`w-14 h-14 flex justify-center items-center rounded-full ${isLocation ? 'bg-primary hover:bg-accent' : 'bg-white hover:bg-accent'} transition-all duration-300 ease-in-out cursor-pointer hero-carousel-prev`}
+      aria-label="Previous slide"
+    >
+      <Icon name="arrow-r" class={`${isLocation?'text-white':'text-paragraph'} w-3.25 h-auto rotate-180`}/>
+    </button>
+
+    <!-- Next arrow -->
+    <button
+      class={`w-14 h-14 flex justify-center items-center rounded-full ${isLocation ? 'bg-primary hover:bg-accent' : 'bg-white hover:bg-accent'} transition-all duration-300 ease-in-out cursor-pointer hero-carousel-next`}
+      aria-label="Next slide"
+    >
+      <Icon name="arrow-r" class={`${isLocation?'text-white':'text-paragraph'} w-3.25 h-auto`}/>
+    </button>
+  </div>
+  <!-- Mobile indicators -->
+  <div
+    class="flex md:hidden gap-4 justify-center mt-4 hero-carousel-indicators"
+  >
+    {
+      Array.from({ length: items.length }).map((_, i) => (
+        <button
+          class="w-2 h-2 rounded-full bg-[#D9D9D9]"
+          data-index={i}
+          aria-label={`Go to slide ${i + 1}`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    if (typeof window === 'undefined') return;
+
+    const debounce = (fn, ms = 100) => {
+      let t;
+      return (...a) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, a), ms);
+      };
+    };
+
+    function initCarousel(carousel) {
+      if (!carousel || carousel.dataset.inited) return;
+      carousel.dataset.inited = '1';
+
+      const track = carousel.querySelector('.hero-carousel-track');
+      const prevBtn = carousel.querySelector('.hero-carousel-prev');
+      const nextBtn = carousel.querySelector('.hero-carousel-next');
+      const indicators = Array.from(
+        carousel.querySelectorAll('.hero-carousel-indicators button')
+      );
+      const intervalMs =
+        parseInt(carousel.getAttribute('data-interval') || '0', 10) || 5000;
+
+      function getPerPage() {
+        const w = window.innerWidth;
+        if (w >= 1024) return 3;
+        if (w >= 768) return 2;
+        return 1;
+      }
+
+      // Setup logic deferred to idle
+      const setup = () => {
+        const originalSlides = Array.from(track.children);
+        const originalCount = originalSlides.length;
+        const perPage = getPerPage();
+
+        // Utility for indicators
+        function updateIndicatorsFor(index, baseIndex = 0) {
+          const realIndex = ((index - baseIndex) % originalCount + originalCount) % originalCount;
+          indicators.forEach((btn, i) => btn.classList.toggle('bg-accent', i === realIndex));
+        }
+
+        // If not enough slides, simpler mode
+        if (originalCount <= perPage) {
+          let slides = Array.from(track.children);
+          let currentIndex = 0;
+          let isTransitioning = false;
+          let autoTimer = null;
+
+          function getSlideWidth() {
+            return slides[0].getBoundingClientRect().width;
+          }
+
+          function goTo(index, smooth = true) {
+            index = Math.max(0, Math.min(slides.length - 1, index));
+            if (isTransitioning && smooth) return;
+            track.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
+            track.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+            currentIndex = index;
+            if (smooth) {
+              isTransitioning = true;
+              const onEnd = () => {
+                isTransitioning = false;
+                track.removeEventListener('transitionend', onEnd);
+                updateIndicatorsFor(currentIndex, 0);
+                scheduleNext();
+              };
+              track.addEventListener('transitionend', onEnd);
+            } else {
+              updateIndicatorsFor(currentIndex, 0);
+            }
+          }
+
+          function scheduleNext() {
+            clearTimeout(autoTimer);
+            if (intervalMs <= 0) return;
+            autoTimer = setTimeout(() => {
+              goTo(currentIndex + getPerPage());
+            }, intervalMs);
+          }
+          function stopAuto() { clearTimeout(autoTimer); autoTimer = null; }
+          function resetAuto() { stopAuto(); scheduleNext(); }
+
+          prevBtn?.addEventListener('click', () => { goTo(Math.max(0, currentIndex - getPerPage())); resetAuto(); });
+          nextBtn?.addEventListener('click', () => { goTo(Math.min(slides.length - 1, currentIndex + getPerPage())); resetAuto(); });
+          indicators.forEach((btn) => btn.addEventListener('click', () => { const idx = Number(btn.dataset.index); goTo(idx); resetAuto(); }));
+
+          // Pointer drag (mouse + touch)
+          (function addDrag() {
+            let dragging = false;
+            let startX = 0;
+            let baseTranslate = 0; // px
+
+            const getCurrentTranslate = () => {
+              const style = window.getComputedStyle(track);
+              const m = style.transform.match(/matrix\((.+)\)/);
+              if (!m) return 0;
+              const values = m[1].split(',');
+              return parseFloat(values[4]);
+            };
+
+            track.addEventListener('pointerdown', (e) => {
+              dragging = true;
+              startX = e.clientX;
+              baseTranslate = -getSlideWidth() * currentIndex;
+              track.style.transition = 'none';
+              stopAuto();
+              track.setPointerCapture(e.pointerId);
+            });
+
+            track.addEventListener('pointermove', (e) => {
+              if (!dragging) return;
+              const dx = e.clientX - startX;
+              track.style.transform = `translateX(${baseTranslate + dx}px)`;
+            });
+
+            const release = (e) => {
+              if (!dragging) return;
+              dragging = false;
+              track.releasePointerCapture(e.pointerId);
+              const dx = e.clientX - startX;
+              const threshold = Math.max(50, getSlideWidth() * 0.15);
+              if (Math.abs(dx) > threshold) {
+                const dir = dx < 0 ? 1 : -1;
+                goTo(currentIndex + dir * getPerPage());
+              } else {
+                goTo(currentIndex, true);
+              }
+              resetAuto();
+            };
+
+            track.addEventListener('pointerup', release);
+            track.addEventListener('pointercancel', release);
+          })();
+
+          // resize handling
+          function init() { slides = Array.from(track.children); goTo(0, false); updateIndicatorsFor(0, 0); scheduleNext(); }
+          window.addEventListener('resize', debounce(() => init(), 120));
+          init();
+          return;
+        }
+
+        // Full mode with clones
+        // Create perPage clones at both ends to support sliding groups
+        for (let i = perPage - 1; i >= 0; i--) {
+          const clone = originalSlides[originalCount - perPage + i].cloneNode(true);
+          clone.dataset.clone = 'true';
+          track.insertBefore(clone, track.firstChild);
+        }
+        for (let i = 0; i < perPage; i++) {
+          const clone = originalSlides[i].cloneNode(true);
+          clone.dataset.clone = 'true';
+          track.appendChild(clone);
+        }
+
+        let slides = Array.from(track.children);
+        let currentIndex = perPage;
+        let isTransitioning = false;
+        let autoTimer = null;
+
+        function getSlideWidth() { return slides[0].getBoundingClientRect().width; }
+
+        function goTo(index, smooth = true) {
+          if (isTransitioning && smooth) return;
+          track.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
+          track.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+          currentIndex = index;
+          if (smooth) {
+            isTransitioning = true;
+            const onEnd = () => {
+              // Jump if in clones
+              if (currentIndex >= slides.length - perPage) {
+                // jump back
+                track.style.transition = 'none';
+                currentIndex = currentIndex - originalCount;
+                track.style.transform = `translateX(-${getSlideWidth() * currentIndex}px)`;
+              } else if (currentIndex < perPage) {
+                track.style.transition = 'none';
+                currentIndex = currentIndex + originalCount;
+                track.style.transform = `translateX(-${getSlideWidth() * currentIndex}px)`;
+              }
+              isTransitioning = false;
+              track.removeEventListener('transitionend', onEnd);
+              updateIndicatorsFor(currentIndex, perPage);
+              scheduleNext();
+            };
+            track.addEventListener('transitionend', onEnd);
+          } else {
+            updateIndicatorsFor(currentIndex, perPage);
+          }
+        }
+
+        function scheduleNext() { clearTimeout(autoTimer); if (intervalMs <= 0) return; autoTimer = setTimeout(() => { goTo(currentIndex + getPerPage()); }, intervalMs); }
+        function stopAuto() { clearTimeout(autoTimer); autoTimer = null; }
+        function resetAuto() { stopAuto(); scheduleNext(); }
+
+        prevBtn?.addEventListener('click', () => { goTo(currentIndex - getPerPage()); resetAuto(); });
+        nextBtn?.addEventListener('click', () => { goTo(currentIndex + getPerPage()); resetAuto(); });
+        indicators.forEach((btn) => btn.addEventListener('click', () => { const idx = Number(btn.dataset.index) + perPage; goTo(idx); resetAuto(); }));
+
+        // Pointer drag for cloned mode
+        (function addDrag() {
+          let dragging = false;
+          let startX = 0;
+          let baseTranslate = 0;
+
+          const getCurrentTranslate = () => {
+            const style = window.getComputedStyle(track);
+            const m = style.transform.match(/matrix\((.+)\)/);
+            if (!m) return 0;
+            const values = m[1].split(',');
+            return parseFloat(values[4]);
+          };
+
+          track.addEventListener('pointerdown', (e) => {
+            dragging = true;
+            startX = e.clientX;
+            baseTranslate = -getSlideWidth() * currentIndex;
+            track.style.transition = 'none';
+            stopAuto();
+            track.setPointerCapture(e.pointerId);
+          });
+
+          track.addEventListener('pointermove', (e) => {
+            if (!dragging) return;
+            const dx = e.clientX - startX;
+            track.style.transform = `translateX(${baseTranslate + dx}px)`;
+          });
+
+          const release = (e) => {
+            if (!dragging) return;
+            dragging = false;
+            track.releasePointerCapture(e.pointerId);
+            const dx = e.clientX - startX;
+            const threshold = Math.max(50, getSlideWidth() * 0.15);
+            if (Math.abs(dx) > threshold) {
+              const dir = dx < 0 ? 1 : -1;
+              goTo(currentIndex + dir * getPerPage());
+            } else {
+              goTo(currentIndex, true);
+            }
+            resetAuto();
+          };
+
+          track.addEventListener('pointerup', release);
+          track.addEventListener('pointercancel', release);
+        })();
+
+        carousel.addEventListener('mouseenter', stopAuto, { passive: true });
+        carousel.addEventListener('mouseleave', scheduleNext, { passive: true });
+
+        function init() { slides = Array.from(track.children); goTo(perPage, false); updateIndicatorsFor(currentIndex, perPage); scheduleNext(); }
+        window.addEventListener('resize', debounce(() => init(), 120));
+        init();
+      };
+
+      if ('requestIdleCallback' in window) requestIdleCallback(setup, { timeout: 1500 });
+      else setTimeout(setup, 600);
+    }
+
+    // Observe carousels and init when visible
+    const carousels = Array.from(document.querySelectorAll('.hero-carousel[data-interval]'));
+    if (carousels.length === 0) return;
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            initCarousel(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { root: null, rootMargin: '400px' });
+      carousels.forEach((c) => io.observe(c));
+    } else {
+      carousels.forEach((c) => initCarousel(c));
+    }
+  })();
+</script>

@@ -1,0 +1,85 @@
+---
+type Translations = typeof import('../../i18n/en').default;
+type ServiceContent = Translations['locationsPage']['service'];
+interface Props {
+  content: ServiceContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-center py-30">
+  <div class="flex flex-col justify-center items-start gap-4">
+    <div class="flex justify-start items-center gap-2">
+      <div class="w-2 h-2 bg-primary"></div>
+      <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+        {content.subtitle}
+      </p>
+    </div>
+    <h2 class="text-primary text-[56px] leading-[114%] font-normal" set:html={content.title}></h2>
+    <p class="text-paragraph text-[16px] leading-[150%] font-normal">{content.description}</p>
+  </div>
+  <div class="flex flex-col justify-center items-center gap-6">
+    {
+      content.items.map((item,index)=>( 
+        <div data-index={index} class={`service-item transition-colors duration-500 ease-out flex flex-col justify-center items-start ${index === 0 ? 'gap-12' : 'gap-0'} py-10 px-9.5 rounded-2xl w-full ${index === 0 ? 'bg-back' : 'bg-primary'}`}>
+          <div class="w-83.75 flex justify-between items-center service-header cursor-pointer">
+            <p class={`${index === 0 ? 'text-paragraph' : 'text-white'} transition-colors duration-500 ease-out text-[24px] font-semibold leading-[133%]`}>{item.title}</p>
+            <img src={index === 0 ? '/images/plus.svg' : '/images/less.svg'} alt="Toggle" width="33" height="33" class="toggle-icon transition-transform duration-300 ease-out w-8.75 h-8.75"/>
+          </div>
+          <div class={`service-areas flex flex-col justify-center items-start gap-6 overflow-hidden transition-all duration-500 ease-out ${index === 0 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+            {
+              item.areas.map((area)=>( 
+                <div class="flex justify-start items-center gap-2">
+                  <img src="/images/arrow-2.svg" alt="Flecha" width="16" height="16" class="w-6 h-6"/>
+                  <a href={area.href} class="text-paragraph text-[16px] font-normal leading-[150%] underline capitalize hover:text-primary-intense transition-all duration-300 ease-in-out hover:font-medium">{area.label}</a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <script type="module">
+    const items = Array.from(document.querySelectorAll('.service-item'));
+    if (items.length) {
+      let openIndex = 0;
+      const setOpen = (newIndex) => {
+        if (newIndex === openIndex) return; // always keep one open
+        items.forEach(i => {
+          const idx = Number(i.dataset.index);
+          const isOpen = idx === newIndex;
+          i.classList.toggle('bg-back', isOpen);
+          i.classList.toggle('bg-primary', !isOpen);
+          const title = i.querySelector('p');
+          if (title) {
+            title.classList.toggle('text-paragraph', isOpen);
+            title.classList.toggle('text-white', !isOpen);
+          }
+          const img = i.querySelector('.toggle-icon');
+          if (img) img.src = isOpen ? '/images/plus.svg' : '/images/less.svg';
+          const areas = i.querySelector('.service-areas');
+          if (areas) {
+            areas.classList.toggle('max-h-96', isOpen);
+            areas.classList.toggle('max-h-0', !isOpen);
+            areas.classList.toggle('opacity-100', isOpen);
+            areas.classList.toggle('opacity-0', !isOpen);
+          }
+          // remove gap when closed so hidden areas don't leave space
+          i.classList.toggle('gap-12', isOpen);
+          i.classList.toggle('gap-0', !isOpen);
+        });
+        openIndex = newIndex;
+      };
+
+      items.forEach(i => {
+        const idx = Number(i.dataset.index);
+        const header = i.querySelector('.service-header');
+        if (header) header.addEventListener('click', () => setOpen(idx));
+      });
+
+      // ensure initial state
+      setOpen(0);
+    }
+  </script>
+</section>

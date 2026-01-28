@@ -1,0 +1,65 @@
+---
+import en from '../../../../i18n/en';
+import es from '../../../../i18n/es';
+import Layout from '../../../../layouts/Layout.astro';
+import Testimonials from '../../../../sections/locations/Testimonials.astro';
+import Quote from '../../../../sections/main/Quote.astro';
+import type { Language } from '../../../../types/language.type';
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/en';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+<Layout lang={lang} t={t}>
+  <section class="w-full flex items-center justify-center relative">
+    {/*
+      <img
+      src="/main/hero.webp"
+      alt="Fondo de soluciones"
+      width="1440"
+      height="900"
+      class="absolute inset-0 w-auto md:w-full h-full object-cover -z-20 md:object-center hidden md:block"
+      loading="eager"
+      decoding="async"
+    />
+    <img
+      src="/main/hero-main-sm.webp"
+      alt="Fondo de soluciones"
+      width="375"
+      height="900"
+      class="absolute inset-0 w-full h-full object-cover -z-20 md:hidden block object-center"
+      loading="eager"
+      decoding="async"
+    />
+    */}
+    
+    <div
+      class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-start sm:items-center lg:items-center gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[55vh] lg:h-screen 3xl:h-[95vh] "
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
+      <div
+        class="flex flex-col items-center justify-center w-full gap-3 3xl:gap-4"
+      >
+        <div class="flex justify-start items-center gap-2">
+          <div class="w-2 h-2 bg-primary"></div>
+          <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+              {t.locations.alabama.hero.subtitle}
+          </p>
+        </div>
+        <h1
+          class="text-paragraph text-[56px] font-normal leading-[114%] text-center"
+          set:html={t.locations.alabama.hero.title}
+        >
+        </h1>
+      </div>
+    </div>
+  </section>
+  <Testimonials content={t.locations.alabama.testimonials} />
+  <Quote content={t.locations.alabama.form} />
+</Layout>

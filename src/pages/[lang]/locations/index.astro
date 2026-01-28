@@ -1,0 +1,28 @@
+---
+import en from '../../../i18n/en';
+import es from '../../../i18n/es';
+import Layout from '../../../layouts/Layout.astro';
+import Hero from '../../../sections/locations/Hero.astro';
+import Service from '../../../sections/locations/Service.astro';
+import Areas from '../../../sections/main/Areas.astro';
+import Equipment from '../../../sections/main/Equipment.astro';
+import Quote from '../../../sections/main/Quote.astro';
+
+import type { Language } from '../../../types/language.type';
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/en';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+<Layout lang={lang} t={t}>
+  <Hero content={t.locationsPage.hero} />
+  <Service content={t.locationsPage.service} />
+  <Areas content={t.locationsPage.areas} />
+  <Equipment content={t.locationsPage.equipment} />
+  <Quote content={t.main.form} />
+</Layout>

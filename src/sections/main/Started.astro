@@ -1,0 +1,26 @@
+---
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type StartedContent = Translations['main']['started'];
+interface Props {
+  content: StartedContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full flex justify-center items-center py-40 bg-back">
+  <div class="flex flex-col justify-center items-center gap-10">
+    <div class="flex flex-col justify-center items-center gap-8 max-w-[50%]">
+      <h2 class="text-paragraph text-center text-[56px] font-normal leading-[114%]">{content.title}</h2>
+      <p class="text-paragraph text-center text-[16px] font-normal leading-[150%]">{content.description}</p>
+    </div>
+    <Button
+        text={content.button}
+        textClass="text-paragraph"
+        href="#"
+        target="_blank"
+        extraBtnClass={`bg-accent hover:bg-accent/90 `}
+        iconName='phone'
+      />
+  </div>
+</section>

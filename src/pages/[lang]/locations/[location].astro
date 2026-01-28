@@ -1,0 +1,41 @@
+---
+import en from '../../../i18n/en';
+import es from '../../../i18n/es';
+import Layout from '../../../layouts/Layout.astro';
+import Info from '../../../sections/locations/Info.astro';
+import Hero from '../../../sections/main/Hero.astro';
+import Equipment from '../../../sections/main/Equipment.astro';
+import type { Language } from '../../../types/language.type';
+import Quote from '../../../sections/main/Quote.astro';
+import Testimonials from '../../../sections/locations/Testimonials.astro';
+
+export function getStaticPaths() {
+  const locations = [
+    'orlando-fl',
+    'melbourne-fl',
+    'tampa-fl',
+    'fort-myers-fl',
+  ];
+  const languages = ['es', 'en'];
+
+  return languages.flatMap((lang) =>
+    locations.map((location) => ({
+      params: { lang, location },
+    }))
+  );
+}
+
+export const defaultRedirect = '/en';
+
+const { lang, location } = Astro.params as { lang: Language; location: string };
+const translations = { es, en };
+const t = translations[lang];
+const locationData = (t.locations as Record<string, any>)[location] ?? {};
+---
+<Layout lang={lang} t={t}>
+  <Hero content={locationData.hero}/>
+  <Info content={locationData.info} />
+  <Equipment content={locationData.equipment} />
+  <Testimonials content={locationData.testimonials} />
+  <Quote content={locationData.form} />
+</Layout>

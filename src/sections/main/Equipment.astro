@@ -1,0 +1,32 @@
+---
+import CarouselEquipment from '../../components/CarouselEquipment.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type EquipmentContent = Translations['main']['equipment'];
+interface Props {
+  content: EquipmentContent;
+}
+const { content } = Astro.props as Props;
+
+const currentPath = Astro.url.pathname;
+// Normalizar: remover idioma y trailing slash
+const normalized =
+  currentPath.replace(/^\/(en|es)/, '').replace(/\/$/, '') || '/';
+const isLocation = normalized === '/locations';
+---
+
+<section class={`w-full flex justify-center items-center  py-30 relative ${isLocation ? 'bg-white' : 'bg-primary'}`}>
+  <img src="/images/back-sections.webp" alt="Imagen de Fondo Quality Port" width="1920" height="1080" decoding="async" loading="lazy" class={`${isLocation ? 'hidden' : 'block'} absolute top-0 left-0 w-full h-full object-cover object-center opacity-10 z-0`}/>
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-30 z-5">
+    <div class="flex flex-col justify-center items-center gap-4">
+      <div class="flex justify-start items-center gap-2">
+        <div class="w-2 h-2 bg-primary"></div>
+        <p class={`${isLocation ? 'text-paragraph' : 'text-white'} text-[16px] font-normal leading-[150%] uppercase`}>
+            {content.subtitle}
+        </p>
+      </div>
+      <h2 class={`${isLocation ? 'text-primary' : 'text-white'} text-[56px] font-normal leading-[114%]`}>{content.title}</h2>
+    </div>
+    <CarouselEquipment items={content.list} isLocation={isLocation}/>
+  </div>
+</section>

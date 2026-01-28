@@ -1,0 +1,36 @@
+---
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type FormContent = Translations['main']['form'];
+interface Props {
+  content: FormContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full flex justify-center items-center relative overflow-hidden bg-back">
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30">
+    <div class="w-[40%] flex flex-col justify-center items-start gap-4">
+      <div class="flex justify-start items-center gap-2">
+        <div class="w-2 h-2 bg-primary"></div>
+        <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+            {content.subtitle}
+        </p>
+      </div>
+      <div class="flex flex-col justify-center items-start gap-10">
+        <h2 class="text-paragraph text-[56px] font-semibold leading-[114%]">{content.title}</h2>
+        <p class="text-paragraph text-[16px] font-normal leading-[150%]">{content.description}</p>
+        <Button
+              text={content.buttons[0].label}
+              textClass={'text-paragraph'}
+              href={content.buttons[0].href}
+              target="_blank"
+              extraBtnClass={'bg-accent hover:bg-accent/90'}
+              iconName={content.buttons[0].icon}
+            />
+      </div>
+    </div>
+    <div class="w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric">
+    </div>
+  </div>
+</section>

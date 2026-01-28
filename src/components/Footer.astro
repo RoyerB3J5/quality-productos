@@ -1,0 +1,165 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Translations = typeof import('../i18n/en').default;
+type FooterContent = Translations['footer'];
+interface Props {
+  content?: FooterContent;
+}
+const { content } = Astro.props as Props;
+
+// Obtener la ruta actual y normalizar el path sin prefijo de idioma
+const currentPath = Astro.url.pathname;
+// Normalizar: remover idioma y trailing slash
+const normalized =
+  currentPath.replace(/^\/(en|es)/, '').replace(/\/$/, '') || '/';
+// Detectar el idioma actual ('en' o 'es')
+const match = currentPath.match(/^\/(en|es)/);
+const lang = match ? match[1] : 'en';
+
+const icons = [
+  {
+    icon: 'facebook',
+    href: '#',
+  },
+  {
+    icon: 'instagram',
+    href: '#',
+  }
+];
+---
+
+<footer class="flex flex-col justify-center items-center w-full">
+  <div
+    class="bg-paragraph flex justify-center items-center px-5 xl:px-0 py-17 lg:pb-20 pt-60 w-full relative"
+  >
+    <img src="/images/back-footer.webp" alt="Imagen de Fondo Footer" width="1440" height="630" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-center opacity-5 z-0"/>
+    <div
+      class="w-full max-w-screen xl:max-w-7xl flex flex-col justify-center items-start gap-10 sm:max-w-[70%] z-5"
+    >
+      <a
+        href={`/${lang}`}
+        aria-label="Ir a la página principal"
+        title="Quality Portable - Inicio"
+      >
+        <img
+          src="/images/logo.svg"
+          alt="Logo de Quality Portable"
+          width="262.5"
+          height="55"
+          class="cursor-pointer w-65 h-auto"
+        />
+      </a>
+      <div
+        class="w-full flex flex-col md:flex-row justify-center md:justify-between items-start gap-20 md:gap-0"
+      >
+        <div class="flex flex-col justify-center items-start gap-8 max-w-81.75">
+          <p
+            class="text-white text-[16px] font-normal leading-[150%]"
+            set:html={content?.description}
+          />
+          <div class="flex justify-center items-center gap-4.75">
+            {
+              icons.map((item) => (
+                <a
+                  href={item.href}
+                  class="w-8.25 h-8.25 flex justify-center items-center cursor-pointer transition-all duration-200 ease-in-out"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name={item.icon} class={'w-full h-full text-accent'} />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-4">
+            <h4
+              class="text-accent text-[16px] font-bold leading-[150%]"
+            >
+              {content?.contact.title}
+            </h4>
+            <div class="flex flex-col justify-center items-start gap-4">
+              {
+                content?.contact.items.map((item) => (
+                  <div class="flex justify-start items-center gap-2">
+                    <Icon name={item.icon} class="w-6 h-6 " />
+                    <a
+                      href={item.href}
+                      class="text-white text-[16px] font-normal leading-[150%] hover:font-medium hover:text-accent transition-all duration-300 ease-in-out"
+                    >
+                      {item.text}
+                    </a>
+                  </div>
+                ))
+              }
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-4">
+            <h4
+              class="text-accent text-[16px] font-bold leading-[150%]"
+            >
+              {content?.nav.title}
+            </h4>
+            <div class="flex flex-col justify-center items-start gap-4">
+              {
+                content?.nav.items.map((item) => (
+                  <a
+                    href={`/${lang}/${item.href}`}
+                    class="text-[16px] leading-[120%] font-normal hover:font-medium text-white hover:text-accent transition-all duration-300 ease-in-out"
+                  >
+                    {item.label}
+                  </a>
+                ))
+              }
+            </div>
+        </div>
+          <div class="flex flex-col justify-center items-start gap-4">
+            <h4
+              class="text-accent text-[16px] font-bold leading-[150%]"
+            >
+              {content?.service.title}
+            </h4>
+            <div class="flex flex-col justify-center items-start gap-4">
+              {
+                content?.service.items.map((item) => (
+                  <a
+                    href={`/${lang}/services/${item.href}`}
+                    class="text-[16px] leading-[120%] font-normal hover:font-medium text-white hover:text-accent transition-all duration-300 ease-in-out"
+                  >
+                    {item.title}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="bg-[#E5E5E5] w-full py-6 md:py-7.75 flex justify-center items-center px-5 xl:px-0"
+  >
+    <div
+      class="w-full max-w-screen md:max-w-7xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 md:gap-4"
+    >
+      <a href="https://inkshapegroup.com/en/">
+        <img
+          src="/images/inkshape.svg"
+          alt=" Logo de Inkshape Group"
+          width="208"
+          height="40"
+          class="w-52 h-auto"
+        />
+      </a>
+      <p
+        class="text-[16px] leading-[120%] text-[#404040] font-normal text-center"
+      >
+        Copyright © 2026 by <a href="https://inkshapegroup.com"
+          >Inkshape Group</a
+        > | Privacy | <a href="/">Quality Products</a> | Florida & Georgia | Call Now: <a
+          href="tel:+13212179445">+1 (321) 217-9445</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>

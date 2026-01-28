@@ -1,0 +1,102 @@
+---
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type IndustriesContent = Translations['main']['industries'];
+interface Props {
+  content: IndustriesContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
+  <div class="flex flex-col justify-center items-start gap-4 w-full">
+    <div class="flex justify-start items-center gap-2">
+      <div class="w-2 h-2 bg-primary"></div>
+      <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+            {content.description}
+      </p>
+      
+    </div>
+    <h2 class="text-primary text-[56px] font-normal leading-[114%] max-w-180">
+          {content.title}
+    </h2>
+    <Button
+        text={content.button.label}
+        textClass="text-white"
+        href={content.button.href}
+        target="_blank"
+        extraBtnClass={`bg-primary hover:bg-primary/90 `}
+      />
+  </div>
+  <div class="w-full flex flex-col justify-center items-center industries-list">
+    {
+      content.items.map((item,index)=>( 
+        <div data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back rounded-2xl px-6 active' : ''}`}>
+          <div class="w-full max-w-211.5 flex justify-between items-center">
+            <h3 class={`${index == 0 ? 'text-primary' : 'text-paragraph'} transition-all duration-300 ease-in-out text-[32px] font-semibold leading-[125%]`}>{item.title}</h3>
+            <div class="flex flex-col justify-center items-start gap-4 max-w-102.75 industries-info">
+              <p class="text-paragraph text-[16px] font-normal leading-[150%]">{item.description}</p>
+              <a href={item.button.href} class="text-primary text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
+            </div>
+          </div>
+          
+          <div class={`aspect-square w-75.5 rounded-t-2xl bg-primary absolute bottom-0 right-6 transition-all delay-75 duration-300 ease-in-out transform ${index == 0 ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}></div>
+        </div>
+      ))
+    }
+  </div>
+
+  <script type="module">
+    const list = document.querySelector('.industries-list');
+    if (list) {
+      const items = Array.from(list.querySelectorAll('.industries-item'));
+      items.forEach(item => {
+        const idx = Number(item.dataset.index);
+        item.addEventListener('mouseenter', (e) => {
+          items.forEach(i => {
+            const isActive = Number(i.dataset.index) === idx;
+            i.classList.toggle('bg-back', isActive);
+            i.classList.toggle('rounded-2xl', isActive);
+            i.classList.toggle('px-6', isActive);
+            i.classList.toggle('active', isActive);
+            const hh3 = i.querySelector('h3');
+            if (hh3) {
+              hh3.classList.toggle('text-primary', isActive);
+              hh3.classList.toggle('text-paragraph', !isActive);
+            }
+            const deco = i.querySelector('.aspect-square');
+            if (deco) {
+              deco.classList.toggle('translate-x-0', isActive);
+              deco.classList.toggle('translate-x-full', !isActive);
+              deco.classList.toggle('opacity-100', isActive);
+              deco.classList.toggle('opacity-0', !isActive);
+            }
+          });
+        });
+        item.addEventListener('mouseleave', (e) => {
+          const to = e.relatedTarget;
+          if (to && to.closest && to.closest('.industries-item')) return;
+          items.forEach(i => {
+            const isFirst = Number(i.dataset.index) === 0;
+            i.classList.toggle('bg-back', isFirst);
+            i.classList.toggle('rounded-2xl', isFirst);
+            i.classList.toggle('px-6', isFirst);
+            i.classList.toggle('active', isFirst);
+            const hh3 = i.querySelector('h3');
+            if (hh3) {
+              hh3.classList.toggle('text-primary', isFirst);
+              hh3.classList.toggle('text-paragraph', !isFirst);
+            }
+            const deco = i.querySelector('.aspect-square');
+            if (deco) {
+              deco.classList.toggle('translate-x-0', isFirst);
+              deco.classList.toggle('translate-x-full', !isFirst);
+              deco.classList.toggle('opacity-100', isFirst);
+              deco.classList.toggle('opacity-0', !isFirst);
+            }
+          });
+        });
+      });
+    }
+  </script>
+</section>

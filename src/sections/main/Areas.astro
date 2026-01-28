@@ -1,0 +1,54 @@
+---
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type AreasContent = Translations['main']['areas'];
+interface Props {
+  content: AreasContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full flex justify-center items-center bg-back py-30">
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-20">
+    <div class="flex flex-col justify-center items-start gap-4 w-full">
+        <div class="flex justify-start items-center gap-2">
+          <div class="w-2 h-2 bg-primary"></div>
+          <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+            {content.description}
+          </p>
+        </div>
+        <h2 class="text-primary text-[56px] font-normal leading-[114%] max-w-180">
+          {content.title}
+        </h2>
+      </div>
+    <div class="w-full flex justify-center items-center gap-13">
+      <div class="flex flex-col justify-center items-start gap-18 w-full">
+        {content.items.map((item)=>( 
+          <div class="flex flex-col justify-center items-start gap-2"> 
+            <div class="flex justify-start items-center gap-4">
+              <img src={`/images/${item.icon}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8"/>
+              <h3 class="text-paragraph text-[32px] font-normal leading-[125%]">{item.title}</h3>
+            </div>
+            <p set:html={item.text} class="text-[16px] font-normal leading-[150%] text-paragraph capitalize"></p>
+            <p class="text-paragraph text-[16px] font-semibold leading-[150%] uppercase">{item.description}</p>
+          </div>
+        ))}
+        <div class="flex justify-center items-center gap-4">
+          {
+            content.buttons.map((btn)=>(
+              <Button
+                text={btn.label}
+                textClass={`${btn.text}`}
+                href={btn.href}
+                target="_blank"
+                extraBtnClass={`${btn.back}`}
+                iconName={btn?.icon}
+              />
+            ))
+          }
+        </div>
+      </div>
+      <img src="/images/mapa.webp" alt="Mapa de áreas de servicio" width="845" height="614" decoding="async" loading="lazy" class="w-full h-auto"/>
+    </div>
+  </div>
+</section>

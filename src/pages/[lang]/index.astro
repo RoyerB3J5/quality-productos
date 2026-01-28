@@ -1,0 +1,33 @@
+---
+import en from '../../i18n/en';
+import es from '../../i18n/es';
+import Layout from '../../layouts/Layout.astro';
+import Areas from '../../sections/main/Areas.astro';
+import Equipment from '../../sections/main/Equipment.astro';
+import Hero from '../../sections/main/Hero.astro';
+import Industries from '../../sections/main/Industries.astro';
+import Quote from '../../sections/main/Quote.astro';
+import Services from '../../sections/main/Services';
+import Started from '../../sections/main/Started.astro';
+import Why from '../../sections/main/Why.astro';
+import type { Language } from '../../types/language.type';
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/en';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+<Layout lang={lang} t={t}>
+  <Hero content={t.main.hero} />
+  <Services client:idle content={t.main.services}  />
+  <Areas content={t.main.areas} />
+  <Why content={t.main.why} />
+  <Equipment content={t.main.equipment} />
+  <Started content={t.main.started} />
+  <Industries content={t.main.industries} />
+  <Quote content={t.main.form} />
+</Layout>
