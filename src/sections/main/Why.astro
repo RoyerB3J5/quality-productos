@@ -13,13 +13,22 @@ const { content } = Astro.props as Props;
         <div class="w-2 h-2 bg-primary"></div>
         <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase ">{content.subtitle}</p>
       </div>
-      <p class="text-paragraph text-[18px] font-semibold leading-[155%] capitalize max-w-[70%]">{content.description}</p>
+      <p class="text-paragraph text-[18px] font-semibold leading-[155%]  max-w-[70%]">{content.description}</p>
     </div>
-    <div class="w-full h-auto rounded-lg bg-back-blue aspect-628/744">
+    <div class="w-full h-auto rounded-lg relative aspect-628/744 overflow-hidden">
+      <img
+        src={`/images/why.webp`}
+        alt="Imagen de Baños Portátiles"
+        width="628"
+        height="744"
+        class="absolute inset-0 w-full h-full object-cover "
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   </div>
   <div class="basis-1/2 flex flex-col justify-center items-start gap-16 self-stretch min-h-0">
-    <h2 class="text-primary text-[56px] font-normal leading-[114%]">{content.title}</h2>
+    <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{content.title}</h2>
     <div class="flex flex-col justify-center items-center gap-6">
       {
         content.items.map((item)=>( 

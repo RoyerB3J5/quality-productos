@@ -18,7 +18,7 @@ export default function Services({ content }: ServicesProps) {
             {content.description}
           </p>
         </div>
-        <h2 className="text-primary text-[56px] font-normal leading-[114%] max-w-180">
+        <h2 className="text-primary text-[56px] font-semibold leading-[114%] max-w-180">
           {content.title}
         </h2>
       </div>
@@ -33,8 +33,21 @@ export default function Services({ content }: ServicesProps) {
             }`}
             onClick={() => setCurrentItem(index)}
           >
+            <img
+              src={`/images/${item.image}.webp`}
+              alt="Fondo de soluciones"
+              width="2500"
+              height="1563"
+              className={`absolute inset-0 w-auto md:w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
+                currentItem === index
+                  ? "translate-y-0"
+                  : "translate-y-full group-hover:translate-y-0"
+              }`}
+              loading="lazy"
+              decoding="async"
+            />
             <div
-              className={`absolute w-full h-full bg-black/30 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
+              className={`absolute w-full h-full bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
                 currentItem === index
                   ? "translate-y-0"
                   : "translate-y-full group-hover:translate-y-0"
@@ -49,9 +62,18 @@ export default function Services({ content }: ServicesProps) {
           </div>
         ))}
       </div>
-      <div className="w-full flex justify-center items-end rounded-2xl aspect-1282/584 relative overflow-hidden bg-[#FAFAFA]">
-        <div className="w-full flex justify-between items-center p-8">
-          <p className="text-paragraph text-[16px] font-normal leading-[150%] text-start max-w-154.75">
+      <div className="w-full flex justify-center items-end rounded-2xl aspect-1282/584 relative overflow-hidden back-img">
+        <img
+          src={`/images/${content.items[currentItem].image}.webp`}
+          alt="Fondo de soluciones"
+          width="1282"
+          height="584"
+          className={`absolute inset-0 w-full h-full object-cover -z-1 object-bottom`}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="w-full flex justify-between items-center p-8 z-5 ">
+          <p className="text-white text-[16px] font-normal leading-[150%] text-start max-w-154.75">
             {content.items[currentItem].description2}
           </p>
           <a
@@ -66,7 +88,7 @@ export default function Services({ content }: ServicesProps) {
               alt="arrow right"
               width="18"
               height="14"
-              className="w-6.5 h-.3.5"
+              className="w-6.5 h-3.5"
             />
           </a>
         </div>

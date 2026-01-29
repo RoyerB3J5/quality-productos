@@ -50,6 +50,7 @@ export default {
   },
   main: {
     hero: {
+      image:'hero-main',
       title:
         "Portable Toilet & <br class='hidden md:block'/> Rental Solutions <br class='hidden md:block'/> You Can Rely On",
       description:
@@ -266,7 +267,7 @@ export default {
       ],
     },
     form: {
-      subtitle: "Get in Touch",
+      subtitle: "Book Now",
       title: "Get a Free Quote in Orlando",
       description:
         "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -554,7 +555,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Get in Touch",
+        subtitle: "Book Now",
         title: "Get a Free Quote in Orlando",
         description:
           "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -664,7 +665,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Get in Touch",
+        subtitle: "Book Now",
         title: "Get a Free Quote in Melbourne",
         description:
           "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -774,7 +775,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Get in Touch",
+        subtitle: "Book Now",
         title: "Get a Free Quote in Tampa",
         description:
           "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -884,7 +885,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Get in Touch",
+        subtitle: "Book Now",
         title: "Get a Free Quote in Fort Myers",
         description:
           "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -935,7 +936,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Get in Touch",
+        subtitle: "Book Now",
         title: "Get a Free Quote in Alabama",
         description:
           "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -980,7 +981,7 @@ export default {
         'Quality Portable Rental Service provides reliable event and construction toilet rentals <br class="hidden md:block"/> offering lean, cost-effective, and well-maintained units for a wide range of needs. From construction <br class="hidden md:block"/> sites to large events, our rental options are designed to deliver dependable sanitation solutions <br class="hidden md:block"/> with on-time delivery and pickup.',
       items: [
         {
-          tile: "Regular Portable Toilet",
+          title: "Regular Portable Toilet",
           lists: [
             "Ideal for construction sites",
             "Very cost-effective",
@@ -992,7 +993,7 @@ export default {
           image: "product-1",
         },
         {
-          tile: "Wheelchair Accessible Portable Toilet",
+          title: "Wheelchair Accessible Portable Toilet",
           lists: [
             "Roomy design for increased movement",
             "Ground-level entry",
@@ -1002,7 +1003,7 @@ export default {
           image: "product-2",
         },
         {
-          tile: "Construction Portable Toilet",
+          title: "Construction Portable Toilet",
           lists: [
             "Ideal for construction sites",
             "Very cost-effective",
@@ -1014,7 +1015,7 @@ export default {
           image: "product-3",
         },
         {
-          tile: "High-Rise Construction Portable Toilet",
+          title: "High-Rise Construction Portable Toilet",
           lists: [
             "Designed for high-rise construction projects",
             "Easily lifted by crane and / or elevator",
@@ -1025,7 +1026,7 @@ export default {
           image: "product-4",
         },
         {
-          tile: "Holding Tank",
+          title: "Holding Tank",
           lists: [
             "250-gallon capacity",
             "Ideal for bulk waste storage",
@@ -1036,7 +1037,7 @@ export default {
           image: "product-5",
         },
         {
-          tile: "Hand Wash Station",
+          title: "Hand Wash Station",
           lists: [
             "60-gallon water capacity / up to 3,800 pumps",
             "Paper towels and soap provided",
@@ -1047,7 +1048,7 @@ export default {
           image: "product-6",
         },
         {
-          tile: "Dumpster Rental (20 Yard)",
+          title: "Dumpster Rental (20 Yard)",
           lists: [
             "20-yard capacity",
             "Great for large events",
@@ -1057,7 +1058,7 @@ export default {
           image: "product-7",
         },
         {
-          tile: "RV & Septic Pump-Out Service",
+          title: "RV & Septic Pump-Out Service",
           lists: [
             "In addition to rental equipment, we also provide RV and septic pump-out services to support job sites and mobile units.",
           ],
@@ -1066,7 +1067,191 @@ export default {
       ],
     },
     form: {
-      subtitle: "Get in Touch",
+      subtitle: "Book Now",
+      title: "Get a Free Quote",
+      description:
+        "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Call Now",
+          href: "tel:+13212179445",
+        },
+      ],
+      image: "#",
+    },
+  },
+  services: {
+    hero: {
+      title: "Services",
+      description:
+        "Reliable portable sanitation, waste, and pump-out <br class='hidden md:block' /> solutions for construction sites, events, and <br class='hidden md:block' /> commercial projects, delivered clean, on time, and <br class='hidden md:block' /> hassle-free.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Call Now",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Book Now",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
+    },
+    items: [
+      {
+        title: "Port O Potty Rental",
+        description: "Comfort and convenience, wherever you are.",
+        section: {
+          subtitle: "Port O Potty Rental",
+          title: "Portable sanitation solutions for job sites and events",
+          description:
+            "We provide portable toilet rentals for construction sites and events, offering clean and cost-effective units suitable for short-term and long-term needs. Our inventory includes standard portable toilets, wheelchair-accessible (ADA) units, high-rise construction toilets, hand wash stations, and holding tanks.",
+          image: "service-1",
+          list: [
+            "Construction site trailers",
+            "Events & festivals",
+            "Commercial projects",
+            "Government jobs",
+          ],
+        },
+      },
+      {
+        title: "Dumpster Rental",
+        description: "Clean spaces start with the right solution.",
+        section: {
+          subtitle: "Dumpster Rental",
+          title: "Efficient waste solutions for projects of any size",
+          description:
+            "Our dumpster rental service includes 10-yard and 20-yard dumpsters, ideal for construction debris, cleanouts, and waste generated during events or projects. We coordinate delivery and pickup to keep your site organized and efficient.",
+          image: "service-2",
+          list: ["10-yard dumpsters", "20-yard dumpsters"],
+        },
+      },
+      {
+        title: "Septic & RV Pump-Out",
+        description: "Efficient and dependable pump-out services.",
+        section: {
+          subtitle: "Septic & RV Pump-Out",
+          title: "Pump-out service to keep operations running smoothly",
+          description:
+            "We offer septic and RV pump-out services to support job sites, trailers, and mobile units. This service helps maintain proper sanitation and ensures uninterrupted operations throughout your project or rental period.",
+          image: "service-3",
+          list: [
+            "Construction site trailers",
+            "RVs and motorhomes",
+            "Temporary facilities",
+            "Long-term job sites",
+          ],
+        },
+      },
+    ],
+    form: {
+      subtitle: "Book Now",
+      title: "Get a Free Quote",
+      description:
+        "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Call Now",
+          href: "tel:+13212179445",
+        },
+      ],
+      image: "#",
+    },
+  },
+  industries: {
+    hero: {
+      title: "Industries We Serve",
+      description:
+        "Reliable sanitation and waste solutions for <br/ class='hidden md:block' /> construction, events, commercial, and government  <br/ class='hidden md:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden md:block' />  service, and professional coordination.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Call Now",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Book Now",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
+    },
+    types: [
+      {
+        back: "bg-white",
+        image: "type-1",
+        subtitle: "Supporting construction projects of all sizes",
+        title: "Construction",
+        description:
+          "We support construction projects of all sizes with clean, durable portable toilets, including standard units, ADA-accessible options, and high-rise toilets designed for multi-story builds. Hand wash stations, holding tanks, dumpster rentals, and pump-out services are available to support ongoing operations.",
+        common: "Common uses",
+        items: [
+          "Commercial construction",
+          "Residential developments",
+          "Long-term job sites",
+          "Office trailers",
+        ],
+      },
+      {
+        back: "bg-back",
+        image: "type-2",
+        subtitle: "Comfort and cleanliness for every gathering",
+        title: "Events & Festivals",
+        description:
+          "From private gatherings to large public events, we provide portable toilets, ADA units, hand wash stations, and waste solutions to ensure a clean and comfortable experience for attendees.",
+        common: "Common uses",
+        items: [
+          "Festivals & outdoor events",
+          "Weddings & private events",
+          "Community gatherings",
+          "Sporting events",
+        ],
+      },
+      {
+        back: "bg-white",
+        image: "type-3",
+        subtitle: "Reliable sanitation for commercial projects",
+        title: "Commercial",
+        description:
+          "We work with businesses and property managers to provide portable sanitation and waste management solutions for temporary needs, renovations, and commercial operations.",
+        common: "Common uses",
+        items: [
+          "Commercial renovations",
+          "Property maintenance",
+          "Temporary business locations",
+          "Retail and office projects",
+        ],
+      },
+      {
+        back: "bg-back",
+        image: "type-4",
+        subtitle: "Trusted partner for municipal operations",
+        title: "Government & Municipal",
+        description:
+          "Quality Portable Rental Service supports city, county, and federal projects with dependable rental equipment and professional coordination. Our team understands the requirements of government work and delivers consistent service.",
+        common: "Common uses",
+        items: [
+          "Municipal projects",
+          "Public works",
+          "Government construction sites",
+          "Community programs",
+        ],
+      },
+    ],
+    form: {
+      subtitle: "Book Now",
       title: "Get a Free Quote",
       description:
         "Contact our team today for pricing, availability, and rental options tailored to your project or event.",
@@ -1126,7 +1311,7 @@ export default {
       ],
     },
     contact: {
-      title: "Get in Touch",
+      title: "Book Now",
       items: [
         {
           icon: "mail-1",

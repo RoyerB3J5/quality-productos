@@ -51,6 +51,7 @@ export default {
   },
   main: {
     hero: {
+      image: "hero-main",
       title:
         "Soluciones de Alquiler de Baños Portátiles <br class='hidden md:block'/> en las que Puedes Confiar",
       description:
@@ -267,7 +268,7 @@ export default {
       ],
     },
     form: {
-      subtitle: "Ponte en Contacto",
+      subtitle: "Reserva Ahora",
       title: "Obtén una Cotización Gratis en Orlando",
       description:
         "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -556,7 +557,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Ponte en Contacto",
+        subtitle: "Reserva Ahora",
         title: "Obtén una Cotización Gratis en Orlando",
         description:
           "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -666,7 +667,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Ponte en Contacto",
+        subtitle: "Reserva Ahora",
         title: "Obtén una Cotización Gratis en Melbourne",
         description:
           "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -776,7 +777,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Ponte en Contacto",
+        subtitle: "Reserva Ahora",
         title: "Obtén una Cotización Gratis en Tampa",
         description:
           "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -887,7 +888,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Ponte en Contacto",
+        subtitle: "Reserva Ahora",
         title: "Obtén una Cotización Gratis en Fort Myers",
         description:
           "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -938,7 +939,7 @@ export default {
         ],
       },
       form: {
-        subtitle: "Ponte en Contacto",
+        subtitle: "Reserva Ahora",
         title: "Obtén una Cotización Gratis en Alabama",
         description:
           "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -983,7 +984,7 @@ export default {
         'Quality Portable Rental Service ofrece alquileres fiables de baños para eventos y construcción <br class="hidden md:block"/> ofreciendo unidades eficientes, económicas y bien mantenidas para una amplia gama de necesidades. Desde obras <br class="hidden md:block"/> hasta grandes eventos, nuestras opciones de alquiler están diseñadas para proporcionar soluciones de saneamiento confiables <br class="hidden md:block"/> con entrega y recogida puntuales.',
       items: [
         {
-          tile: "Baño Portátil Regular",
+          title: "Baño Portátil Regular",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -995,7 +996,7 @@ export default {
           image: "product-1",
         },
         {
-          tile: "Baño Portátil - Silla de Ruedas",
+          title: "Baño Portátil - Silla de Ruedas",
           lists: [
             "Diseño amplio para mayor movilidad",
             "Acceso a nivel de suelo",
@@ -1005,7 +1006,7 @@ export default {
           image: "product-2",
         },
         {
-          tile: "Baño Portátil para Construcción",
+          title: "Baño Portátil para Construcción",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -1017,7 +1018,7 @@ export default {
           image: "product-3",
         },
         {
-          tile: "Baño Portátil para Construcción en Altura",
+          title: "Baño Portátil para Construcción en Altura",
           lists: [
             "Diseñado para proyectos en altura",
             "Fácil de elevar con grúa y/o ascensor",
@@ -1028,7 +1029,7 @@ export default {
           image: "product-4",
         },
         {
-          tile: "Tanque de Retención",
+          title: "Tanque de Retención",
           lists: [
             "Capacidad de 250 galones",
             "Ideal para almacenamiento de residuos a granel",
@@ -1039,7 +1040,7 @@ export default {
           image: "product-5",
         },
         {
-          tile: "Estación de Lavado de Manos",
+          title: "Estación de Lavado de Manos",
           lists: [
             "Capacidad de 60 galones / hasta 3,800 usos",
             "Toallas de papel y jabón incluidos",
@@ -1050,7 +1051,7 @@ export default {
           image: "product-6",
         },
         {
-          tile: "Alquiler de Contenedor (20 yardas)",
+          title: "Alquiler de Contenedor (20 yardas)",
           lists: [
             "Capacidad de 20 yardas",
             "Ideal para grandes eventos",
@@ -1060,7 +1061,7 @@ export default {
           image: "product-7",
         },
         {
-          tile: "Servicio de Vaciado para RV y Sépticos",
+          title: "Servicio de Vaciado para RV y Sépticos",
           lists: [
             "Además del alquiler, ofrecemos servicios de vaciado para RV y sépticos, apoyando obras y unidades móviles.",
           ],
@@ -1069,7 +1070,7 @@ export default {
       ],
     },
     form: {
-      subtitle: "Ponte en Contacto",
+      subtitle: "Reserva Ahora",
       title: "Obtén una Cotización Gratis",
       description:
         "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
@@ -1077,6 +1078,191 @@ export default {
         {
           icon: "phone",
           label: "Llamar Ya",
+          href: "tel:+13212179445",
+        },
+      ],
+      image: "#",
+    },
+  },
+  services: {
+    hero: {
+      title: "Servicios",
+      description:
+        "Soluciones confiables de saneamiento portátil, residuos y vaciado <br class='hidden md:block' /> para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo y <br class='hidden md:block' /> sin inconvenientes.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Llama Ya",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Reserva Ahora",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
+    },
+    items: [
+      {
+        title: "Alquiler de Baños Portátiles",
+        description: "Comodidad y conveniencia, donde la necesites.",
+        section: {
+          subtitle: "Alquiler de Baños Portátiles",
+          title: "Soluciones de saneamiento portátil para obras y eventos",
+          description:
+            "Ofrecemos alquileres de baños portátiles para obras y eventos, con unidades limpias y económicas para necesidades a corto y largo plazo. Nuestro inventario incluye baños portátiles estándar, unidades accesibles (ADA), baños para construcción en altura, estaciones de lavamanos y tanques de retención.",
+          image: "service-1",
+          list: [
+            "Remolques en obra",
+            "Festivales y eventos",
+            "Proyectos comerciales",
+            "Trabajos gubernamentales",
+          ],
+        },
+      },
+      {
+        title: "Alquiler de Contenedores",
+        description: "Espacios limpios comienzan con la solución correcta.",
+        section: {
+          subtitle: "Alquiler de Contenedores",
+          title:
+            "Soluciones eficientes de residuos para proyectos de cualquier tamaño",
+          description:
+            "Nuestro servicio de alquiler de contenedores incluye modelos de 10 y 20 yardas, ideales para escombros de construcción, limpiezas y residuos generados durante eventos o proyectos. Coordinamos entrega y recogida para mantener tu sitio organizado y eficiente.",
+          image: "service-2",
+          list: ["Contenedores de 10 yardas", "Contenedores de 20 yardas"],
+        },
+      },
+      {
+        title: "Vaciado de Septic y RV",
+        description: "Servicios de vaciado eficientes y confiables.",
+        section: {
+          subtitle: "Vaciado de Septic y RV",
+          title: "Servicio de vaciado para mantener operaciones fluidas",
+          description:
+            "Ofrecemos servicios de vaciado para septic y RV para apoyar obras, remolques y unidades móviles. Este servicio ayuda a mantener el saneamiento adecuado y garantiza operaciones ininterrumpidas durante tu proyecto o período de alquiler.",
+          image: "service-3",
+          list: [
+            "Remolques en obra",
+            "RVs y motorhomes",
+            "Instalaciones temporales",
+            "Obras a largo plazo",
+          ],
+        },
+      },
+    ],
+    form: {
+      subtitle: "Reserva Ahora",
+      title: "Obtén una Cotización Gratis",
+      description:
+        "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Llamar Ahora",
+          href: "tel:+13212179445",
+        },
+      ],
+      image: "#",
+    },
+  },
+  industries: {
+    hero: {
+      title: "Industrias que Atendemos",
+      description:
+        "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden md:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden md:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden md:block' /> dependable y coordinación profesional.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Llamar Ahora",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Reserva Ahora",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
+    },
+    types: [
+      {
+        back: "bg-white",
+        image: "type-1",
+        subtitle: "Apoyamos proyectos de construcción de todos los tamaños",
+        title: "Construcción",
+        description:
+          "Apoyamos proyectos de construcción de todos los tamaños con baños portátiles limpios y duraderos, incluyendo unidades estándar, opciones accesibles (ADA) y baños para construcción en altura. Estaciones de lavado, tanques de retención, alquileres de contenedores y servicios de vaciado están disponibles.",
+        common: "Usos comunes",
+        items: [
+          "Construcción comercial",
+          "Desarrollos residenciales",
+          "Proyectos de obra a largo plazo",
+          "Oficinas móviles",
+        ],
+      },
+      {
+        back: "bg-back",
+        image: "type-2",
+        subtitle: "Comodidad y limpieza en cada reunión",
+        title: "Eventos y Festivales",
+        description:
+          "De reuniones privadas a grandes eventos públicos, proporcionamos baños portátiles, unidades ADA, estaciones de lavado y soluciones de residuos para garantizar una experiencia limpia y cómoda para asistentes.",
+        common: "Usos comunes",
+        items: [
+          "Festivales y eventos al aire libre",
+          "Bodas y eventos privados",
+          "Reuniones comunitarias",
+          "Eventos deportivos",
+        ],
+      },
+      {
+        back: "bg-white",
+        image: "type-3",
+        subtitle: "Saneamiento confiable para proyectos comerciales",
+        title: "Comercial",
+        description:
+          "Trabajamos con empresas y gestores de propiedades para proporcionar soluciones de saneamiento portátil y gestión de residuos para necesidades temporales, renovaciones y operaciones comerciales.",
+        common: "Usos comunes",
+        items: [
+          "Renovaciones comerciales",
+          "Mantenimiento de propiedades",
+          "Ubicaciones comerciales temporales",
+          "Proyectos comerciales y de oficina",
+        ],
+      },
+      {
+        back: "bg-back",
+        image: "type-4",
+        subtitle: "Socio confiable para operaciones municipales",
+        title: "Gobierno y Municipal",
+        description:
+          "Quality Portable Rental Service apoya proyectos municipales, estatales y federales con equipos de alquiler confiables y coordinación profesional. Nuestro equipo entiende los requisitos del trabajo gubernamental y entrega servicio consistente.",
+        common: "Usos comunes",
+        items: [
+          "Proyectos municipales",
+          "Obras públicas",
+          "Sitios de construcción gubernamental",
+          "Programas comunitarios",
+        ],
+      },
+    ],
+    form: {
+      subtitle: "Reserva Ahora",
+      title: "Obtén una Cotización Gratis",
+      description:
+        "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Llamar Ahora",
           href: "tel:+13212179445",
         },
       ],

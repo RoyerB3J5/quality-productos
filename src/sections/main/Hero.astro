@@ -10,18 +10,19 @@ const { content } = Astro.props as Props;
 ---
 
 <section class="w-full flex items-center justify-center relative">
-  {/*
-    <img
-    src="/main/hero.webp"
+  <img
+    src={`/images/${content.image}.webp`}
     alt="Fondo de soluciones"
-    width="1440"
-    height="900"
+    width="2500"
+    height="1563"
     class="absolute inset-0 w-auto md:w-full h-full object-cover -z-20 md:object-center hidden md:block"
     loading="eager"
     decoding="async"
   />
+  {/*
+    
   <img
-    src="/main/hero-main-sm.webp"
+    src={`/images/${content.image}-sm.webp`}
     alt="Fondo de soluciones"
     width="375"
     height="900"
@@ -32,7 +33,7 @@ const { content } = Astro.props as Props;
   */}
   
   <div
-    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-start sm:items-center lg:items-center gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[55vh] lg:h-screen 3xl:h-[95vh] "
+    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-start sm:items-center lg:items-start gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[55vh] lg:h-screen 3xl:h-[95vh] pt-[5%]"
     data-aos="fade-up"
     data-aos-duration="2000"
   >
@@ -40,7 +41,7 @@ const { content } = Astro.props as Props;
       class="flex flex-col items-start justify-center w-full max-w-none sm:max-w-[50%] gap-3 3xl:gap-10 translate-y-10"
     >
       <h1
-        class="text-paragraph text-[56px] font-normal leading-[114%]"
+        class="text-primary text-[64px] font-extrabold leading-[114%] uppercase"
         set:html={content.title}
       >
       </h1>
@@ -59,7 +60,6 @@ const { content } = Astro.props as Props;
           ))
         }
       </div>
-      
     </div>
   </div>
 </section>

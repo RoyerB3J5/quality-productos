@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+@import "tailwindcss";
 
 @theme {
-  --font-family: 'Inter', 'NeueMontreal', sans-serif;
-  --font-title: 'Komet';
-  --color-primary: #0D34E9;
-  --color-secondary:#0A0BA4;
-  --color-accent:#F5A623;
-  --color-primary-electric:#2548EB;
-  --color-primary-intense:#0F32D5;
-  --color-paragraph:#303030;
-  --color-back:#E6E9F0;
-  --color-back-blue:#6B728A;
+  --font-family: "Inter", "NeueMontreal", sans-serif;
+  --font-title: "Komet";
+  --color-primary: #0d34e9;
+  --color-secondary: #0a0ba4;
+  --color-accent: #f5a623;
+  --color-primary-electric: #2548eb;
+  --color-primary-intense: #0f32d5;
+  --color-paragraph: #303030;
+  --color-back: #e6e9f0;
+  --color-back-blue: #6b728a;
   --breakpoint-xs: 400px;
   --breakpoint-3xl: 106rem;
 }
@@ -122,4 +122,17 @@
   .fade-up.active {
     animation: fadeUp 1.2s ease-in-out forwards;
   }
+}
+
+.back-img {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #000 100%);
+}
+
+.shadow-ubi {
+  box-shadow:
+    0 72px 20px 0 rgba(0, 0, 0, 0),
+    0 46px 18px 0 rgba(0, 0, 0, 0.01),
+    0 26px 15px 0 rgba(0, 0, 0, 0.03),
+    0 11px 11px 0 rgba(0, 0, 0, 0.04),
+    0 3px 6px 0 rgba(0, 0, 0, 0.05);
 }

@@ -1,0 +1,55 @@
+---
+import en from '../../../i18n/en';
+import es from '../../../i18n/es';
+import Layout from '../../../layouts/Layout.astro';
+import Hero from '../../../sections/main/Hero.astro';
+import Quote from '../../../sections/main/Quote.astro';
+import type { Language } from '../../../types/language.type';
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/en';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+<Layout lang={lang} t={t}>
+  <Hero content={t.industries.hero} />
+  {
+    t.industries.types.map((type,index)=>{
+      const isParity = index % 2 === 0;
+      return(
+        <section class={`w-full flex justify-center items-center py-30 ${type.back}`}>
+          <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-center gap-16">
+            <div class={`w-[58%] h-auto aspect-697/577 rounded-2xl bg-primary-electric ${isParity ? 'order-1' : 'order-2'}`}></div>
+            <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2' : 'order-1'}`}>
+              <div class="flex justify-start items-center gap-2">
+                <div class="w-2 h-2 bg-primary"></div>
+                <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+                    {type.subtitle}
+                </p>
+              </div>
+              <div class="flex flex-col justify-center items-start gap-12">
+                <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{type.title}</h2>
+                <p class="text-paragraph text-[16px] font-normal leading-[150%]">{type.description}</p>
+              </div>
+              <p class="text-paragraph text-[16px] font-bold leading-[150%]">{type.common}</p>
+              <ul class="flex flex-col justify-center items-start gap-4">
+                {
+                  type.items.map((item)=>(
+                    <li class={`flex p-2 justify-center items-center ${isParity ? 'bg-back' : 'bg-white'} rounded-lg text-paragraph text-[16px] font-normal leading-[150%]`}>
+                      {item}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </section>
+      )
+    })
+  }
+  <Quote content={t.industries.form} />
+</Layout>
