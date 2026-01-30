@@ -21,8 +21,9 @@ const lang = match ? match[1] : 'en';
 ---
 
 <header
-  class={`fixed left-0 right-0 z-50 w-full flex flex-col justify-center items-center transition-top duration-300 ease-in-out border-0 top-0 bg-secondary `}
+  class={`fixed left-0 right-0 z-50 w-full flex flex-col justify-center items-center transition-top duration-300 ease-in-out border-0 top-0`}
   id="site-header"
+  style="background-color: rgba(var(--color-primary-rgb), 0); transition: background-color 0.1s ease-out, transform 0.3s ease-out;"
 >
   <div
     class={`w-[calc(100%-40px)] xl:w-full sm:max-w-7xl flex justify-between items-center relative  py-3.75 px-5 xl:px-0`}
@@ -374,16 +375,29 @@ const lang = match ? match[1] : 'en';
         }
       });
       const header = document.getElementById('site-header');
+      const viewportHeight = window.innerHeight;
       let lastScroll = window.pageYOffset;
 
       window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
+        
+        // Calcular la opacidad: 0 al inicio, 1 cuando se alcance 100vh
+        const opacity = Math.min(currentScroll / viewportHeight, 1);
+        
+        // Actualizar el fondo del header con la opacidad calculada
+        header.style.backgroundColor = `rgba(var(--color-primary-rgb), ${opacity})`;
 
-        if (currentScroll > lastScroll && currentScroll > 100) {
-          // Scroll hacia abajo: escondemos el header completo
-          header.style.transform = 'translateY(-120%)';
+        // Mostrar/ocultar header según dirección del scroll, pero SOLO después de los primeros 100vh
+        if (currentScroll > viewportHeight) {
+          if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scroll hacia abajo: escondemos el header
+            header.style.transform = 'translateY(-120%)';
+          } else {
+            // Scroll hacia arriba: mostramos el header
+            header.style.transform = 'translateY(0)';
+          }
         } else {
-          // Scroll hacia arriba: lo mostramos
+          // Dentro de los primeros 100vh, siempre mostrado
           header.style.transform = 'translateY(0)';
         }
 
