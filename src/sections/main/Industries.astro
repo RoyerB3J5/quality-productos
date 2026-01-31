@@ -9,17 +9,17 @@ interface Props {
 const { content } = Astro.props as Props;
 ---
 <section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
-  <div class="flex flex-col justify-center items-start gap-4 w-full">
+  <div class="flex flex-col justify-center items-start gap-4 w-full" data-aos="flip-down">
     <div class="flex justify-start items-center gap-2">
       <div class="w-2 h-2 bg-primary"></div>
       <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
             {content.description}
       </p>
-      
     </div>
     <h2 class="text-primary text-[56px] font-normal leading-[114%] max-w-180">
           {content.title}
     </h2>
+    <p class="text-paragraph text-[16px] leading-[150%] " set:html={content.paragraph}></p>
     <Button
         text={content.button.label}
         textClass="text-white"
@@ -28,7 +28,7 @@ const { content } = Astro.props as Props;
         extraBtnClass={`bg-primary hover:bg-primary/90 `}
       />
   </div>
-  <div class="w-full flex flex-col justify-center items-center industries-list">
+  <div class="w-full flex flex-col justify-center items-center industries-list" data-aos="flip-up">
     {
       content.items.map((item,index)=>( 
         <div data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back rounded-2xl px-6 active' : ''}`}>
@@ -40,7 +40,7 @@ const { content } = Astro.props as Props;
             </div>
           </div>
           
-          <div class={`aspect-square w-75.5 rounded-t-2xl  absolute bottom-0 right-6 transition-all delay-75 duration-300 box-border border-t-8 border-r-8 border-l-8 border-paragraph ease-in-out transform ${index == 0 ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+          <div class={`aspect-square w-75.5 rounded-t-2xl  absolute bottom-0 right-6 transition-all delay-75 duration-300 box-border border-t-8 border-r-8 border-l-8 border-paragraph ease-in-out transform origin-bottom ${index == 0 ? 'opacity-100' : 'opacity-0'}`} style={index == 0 ? 'transform: scaleY(1)' : 'transform: scaleY(0.92)'}>
             <div class="relative w-full h-full overflow-hidden rounded-t-lg ">
               <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="302" decoding="async" loading="lazy" class="w-full h-full object-cover object-center absolute inset-0 "/>
             </div>
@@ -70,8 +70,8 @@ const { content } = Astro.props as Props;
             }
             const deco = i.querySelector('.aspect-square');
             if (deco) {
-              deco.classList.toggle('translate-x-0', isActive);
-              deco.classList.toggle('translate-x-full', !isActive);
+              deco.classList.toggle('translate-y-0', isActive);
+              deco.classList.toggle('translate-y-full', !isActive);
               deco.classList.toggle('opacity-100', isActive);
               deco.classList.toggle('opacity-0', !isActive);
             }
@@ -93,8 +93,8 @@ const { content } = Astro.props as Props;
             }
             const deco = i.querySelector('.aspect-square');
             if (deco) {
-              deco.classList.toggle('translate-x-0', isFirst);
-              deco.classList.toggle('translate-x-full', !isFirst);
+              deco.classList.toggle('translate-y-0', isFirst);
+              deco.classList.toggle('translate-y-full', !isFirst);
               deco.classList.toggle('opacity-100', isFirst);
               deco.classList.toggle('opacity-0', !isFirst);
             }

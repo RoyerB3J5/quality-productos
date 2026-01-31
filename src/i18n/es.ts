@@ -220,6 +220,8 @@ export default {
     industries: {
       description: "Soluciones para diversas industrias",
       title: "Industrias que Atendemos",
+      paragraph:
+        "Soluciones confiables de saneamiento y gestión de residuos para proyectos de construcción, eventos, comerciales y gubernamentales, <br class='hidden md:block'/> ofreciendo equipos limpios, servicio confiable y coordinación profesional.",
       button: {
         label: "Ver Todas las Industrias",
         href: "#",

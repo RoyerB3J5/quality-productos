@@ -50,7 +50,7 @@ export default {
   },
   main: {
     hero: {
-      image:'hero-main',
+      image: "hero-main",
       title:
         "Portable Toilet & <br class='hidden md:block'/> Rental Solutions <br class='hidden md:block'/> You Can Rely On",
       description:
@@ -219,6 +219,8 @@ export default {
     industries: {
       description: "solution for various industries",
       title: "Industries We Serve",
+      paragraph:
+        "Reliable sanitation and waste solutions for construction, events, commercial, and government <br class='hidden md:block'/> projects, delivering clean equipment, dependable service, and professional coordination.",
       button: {
         label: "See All Industrues",
         href: "#",

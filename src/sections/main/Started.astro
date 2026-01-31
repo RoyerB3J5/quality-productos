@@ -11,7 +11,7 @@ const { content } = Astro.props as Props;
 <section class="w-full flex justify-center items-start  relative aspect-1440/684 pt-30 3xl:max-h-[80vh]">
   <img src="/images/back-started.webp" alt="Imagen de Fondo Quality Port" width="2000" height="1575" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-[50%_60%] z-2 inset-0"/>
   <div class="absolute inset-0 top-0 left-0 w-full h-full bg-black/30 z-4"></div>
-  <div class="flex flex-col justify-center items-center gap-10 z-5">
+  <div class="flex flex-col justify-center items-center gap-10 z-5" data-aos="zoom-in">
     <div class="flex flex-col justify-center items-center gap-8 max-w-[50%]">
       <h2 class="text-white text-center text-[56px] font-semibold leading-[114%]">{content.title}</h2>
       <p class="text-white text-center text-[16px] font-normal leading-[150%]">{content.description}</p>
