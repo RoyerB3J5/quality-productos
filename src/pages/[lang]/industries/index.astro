@@ -16,15 +16,77 @@ const translations = { es, en };
 const t = translations[lang];
 ---
 <Layout lang={lang} t={t}>
+  <style>
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    [data-fade-down] {
+      opacity: 0;
+      transform: translateY(-40%);
+    }
+
+    [data-fade-down].fade-down-visible {
+      animation: fadeDown 1s ease-out forwards;
+    }
+
+    [data-fade-left] {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    [data-fade-left].fade-left-visible {
+      animation: fadeInLeft 1s ease-out forwards;
+    }
+
+    [data-fade-right] {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    [data-fade-right].fade-right-visible {
+      animation: fadeInRight 1s ease-out forwards;
+    }
+  </style>
+
   <Hero content={t.industries.hero} />
   {
     t.industries.types.map((type,index)=>{
       const isParity = index % 2 === 0;
       return(
-        <section class={`w-full flex justify-center items-center py-30 ${type.back}`}>
+        <section class={`w-full flex justify-center items-center py-30 overflow-hidden ${type.back}`}>
           <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-center gap-16">
-            <div class={`w-[58%] h-auto aspect-697/577 rounded-2xl bg-primary-electric ${isParity ? 'order-1' : 'order-2'}`}></div>
-            <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2' : 'order-1'}`}>
+            <div class={`w-[58%] h-auto aspect-697/577 rounded-2xl bg-primary-electric ${isParity ? 'order-1' : 'order-2'}`} data-fade-down></div>
+            <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2' : 'order-1'}`} {...(!isParity ? { 'data-fade-left': true } : { 'data-fade-right': true })}>
               <div class="flex justify-start items-center gap-2">
                 <div class="w-2 h-2 bg-primary"></div>
                 <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
@@ -52,4 +114,41 @@ const t = translations[lang];
     })
   }
   <Quote content={t.industries.form} />
+
+  <script is:inline>
+  {
+    function initFadeAnimations() {
+      const fadeDownElements = document.querySelectorAll('[data-fade-down]');
+      const fadeLeftElements = document.querySelectorAll('[data-fade-left]');
+      const fadeRightElements = document.querySelectorAll('[data-fade-right]');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.hasAttribute('data-fade-down')) {
+              entry.target.classList.add('fade-down-visible');
+            } else if (entry.target.hasAttribute('data-fade-left')) {
+              entry.target.classList.add('fade-left-visible');
+            } else if (entry.target.hasAttribute('data-fade-right')) {
+              entry.target.classList.add('fade-right-visible');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.4
+      });
+
+      fadeDownElements.forEach((el) => observer.observe(el));
+      fadeLeftElements.forEach((el) => observer.observe(el));
+      fadeRightElements.forEach((el) => observer.observe(el));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFadeAnimations);
+    } else {
+      initFadeAnimations();
+    }
+  }
+  </script>
 </Layout>

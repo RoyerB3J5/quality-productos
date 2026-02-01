@@ -285,10 +285,26 @@ export default {
   },
   locationsPage: {
     hero: {
-      subtitle: "Service where you need it",
+      image: "#",
       title: "Locations",
       description:
-        "We proudly serve multiple locations across Florida and Georgia, offering fast <br/> delivery, local pricing, and reliable rental availability for every project",
+        "We proudly serve multiple locations across Florida <br class='hidden md:block'/> and Georgia, offering fast delivery, local pricing, <br class='hidden md:block'/> and reliable rental availability for every project",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Call Now",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Book Now",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
     },
     service: {
       subtitle: "Service Area",
@@ -463,6 +479,7 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
+        image: "#",
         title: "Orlando, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Orlando, delivering clean equipment and on-time service since 2011.",
@@ -537,19 +554,22 @@ export default {
         },
         items: [
           {
-            title: "“Great Experience”",
+            image: "customer-1",
+            time: "2 weeks ago",
             description:
               "Always a great experience doing business here. Always Clean and on time.",
             name: "City Automotive Group",
           },
           {
-            title: "“Great Service”",
+            image: "customer-2",
+            time: "3 weeks ago",
             description:
               "Great service every time. Thank you so much for helping me with my event.",
             name: "Tech Store",
           },
           {
-            title: "“Very Professional”",
+            image: "customer-3",
+            time: "1 week ago",
             description:
               "Very professional work. They cleaned the toilets periodically. I liked that!",
             name: "Aqua Venue & Studio",
@@ -573,6 +593,7 @@ export default {
     },
     "melbourne-fl": {
       hero: {
+        image: "#",
         title: "Melbourne, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Melbourne, delivering clean equipment and on-time service since 2011.",
@@ -647,19 +668,22 @@ export default {
         },
         items: [
           {
-            title: "“Great Experience”",
+            image: "customer-1",
+            time: "2 weeks ago",
             description:
               "Always a great experience doing business here. Always Clean and on time.",
             name: "City Automotive Group",
           },
           {
-            title: "“Great Service”",
+            image: "customer-2",
+            time: "3 weeks ago",
             description:
               "Great service every time. Thank you so much for helping me with my event.",
             name: "Tech Store",
           },
           {
-            title: "“Very Professional”",
+            image: "customer-3",
+            time: "1 week ago",
             description:
               "Very professional work. They cleaned the toilets periodically. I liked that!",
             name: "Aqua Venue & Studio",
@@ -683,6 +707,7 @@ export default {
     },
     "tampa-fl": {
       hero: {
+        image: "#",
         title: "Tampa, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Tampa, delivering clean equipment and on-time service since 2011.",
@@ -757,19 +782,22 @@ export default {
         },
         items: [
           {
-            title: "“Great Experience”",
+            image: "customer-1",
+            time: "2 weeks ago",
             description:
               "Always a great experience doing business here. Always Clean and on time.",
             name: "City Automotive Group",
           },
           {
-            title: "“Great Service”",
+            image: "customer-2",
+            time: "3 weeks ago",
             description:
               "Great service every time. Thank you so much for helping me with my event.",
             name: "Tech Store",
           },
           {
-            title: "“Very Professional”",
+            image: "customer-3",
+            time: "1 week ago",
             description:
               "Very professional work. They cleaned the toilets periodically. I liked that!",
             name: "Aqua Venue & Studio",
@@ -793,6 +821,7 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
+        image: "#",
         title: "Fort Myers, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Fort Myers, delivering clean equipment and dependable service since 2011.",
@@ -867,19 +896,22 @@ export default {
         },
         items: [
           {
-            title: "“Great Experience”",
+            image: "customer-1",
+            time: "2 weeks ago",
             description:
               "Always a great experience doing business here. Always Clean and on time.",
             name: "City Automotive Group",
           },
           {
-            title: "“Great Service”",
+            image: "customer-2",
+            time: "3 weeks ago",
             description:
               "Great service every time. Thank you so much for helping me with my event.",
             name: "Tech Store",
           },
           {
-            title: "“Very Professional”",
+            image: "customer-3",
+            time: "1 week ago",
             description:
               "Very professional work. They cleaned the toilets periodically. I liked that!",
             name: "Aqua Venue & Studio",
@@ -918,19 +950,22 @@ export default {
         },
         items: [
           {
-            title: "“Great Experience”",
+            image: "customer-1",
+            time: "2 weeks ago",
             description:
               "Always a great experience doing business here. Always Clean and on time.",
             name: "City Automotive Group",
           },
           {
-            title: "“Great Service”",
+            image: "customer-2",
+            time: "3 weeks ago",
             description:
               "Great service every time. Thank you so much for helping me with my event.",
             name: "Tech Store",
           },
           {
-            title: "“Very Professional”",
+            image: "customer-3",
+            time: "1 week ago",
             description:
               "Very professional work. They cleaned the toilets periodically. I liked that!",
             name: "Aqua Venue & Studio",
@@ -955,6 +990,7 @@ export default {
   },
   products: {
     hero: {
+      image: "#",
       title: "Products",
       description:
         "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment <br class='hidden md:block'/> and dependable service since 2011.",
@@ -978,7 +1014,7 @@ export default {
     services: {
       subtitle: "Reliable sanitation, every time",
       title:
-        'Quality <br class="hidden md:block"/> Portable Rental <br class="hidden md:block"/> Service',
+        'Quality Portable <br class="hidden md:block"/>  Rental Service',
       description:
         'Quality Portable Rental Service provides reliable event and construction toilet rentals <br class="hidden md:block"/> offering lean, cost-effective, and well-maintained units for a wide range of needs. From construction <br class="hidden md:block"/> sites to large events, our rental options are designed to deliver dependable sanitation solutions <br class="hidden md:block"/> with on-time delivery and pickup.',
       items: [
@@ -992,7 +1028,7 @@ export default {
             "Two tissue rolls included",
             "Optional hand sanitizer",
           ],
-          image: "product-1",
+          image: "equipment-1",
         },
         {
           title: "Wheelchair Accessible Portable Toilet",
@@ -1002,7 +1038,7 @@ export default {
             "Side rails for handicap assistance",
             "Wide door for easy access",
           ],
-          image: "product-2",
+          image: "equipment-2",
         },
         {
           title: "Construction Portable Toilet",
@@ -1014,7 +1050,7 @@ export default {
             "Two tissue rolls included",
             "Optional hand sanitizer",
           ],
-          image: "product-3",
+          image: "equipment-3",
         },
         {
           title: "High-Rise Construction Portable Toilet",
@@ -1050,7 +1086,7 @@ export default {
           image: "product-6",
         },
         {
-          title: "Dumpster Rental (20 Yard)",
+          title: "Dumpster Rental <br/> (20 Yard)",
           lists: [
             "20-yard capacity",
             "Great for large events",
@@ -1085,6 +1121,7 @@ export default {
   },
   services: {
     hero: {
+      image: "#",
       title: "Services",
       description:
         "Reliable portable sanitation, waste, and pump-out <br class='hidden md:block' /> solutions for construction sites, events, and <br class='hidden md:block' /> commercial projects, delivered clean, on time, and <br class='hidden md:block' /> hassle-free.",
@@ -1170,6 +1207,7 @@ export default {
   },
   industries: {
     hero: {
+      image: "#",
       title: "Industries We Serve",
       description:
         "Reliable sanitation and waste solutions for <br/ class='hidden md:block' /> construction, events, commercial, and government  <br/ class='hidden md:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden md:block' />  service, and professional coordination.",

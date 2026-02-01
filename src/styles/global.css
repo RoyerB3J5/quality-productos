@@ -69,3 +69,7 @@
   z-index: 0;
   pointer-events: none;
 }
+
+.shadow-testimony{
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+}

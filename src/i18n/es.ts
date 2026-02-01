@@ -286,10 +286,26 @@ export default {
   },
   locationsPage: {
     hero: {
-      subtitle: "Servicio donde lo necesite",
+      image: "#",
       title: "Ubicaciones",
       description:
-        "Atendemos con orgullo múltiples ubicaciones en Florida y Georgia, ofreciendo entregas rápidas, precios locales y disponibilidad para cada proyecto",
+        "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y disponibilidad confiable para cada proyecto",
+      buttons: [
+        {
+          icon: "phone",
+          label: "Llamar Ya",
+          href: "tel:+13212179445",
+          text: "text-paragraph",
+          back: "bg-accent hover:bg-accent/90",
+        },
+        {
+          icon: "calendar",
+          label: "Reservar Ya",
+          href: "#",
+          text: "text-white",
+          back: "bg-primary hover:bg-primary/90",
+        },
+      ],
     },
     service: {
       subtitle: "Área de Servicio",
@@ -465,6 +481,7 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
+        image: "#",
         title: "Orlando, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Orlando, con equipo limpio y servicio puntual desde 2011.",
@@ -539,21 +556,24 @@ export default {
         },
         items: [
           {
-            title: "“Gran Experiencia”",
+            image: "customer-1",
+            time: "Hace 2 semanas",
             description:
               "Siempre una gran experiencia al hacer negocios aquí. Siempre limpio y a tiempo.",
             name: "City Automotive Group",
           },
           {
-            title: "“Gran Servicio”",
+            image: "customer-2",
+            time: "Hace 3 semanas",
             description:
-              "Gran servicio cada vez. Muchas gracias por ayudarme con mi evento.",
+              "Gran servicio siempre. Muchas gracias por ayudarme tan bien con mi evento.",
             name: "Tech Store",
           },
           {
-            title: "“Muy Profesional”",
+            image: "customer-3",
+            time: "Hace 1 semana",
             description:
-              "Trabajo muy profesional. Limpiaron los baños periódicamente. ¡Me gustó eso!",
+              "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó mucho eso!",
             name: "Aqua Venue & Studio",
           },
         ],
@@ -575,6 +595,7 @@ export default {
     },
     "melbourne-fl": {
       hero: {
+        image: "#",
         title: "Melbourne, Florida",
         description:
           "Servicios confiables de baños portátiles, contenedores y vaciado en Melbourne, con equipo limpio y servicio puntual desde 2011.",
@@ -649,21 +670,24 @@ export default {
         },
         items: [
           {
-            title: "“Gran Experiencia”",
+            image: "customer-1",
+            time: "Hace 2 semanas",
             description:
               "Siempre una gran experiencia al hacer negocios aquí. Siempre limpio y a tiempo.",
             name: "City Automotive Group",
           },
           {
-            title: "“Gran Servicio”",
+            image: "customer-2",
+            time: "Hace 3 semanas",
             description:
-              "Gran servicio cada vez. Muchas gracias por ayudarme con mi evento.",
+              "Gran servicio siempre. Muchas gracias por ayudarme tan bien con mi evento.",
             name: "Tech Store",
           },
           {
-            title: "“Muy Profesional”",
+            image: "customer-3",
+            time: "Hace 1 semana",
             description:
-              "Trabajo muy profesional. Limpiaron los baños periódicamente. ¡Me gustó eso!",
+              "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó mucho eso!",
             name: "Aqua Venue & Studio",
           },
         ],
@@ -685,6 +709,7 @@ export default {
     },
     "tampa-fl": {
       hero: {
+        image: "#",
         title: "Tampa, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Tampa, con equipo limpio y servicio puntual desde 2011.",
@@ -759,21 +784,24 @@ export default {
         },
         items: [
           {
-            title: "“Gran Experiencia”",
+            image: "customer-1",
+            time: "Hace 2 semanas",
             description:
               "Siempre una gran experiencia al hacer negocios aquí. Siempre limpio y a tiempo.",
             name: "City Automotive Group",
           },
           {
-            title: "“Gran Servicio”",
+            image: "customer-2",
+            time: "Hace 3 semanas",
             description:
-              "Gran servicio cada vez. Muchas gracias por ayudarme con mi evento.",
+              "Gran servicio siempre. Muchas gracias por ayudarme tan bien con mi evento.",
             name: "Tech Store",
           },
           {
-            title: "“Muy Profesional”",
+            image: "customer-3",
+            time: "Hace 1 semana",
             description:
-              "Trabajo muy profesional. Limpiaron los baños periódicamente. ¡Me gustó eso!",
+              "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó mucho eso!",
             name: "Aqua Venue & Studio",
           },
         ],
@@ -795,6 +823,7 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
+        image: "#",
         title: "Fort Myers, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Fort Myers, con equipos limpios y servicio constante desde 2011.",
@@ -870,21 +899,24 @@ export default {
         },
         items: [
           {
-            title: "“Gran Experiencia”",
+            image: "customer-1",
+            time: "Hace 2 semanas",
             description:
               "Siempre una gran experiencia al hacer negocios aquí. Siempre limpio y a tiempo.",
             name: "City Automotive Group",
           },
           {
-            title: "“Gran Servicio”",
+            image: "customer-2",
+            time: "Hace 3 semanas",
             description:
-              "Gran servicio cada vez. Muchas gracias por ayudarme con mi evento.",
+              "Gran servicio siempre. Muchas gracias por ayudarme tan bien con mi evento.",
             name: "Tech Store",
           },
           {
-            title: "“Muy Profesional”",
+            image: "customer-3",
+            time: "Hace 1 semana",
             description:
-              "Trabajo muy profesional. Limpiaron los baños periódicamente. ¡Me gustó eso!",
+              "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó mucho eso!",
             name: "Aqua Venue & Studio",
           },
         ],
@@ -921,21 +953,24 @@ export default {
         },
         items: [
           {
-            title: "“Gran Experiencia”",
+            image: "customer-1",
+            time: "Hace 2 semanas",
             description:
               "Siempre una gran experiencia al hacer negocios aquí. Siempre limpio y a tiempo.",
             name: "City Automotive Group",
           },
           {
-            title: "“Gran Servicio”",
+            image: "customer-2",
+            time: "Hace 3 semanas",
             description:
-              "Gran servicio cada vez. Muchas gracias por ayudarme con mi evento.",
+              "Gran servicio siempre. Muchas gracias por ayudarme tan bien con mi evento.",
             name: "Tech Store",
           },
           {
-            title: "“Muy Profesional”",
+            image: "customer-3",
+            time: "Hace 1 semana",
             description:
-              "Trabajo muy profesional. Limpiaron los baños periódicamente. ¡Me gustó eso!",
+              "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó mucho eso!",
             name: "Aqua Venue & Studio",
           },
         ],
@@ -958,6 +993,7 @@ export default {
   },
   products: {
     hero: {
+      image: "#",
       title: "Productos",
       description:
         "Servicios fiables de baños portátiles, contenedores y vaciado <br class='hidden md:block'/> en Fort Myers, con equipos limpios <br class='hidden md:block'/> y servicio confiable desde 2011.",
@@ -981,7 +1017,7 @@ export default {
     services: {
       subtitle: "Saneamiento fiable, siempre",
       title:
-        'Servicio de Alquiler <br class="hidden md:block"/> Portátil de <br class="hidden md:block"/> Calidad',
+        'Servicio de Alquiler <br class="hidden md:block"/> Portátil de Calidad',
       description:
         'Quality Portable Rental Service ofrece alquileres fiables de baños para eventos y construcción <br class="hidden md:block"/> ofreciendo unidades eficientes, económicas y bien mantenidas para una amplia gama de necesidades. Desde obras <br class="hidden md:block"/> hasta grandes eventos, nuestras opciones de alquiler están diseñadas para proporcionar soluciones de saneamiento confiables <br class="hidden md:block"/> con entrega y recogida puntuales.',
       items: [
@@ -995,7 +1031,7 @@ export default {
             "Incluye dos rollos de papel",
             "Opcional: desinfectante de manos",
           ],
-          image: "product-1",
+          image: "equipment-1",
         },
         {
           title: "Baño Portátil - Silla de Ruedas",
@@ -1005,10 +1041,10 @@ export default {
             "Barras laterales para asistencia",
             "Puerta ancha para fácil acceso",
           ],
-          image: "product-2",
+          image: "equipment-2",
         },
         {
-          title: "Baño Portátil para Construcción",
+          title: "Baño Portátil - Construcción",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -1017,10 +1053,10 @@ export default {
             "Incluye dos rollos de papel",
             "Opcional: desinfectante de manos",
           ],
-          image: "product-3",
+          image: "equipment-3",
         },
         {
-          title: "Baño Portátil para Construcción en Altura",
+          title: "Baño Portátil - Construcción en Altura",
           lists: [
             "Diseñado para proyectos en altura",
             "Fácil de elevar con grúa y/o ascensor",
@@ -1053,7 +1089,7 @@ export default {
           image: "product-6",
         },
         {
-          title: "Alquiler de Contenedor (20 yardas)",
+          title: "Alquiler Contenedor (20 yardas)",
           lists: [
             "Capacidad de 20 yardas",
             "Ideal para grandes eventos",
@@ -1063,7 +1099,7 @@ export default {
           image: "product-7",
         },
         {
-          title: "Servicio de Vaciado para RV y Sépticos",
+          title: "Servicio Vaciado para RV y Sépticos",
           lists: [
             "Además del alquiler, ofrecemos servicios de vaciado para RV y sépticos, apoyando obras y unidades móviles.",
           ],
@@ -1088,6 +1124,7 @@ export default {
   },
   services: {
     hero: {
+      image: "#",
       title: "Servicios",
       description:
         "Soluciones confiables de saneamiento portátil, residuos y vaciado <br class='hidden md:block' /> para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo y <br class='hidden md:block' /> sin inconvenientes.",
@@ -1174,6 +1211,7 @@ export default {
   },
   industries: {
     hero: {
+      image: "#",
       title: "Industrias que Atendemos",
       description:
         "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden md:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden md:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden md:block' /> dependable y coordinación profesional.",

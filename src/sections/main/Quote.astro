@@ -8,11 +8,11 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full flex justify-center items-center relative " >
+<section class="w-full flex justify-center items-center relative" >
   <img src="/images/back-form.webp" alt="Imagen de Fondo Quality Port" width="1500" height="1144" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-[50%_80%] inset-0 z-0"/>
   <div class="w-full h-full z-5 bg-black/40 absolute"></div>
-  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30 z-10 form-section relative " >
-    <div class="w-[40%] flex flex-col justify-center items-start gap-4 move-content transform" >
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30 z-10 relative" data-quote-section>
+    <div class="w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
       <div class="flex justify-start items-center gap-2" data-aos="fade-right">
         <div class="w-2 h-2 bg-white"></div>
         <p class="text-white text-[16px] font-normal leading-[150%] uppercase">
@@ -39,75 +39,78 @@ const { content } = Astro.props as Props;
 
 <script is:inline>
 {
-  const parent = document.querySelector('.form-section');
-  const content = parent?.querySelector('.move-content');
+  function initQuoteAnimation() {
+    const quotesSections = document.querySelectorAll('[data-quote-section]');
+    
+    quotesSections.forEach((parent) => {
+      const content = parent.querySelector('[data-quote-content]');
+      if (!content) return;
 
-  let maxTranslate = 0;
-  let animationFrameId = null;
-  let contentStartTop = 0;
+      let maxTranslate = 0;
+      let animationFrameId = null;
+      let contentStartTop = 0;
+      let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  function calculateMaxTranslate() {
-    if (!parent || !content) return;
+      const offsetDown = 24;
+      const offsetUp = 100;
 
-    const parentHeight = parent.offsetHeight;
-    const contentHeight = content.offsetHeight;
+      function calculateMaxTranslate() {
+        const parentHeight = parent.offsetHeight;
+        const contentHeight = content.offsetHeight;
 
-    const styles = getComputedStyle(parent);
-    const paddingTop = parseFloat(styles.paddingTop);
-    const paddingBottom = parseFloat(styles.paddingBottom);
-    const verticalPadding = paddingTop + paddingBottom;
+        const styles = getComputedStyle(parent);
+        const paddingTop = parseFloat(styles.paddingTop) || 0;
+        const paddingBottom = parseFloat(styles.paddingBottom) || 0;
+        const verticalPadding = paddingTop + paddingBottom;
 
-    // límite inferior real
-    maxTranslate = Math.max(
-      0,
-      parentHeight - verticalPadding - contentHeight
-    );
+        maxTranslate = Math.max(0, parentHeight - verticalPadding - contentHeight);
 
-    // 🔥 ESTE ES EL CAMBIO IMPORTANTE
-    contentStartTop =
-      content.getBoundingClientRect().top +
-      (window.scrollY || document.documentElement.scrollTop);
+        contentStartTop = content.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop);
+      }
+
+      function updateTransform() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const isScrollingDown = scrollTop > lastScrollTop;
+        lastScrollTop = scrollTop;
+
+        const currentOffset = isScrollingDown ? offsetDown : offsetUp;
+        let translateAmount = 0;
+
+        if (scrollTop >= contentStartTop - currentOffset) {
+          const scrollProgress = scrollTop - (contentStartTop - currentOffset);
+          translateAmount = Math.min(scrollProgress, maxTranslate);
+        }
+
+        content.style.transform = `translateY(${translateAmount}px)`;
+      }
+
+      function onScroll() {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        animationFrameId = requestAnimationFrame(updateTransform);
+      }
+
+      calculateMaxTranslate();
+      updateTransform();
+
+      // Usar capture: true para asegurar que se ejecute
+      window.addEventListener('scroll', onScroll, { passive: true, capture: false });
+      window.addEventListener('resize', () => {
+        calculateMaxTranslate();
+        updateTransform();
+      });
+    });
   }
 
-  function updateTransform() {
-    if (!parent || !content) return;
-
-    const scrollTop =
-      window.scrollY || document.documentElement.scrollTop;
-
-    let translateAmount = 0;
-
-    if (scrollTop >= contentStartTop) {
-      const scrollProgress = scrollTop - contentStartTop;
-      translateAmount = Math.min(scrollProgress, maxTranslate);
-    }
-
-    // 🔥 agregar / quitar mt-4
-    if (translateAmount > 0) {
-      content.classList.add('mt-4');
-    } else {
-      content.classList.remove('mt-4');
-    }
-
-    content.style.transform =
-      `translateY(${translateAmount}px)`;
+  // Ejecutar cuando el DOM esté completamente listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initQuoteAnimation);
+  } else {
+    initQuoteAnimation();
   }
 
-
-  function onScroll() {
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
-    animationFrameId = requestAnimationFrame(updateTransform);
-  }
-
-  calculateMaxTranslate();
-  updateTransform();
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', () => {
-    calculateMaxTranslate();
-    updateTransform();
-  });
+  // También ejecutar con un pequeño delay para asegurar que los elementos estén listos
+  setTimeout(initQuoteAnimation, 100);
 }
 </script>
