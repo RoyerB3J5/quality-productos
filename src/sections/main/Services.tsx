@@ -92,27 +92,27 @@ export default function Services({ content }: ServicesProps) {
           animation: fadeUp 1s ease-out forwards;
         }
       `}</style>
-      <section className="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-16">
+      <section className="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-20 md:py-30 flex flex-col justify-center items-center gap-8 md:gap-16">
         <div
           ref={headerRef}
-          className={`w-full flex flex-col justify-center items-center gap-16 services-header ${isHeaderVisible ? "active" : ""}`}
+          className={`w-full flex flex-col justify-center items-center gap-8 md:gap-16 services-header ${isHeaderVisible ? "active" : ""}`}
         >
           <div className="flex flex-col justify-center items-start gap-4 w-full">
             <div className="flex justify-start items-center gap-2">
               <div className="w-2 h-2 bg-primary"></div>
-              <p className="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+              <p className="text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
                 {content.description}
               </p>
             </div>
-            <h2 className="text-primary text-[56px] font-semibold leading-[114%] max-w-180">
+            <h2 className="text-primary text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-180">
               {content.title}
             </h2>
           </div>
-          <div className="flex justify-center items-center gap-6 w-full">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 w-full">
             {content.items.map((item, index) => (
               <div
                 key={index}
-                className={`w-1/3 flex flex-col justify-center items-center gap-18 aspect-411/252 pt-26 pb-6 rounded-2xl  transition-all duration-300 ease-in-out relative group overflow-hidden ${
+                className={`w-full md:w-1/3 flex flex-col justify-center items-center gap-18 md:aspect-411/252 py-4 md:py-0 px-6 lg:px-0 lg:pt-26 lg:pb-6 rounded-2xl transition-all duration-300 ease-in-out relative group overflow-hidden ${
                   currentItem === index
                     ? ""
                     : "cursor-pointer bg-primary hover:bg-transparent"
@@ -124,7 +124,7 @@ export default function Services({ content }: ServicesProps) {
                   alt="Fondo de soluciones"
                   width="2500"
                   height="1563"
-                  className={`absolute inset-0 w-auto md:w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
+                  className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
                     currentItem === index
                       ? "translate-y-0"
                       : "translate-y-full group-hover:translate-y-0"
@@ -133,16 +133,16 @@ export default function Services({ content }: ServicesProps) {
                   decoding="async"
                 />
                 <div
-                  className={`absolute w-full h-full bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
+                  className={`absolute w-full h-full bg-black/70 md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
                     currentItem === index
                       ? "translate-y-0"
                       : "translate-y-full group-hover:translate-y-0"
                   }`}
                 ></div>
-                <h3 className="text-white text-[24px] font-semibold leading-[133%] z-5">
+                <h3 className="text-white text-[20px] md:text-[24px] font-semibold leading-[133%] z-5 text-center">
                   {item.title}
                 </h3>
-                <p className="text-white text-[14px] font-normal leading-[143%] z-5">
+                <p className="text-white text-[14px] font-normal leading-[143%] z-5 hidden lg:block">
                   {item.description}
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function Services({ content }: ServicesProps) {
         </div>
         <div
           ref={detailRef}
-          className={`w-full flex justify-center items-end rounded-2xl aspect-1282/584 relative overflow-hidden services-detail ${isDetailVisible ? "active" : ""}`}
+          className={`w-full flex justify-center items-end rounded-2xl aspect-343/348 md:aspect-1282/584 relative overflow-hidden services-detail ${isDetailVisible ? "active" : ""}`}
           key={currentItem}
         >
           <img
@@ -164,14 +164,13 @@ export default function Services({ content }: ServicesProps) {
             decoding="async"
           />
           <div
-            className="absolute inset-0 z-10"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #000 100%)",
-            }}
+            className="
+              absolute inset-0 z-10
+              gradient-overlay
+            "
           ></div>
-          <div className="w-full flex justify-between items-center p-8 z-20 relative">
-            <p className="text-white text-[16px] font-normal leading-[150%] text-start max-w-154.75">
+          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center p-4 lg:p-8 z-20 relative gap-4 md:gap-0">
+            <p className="text-white text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] text-start max-w-none md:max-w-[75%] lg:max-w-154.75">
               {content.items[currentItem].description2}
             </p>
             <a

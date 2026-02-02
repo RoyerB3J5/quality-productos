@@ -122,8 +122,8 @@ export default {
         },
         {
           icon: "customer",
-          title: "Current Customers",
-          text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
+          title: "Clientes Actuales",
+          text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
         },
       ],

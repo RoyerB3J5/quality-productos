@@ -70,6 +70,34 @@
   pointer-events: none;
 }
 
-.shadow-testimony{
-  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+@media (max-width: 1023px) {
+  .equipment::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none
+  }
+}
+
+.shadow-testimony {
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.gradient-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, #000 100%);
+}
+@media (min-width: 768px) {
+  .gradient-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000 100%);
+  }
+}
+@media (min-width: 1024px) {
+  .gradient-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #000 100%);
+  }
 }

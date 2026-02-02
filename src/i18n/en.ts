@@ -122,7 +122,7 @@ export default {
         {
           icon: "customer",
           title: "Current Customers",
-          text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
+          text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
         },
       ],
@@ -1013,8 +1013,7 @@ export default {
     },
     services: {
       subtitle: "Reliable sanitation, every time",
-      title:
-        'Quality Portable <br class="hidden md:block"/>  Rental Service',
+      title: 'Quality Portable <br class="hidden md:block"/>  Rental Service',
       description:
         'Quality Portable Rental Service provides reliable event and construction toilet rentals <br class="hidden md:block"/> offering lean, cost-effective, and well-maintained units for a wide range of needs. From construction <br class="hidden md:block"/> sites to large events, our rental options are designed to deliver dependable sanitation solutions <br class="hidden md:block"/> with on-time delivery and pickup.',
       items: [

@@ -6,14 +6,15 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-center items-stretch gap-6 py-30 min-h-0">
-  <div class="basis-1/2 flex flex-col justify-between items-start self-stretch min-h-0" id="parentDiv">
-    <div class="flex flex-col justify-center items-start gap-4 " id="contenido">
+<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 py-20 md:py-30 min-h-0">
+  <div class="basis-1/2 flex flex-col justify-center md:justify-between items-start self-stretch min-h-0 gap-6 md:gap-0" id="parentDiv">
+    <div class="flex flex-col justify-center items-start gap-6 md:gap-4 " id="contenido">
       <div class="flex justify-center items-center gap-2">
         <div class="w-2 h-2 bg-primary"></div>
-        <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase ">{content.subtitle}</p>
+        <p class="text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase ">{content.subtitle}</p>
       </div>
-      <p class="text-paragraph text-[18px] font-semibold leading-[155%]  max-w-[70%]">{content.description}</p>
+      <h2 class="text-primary text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] block md:hidden">{content.title}</h2>
+      <p class="text-paragraph text-[14px] md:text-[18px] font-semibold leading-[143%] md:leading-[155%]  max-w-none md:max-w-[70%]">{content.description}</p>
     </div>
     <div class="w-full h-auto rounded-lg relative aspect-628/694 overflow-hidden" id="img-contenedor">
       <img
@@ -28,20 +29,22 @@ const { content } = Astro.props as Props;
     </div>
   </div>
   <div class="basis-1/2 flex flex-col justify-center items-start gap-16 self-stretch min-h-0">
-    <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{content.title}</h2>
+    <h2 class="text-primary text-[56px] font-semibold leading-[114%] hidden md:block">{content.title}</h2>
     <div class="flex flex-col justify-center items-center gap-6">
       {
         content.items.map((item,index)=>{
           return (
-            <div class="w-full bg-back p-6 rounded-2xl flex flex-col justify-center items-start gap-8" data-aos="fade-left" data-aos-duration="800" data-aos-delay={index * 100}>
-            <div class="w-14 h-14 rounded-full p-4 bg-primary  flex justify-center items-center">
-              <img src={`/images/${item.icon}.svg`} alt={item.title} width="9" height="13" class="w-[60%] h-auto" decoding="async" loading="lazy"/>
+            <div class="w-full bg-back p-6 rounded-2xl flex flex-col justify-center items-start gap-4" data-aos="fade-left" data-aos-duration="800" data-aos-delay={index * 100}>
+              <div class="flex flex-row md:flex-col justify-center items-center md:items-start gap-4 md:gap-8">
+                <div class="w-14 h-14 rounded-full p-4 bg-primary  flex justify-center items-center">
+                  <img src={`/images/${item.icon}.svg`} alt={item.title} width="9" height="13" class="w-[90%] md:w-[60%] h-auto" decoding="async" loading="lazy"/>
+                </div>
+                <h3 class="text-black text-[20px] md:text-[24px] font-medium md:font-normal leading-[140%] md:leading-[133%]">{item.title}</h3>
+              </div>
+              <div class="w-full flex flex-col justify-center items-start gap-4">
+                <p class="text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] capitalize ">{item.description}</p>
+              </div>
             </div>
-            <div class="w-full flex flex-col justify-center items-start gap-4">
-              <h3 class="text-black text-[24px] font-normal leading-[133%]">{item.title}</h3>
-              <p class="text-paragraph text-[16px] font-normal leading-[150%] capitalize ">{item.description}</p>
-            </div>
-          </div>
           )
         } 
         )
