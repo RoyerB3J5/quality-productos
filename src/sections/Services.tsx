@@ -7,10 +7,21 @@ type ServicesContent = Translations["services"]["items"];
 
 interface ServicesProps {
   content: ServicesContent;
+  hash?: string;
 }
 
-export default function Services({ content }: ServicesProps) {
-  const [currentItem, setCurrentItem] = useState(0);
+export default function Services({ content, hash }: ServicesProps) {
+  // Mapeo de hash a índice
+  const hashToIndex: Record<string, number> = {
+    "portable-toilet-rental": 0,
+    "dumpster-rental": 1,
+    "septic-rv-pump-out": 2,
+  };
+
+  // Obtener el índice inicial basado en el hash
+  const initialIndex = hash ? (hashToIndex[hash] ?? 0) : 0;
+
+  const [currentItem, setCurrentItem] = useState(initialIndex);
 
   const headerRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLDivElement>(null);
@@ -144,6 +155,7 @@ export default function Services({ content }: ServicesProps) {
           ref={detailRef}
           key={currentItem}
           className={`w-full flex flex-col justify-center items-center gap-16 services-detail ${isDetailVisible ? "active" : ""}`}
+          id={content[currentItem].id}
         >
           <div className={`w-full flex justify-between items-start `}>
             <h4 className="text-primary text-[56px] font-semibold leading-[114%] max-w-131">

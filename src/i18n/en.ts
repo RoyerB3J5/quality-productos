@@ -66,7 +66,7 @@ export default {
         {
           icon: "calendar",
           label: "Book Now",
-          href: "#",
+          href: "/en/#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -81,7 +81,7 @@ export default {
           description: "Comfort and convenience, wherever you are.",
           description2:
             "Portable toilet rentals for construction sites and events, offering clean, affordable units including ADA, high-rise, and hand wash solutions.",
-          href: "#",
+          href: "/en/services/#portable-toilet-rental",
           image: "service-1",
         },
         {
@@ -89,7 +89,7 @@ export default {
           description: "Clean spaces start with the right solution.",
           description2:
             "Efficient dumpster rental solutions with 10- and 20-yard options for construction, cleanouts, and events.",
-          href: "#",
+          href: "/en/services/#dumpster-rental",
           image: "service-2",
         },
         {
@@ -97,7 +97,7 @@ export default {
           description: "Efficient and dependable pump-out services.",
           description2:
             "Reliable septic and RV pump-out services ensuring proper sanitation and uninterrupted operations across all job sites.",
-          href: "#",
+          href: "/en/services/#septic-rv-pump-out",
           image: "service-3",
         },
       ],
@@ -131,7 +131,7 @@ export default {
           label: "View Service Areas",
           back: "bg-primary",
           text: "text-white",
-          href: "#",
+          href: "/en/locations",
         },
         {
           icon: "phone",
@@ -181,31 +181,31 @@ export default {
         {
           image: "equipment-1",
           title: "Regular Portable Toilet",
-          href: "#",
+          href: "/en/products/#regular-portable-toilet",
           label: "Learn More",
         },
         {
           image: "equipment-2",
           title: "Wheelchair Accessible Portable Toilet",
-          href: "#",
+          href: "/en/products/#wheelchair-accessible",
           label: "Learn More",
         },
         {
           image: "equipment-3",
           title: "Construction Portable Toilet",
-          href: "#",
+          href: "/en/products/#construction-portable",
           label: "Learn More",
         },
         {
           image: "equipment-4",
           title: "Holding Tank",
-          href: "#",
+          href: "/en/products/#holding-tank",
           label: "Learn More",
         },
         {
           image: "equipment-5",
           title: "Dumpster 20 yrd",
-          href: "#",
+          href: "/en/products/#dumpster-rental",
           label: "Learn More",
         },
       ],
@@ -222,8 +222,8 @@ export default {
       paragraph:
         "Reliable sanitation and waste solutions for construction, events, commercial, and government <br class='hidden md:block'/> projects, delivering clean equipment, dependable service, and professional coordination.",
       button: {
-        label: "See All Industrues",
-        href: "#",
+        label: "See All Industries",
+        href: "/en/industries",
       },
       items: [
         {
@@ -233,7 +233,7 @@ export default {
           image: "construction",
           button: {
             label: "Learn More",
-            href: "#",
+            href: "/en/industries/#construction",
           },
         },
         {
@@ -243,7 +243,7 @@ export default {
           image: "events",
           button: {
             label: "Learn More",
-            href: "#",
+            href: "/en/industries/#events-festivals",
           },
         },
         {
@@ -253,7 +253,7 @@ export default {
           image: "commercial",
           button: {
             label: "Learn More",
-            href: "#",
+            href: "/en/industries/#commercial",
           },
         },
         {
@@ -263,7 +263,7 @@ export default {
           image: "government",
           button: {
             label: "Learn More",
-            href: "#",
+            href: "/en/industries/#government-municipal",
           },
         },
       ],
@@ -285,7 +285,7 @@ export default {
   },
   locationsPage: {
     hero: {
-      image: "#",
+      image: "location-hero",
       title: "Locations",
       description:
         "We proudly serve multiple locations across Florida <br class='hidden md:block'/> and Georgia, offering fast delivery, local pricing, <br class='hidden md:block'/> and reliable rental availability for every project",
@@ -300,7 +300,7 @@ export default {
         {
           icon: "calendar",
           label: "Book Now",
-          href: "#",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -316,19 +316,19 @@ export default {
           areas: [
             {
               label: "Orlando",
-              href: "orlando-fl",
+              href: "/en/locations/orlando-fl",
             },
             {
               label: "Tampa",
-              href: "tampa-fl",
+              href: "/en/locations/tampa-fl",
             },
             {
               label: "Melbourne",
-              href: "melbourne-fl",
+              href: "/en/locations/melbourne-fl",
             },
             {
               label: "Fort Myers",
-              href: "fort-myers-fl",
+              href: "/en/locations/fort-myers-fl",
             },
             {
               label: "Jacksonville",
@@ -428,7 +428,7 @@ export default {
           label: "View Service Areas",
           back: "bg-primary",
           text: "text-white",
-          href: "#",
+          href: "services",
         },
         {
           icon: "phone",
@@ -446,31 +446,31 @@ export default {
         {
           image: "equipment-1",
           title: "Regular Portable Toilet",
-          href: "#",
+          href: "/en/products/#regular-portable-toilet",
           label: "Learn More",
         },
         {
           image: "equipment-2",
           title: "Wheelchair Accessible Portable Toilet",
-          href: "#",
+          href: "/en/products/#wheelchair-accessible",
           label: "Learn More",
         },
         {
           image: "equipment-3",
           title: "Construction Portable Toilet",
-          href: "#",
+          href: "/en/products/#construction-portable",
           label: "Learn More",
         },
         {
           image: "equipment-4",
           title: "Holding Tank",
-          href: "#",
+          href: "/en/products/#holding-tank",
           label: "Learn More",
         },
         {
           image: "equipment-5",
           title: "Dumpster 20 yrd",
-          href: "#",
+          href: "/en/products/#dumpster-rental",
           label: "Learn More",
         },
       ],
@@ -479,7 +479,7 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
-        image: "#",
+        image: "orlando-hero",
         title: "Orlando, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Orlando, delivering clean equipment and on-time service since 2011.",
@@ -494,14 +494,14 @@ export default {
           {
             icon: "calendar",
             label: "Book Now",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "orlando",
+        image: "orlando-services",
         subtitle: "Quality service, every time.",
         title: "Portable Toilet & Rental Services in Orlando",
         description:
@@ -514,31 +514,31 @@ export default {
           {
             image: "equipment-1",
             title: "Regular Portable Toilet",
-            href: "#",
+            href: "/en/products/#regular-portable-toilet",
             label: "Learn More",
           },
           {
             image: "equipment-2",
             title: "Wheelchair Accessible Portable Toilet",
-            href: "#",
+            href: "/en/products/#wheelchair-accessible",
             label: "Learn More",
           },
           {
             image: "equipment-3",
             title: "Construction Portable Toilet",
-            href: "#",
+            href: "/en/products/#construction-portable",
             label: "Learn More",
           },
           {
             image: "equipment-4",
             title: "Holding Tank",
-            href: "#",
+            href: "/en/products/#holding-tank",
             label: "Learn More",
           },
           {
             image: "equipment-5",
             title: "Dumpster 20 yrd",
-            href: "#",
+            href: "/en/products/#dumpster-rental",
             label: "Learn More",
           },
         ],
@@ -593,7 +593,7 @@ export default {
     },
     "melbourne-fl": {
       hero: {
-        image: "#",
+        image: "melbourne-hero",
         title: "Melbourne, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Melbourne, delivering clean equipment and on-time service since 2011.",
@@ -608,14 +608,14 @@ export default {
           {
             icon: "calendar",
             label: "Book Now",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "melbourne",
+        image: "melbourne-services",
         subtitle: "Quality service, every time.",
         title: "Reliable Portable Toilet Rentals in Melbourne",
         description:
@@ -628,31 +628,31 @@ export default {
           {
             image: "equipment-1",
             title: "Regular Portable Toilet",
-            href: "#",
+            href: "/en/products/#regular-portable-toilet",
             label: "Learn More",
           },
           {
             image: "equipment-2",
             title: "Wheelchair Accessible Portable Toilet",
-            href: "#",
+            href: "/en/products/#wheelchair-accessible",
             label: "Learn More",
           },
           {
             image: "equipment-3",
             title: "Construction Portable Toilet",
-            href: "#",
+            href: "/en/products/#construction-portable",
             label: "Learn More",
           },
           {
             image: "equipment-4",
             title: "Holding Tank",
-            href: "#",
+            href: "/en/products/#holding-tank",
             label: "Learn More",
           },
           {
             image: "equipment-5",
             title: "Dumpster 20 yrd",
-            href: "#",
+            href: "/en/products/#dumpster-rental",
             label: "Learn More",
           },
         ],
@@ -707,7 +707,7 @@ export default {
     },
     "tampa-fl": {
       hero: {
-        image: "#",
+        image: "tampa-hero",
         title: "Tampa, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Tampa, delivering clean equipment and on-time service since 2011.",
@@ -722,14 +722,14 @@ export default {
           {
             icon: "calendar",
             label: "Book Now",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "tampa",
+        image: "tampa-services",
         subtitle: "Quality service, every time.",
         title: "Trusted Portable Sanitation Services in Tampa",
         description:
@@ -742,31 +742,31 @@ export default {
           {
             image: "equipment-1",
             title: "Regular Portable Toilet",
-            href: "#",
+            href: "/en/products/#regular-portable-toilet",
             label: "Learn More",
           },
           {
             image: "equipment-2",
             title: "Wheelchair Accessible Portable Toilet",
-            href: "#",
+            href: "/en/products/#wheelchair-accessible",
             label: "Learn More",
           },
           {
             image: "equipment-3",
             title: "Construction Portable Toilet",
-            href: "#",
+            href: "/en/products/#construction-portable",
             label: "Learn More",
           },
           {
             image: "equipment-4",
             title: "Holding Tank",
-            href: "#",
+            href: "/en/products/#holding-tank",
             label: "Learn More",
           },
           {
             image: "equipment-5",
             title: "Dumpster 20 yrd",
-            href: "#",
+            href: "/en/products/#dumpster-rental",
             label: "Learn More",
           },
         ],
@@ -821,7 +821,7 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
-        image: "#",
+        image: "fort-hero",
         title: "Fort Myers, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Fort Myers, delivering clean equipment and dependable service since 2011.",
@@ -836,14 +836,14 @@ export default {
           {
             icon: "calendar",
             label: "Book Now",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "fort-myers",
+        image: "fort-services",
         subtitle: "Quality service, every time.",
         title: "Local Portable Toilet & Waste Rental Solutions in Fort Myers",
         description:
@@ -856,31 +856,31 @@ export default {
           {
             image: "equipment-1",
             title: "Regular Portable Toilet",
-            href: "#",
+            href: "/en/products/#regular-portable-toilet",
             label: "Learn More",
           },
           {
             image: "equipment-2",
             title: "Wheelchair Accessible Portable Toilet",
-            href: "#",
+            href: "/en/products/#wheelchair-accessible",
             label: "Learn More",
           },
           {
             image: "equipment-3",
             title: "Construction Portable Toilet",
-            href: "#",
+            href: "/en/products/#construction-portable",
             label: "Learn More",
           },
           {
             image: "equipment-4",
             title: "Holding Tank",
-            href: "#",
+            href: "/en/products/#holding-tank",
             label: "Learn More",
           },
           {
             image: "equipment-5",
             title: "Dumpster 20 yrd",
-            href: "#",
+            href: "/en/products/#dumpster-rental",
             label: "Learn More",
           },
         ],
@@ -937,7 +937,7 @@ export default {
       hero: {
         subtitle: "Expanding our service area",
         title: "We Are Coming Soon <br/> to Alabama, State.",
-        image: "#",
+        image: "alabama-hero",
       },
       testimonials: {
         subtitle: "Testimonials",
@@ -990,7 +990,7 @@ export default {
   },
   products: {
     hero: {
-      image: "#",
+      image: "products-hero",
       title: "Products",
       description:
         "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment <br class='hidden md:block'/> and dependable service since 2011.",
@@ -1005,7 +1005,7 @@ export default {
         {
           icon: "calendar",
           label: "Book Now",
-          href: "#",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -1019,6 +1019,7 @@ export default {
       items: [
         {
           title: "Regular Portable Toilet",
+          id: "regular-portable-toilet",
           lists: [
             "Ideal for construction sites",
             "Very cost-effective",
@@ -1031,6 +1032,7 @@ export default {
         },
         {
           title: "Wheelchair Accessible Portable Toilet",
+          id: "wheelchair-accessible",
           lists: [
             "Roomy design for increased movement",
             "Ground-level entry",
@@ -1041,6 +1043,7 @@ export default {
         },
         {
           title: "Construction Portable Toilet",
+          id: "construction-portable",
           lists: [
             "Ideal for construction sites",
             "Very cost-effective",
@@ -1053,6 +1056,7 @@ export default {
         },
         {
           title: "High-Rise Construction Portable Toilet",
+          id: "high-rise-construction",
           lists: [
             "Designed for high-rise construction projects",
             "Easily lifted by crane and / or elevator",
@@ -1064,6 +1068,7 @@ export default {
         },
         {
           title: "Holding Tank",
+          id: "holding-tank",
           lists: [
             "250-gallon capacity",
             "Ideal for bulk waste storage",
@@ -1075,6 +1080,7 @@ export default {
         },
         {
           title: "Hand Wash Station",
+          id: "hand-wash",
           lists: [
             "60-gallon water capacity / up to 3,800 pumps",
             "Paper towels and soap provided",
@@ -1086,6 +1092,7 @@ export default {
         },
         {
           title: "Dumpster Rental <br/> (20 Yard)",
+          id: "dumpster-rental",
           lists: [
             "20-yard capacity",
             "Great for large events",
@@ -1096,6 +1103,7 @@ export default {
         },
         {
           title: "RV & Septic Pump-Out Service",
+          id: "septic-rv",
           lists: [
             "In addition to rental equipment, we also provide RV and septic pump-out services to support job sites and mobile units.",
           ],
@@ -1120,7 +1128,7 @@ export default {
   },
   services: {
     hero: {
-      image: "#",
+      image: "services-hero",
       title: "Services",
       description:
         "Reliable portable sanitation, waste, and pump-out <br class='hidden md:block' /> solutions for construction sites, events, and <br class='hidden md:block' /> commercial projects, delivered clean, on time, and <br class='hidden md:block' /> hassle-free.",
@@ -1135,7 +1143,7 @@ export default {
         {
           icon: "calendar",
           label: "Book Now",
-          href: "#",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -1144,6 +1152,7 @@ export default {
     items: [
       {
         title: "Port O Potty Rental",
+        id: "portable-toilet-rental",
         description: "Comfort and convenience, wherever you are.",
         section: {
           subtitle: "Port O Potty Rental",
@@ -1161,6 +1170,7 @@ export default {
       },
       {
         title: "Dumpster Rental",
+        id: "dumpster-rental",
         description: "Clean spaces start with the right solution.",
         section: {
           subtitle: "Dumpster Rental",
@@ -1173,6 +1183,7 @@ export default {
       },
       {
         title: "Septic & RV Pump-Out",
+        id: "septic-rv-pump-out",
         description: "Efficient and dependable pump-out services.",
         section: {
           subtitle: "Septic & RV Pump-Out",
@@ -1206,7 +1217,7 @@ export default {
   },
   industries: {
     hero: {
-      image: "#",
+      image: "industries-hero",
       title: "Industries We Serve",
       description:
         "Reliable sanitation and waste solutions for <br/ class='hidden md:block' /> construction, events, commercial, and government  <br/ class='hidden md:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden md:block' />  service, and professional coordination.",
@@ -1221,7 +1232,7 @@ export default {
         {
           icon: "calendar",
           label: "Book Now",
-          href: "#",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -1230,8 +1241,9 @@ export default {
     types: [
       {
         back: "bg-white",
-        image: "type-1",
+        image: "construction-2",
         subtitle: "Supporting construction projects of all sizes",
+        id: "construction",
         title: "Construction",
         description:
           "We support construction projects of all sizes with clean, durable portable toilets, including standard units, ADA-accessible options, and high-rise toilets designed for multi-story builds. Hand wash stations, holding tanks, dumpster rentals, and pump-out services are available to support ongoing operations.",
@@ -1245,8 +1257,9 @@ export default {
       },
       {
         back: "bg-back",
-        image: "type-2",
+        image: "events-2",
         subtitle: "Comfort and cleanliness for every gathering",
+        id: "events-festivals",
         title: "Events & Festivals",
         description:
           "From private gatherings to large public events, we provide portable toilets, ADA units, hand wash stations, and waste solutions to ensure a clean and comfortable experience for attendees.",
@@ -1260,8 +1273,9 @@ export default {
       },
       {
         back: "bg-white",
-        image: "type-3",
+        image: "commercial-2",
         subtitle: "Reliable sanitation for commercial projects",
+        id: "commercial",
         title: "Commercial",
         description:
           "We work with businesses and property managers to provide portable sanitation and waste management solutions for temporary needs, renovations, and commercial operations.",
@@ -1275,8 +1289,9 @@ export default {
       },
       {
         back: "bg-back",
-        image: "type-4",
+        image: "government-2",
         subtitle: "Trusted partner for municipal operations",
+        id: "government-municipal",
         title: "Government & Municipal",
         description:
           "Quality Portable Rental Service supports city, county, and federal projects with dependable rental equipment and professional coordination. Our team understands the requirements of government work and delivers consistent service.",

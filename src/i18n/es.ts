@@ -67,7 +67,7 @@ export default {
         {
           icon: "calendar",
           label: "Agendar Ya",
-          href: "#",
+          href: "/es/#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -82,7 +82,7 @@ export default {
           description: "Comodidad y servicio donde lo necesites.",
           description2:
             "Alquiler de baños portátiles para obra y eventos, con unidades limpias y económicas, incluyendo ADA, para altura y soluciones con lavado de manos.",
-          href: "#",
+          href: "/es/services/#portable-toilet-rental",
           image: "service-1",
         },
         {
@@ -90,7 +90,7 @@ export default {
           description: "Espacios limpios empiezan con la solución correcta.",
           description2:
             "Los espacios limpios comienzan con la solución adecuada. Contenedores listos para obra y evento, fiables y accesibles.",
-          href: "#",
+          href: "/es/services/#dumpster-rental",
           image: "service-2",
         },
         {
@@ -98,7 +98,7 @@ export default {
           description: "Servicios de vaciado eficientes y fiables.",
           description2:
             "Vaciados y mantenimiento eficientes para septic y RV, con personal profesional y respuesta rápida.",
-          href: "#",
+          href: "/es/services/#septic-rv-pump-out",
           image: "service-3",
         },
       ],
@@ -132,7 +132,7 @@ export default {
           label: "Áreas Servicio",
           back: "bg-primary",
           text: "text-white",
-          href: "#",
+          href: "/es/locations",
         },
         {
           icon: "phone",
@@ -182,31 +182,31 @@ export default {
         {
           image: "equipment-1",
           title: "Baño Portátil Regular",
-          href: "#",
+          href: "/es/products/#regular-portable-toilet",
           label: "Más Info",
         },
         {
           image: "equipment-2",
           title: "Baño Portátil Accesible",
-          href: "#",
+          href: "/es/products/#wheelchair-accessible",
           label: "Más Info",
         },
         {
           image: "equipment-3",
           title: "Baño Portátil para Construcción",
-          href: "#",
+          href: "/es/products/#construction-portable",
           label: "Más Info",
         },
         {
           image: "equipment-4",
           title: "Tanque de Retención",
-          href: "#",
+          href: "/es/products/#holding-tank",
           label: "Más Info",
         },
         {
           image: "equipment-5",
           title: "Contenedor 20 yd",
-          href: "#",
+          href: "/es/products/#dumpster-rental",
           label: "Más Info",
         },
       ],
@@ -223,8 +223,8 @@ export default {
       paragraph:
         "Soluciones confiables de saneamiento y gestión de residuos para proyectos de construcción, eventos, comerciales y gubernamentales, <br class='hidden md:block'/> ofreciendo equipos limpios, servicio confiable y coordinación profesional.",
       button: {
-        label: "Ver Todas las Industrias",
-        href: "#",
+        label: "Todas Industrias",
+        href: "/es/industries",
       },
       items: [
         {
@@ -234,7 +234,7 @@ export default {
           image: "construction",
           button: {
             label: "Más Info",
-            href: "#",
+            href: "/es/industries/#construction",
           },
         },
         {
@@ -244,7 +244,7 @@ export default {
           image: "events",
           button: {
             label: "Más Info",
-            href: "#",
+            href: "/es/industries/#events-festivals",
           },
         },
         {
@@ -254,7 +254,7 @@ export default {
           image: "commercial",
           button: {
             label: "Más Info",
-            href: "#",
+            href: "/es/industries/#commercial",
           },
         },
         {
@@ -264,7 +264,7 @@ export default {
           image: "government",
           button: {
             label: "Más Info",
-            href: "#",
+            href: "/es/industries/#government-municipal",
           },
         },
       ],
@@ -286,7 +286,7 @@ export default {
   },
   locationsPage: {
     hero: {
-      image: "#",
+      image: "location-hero",
       title: "Ubicaciones",
       description:
         "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y disponibilidad confiable para cada proyecto",
@@ -300,8 +300,8 @@ export default {
         },
         {
           icon: "calendar",
-          label: "Reservar Ya",
-          href: "#",
+          label: "Reservar",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -318,19 +318,19 @@ export default {
           areas: [
             {
               label: "Orlando",
-              href: "orlando-fl",
+              href: "/es/locations/orlando-fl",
             },
             {
               label: "Tampa",
-              href: "tampa-fl",
+              href: "/es/locations/tampa-fl",
             },
             {
               label: "Melbourne",
-              href: "melbourne-fl",
+              href: "/es/locations/melbourne-fl",
             },
             {
               label: "Fort Myers",
-              href: "fort-myers-fl",
+              href: "/es/locations/fort-myers-fl",
             },
             {
               label: "Jacksonville",
@@ -430,7 +430,7 @@ export default {
           label: "Ver Áreas de Servicio",
           back: "bg-primary",
           text: "text-white",
-          href: "#",
+          href: "services",
         },
         {
           icon: "phone",
@@ -448,31 +448,31 @@ export default {
         {
           image: "equipment-1",
           title: "Baño Portátil Regular",
-          href: "#",
+          href: "/es/products/#regular-portable-toilet",
           label: "Más Info",
         },
         {
           image: "equipment-2",
           title: "Baño Portátil Accesible",
-          href: "#",
+          href: "/es/products/#wheelchair-accessible",
           label: "Más Info",
         },
         {
           image: "equipment-3",
           title: "Baño Portátil para Construcción",
-          href: "#",
+          href: "/es/products/#construction-portable",
           label: "Más Info",
         },
         {
           image: "equipment-4",
           title: "Tanque de Retención",
-          href: "#",
+          href: "/es/products/#holding-tank",
           label: "Más Info",
         },
         {
           image: "equipment-5",
           title: "Contenedor 20 yd",
-          href: "#",
+          href: "/es/products/#dumpster-rental",
           label: "Más Info",
         },
       ],
@@ -481,7 +481,7 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
-        image: "#",
+        image: "orlando-hero",
         title: "Orlando, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Orlando, con equipo limpio y servicio puntual desde 2011.",
@@ -496,14 +496,14 @@ export default {
           {
             icon: "calendar",
             label: "Agendar Ya",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "orlando",
+        image: "orlando-services",
         subtitle: "Servicio de calidad, siempre.",
         title: "Servicios de Baños Portátiles y Alquiler en Orlando",
         description:
@@ -516,31 +516,31 @@ export default {
           {
             image: "equipment-1",
             title: "Baño Portátil Regular",
-            href: "#",
+            href: "/es/products/#regular-portable-toilet",
             label: "Más Info",
           },
           {
             image: "equipment-2",
             title: "Baño Portátil Accesible",
-            href: "#",
+            href: "/es/products/#wheelchair-accessible",
             label: "Más Info",
           },
           {
             image: "equipment-3",
             title: "Baño Portátil para Construcción",
-            href: "#",
+            href: "/es/products/#construction-portable",
             label: "Más Info",
           },
           {
             image: "equipment-4",
             title: "Tanque de Retención",
-            href: "#",
+            href: "/es/products/#holding-tank",
             label: "Más Info",
           },
           {
             image: "equipment-5",
             title: "Contenedor 20 yd",
-            href: "#",
+            href: "/es/products/#dumpster-rental",
             label: "Más Info",
           },
         ],
@@ -595,7 +595,7 @@ export default {
     },
     "melbourne-fl": {
       hero: {
-        image: "#",
+        image: "melbourne-hero",
         title: "Melbourne, Florida",
         description:
           "Servicios confiables de baños portátiles, contenedores y vaciado en Melbourne, con equipo limpio y servicio puntual desde 2011.",
@@ -610,14 +610,14 @@ export default {
           {
             icon: "calendar",
             label: "Agendar Ya",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "melbourne",
+        image: "melbourne-services",
         subtitle: "Servicio de calidad, siempre.",
         title: "Alquiler de Baños Portátiles en Melbourne",
         description:
@@ -630,31 +630,31 @@ export default {
           {
             image: "equipment-1",
             title: "Baño Portátil Regular",
-            href: "#",
+            href: "/es/products/#regular-portable-toilet",
             label: "Más Info",
           },
           {
             image: "equipment-2",
             title: "Baño Portátil Accesible",
-            href: "#",
+            href: "/es/products/#wheelchair-accessible",
             label: "Más Info",
           },
           {
             image: "equipment-3",
             title: "Baño Portátil para Construcción",
-            href: "#",
+            href: "/es/products/#construction-portable",
             label: "Más Info",
           },
           {
             image: "equipment-4",
             title: "Tanque de Retención",
-            href: "#",
+            href: "/es/products/#holding-tank",
             label: "Más Info",
           },
           {
             image: "equipment-5",
             title: "Contenedor 20 yd",
-            href: "#",
+            href: "/es/products/#dumpster-rental",
             label: "Más Info",
           },
         ],
@@ -709,7 +709,7 @@ export default {
     },
     "tampa-fl": {
       hero: {
-        image: "#",
+        image: "tampa-hero",
         title: "Tampa, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Tampa, con equipo limpio y servicio puntual desde 2011.",
@@ -724,14 +724,14 @@ export default {
           {
             icon: "calendar",
             label: "Agendar Ya",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "tampa",
+        image: "tampa-services",
         subtitle: "Servicio de calidad, siempre.",
         title: "Servicios de Saneamiento Portátil en Tampa",
         description:
@@ -744,31 +744,31 @@ export default {
           {
             image: "equipment-1",
             title: "Baño Portátil Regular",
-            href: "#",
+            href: "/es/products/#regular-portable-toilet",
             label: "Más Info",
           },
           {
             image: "equipment-2",
             title: "Baño Portátil Accesible",
-            href: "#",
+            href: "/es/products/#wheelchair-accessible",
             label: "Más Info",
           },
           {
             image: "equipment-3",
             title: "Baño Portátil para Construcción",
-            href: "#",
+            href: "/es/products/#construction-portable",
             label: "Más Info",
           },
           {
             image: "equipment-4",
             title: "Tanque de Retención",
-            href: "#",
+            href: "/es/products/#holding-tank",
             label: "Más Info",
           },
           {
             image: "equipment-5",
             title: "Contenedor 20 yd",
-            href: "#",
+            href: "/es/products/#dumpster-rental",
             label: "Más Info",
           },
         ],
@@ -823,7 +823,7 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
-        image: "#",
+        image: "fort-hero",
         title: "Fort Myers, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Fort Myers, con equipos limpios y servicio constante desde 2011.",
@@ -838,14 +838,14 @@ export default {
           {
             icon: "calendar",
             label: "Agendar Ya",
-            href: "#",
+            href: "#quote-section",
             text: "text-white",
             back: "bg-primary hover:bg-primary/90",
           },
         ],
       },
       info: {
-        image: "fort-myers",
+        image: "fort-services",
         subtitle: "Servicio de calidad, siempre.",
         title:
           "Soluciones Locales de Baños Portátiles y Alquiler en Fort Myers",
@@ -859,31 +859,31 @@ export default {
           {
             image: "equipment-1",
             title: "Baño Portátil Regular",
-            href: "#",
+            href: "/es/products/#regular-portable-toilet",
             label: "Más Info",
           },
           {
             image: "equipment-2",
             title: "Baño Portátil Accesible",
-            href: "#",
+            href: "/es/products/#wheelchair-accessible",
             label: "Más Info",
           },
           {
             image: "equipment-3",
             title: "Baño Portátil para Construcción",
-            href: "#",
+            href: "/es/products/#construction-portable",
             label: "Más Info",
           },
           {
             image: "equipment-4",
             title: "Tanque de Retención",
-            href: "#",
+            href: "/es/products/#holding-tank",
             label: "Más Info",
           },
           {
             image: "equipment-5",
             title: "Contenedor 20 yd",
-            href: "#",
+            href: "/es/products/#dumpster-rental",
             label: "Más Info",
           },
         ],
@@ -940,7 +940,7 @@ export default {
       hero: {
         subtitle: "Ampliando nuestra área de servicio",
         title: "Próximamente en el estado de Alabama",
-        image: "#",
+        image: "alabama-hero",
       },
       testimonials: {
         subtitle: "Testimonios",
@@ -993,7 +993,7 @@ export default {
   },
   products: {
     hero: {
-      image: "#",
+      image: "products-hero",
       title: "Productos",
       description:
         "Servicios fiables de baños portátiles, contenedores y vaciado <br class='hidden md:block'/> en Fort Myers, con equipos limpios <br class='hidden md:block'/> y servicio confiable desde 2011.",
@@ -1008,7 +1008,7 @@ export default {
         {
           icon: "calendar",
           label: "Agendar Ya",
-          href: "#",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90",
         },
@@ -1023,6 +1023,7 @@ export default {
       items: [
         {
           title: "Baño Portátil Regular",
+          id: "regular-portable-toilet",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -1035,6 +1036,7 @@ export default {
         },
         {
           title: "Baño Portátil - Silla de Ruedas",
+          id: "wheelchair-accessible",
           lists: [
             "Diseño amplio para mayor movilidad",
             "Acceso a nivel de suelo",
@@ -1045,6 +1047,7 @@ export default {
         },
         {
           title: "Baño Portátil - Construcción",
+          id: "construction-portable",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -1057,6 +1060,7 @@ export default {
         },
         {
           title: "Baño Portátil - Construcción en Altura",
+          id: "high-rise-construction",
           lists: [
             "Diseñado para proyectos en altura",
             "Fácil de elevar con grúa y/o ascensor",
@@ -1068,6 +1072,7 @@ export default {
         },
         {
           title: "Tanque de Retención",
+          id: "holding-tank",
           lists: [
             "Capacidad de 250 galones",
             "Ideal para almacenamiento de residuos a granel",
@@ -1079,6 +1084,7 @@ export default {
         },
         {
           title: "Estación de Lavado de Manos",
+          id: "hand-wash",
           lists: [
             "Capacidad de 60 galones / hasta 3,800 usos",
             "Toallas de papel y jabón incluidos",
@@ -1090,6 +1096,7 @@ export default {
         },
         {
           title: "Alquiler Contenedor (20 yardas)",
+          id: "dumpster-rental",
           lists: [
             "Capacidad de 20 yardas",
             "Ideal para grandes eventos",
@@ -1100,6 +1107,7 @@ export default {
         },
         {
           title: "Servicio Vaciado para RV y Sépticos",
+          id: "septic-rv",
           lists: [
             "Además del alquiler, ofrecemos servicios de vaciado para RV y sépticos, apoyando obras y unidades móviles.",
           ],
@@ -1124,7 +1132,7 @@ export default {
   },
   services: {
     hero: {
-      image: "#",
+      image: "services-hero",
       title: "Servicios",
       description:
         "Soluciones confiables de saneamiento portátil, residuos y vaciado <br class='hidden md:block' /> para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo y <br class='hidden md:block' /> sin inconvenientes.",
@@ -1148,6 +1156,7 @@ export default {
     items: [
       {
         title: "Alquiler de Baños Portátiles",
+        id: "portable-toilet-rental",
         description: "Comodidad y conveniencia, donde la necesites.",
         section: {
           subtitle: "Alquiler de Baños Portátiles",
@@ -1165,6 +1174,7 @@ export default {
       },
       {
         title: "Alquiler de Contenedores",
+        id: "container-rental",
         description: "Espacios limpios comienzan con la solución correcta.",
         section: {
           subtitle: "Alquiler de Contenedores",
@@ -1178,6 +1188,7 @@ export default {
       },
       {
         title: "Vaciado de Septic y RV",
+        id: "septic-rv-pump-out",
         description: "Servicios de vaciado eficientes y confiables.",
         section: {
           subtitle: "Vaciado de Septic y RV",
@@ -1211,7 +1222,7 @@ export default {
   },
   industries: {
     hero: {
-      image: "#",
+      image: "industries-hero",
       title: "Industrias que Atendemos",
       description:
         "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden md:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden md:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden md:block' /> dependable y coordinación profesional.",
@@ -1235,8 +1246,9 @@ export default {
     types: [
       {
         back: "bg-white",
-        image: "type-1",
+        image: "construction-2",
         subtitle: "Apoyamos proyectos de construcción de todos los tamaños",
+        id: "construction",
         title: "Construcción",
         description:
           "Apoyamos proyectos de construcción de todos los tamaños con baños portátiles limpios y duraderos, incluyendo unidades estándar, opciones accesibles (ADA) y baños para construcción en altura. Estaciones de lavado, tanques de retención, alquileres de contenedores y servicios de vaciado están disponibles.",
@@ -1250,8 +1262,9 @@ export default {
       },
       {
         back: "bg-back",
-        image: "type-2",
+        image: "events-2",
         subtitle: "Comodidad y limpieza en cada reunión",
+        id: "events-festivals",
         title: "Eventos y Festivales",
         description:
           "De reuniones privadas a grandes eventos públicos, proporcionamos baños portátiles, unidades ADA, estaciones de lavado y soluciones de residuos para garantizar una experiencia limpia y cómoda para asistentes.",
@@ -1265,8 +1278,9 @@ export default {
       },
       {
         back: "bg-white",
-        image: "type-3",
+        image: "commercial-2",
         subtitle: "Saneamiento confiable para proyectos comerciales",
+        id: "commercial",
         title: "Comercial",
         description:
           "Trabajamos con empresas y gestores de propiedades para proporcionar soluciones de saneamiento portátil y gestión de residuos para necesidades temporales, renovaciones y operaciones comerciales.",
@@ -1280,8 +1294,9 @@ export default {
       },
       {
         back: "bg-back",
-        image: "type-4",
+        image: "government-2",
         subtitle: "Socio confiable para operaciones municipales",
+        id: "government-municipal",
         title: "Gobierno y Municipal",
         description:
           "Quality Portable Rental Service apoya proyectos municipales, estatales y federales con equipos de alquiler confiables y coordinación profesional. Nuestro equipo entiende los requisitos del trabajo gubernamental y entrega servicio consistente.",

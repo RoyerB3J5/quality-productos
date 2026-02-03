@@ -32,7 +32,7 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
                   <img src={`/images/${item.image}.webp`} alt="Equipment Image" width="344" height="246" decoding="async" loading="lazy" class="w-full h-full object-cover object-center pointer-events-none select-none" draggable="false"/>
                 </div>
                 <h3 class="text-paragraph text-[20px] font-medium leading-[140%] text-start flex-1">{item.title}</h3>
-                <a href={item.href} class="text-primary text-start text-[12px] font-semibold leading-[133%] underline uppercase">
+                <a href={item.href} class="text-primary text-start text-[12px] font-semibold leading-[133%] underline uppercase hover:text-accent transition-colors duration-300 ease-in-out cursor-pointer">
                   {item.label}
                 </a>
               </div>
@@ -87,16 +87,16 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
 
       function getPerPage() {
         const w = window.innerWidth;
-        if (w >= 1800) return 3;
-        if (w >= 700) return 2;
+        if (w >= 1025) return 3;
+        if (w >= 640) return 2;
         return 1;
       }
 
       function computeSizes(perPage) {
         const gap = parseInt(getComputedStyle(track).gap) || 16;
-        const peekPercent = window.innerWidth < 600 ? 0.05 : 0.03;
+        const peekPercent = window.innerWidth < 640 ? 0.05 : 0.03;
         const peekPxLeft = Math.round(window.innerWidth * peekPercent);
-        const peekPxRight = window.innerWidth < 600 ? Math.round(window.innerWidth * 0.05) : Math.round(window.innerWidth * 0.01);
+        const peekPxRight = window.innerWidth < 640 ? Math.round(window.innerWidth * 0.05) : Math.round(window.innerWidth * 0.01);
         // apply padding on track to create visual peek on both sides
         track.style.paddingLeft = peekPxLeft + 'px';
         track.style.paddingRight = peekPxRight + 'px';
@@ -145,10 +145,12 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
           (function addDrag() {
             let dragging = false; let startX = 0; let baseTranslate = 0;
             track.addEventListener('pointerdown', (e) => {
+              // Permitir que los links sean clickeables
+              if (e.target.tagName === 'A' || e.target.closest('a')) return;
               dragging = true; startX = e.clientX; baseTranslate = -getSlideWidth() * currentIndex; track.style.transition = 'none'; stopAuto(); track.setPointerCapture(e.pointerId);
             });
             track.addEventListener('pointermove', (e) => { if (!dragging) return; const dx = e.clientX - startX; track.style.transform = `translateX(${baseTranslate + dx}px)`; });
-            const release = (e) => { if (!dragging) return; dragging = false; track.releasePointerCapture(e.pointerId); const dx = e.clientX - startX; const threshold = Math.max(50, getSlideWidth() * 0.15); if (Math.abs(dx) > threshold) { const dir = dx < 0 ? 1 : -1; goTo(currentIndex + dir); } else { goTo(currentIndex, true); } resetAuto(); };
+            const release = (e) => { if (!dragging) return; dragging = false; track.releasePointerCapture(e.pointerId); const dx = e.clientX - startX; const threshold = Math.max(50, getSlideWidth() * 0.15); if (Math.abs(dx) > threshold) { const dir = dx < 0 ? 1 : -1; goTo(currentIndex + dir); } else { goTo(currentItem, true); } resetAuto(); };
             track.addEventListener('pointerup', release); track.addEventListener('pointercancel', release);
           })();
 
@@ -206,6 +208,8 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
         (function addDrag() {
           let dragging = false; let startX = 0; let baseTranslate = 0;
           track.addEventListener('pointerdown', (e) => {
+            // Permitir que los links sean clickeables
+            if (e.target.tagName === 'A' || e.target.closest('a')) return;
             dragging = true; startX = e.clientX; baseTranslate = -getSlideWidth() * currentIndex; track.style.transition = 'none'; stopAuto(); track.setPointerCapture(e.pointerId);
           });
           track.addEventListener('pointermove', (e) => { if (!dragging) return; const dx = e.clientX - startX; track.style.transform = `translateX(${baseTranslate + dx}px)`; });

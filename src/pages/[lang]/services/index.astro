@@ -15,9 +15,12 @@ export const defaultRedirect = '/en';
 const lang = Astro.params.lang as Language;
 const translations = { es, en };
 const t = translations[lang];
+
+// Extraer el hash del URL sin el #
+const hash = Astro.url.hash ? Astro.url.hash.substring(1) : '';
 ---
 <Layout lang={lang} t={t}>
   <Hero content={t.services.hero} />
-  <Services client:idle content={t.services.items}  />
+  <Services client:idle content={t.services.items} hash={hash} />
   <Quote content={t.services.form} />
 </Layout>

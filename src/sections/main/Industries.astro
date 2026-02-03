@@ -16,7 +16,7 @@ const { content } = Astro.props as Props;
             {content.description}
       </p>
     </div>
-    <h2 class="text-primary text-[56px] font-normal leading-[114%] max-w-180">
+    <h2 class="text-primary text-[56px] font-semibold leading-[114%] max-w-180">
           {content.title}
     </h2>
     <p class="text-paragraph text-[16px] leading-[150%] " set:html={content.paragraph}></p>
@@ -36,7 +36,7 @@ const { content } = Astro.props as Props;
             <h3 class={`${index == 0 ? 'text-primary' : 'text-paragraph'} transition-all duration-300 ease-in-out text-[32px] font-semibold leading-[125%]`}>{item.title}</h3>
             <div class="flex flex-col justify-center items-start gap-4 max-w-102.75 industries-info">
               <p class="text-paragraph text-[16px] font-normal leading-[150%]">{item.description}</p>
-              <a href={item.button.href} class="text-primary text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
+              <a href={item.button.href} class="text-primary hover:text-accent transition-all duration-300 ease-in-out text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
             </div>
           </div>
           
