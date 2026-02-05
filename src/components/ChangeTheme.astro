@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  id="theme-toggle"
+  class="relative flex items-center gap-2 p-1 w-fit rounded-full bg-white dark:bg-paragraph-dark select-none transition-colors duration-300 ease-in-out"
+>
+  <!-- THUMB -->
+  <span
+    aria-hidden="true"
+    class="absolute left-1 top-1 h-7 w-7 rounded-full
+           bg-accent dark:bg-primary
+           transition-all duration-300 ease-in-out
+           translate-x-0 dark:translate-x-9 "
+  ></span>
+
+  <button
+    type="button"
+    class="relative z-10 flex h-7 w-7 items-center justify-center rounded-full
+           bg-transparent cursor-default dark:cursor-pointer"
+  >
+    <Icon
+      name="sun" class={'transition-all duration-300 ease-in-out text-paragraph dark:text-[#9B9EB3] w-4 h-4 dark:w-3 dark:h-3'}
+    />
+  </button>
+
+  <button
+    type="button"
+    class="relative z-10 flex h-7 w-7 items-center justify-center rounded-full
+           bg-transparent cursor-pointer dark:cursor-default"
+  >
+    <Icon
+      name="moon"
+      class={'transition-all duration-300 ease-in-out text-[#E6E9F0] dark:text-paragraph-dark w-3 h-3 dark:w-4 dark:h-4'}
+    />
+  </button>
+</div>
+<script is:inline>
+  const toggle = document.getElementById('theme-toggle')
+  const html = document.documentElement
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        localStorage.theme = 'light'
+        html.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        html.classList.add('dark')
+      }
+    })
+  }
+</script>

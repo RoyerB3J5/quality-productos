@@ -14,14 +14,14 @@ const { content } = Astro.props as Props;
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30 z-10 relative" data-quote-section>
     <div class="w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
       <div class="flex justify-start items-center gap-2" data-aos="fade-right">
-        <div class="w-2 h-2 bg-white"></div>
-        <p class="text-white text-[16px] font-normal leading-[150%] uppercase">
+        <div class="w-2 h-2 bg-white dark:bg-paragraph-dark"></div>
+        <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
             {content.subtitle}
         </p>
       </div>
       <div class="flex flex-col justify-center items-start gap-10" data-aos="fade-right">
-        <h2 class="text-white text-[56px] font-semibold leading-[114%]">{content.title}</h2>
-        <p class="text-white text-[16px] font-normal leading-[150%]">{content.description}</p>
+        <h2 class="text-white dark:text-paragraph-dark text-[56px] font-semibold leading-[114%]">{content.title}</h2>
+        <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{content.description}</p>
         <Button
               text={content.buttons[0].label}
               textClass={'text-paragraph'}

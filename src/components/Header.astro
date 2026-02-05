@@ -2,6 +2,7 @@
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 import ChangeLanguage from './ChangeLanguage.astro';
+import ChangeTheme from './ChangeTheme.astro';
 
 type Translations = typeof import('../i18n/en').default;
 type HeaderContent = Translations['header'];
@@ -38,7 +39,14 @@ const lang = match ? match[1] : 'en';
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-30 h-auto"
+          class="cursor-pointer w-30 h-auto block dark:hidden"
+        />
+        <img
+          src="/images/logo-dark.svg"
+          alt="Logo de Quality Portable"
+          width="120"
+          height="26"
+          class="cursor-pointer w-30 h-auto hidden dark:block"
         />
       </a>
     <!-- Menú desktop (lg y arriba) -->
@@ -66,7 +74,7 @@ const lang = match ? match[1] : 'en';
                   class=" relative transition-colors duration-300 flex justify-center items-center"
                 >
                   <p
-                    class="text-[16px] font-normal leading-[150%] text-white"
+                    class="text-[16px] font-normal leading-[150%] text-white dark:text-paragraph-dark transition-all duration-300 ease-in-out"
                     set:html={item.label}
                   />
                   <span
@@ -74,9 +82,9 @@ const lang = match ? match[1] : 'en';
                   />
                 </a>
                 {isLocations && (
-                  <div class="dropdown-menu absolute top-9 left-0 mt-0 w-50 flex-col items-center bg-white z-40 hidden group-hover:flex opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 ease-out -translate-x-[20%] shadow-lg overflow-hidden rounded-lg">
+                  <div class="dropdown-menu absolute top-9 left-0 mt-0 w-50 flex-col items-center bg-white dark:bg-secondary z-40 hidden group-hover:flex opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 ease-out -translate-x-[20%] shadow-lg overflow-hidden rounded-lg">
                     {content.locations.map((sub) => (
-                      <div class="text-[16px] font-medium text-primary-electric py-2 hover:bg-primary hover:text-accent transition-colors duration-200 ease-in-out cursor-pointer px-6 w-full text-center">
+                      <div class="text-[16px] font-medium text-primary-electric dark:text-white py-2 hover:bg-primary hover:text-accent transition-colors duration-200 ease-in-out cursor-pointer px-6 w-full text-center">
                         <a
                           href={`/${lang}/locations/${sub.href}`}
                           class="block w-full h-full"
@@ -103,6 +111,7 @@ const lang = match ? match[1] : 'en';
         iconName={content?.buttons[0].icon}
       />
       <ChangeLanguage />
+      <ChangeTheme />
       <div class="flex lg:hidden justify-center items-center gap-7">
         <button
           type="button"
@@ -122,7 +131,7 @@ const lang = match ? match[1] : 'en';
 
 <!-- Menú móvil independiente (lg para abajo) -->
 <div
-  class="fixed top-0 right-0 bottom-0 lg:hidden flex items-center bg-primary-intense text-white flex-col justify-center h-[70%] w-full z-60 py-6 gap-12 transform -translate-y-full transition-transform duration-300 ease-out"
+  class="fixed top-0 right-0 bottom-0 lg:hidden flex items-center bg-primary-intense dark:bg-back-dark text-white dark:text-paragraph-dark flex-col justify-center h-[70%] w-full z-60 py-6 gap-12 transform -translate-y-full transition-transform duration-300 ease-out"
   id="mobile-menu"
 >
   <img
@@ -147,7 +156,14 @@ const lang = match ? match[1] : 'en';
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-36 h-auto"
+          class="cursor-pointer w-36 h-auto block dark:hidden"
+        />
+        <img
+          src="/images/logo-dark.svg"
+          alt="Logo de Quality Portable"
+          width="120"
+          height="26"
+          class="cursor-pointer w-30 h-auto hidden dark:block"
         />
       </a>
   <nav class="relative flex items-center flex-col justify-center w-full">
@@ -160,7 +176,7 @@ const lang = match ? match[1] : 'en';
         const isLocations = index === 0;
         return (
           <div
-            class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-white ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-white uppercase' : ''}`}
+            class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-white dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-white dark:text-paragraph-dark uppercase' : ''}`}
             id={`mobile-locations-${index}`}
           >
             <a
@@ -378,14 +394,22 @@ const lang = match ? match[1] : 'en';
       const viewportHeight = window.innerHeight;
       let lastScroll = window.pageYOffset;
 
-      window.addEventListener('scroll', () => {
+      function updateHeaderBackground() {
         const currentScroll = window.pageYOffset;
+        const isDark = document.documentElement.classList.contains('dark');
+        const colorVar = isDark ? '--color-back-dark-rgb' : '--color-primary-rgb';
         
         // Calcular la opacidad: 0 al inicio, 1 cuando se alcance 100vh
         const opacity = Math.min(currentScroll / viewportHeight, 1);
         
         // Actualizar el fondo del header con la opacidad calculada
-        header.style.backgroundColor = `rgba(var(--color-primary-rgb), ${opacity})`;
+        header.style.backgroundColor = `rgba(var(${colorVar}), ${opacity})`;
+      }
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        updateHeaderBackground();
 
         // Mostrar/ocultar header según dirección del scroll, pero SOLO después de los primeros 100vh
         if (currentScroll > viewportHeight) {
@@ -402,6 +426,16 @@ const lang = match ? match[1] : 'en';
         }
 
         lastScroll = currentScroll;
+      });
+
+      // Observer para detectar cambios en el tema (clase 'dark')
+      const observer = new MutationObserver(() => {
+        updateHeaderBackground();
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class'],
       });
     });
   </script>

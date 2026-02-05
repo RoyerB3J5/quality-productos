@@ -8,15 +8,16 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full flex justify-center items-center bg-back py-20 md:py-30 relative overflow-hidden">
+<section class="w-full flex justify-center items-center bg-back dark:bg-[#11152A] py-20 md:py-30 relative overflow-hidden">
   <div class="w-full h-auto absolute z-1 top-0 left-0 max-w-340 3xl:max-w-[80%] aspect-1360/958 hidden md:block">
     <div class="aspect-1360/958 relative w-full h-full">
-      <img src="/images/mapa.webp" alt="Mapa de áreas de servicio" width="1360" height="958" decoding="async" loading="lazy" class="w-full h-full z-1 "/>
-      <div class="flex flex-col justify-center items-center p-6 gap-2.5 bg-white rounded-2xl shadow-ubi absolute bottom-[17%] right-[22%]" >
-        <div class="flex justify-center items-center bg-primary rounded-lg px-6 py-2">
+      <img src="/images/mapa.webp" alt="Mapa de áreas de servicio" width="1360" height="958" decoding="async" loading="lazy" class="w-full h-full z-1 block dark:hidden"/>
+      <img src="/images/mapa-dark.webp" alt="Mapa de áreas de servicio" width="1360" height="958" decoding="async" loading="lazy" class="w-full h-full z-1 hidden dark:block"/>
+      <div class="flex flex-col justify-center items-center p-6 gap-2.5 bg-white dark:bg-paragraph-dark rounded-2xl shadow-ubi absolute bottom-[17%] right-[22%]" >
+        <div class="flex justify-center items-center bg-primary dark:bg-primary-dark rounded-lg px-6 py-2">
           <p class="text-white text-[18px] font-bold leading-[160%]">Tampa, Florida</p>
         </div>
-        <div class="flex flex-col justify-center items-center gap-1 text-paragraph text-center text-[18px] font-normal leading-[160%]">
+        <div class="flex flex-col justify-center items-center gap-1 text-paragraph dark:text-[#11152A] text-center text-[18px] font-normal leading-[160%]">
           <p >Call Now For a Quote</p>
           <a href="tel:+18138534334" class="font-bold">813 - 853 - 4334</a>
         </div>
@@ -28,12 +29,12 @@ const { content } = Astro.props as Props;
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-10 md:gap-20 z-20" data-aos="fade-right" data-aos-delay="300">
     <div class="flex flex-col justify-center items-center md:items-start gap-4 w-full">
         <div class="flex justify-start items-center gap-2">
-          <div class="w-2 h-2 bg-primary"></div>
-          <p class="text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
+          <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+          <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.description}
           </p>
         </div>
-        <h2 class="text-primary text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-100">
+        <h2 class="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-100">
           {content.title}
         </h2>
       </div>
@@ -42,11 +43,12 @@ const { content } = Astro.props as Props;
         {content.items.map((item)=>( 
           <div class="flex flex-col justify-center items-center md:items-start gap-2"> 
             <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-4">
-              <img src={`/images/${item.icon}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8"/>
-              <h3 class="text-paragraph text-[20px] md:text-[32px] font-bold md:font-normal leading-[140%] md:leading-[125%]">{item.title}</h3>
+              <img src={`/images/${item.icon}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 block dark:hidden"/>
+              <img src={`/images/${item.iconDark}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 hidden dark:block"/>
+              <h3 class="text-paragraph dark:text-paragraph-dark text-[20px] md:text-[32px] font-bold md:font-normal leading-[140%] md:leading-[125%]">{item.title}</h3>
             </div>
-            <p set:html={item.text} class="text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] text-paragraph capitalize"></p>
-            <p class="text-paragraph text-[14px] md:text-[16px] font-semibold leading-[143%] md:leading-[150%] uppercase max-w-39.5 md:max-w-none text-center">{item.description}</p>
+            <p set:html={item.text} class="text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] text-paragraph dark:text-paragraph-dark capitalize"></p>
+            <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-semibold leading-[143%] md:leading-[150%] uppercase max-w-39.5 md:max-w-none text-center">{item.description}</p>
           </div>
         ))}
         <div class="flex justify-center items-center gap-4">

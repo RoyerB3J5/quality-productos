@@ -1,18 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-family: "Inter", "NeueMontreal", sans-serif;
   --font-title: "Komet";
   --color-primary: #0d34e9;
   --color-primary-rgb: 13, 52, 233;
+  --color-primary-dark: #4F6BFF;
   --color-secondary: #0a0ba4;
+  --color-secondary-dark: #1E2452;
   --color-accent: #f5a623;
   --color-primary-electric: #2548eb;
   --color-primary-intense: #0f32d5;
   --color-paragraph: #303030;
   --color-back: #e6e9f0;
   --color-back-blue: #6b728a;
+  --color-paragraph-dark: #E8EAF6;
+  --color-back-dark-rgb: 11, 14, 26;
+  --color-back-dark: #0B0E1A;
   --breakpoint-xs: 400px;
   --breakpoint-3xl: 106rem;
 }

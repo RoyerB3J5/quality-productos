@@ -8,66 +8,79 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
-  <div class="flex flex-col justify-center items-start gap-4 w-full" data-aos="flip-down">
-    <div class="flex justify-start items-center gap-2">
-      <div class="w-2 h-2 bg-primary"></div>
-      <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
-            {content.description}
-      </p>
+<section class="w-full flex justify-center items-center dark:bg-back-dark">
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
+    <div class="flex flex-col justify-center items-start gap-4 w-full" data-aos="flip-down">
+      <div class="flex justify-start items-center gap-2">
+        <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+        <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
+              {content.description}
+        </p>
+      </div>
+      <h2 class="text-primary dark:text-paragraph-dark text-[56px] font-semibold leading-[114%] max-w-180">
+            {content.title}
+      </h2>
+      <p class="text-paragraph dark:text-paragraph-dark text-[16px] leading-[150%] " set:html={content.paragraph}></p>
+      <Button
+          text={content.button.label}
+          textClass="text-white"
+          href={content.button.href}
+          target="_blank"
+          extraBtnClass={`bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90`}
+        />
     </div>
-    <h2 class="text-primary text-[56px] font-semibold leading-[114%] max-w-180">
-          {content.title}
-    </h2>
-    <p class="text-paragraph text-[16px] leading-[150%] " set:html={content.paragraph}></p>
-    <Button
-        text={content.button.label}
-        textClass="text-white"
-        href={content.button.href}
-        target="_blank"
-        extraBtnClass={`bg-primary hover:bg-primary/90 `}
-      />
-  </div>
-  <div class="w-full flex flex-col justify-center items-center industries-list" data-aos="flip-up">
-    {
-      content.items.map((item,index)=>( 
-        <div data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back rounded-2xl px-6 active' : ''}`}>
-          <div class="w-full max-w-211.5 flex justify-between items-center">
-            <h3 class={`${index == 0 ? 'text-primary' : 'text-paragraph'} transition-all duration-300 ease-in-out text-[32px] font-semibold leading-[125%]`}>{item.title}</h3>
-            <div class="flex flex-col justify-center items-start gap-4 max-w-102.75 industries-info">
-              <p class="text-paragraph text-[16px] font-normal leading-[150%]">{item.description}</p>
-              <a href={item.button.href} class="text-primary hover:text-accent transition-all duration-300 ease-in-out text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
+    <div class="w-full flex flex-col justify-center items-center industries-list" data-aos="flip-up">
+      {
+        content.items.map((item,index)=>( 
+          <div data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back dark:bg-secondary-dark rounded-2xl px-6 active' : ''}`}>
+            <div class="w-full max-w-211.5 flex justify-between items-center">
+              <h3 class={`${index == 0 ? 'text-primary dark:text-primary-dark' : 'text-paragraph dark:text-paragraph-dark'} transition-all duration-300 ease-in-out text-[32px] font-semibold leading-[125%]`}>{item.title}</h3>
+              <div class="flex flex-col justify-center items-start gap-4 max-w-102.75 industries-info">
+                <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{item.description}</p>
+                <a href={item.button.href} class="text-primary dark:text-[#8E93C8] hover:text-accent transition-all duration-300 ease-in-out text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
+              </div>
+            </div>
+            
+            <div class={`aspect-square w-75.5 rounded-t-2xl  absolute bottom-0 right-6 transition-all delay-75 duration-300 box-border border-t-8 border-r-8 border-l-8 border-paragraph dark:border-paragraph-dark ease-in-out transform origin-bottom ${index == 0 ? 'opacity-100' : 'opacity-0'}`} style={index == 0 ? 'transform: scaleY(1)' : 'transform: scaleY(0.92)'}>
+              <div class="relative w-full h-full overflow-hidden rounded-t-lg ">
+                <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="302" decoding="async" loading="lazy" class="w-full h-full object-cover object-center absolute inset-0 "/>
+              </div>
             </div>
           </div>
-          
-          <div class={`aspect-square w-75.5 rounded-t-2xl  absolute bottom-0 right-6 transition-all delay-75 duration-300 box-border border-t-8 border-r-8 border-l-8 border-paragraph ease-in-out transform origin-bottom ${index == 0 ? 'opacity-100' : 'opacity-0'}`} style={index == 0 ? 'transform: scaleY(1)' : 'transform: scaleY(0.92)'}>
-            <div class="relative w-full h-full overflow-hidden rounded-t-lg ">
-              <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="302" decoding="async" loading="lazy" class="w-full h-full object-cover object-center absolute inset-0 "/>
-            </div>
-          </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
-
-  <script type="module">
+</section>
+<script is:inline>
     const list = document.querySelector('.industries-list');
     if (list) {
       const items = Array.from(list.querySelectorAll('.industries-item'));
+      
+      const isDark = () => document.documentElement.classList.contains('dark');
+      
       items.forEach(item => {
         const idx = Number(item.dataset.index);
         item.addEventListener('mouseenter', (e) => {
           items.forEach(i => {
             const isActive = Number(i.dataset.index) === idx;
-            i.classList.toggle('bg-back', isActive);
+            const dark = isDark();
+            
+            // Toggle background
+            i.classList.toggle('bg-back', isActive && !dark);
+            i.classList.toggle('dark:bg-secondary-dark', isActive && dark);
             i.classList.toggle('rounded-2xl', isActive);
             i.classList.toggle('px-6', isActive);
             i.classList.toggle('active', isActive);
+            
             const hh3 = i.querySelector('h3');
             if (hh3) {
-              hh3.classList.toggle('text-primary', isActive);
-              hh3.classList.toggle('text-paragraph', !isActive);
+              hh3.classList.toggle('text-primary', isActive && !dark);
+              hh3.classList.toggle('dark:text-primary-dark', isActive && dark);
+              hh3.classList.toggle('text-paragraph', !isActive && !dark);
+              hh3.classList.toggle('dark:text-paragraph-dark', !isActive && dark);
             }
+            
             const deco = i.querySelector('.aspect-square');
             if (deco) {
               deco.classList.toggle('translate-y-0', isActive);
@@ -77,20 +90,28 @@ const { content } = Astro.props as Props;
             }
           });
         });
+        
         item.addEventListener('mouseleave', (e) => {
           const to = e.relatedTarget;
           if (to && to.closest && to.closest('.industries-item')) return;
           items.forEach(i => {
             const isFirst = Number(i.dataset.index) === 0;
-            i.classList.toggle('bg-back', isFirst);
+            const dark = isDark();
+            
+            i.classList.toggle('bg-back', isFirst && !dark);
+            i.classList.toggle('dark:bg-secondary-dark', isFirst && dark);
             i.classList.toggle('rounded-2xl', isFirst);
             i.classList.toggle('px-6', isFirst);
             i.classList.toggle('active', isFirst);
+            
             const hh3 = i.querySelector('h3');
             if (hh3) {
-              hh3.classList.toggle('text-primary', isFirst);
-              hh3.classList.toggle('text-paragraph', !isFirst);
+              hh3.classList.toggle('text-primary', isFirst && !dark);
+              hh3.classList.toggle('dark:text-primary-dark', isFirst && dark);
+              hh3.classList.toggle('text-paragraph', !isFirst && !dark);
+              hh3.classList.toggle('dark:text-paragraph-dark', !isFirst && dark);
             }
+            
             const deco = i.querySelector('.aspect-square');
             if (deco) {
               deco.classList.toggle('translate-y-0', isFirst);
@@ -103,4 +124,3 @@ const { content } = Astro.props as Props;
       });
     }
   </script>
-</section>

@@ -68,7 +68,7 @@ export default {
           label: "Book Now",
           href: "/en/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
         },
       ],
     },
@@ -109,18 +109,21 @@ export default {
       items: [
         {
           icon: "location",
+          iconDark:'location-dark',
           title: "Locations",
           text: "Multiple Service Locations",
           description: "Florida & Georgia",
         },
         {
           icon: "inventory",
+          iconDark:'inventory-dark',
           title: "Inventory",
           text: "Large Rental Inventory",
           description: "Ready for projects of all sizes",
         },
         {
           icon: "customer",
+          iconDark:'customer-dark',
           title: "Current Customers",
           text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -129,7 +132,7 @@ export default {
       buttons: [
         {
           label: "View Service Areas",
-          back: "bg-primary",
+          back: "bg-primary dark:bg-primary-dark",
           text: "text-white",
           href: "/en/locations",
         },

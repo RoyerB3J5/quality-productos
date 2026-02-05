@@ -107,6 +107,15 @@ const { lang, t } = Astro.props;
         "logo": "https://qualityportableservice.com/favicon.svg"
       }
     </script>
+    <script is:inline>
+      document.documentElement.classList.toggle(
+        'dark',
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches),
+      )
+    </script>
+
   </head>
   <body
     class="font-family antialiased overflow-x-hidden bg-[#FFFFFF] flex flex-col justify-center items-center w-full"

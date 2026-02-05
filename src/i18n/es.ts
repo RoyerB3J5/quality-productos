@@ -53,7 +53,7 @@ export default {
     hero: {
       image: "hero-main",
       title:
-        "Soluciones de Alquiler de Baños Portátiles <br class='hidden md:block'/> en las que Puedes Confiar",
+        "Baños Portátiles  <br class='hidden md:block'/>  & Alquiler de <br class='hidden md:block'/> Confianza",
       description:
         "Unidades limpias, entrega y recogida puntuales, y <br class='hidden md:block'/> precios competitivos para obras y eventos en <br class='hidden md:block'/> Florida y Georgia.",
       buttons: [
@@ -69,7 +69,7 @@ export default {
           label: "Agendar Ya",
           href: "/es/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
         },
       ],
     },
@@ -110,18 +110,21 @@ export default {
       items: [
         {
           icon: "location",
+          iconDark:'location-dark',
           title: "Ubicaciones",
           text: "Varias zonas de servicio",
           description: "Florida y Georgia",
         },
         {
           icon: "inventory",
+          iconDark:'inventory-dark',
           title: "Inventario",
           text: "Gran stock de alquiler",
           description: "Listo para proyectos de cualquier tamaño",
         },
         {
           icon: "customer",
+          iconDark:'customer-dark',
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -130,7 +133,7 @@ export default {
       buttons: [
         {
           label: "Áreas Servicio",
-          back: "bg-primary",
+          back: "bg-primary dark:bg-primary-dark",
           text: "text-white",
           href: "/es/locations",
         },
