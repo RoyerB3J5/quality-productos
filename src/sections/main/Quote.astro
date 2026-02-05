@@ -13,13 +13,13 @@ const { content } = Astro.props as Props;
   <div class="w-full h-full z-5 bg-black/40 absolute"></div>
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30 z-10 relative" data-quote-section>
     <div class="w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
-      <div class="flex justify-start items-center gap-2" data-aos="fade-right">
+      <div class="flex justify-start items-center gap-2 services-header" >
         <div class="w-2 h-2 bg-white dark:bg-paragraph-dark"></div>
         <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
             {content.subtitle}
         </p>
       </div>
-      <div class="flex flex-col justify-center items-start gap-10" data-aos="fade-right">
+      <div class="flex flex-col justify-center items-start gap-10 services-header">
         <h2 class="text-white dark:text-paragraph-dark text-[56px] font-semibold leading-[114%]">{content.title}</h2>
         <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{content.description}</p>
         <Button
@@ -32,7 +32,7 @@ const { content } = Astro.props as Props;
             />
       </div>
     </div>
-    <div class="w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric" data-aos="fade-left">
+    <div class="w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric animation-left" >
     </div>
   </div>
 </section>
@@ -91,15 +91,16 @@ const { content } = Astro.props as Props;
         animationFrameId = requestAnimationFrame(updateTransform);
       }
 
-      calculateMaxTranslate();
-      updateTransform();
-
-      // Usar capture: true para asegurar que se ejecute
-      window.addEventListener('scroll', onScroll, { passive: true, capture: false });
-      window.addEventListener('resize', () => {
+      // Iniciar parallax después de que las animaciones CSS se ejecuten (700ms = 600ms del fadeRight + margen)
+      setTimeout(() => {
         calculateMaxTranslate();
         updateTransform();
-      });
+        window.addEventListener('scroll', onScroll, { passive: true, capture: false });
+        window.addEventListener('resize', () => {
+          calculateMaxTranslate();
+          updateTransform();
+        });
+      }, 700);
     });
   }
 
@@ -109,8 +110,5 @@ const { content } = Astro.props as Props;
   } else {
     initQuoteAnimation();
   }
-
-  // También ejecutar con un pequeño delay para asegurar que los elementos estén listos
-  setTimeout(initQuoteAnimation, 100);
 }
 </script>

@@ -277,3 +277,47 @@ const { lang, t } = Astro.props;
     }
   });
 </script>
+
+<!-- Consolidated IntersectionObserver for all animations and carousels -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Observer para animaciones: services-header, animation-left, services-detail, hero-content
+    const animationElements = document.querySelectorAll('.services-header, .animation-left, .services-detail, .hero-content');
+    
+    const animationObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            animationObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    
+    animationElements.forEach((element) => {
+      animationObserver.observe(element);
+    });
+
+    // Observer para carousels: .hero-carousel[data-interval]
+    const carousels = Array.from(document.querySelectorAll('.hero-carousel[data-interval]'));
+    
+    if (carousels.length > 0 && 'IntersectionObserver' in window) {
+      const carouselObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Trigger custom event or initialization if needed
+              entry.target.dispatchEvent(new CustomEvent('carouselVisible'));
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: '400px' }
+      );
+      
+      carousels.forEach((c) => carouselObserver.observe(c));
+    }
+  });
+</script>

@@ -39,14 +39,14 @@ const lang = match ? match[1] : 'en';
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-30 h-auto block dark:hidden"
+          class="cursor-pointer w-43.75 h-auto block dark:hidden"
         />
         <img
           src="/images/logo-dark.svg"
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-30 h-auto hidden dark:block"
+          class="cursor-pointer w-43.75 h-auto hidden dark:block"
         />
       </a>
     <!-- Menú desktop (lg y arriba) -->
@@ -399,8 +399,8 @@ const lang = match ? match[1] : 'en';
         const isDark = document.documentElement.classList.contains('dark');
         const colorVar = isDark ? '--color-back-dark-rgb' : '--color-primary-rgb';
         
-        // Calcular la opacidad: 0 al inicio, 1 cuando se alcance 100vh
-        const opacity = Math.min(currentScroll / viewportHeight, 1);
+        // Calcular la opacidad: 0 al inicio, 1 cuando se alcance 50vh
+        const opacity = Math.min(currentScroll / (viewportHeight * 0.5), 1);
         
         // Actualizar el fondo del header con la opacidad calculada
         header.style.backgroundColor = `rgba(var(${colorVar}), ${opacity})`;

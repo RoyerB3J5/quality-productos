@@ -3,24 +3,30 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-family: "Inter", "NeueMontreal", sans-serif;
-  --font-title: "Komet";
+  --font-family: "Inter", sans-serif;
+  --font-title: "Inter", sans-serif;
   --color-primary: #0d34e9;
-  --color-primary-rgb: 13, 52, 233;
-  --color-primary-dark: #4F6BFF;
+  --color-primary-rgb: 10, 11, 164;
+  --color-primary-dark: #4f6bff;
   --color-secondary: #0a0ba4;
-  --color-secondary-dark: #1E2452;
+  --color-secondary-dark: #1e2452;
   --color-accent: #f5a623;
   --color-primary-electric: #2548eb;
   --color-primary-intense: #0f32d5;
   --color-paragraph: #303030;
   --color-back: #e6e9f0;
   --color-back-blue: #6b728a;
-  --color-paragraph-dark: #E8EAF6;
+  --color-paragraph-dark: #e8eaf6;
   --color-back-dark-rgb: 11, 14, 26;
-  --color-back-dark: #0B0E1A;
+  --color-back-dark: #0b0e1a;
   --breakpoint-xs: 400px;
   --breakpoint-3xl: 106rem;
+}
+
+@layer base {
+  * {
+    font-family: var(--font-family);
+  }
 }
 
 @keyframes shake {
@@ -87,7 +93,7 @@
     background-attachment: fixed;
     opacity: 0.1;
     z-index: 0;
-    pointer-events: none
+    pointer-events: none;
   }
 }
 
@@ -106,4 +112,86 @@
   .gradient-overlay {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #000 100%);
   }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(90%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+@keyframes zoomIn2 {
+  from {
+    opacity: 0;
+    transform: scale(80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+.services-header {
+  opacity: 0;
+}
+
+.services-header.active {
+  animation: fadeRight 0.6s ease-in-out forwards;
+}
+
+.hero-content {
+  opacity: 0;
+}
+
+.hero-content.active {
+  animation: fadeRight 0.6s ease-in-out forwards;
+}
+
+.services-detail {
+  opacity: 0;
+}
+
+.services-detail.active {
+  animation: zoomIn 0.6s ease-in-out forwards;
+}
+
+.services-detail-2 {
+  opacity: 0;
+}
+
+.services-detail-2.active {
+  animation: zoomIn2 0.6s ease-in-out forwards;
+}
+
+.animation-left {
+  opacity: 0;
+}
+
+.animation-left.active {
+  animation: fadeLeft 0.6s ease-in-out forwards;
 }

@@ -89,7 +89,7 @@ export default {
           title: "Alquiler de Contenedores",
           description: "Espacios limpios empiezan con la solución correcta.",
           description2:
-            "Los espacios limpios comienzan con la solución adecuada. Contenedores listos para obra y evento, fiables y accesibles.",
+            "Soluciones eficientes de alquiler de contenedores con opciones de 20 y 30 yardas para construcción, limpiezas y eventos",
           href: "/es/services/#dumpster-rental",
           image: "service-2",
         },
@@ -110,21 +110,21 @@ export default {
       items: [
         {
           icon: "location",
-          iconDark:'location-dark',
+          iconDark: "location-dark",
           title: "Ubicaciones",
           text: "Varias zonas de servicio",
           description: "Florida y Georgia",
         },
         {
           icon: "inventory",
-          iconDark:'inventory-dark',
+          iconDark: "inventory-dark",
           title: "Inventario",
           text: "Gran stock de alquiler",
           description: "Listo para proyectos de cualquier tamaño",
         },
         {
           icon: "customer",
-          iconDark:'customer-dark',
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -411,21 +411,24 @@ export default {
       items: [
         {
           icon: "location",
+          iconDark: "location-dark",
           title: "Ubicaciones",
           text: "Varias zonas de servicio",
           description: "Florida y Georgia",
         },
         {
           icon: "inventory",
+          iconDark: "inventory-dark",
           title: "Inventario",
           text: "Gran stock de alquiler",
           description: "Listo para proyectos de cualquier tamaño",
         },
         {
           icon: "customer",
-          title: "Clientes",
-          text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
-          description: "Alquileres Completados",
+          iconDark: "customer-dark",
+          title: "Clientes Actuales",
+          text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
+          description: "Rentals Completed",
         },
       ],
       buttons: [

@@ -26,9 +26,9 @@ const { content } = Astro.props as Props;
   </div>
   
   
-  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-10 md:gap-20 z-20" data-aos="fade-right" data-aos-delay="300">
-    <div class="flex flex-col justify-center items-center md:items-start gap-4 w-full">
-        <div class="flex justify-start items-center gap-2">
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-10 md:gap-20 z-20" >
+    <div class="flex flex-col justify-center items-center md:items-start gap-4 w-full services-header" >
+        <div class="flex justify-start items-center gap-2" >
           <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
           <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.description}
@@ -41,7 +41,7 @@ const { content } = Astro.props as Props;
     <div class="w-full flex justify-center items-center gap-13">
       <div class="flex flex-col justify-center items-center md:items-start gap-10 md:gap-18 w-full z-5">
         {content.items.map((item)=>( 
-          <div class="flex flex-col justify-center items-center md:items-start gap-2"> 
+          <div class="flex flex-col justify-center items-center md:items-start gap-2 services-header"> 
             <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-4">
               <img src={`/images/${item.icon}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 block dark:hidden"/>
               <img src={`/images/${item.iconDark}.svg`} alt={item.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 hidden dark:block"/>
@@ -51,7 +51,7 @@ const { content } = Astro.props as Props;
             <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-semibold leading-[143%] md:leading-[150%] uppercase max-w-39.5 md:max-w-none text-center">{item.description}</p>
           </div>
         ))}
-        <div class="flex justify-center items-center gap-4">
+        <div class="flex justify-center items-center gap-4 services-header">
           {
             content.buttons.map((btn)=>(
               <Button

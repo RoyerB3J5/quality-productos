@@ -10,7 +10,7 @@ const { content } = Astro.props as Props;
 ---
 <section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start py-30">
   <div class="flex flex-col justify-center items-start max-w-102.75 gap-87.5">
-    <div class="flex flex-col justify-center items-start gap-4" data-aos="fade-right">
+    <div class="flex flex-col justify-center items-start gap-4 services-header" >
       <div class="flex justify-start items-center gap-2">
         <div class="w-2 h-2 bg-primary"></div>
         <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
@@ -19,7 +19,7 @@ const { content } = Astro.props as Props;
       </div>
       <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{content.title}</h2>
     </div>
-    <div class="flex flex-col justify-center items-start gap-2" data-aos="fade-left"> 
+    <div class="flex flex-col justify-center items-start gap-2 services-header"> 
             <div class="flex justify-start items-center gap-4">
               <img src={`/images/${content.metric.icon}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8"/>
               <h3 class="text-paragraph text-[32px] font-normal leading-[125%]">{content.metric.title}</h3>

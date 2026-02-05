@@ -10,7 +10,7 @@ const { content } = Astro.props as Props;
 ---
 <section class="w-full flex justify-center items-center dark:bg-back-dark">
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
-    <div class="flex flex-col justify-center items-start gap-4 w-full" data-aos="flip-down">
+    <div class="flex flex-col justify-center items-start gap-4 w-full services-header" >
       <div class="flex justify-start items-center gap-2">
         <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
         <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
@@ -29,7 +29,7 @@ const { content } = Astro.props as Props;
           extraBtnClass={`bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90`}
         />
     </div>
-    <div class="w-full flex flex-col justify-center items-center industries-list" data-aos="flip-up">
+    <div class="w-full flex flex-col justify-center items-center industries-list services-detail" >
       {
         content.items.map((item,index)=>( 
           <div data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back dark:bg-secondary-dark rounded-2xl px-6 active' : ''}`}>

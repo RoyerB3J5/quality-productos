@@ -11,8 +11,10 @@ export default function Services({ content }: ServicesProps) {
   const [currentItem, setCurrentItem] = useState(0);
   const headerRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLDivElement>(null);
+  const detail2Ref = useRef<HTMLDivElement>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [isDetailVisible, setIsDetailVisible] = useState(false);
+  const [isDetail2Visible, setIsDetail2Visible] = useState(false);
 
   // Observer para el header
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function Services({ content }: ServicesProps) {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.2 },
     );
 
     if (detailRef.current) {
@@ -51,72 +53,68 @@ export default function Services({ content }: ServicesProps) {
 
     return () => observer.disconnect();
   }, []);
+
+  // Observer para detail-2
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsDetail2Visible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    if (detail2Ref.current) {
+      observer.observe(detail2Ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Re-dispara animación cuando cambia currentItem
+  useEffect(() => {
+    if (detail2Ref.current && isDetail2Visible) {
+      const element = detail2Ref.current;
+      element.classList.remove("active");
+      // Forzar reflow para retrigguear la animación
+      void element.offsetWidth;
+      element.classList.add("active");
+    }
+  }, [currentItem, isDetail2Visible]);
   return (
     <>
-      <style>{`
-        @keyframes fadeDown {
-          from {
-            opacity: 0;
-            transform: translateY(-100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .services-header {
-          opacity: 0;
-        }
-
-        .services-header.active {
-          animation: fadeDown 1s ease-out forwards;
-        }
-
-        .services-detail {
-          opacity: 0;
-        }
-
-        .services-detail.active {
-          animation: fadeUp 1s ease-out forwards;
-        }
-      `}</style>
       <section className="w-full py-20 md:py-30 flex justify-center items-center dark:bg-back-dark">
         <div className=" w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-8 md:gap-16">
           <div
-            ref={headerRef}
-            className={`w-full flex flex-col justify-center items-center gap-8 md:gap-16 services-header ${isHeaderVisible ? "active" : ""}`}
+            className={`w-full flex flex-col justify-center items-center gap-8 md:gap-16 `}
           >
-            <div className="flex flex-col justify-center items-start gap-4 w-full">
+            <div
+              className={`flex flex-col justify-center items-start gap-4 w-full services-header ${isHeaderVisible ? "active" : ""}`}
+              ref={headerRef}
+            >
               <div className="flex justify-start items-center gap-2">
                 <div className="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
                 <p className="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
                   {content.description}
                 </p>
               </div>
-              <h2 className="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-180">
+              <h2 className="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-180 tracking-[1px]">
                 {content.title}
               </h2>
             </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 w-full">
+            <div
+              className={`flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 w-full services-detail ${isDetailVisible ? "active" : ""}`}
+              ref={detailRef}
+            >
               {content.items.map((item, index) => (
                 <div
                   key={index}
                   className={`w-full md:w-1/3 flex flex-col justify-center items-center gap-18 md:aspect-411/252 py-4 md:py-0 px-6 lg:px-0 lg:pt-26 lg:pb-6 rounded-2xl transition-all duration-300 ease-in-out relative group overflow-hidden ${
                     currentItem === index
                       ? ""
-                      : "cursor-pointer bg-primary dark:bg-secondary-dark hover:bg-transparent"
+                      : "cursor-pointer bg-primary dark:bg-secondary-dark hover:scale-95 "
                   }`}
                   onClick={() => setCurrentItem(index)}
                 >
@@ -128,7 +126,7 @@ export default function Services({ content }: ServicesProps) {
                     className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
                       currentItem === index
                         ? "translate-y-0"
-                        : "translate-y-full group-hover:translate-y-0"
+                        : "translate-y-full"
                     }`}
                     loading="lazy"
                     decoding="async"
@@ -137,7 +135,7 @@ export default function Services({ content }: ServicesProps) {
                     className={`absolute w-full h-full bg-black/70 md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
                       currentItem === index
                         ? "translate-y-0"
-                        : "translate-y-full group-hover:translate-y-0"
+                        : "translate-y-full"
                     }`}
                   ></div>
                   <h3 className="text-white dark:text-paragraph-dark text-[20px] md:text-[24px] font-semibold leading-[133%] z-5 text-center">
@@ -151,9 +149,8 @@ export default function Services({ content }: ServicesProps) {
             </div>
           </div>
           <div
-            ref={detailRef}
-            className={`w-full flex justify-center items-end rounded-2xl aspect-343/348 md:aspect-1282/584 relative overflow-hidden services-detail ${isDetailVisible ? "active" : ""}`}
-            key={currentItem}
+            ref={detail2Ref}
+            className={`w-full flex justify-center items-end rounded-2xl aspect-343/348 md:aspect-1282/584 relative overflow-hidden services-detail-2 ${isDetail2Visible ? "active" : ""}`}
           >
             <img
               src={`/images/${content.items[currentItem].image}.webp`}

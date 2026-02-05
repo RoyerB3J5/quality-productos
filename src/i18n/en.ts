@@ -88,7 +88,7 @@ export default {
           title: "Dumpster Rental",
           description: "Clean spaces start with the right solution.",
           description2:
-            "Efficient dumpster rental solutions with 10- and 20-yard options for construction, cleanouts, and events.",
+            "Efficient dumpster rental solutions with 20- and 30-yard options for construction, cleanouts, and events.",
           href: "/en/services/#dumpster-rental",
           image: "service-2",
         },
@@ -109,21 +109,21 @@ export default {
       items: [
         {
           icon: "location",
-          iconDark:'location-dark',
+          iconDark: "location-dark",
           title: "Locations",
           text: "Multiple Service Locations",
           description: "Florida & Georgia",
         },
         {
           icon: "inventory",
-          iconDark:'inventory-dark',
+          iconDark: "inventory-dark",
           title: "Inventory",
           text: "Large Rental Inventory",
           description: "Ready for projects of all sizes",
         },
         {
           icon: "customer",
-          iconDark:'customer-dark',
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -409,20 +409,23 @@ export default {
       items: [
         {
           icon: "location",
+          iconDark: "location-dark",
           title: "Locations",
           text: "Multiple Service Locations",
           description: "Florida & Georgia",
         },
         {
           icon: "inventory",
+          iconDark: "inventory-dark",
           title: "Inventory",
           text: "Large Rental Inventory",
           description: "Ready for projects of all sizes",
         },
         {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
-          text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
+          text: '<span class="font-bold text-[28px] md:text-[40px] leading-[129%] md:leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
         },
       ],

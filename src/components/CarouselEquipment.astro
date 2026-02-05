@@ -27,7 +27,7 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
         {
           items.map((item) => (
             <div class="shrink-0 w-full md:w-1/2 lg:w-1/3 px-3 flex flex-col">
-              <div class={`${isLocation ? 'bg-back' : 'bg-white dark:bg-secondary-dark'} w-full p-6 rounded-2xl flex flex-col justify-between items-start relative gap-4 flex-1`}>
+              <div class={`${isLocation ? 'bg-back' : 'bg-white dark:bg-secondary-dark'} w-full p-6 rounded-2xl flex flex-col justify-between items-start relative gap-8 flex-1`}>
                 <div class="w-full h-auto aspect-344/246 rounded-lg relative overflow-hidden ">
                   <img src={`/images/${item.image}.webp`} alt="Equipment Image" width="344" height="246" decoding="async" loading="lazy" class="w-full h-full object-cover object-center pointer-events-none select-none" draggable="false"/>
                 </div>
@@ -87,6 +87,7 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
 
       function getPerPage() {
         const w = window.innerWidth;
+        if (w >= 1900) return 4;
         if (w >= 1025) return 3;
         if (w >= 640) return 2;
         return 1;
@@ -94,9 +95,9 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
 
       function computeSizes(perPage) {
         const gap = parseInt(getComputedStyle(track).gap) || 16;
-        const peekPercent = window.innerWidth < 640 ? 0.05 : 0.03;
+        const peekPercent = window.innerWidth < 640 ? 0.05 : 0.06;
         const peekPxLeft = Math.round(window.innerWidth * peekPercent);
-        const peekPxRight = window.innerWidth < 640 ? Math.round(window.innerWidth * 0.05) : Math.round(window.innerWidth * 0.01);
+        const peekPxRight = window.innerWidth < 640 ? Math.round(window.innerWidth * 0.05) : Math.round(window.innerWidth * 0.04);
         // apply padding on track to create visual peek on both sides
         track.style.paddingLeft = peekPxLeft + 'px';
         track.style.paddingRight = peekPxRight + 'px';
