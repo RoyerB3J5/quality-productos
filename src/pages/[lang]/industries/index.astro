@@ -16,67 +16,6 @@ const translations = { es, en };
 const t = translations[lang];
 ---
 <Layout lang={lang} t={t}>
-  <style>
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-100%);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    [data-fade-down] {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-
-    [data-fade-down].fade-down-visible {
-      animation: fadeDown 1s ease-out forwards 0.5s;
-    }
-
-    [data-fade-left] {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-
-    [data-fade-left].fade-left-visible {
-      animation: fadeInLeft 1s ease-out forwards 0.5s;
-    }
-
-    [data-fade-right] {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-
-    [data-fade-right].fade-right-visible {
-      animation: fadeInRight 1s ease-out forwards 0.5s;
-    }
-  </style>
 
   <Hero content={t.industries.hero} />
   {
@@ -85,10 +24,10 @@ const t = translations[lang];
       return(
         <section class={`w-full flex justify-center items-center py-30 overflow-hidden ${type.back}`} id={type.id}>
           <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-center gap-16">
-            <div class={`w-[58%] h-auto aspect-697/577 rounded-2xl ${isParity ? 'order-1' : 'order-2'}`} data-fade-down>
+            <div class={`w-[58%] h-auto aspect-697/577 rounded-2xl animation-zoom ${isParity ? 'order-1' : 'order-2'}`} >
               <img src={`/images/${type.image}.webp`} alt={type.title} width="697" height="577" class="absolute w-full h-full object-cover rounded-2xl inset-0"/>
             </div>
-            <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2' : 'order-1'}`} {...(!isParity ? { 'data-fade-left': true } : { 'data-fade-right': true })}>
+            <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2 animation-left' : 'order-1 services-header'}`} >
               <div class="flex justify-start items-center gap-2">
                 <div class="w-2 h-2 bg-primary"></div>
                 <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">

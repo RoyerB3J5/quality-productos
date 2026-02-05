@@ -18,18 +18,53 @@ export default function Services({ content, hash }: ServicesProps) {
     "septic-rv-pump-out": 2,
   };
 
-  // Obtener el índice inicial basado en el hash
-  const initialIndex = hash ? (hashToIndex[hash] ?? 0) : 0;
-
-  const [currentItem, setCurrentItem] = useState(initialIndex);
+  // Estado inicial siempre es 0 para evitar hydration mismatch
+  const [currentItem, setCurrentItem] = useState(0);
 
   const headerRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLDivElement>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [isDetailVisible, setIsDetailVisible] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Marcar como hidratado y actualizar currentItem basado en URL
+  useEffect(() => {
+    setIsHydrated(true);
+
+    // Leer el hash de la URL después de la hidratación
+    if (typeof window !== "undefined") {
+      const urlHash =
+        new URL(window.location.href).searchParams.get("section") || "";
+
+      // Si hay un hash válido, usar su índice, si no, usar 1 por defecto
+      const newIndex =
+        urlHash && hashToIndex[urlHash] !== undefined
+          ? hashToIndex[urlHash]
+          : 0; // Valor por defecto es 1
+
+      setCurrentItem(newIndex);
+
+      // Scroll suave al elemento después de un pequeño delay (solo si hay hash)
+      if (urlHash && hashToIndex[urlHash] !== undefined) {
+        setTimeout(() => {
+          const element = document.getElementById(urlHash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 500);
+      }
+    }
+  }, []);
+
+  // Marcar como hidratado después del primer render
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
 
   // Observer para el header
   useEffect(() => {
+    if (!isHydrated) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -45,10 +80,12 @@ export default function Services({ content, hash }: ServicesProps) {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isHydrated]);
 
   // Observer para el detail
   useEffect(() => {
+    if (!isHydrated) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -64,52 +101,13 @@ export default function Services({ content, hash }: ServicesProps) {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isHydrated]);
 
   return (
     <>
-      <style>{`
-        @keyframes fadeDown {
-          from {
-            opacity: 0;
-            transform: translateY(-100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .services-header {
-          opacity: 0;
-        }
-
-        .services-header.active {
-          animation: fadeDown 1s ease-out forwards;
-        }
-
-        .services-detail {
-          opacity: 0;
-        }
-
-        .services-detail.active {
-          animation: fadeUp 1s ease-out forwards;
-        }
-      `}</style>
-      <section className="w-full max-w-scree xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center itmes-center py-30 gap-16">
+      <section className="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center py-30 gap-16">
         <div
-          className={`flex justify-center items-center gap-6 w-full services-header ${isHeaderVisible ? "active" : ""}`}
+          className={`flex justify-center items-center gap-6 w-full services-detail ${isHydrated && isHeaderVisible ? "active" : ""}`}
           ref={headerRef}
         >
           {content.map((item, index) => (
@@ -118,7 +116,7 @@ export default function Services({ content, hash }: ServicesProps) {
               className={`w-1/3 flex flex-col justify-center items-center gap-18 aspect-411/252 pt-26 pb-6 rounded-2xl  transition-all duration-300 ease-in-out relative group overflow-hidden ${
                 currentItem === index
                   ? ""
-                  : "cursor-pointer bg-primary hover:bg-transparent"
+                  : "cursor-pointer bg-primary hover:scale-95"
               }`}
               onClick={() => setCurrentItem(index)}
             >
@@ -128,18 +126,14 @@ export default function Services({ content, hash }: ServicesProps) {
                 width="2500"
                 height="1563"
                 className={`absolute inset-0 w-auto md:w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
-                  currentItem === index
-                    ? "translate-y-0"
-                    : "translate-y-full group-hover:translate-y-0"
+                  currentItem === index ? "translate-y-0" : "translate-y-full"
                 }`}
                 loading="lazy"
                 decoding="async"
               />
               <div
                 className={`absolute w-full h-full bg-black/30 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
-                  currentItem === index
-                    ? "translate-y-0"
-                    : "translate-y-full group-hover:translate-y-0"
+                  currentItem === index ? "translate-y-0" : "translate-y-full"
                 }`}
               ></div>
               <h3 className="text-white text-[24px] font-semibold leading-[133%] z-5">
@@ -154,7 +148,7 @@ export default function Services({ content, hash }: ServicesProps) {
         <div
           ref={detailRef}
           key={currentItem}
-          className={`w-full flex flex-col justify-center items-center gap-16 services-detail ${isDetailVisible ? "active" : ""}`}
+          className={`w-full flex flex-col justify-center items-center gap-16 services-detail ${isHydrated && isDetailVisible ? "active" : ""}`}
           id={content[currentItem].id}
         >
           <div className={`w-full flex justify-between items-start `}>

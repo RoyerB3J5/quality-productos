@@ -81,7 +81,7 @@ export default {
           description: "Comfort and convenience, wherever you are.",
           description2:
             "Portable toilet rentals for construction sites and events, offering clean, affordable units including ADA, high-rise, and hand wash solutions.",
-          href: "/en/services/#portable-toilet-rental",
+          href: "/en/services?section=portable-toilet-rental",
           image: "service-1",
         },
         {
@@ -89,7 +89,7 @@ export default {
           description: "Clean spaces start with the right solution.",
           description2:
             "Efficient dumpster rental solutions with 20- and 30-yard options for construction, cleanouts, and events.",
-          href: "/en/services/#dumpster-rental",
+          href: "/en/services?section=dumpster-rental",
           image: "service-2",
         },
         {
@@ -97,7 +97,7 @@ export default {
           description: "Efficient and dependable pump-out services.",
           description2:
             "Reliable septic and RV pump-out services ensuring proper sanitation and uninterrupted operations across all job sites.",
-          href: "/en/services/#septic-rv-pump-out",
+          href: "/en/services?section=septic-rv-pump-out",
           image: "service-3",
         },
       ],
@@ -1182,9 +1182,9 @@ export default {
           subtitle: "Dumpster Rental",
           title: "Efficient waste solutions for projects of any size",
           description:
-            "Our dumpster rental service includes 10-yard and 20-yard dumpsters, ideal for construction debris, cleanouts, and waste generated during events or projects. We coordinate delivery and pickup to keep your site organized and efficient.",
+            "Our dumpster rental service includes 20-yard and 30-yard dumpsters, ideal for construction debris, cleanouts, and waste generated during events or projects. We coordinate delivery and pickup to keep your site organized and efficient.",
           image: "service-2",
-          list: ["10-yard dumpsters", "20-yard dumpsters"],
+          list: ["20-yard dumpsters", "30-yard dumpsters"],
         },
       },
       {

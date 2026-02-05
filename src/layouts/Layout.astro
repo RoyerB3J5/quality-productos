@@ -281,8 +281,8 @@ const { lang, t } = Astro.props;
 <!-- Consolidated IntersectionObserver for all animations and carousels -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    // Observer para animaciones: services-header, animation-left, services-detail, hero-content
-    const animationElements = document.querySelectorAll('.services-header, .animation-left, .services-detail, .hero-content');
+    // Observer para animaciones: services-header, animation-left, hero-content
+    const animationElements = document.querySelectorAll('.services-header, .animation-left, .hero-content, .animation-zoom');
     
     const animationObserver = new IntersectionObserver(
       (entries) => {

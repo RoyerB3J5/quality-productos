@@ -82,7 +82,7 @@ export default {
           description: "Comodidad y servicio donde lo necesites.",
           description2:
             "Alquiler de baños portátiles para obra y eventos, con unidades limpias y económicas, incluyendo ADA, para altura y soluciones con lavado de manos.",
-          href: "/es/services/#portable-toilet-rental",
+          href: "/es/services?section=portable-toilet-rental",
           image: "service-1",
         },
         {
@@ -90,7 +90,7 @@ export default {
           description: "Espacios limpios empiezan con la solución correcta.",
           description2:
             "Soluciones eficientes de alquiler de contenedores con opciones de 20 y 30 yardas para construcción, limpiezas y eventos",
-          href: "/es/services/#dumpster-rental",
+          href: "/es/services?section=dumpster-rental",
           image: "service-2",
         },
         {
@@ -98,7 +98,7 @@ export default {
           description: "Servicios de vaciado eficientes y fiables.",
           description2:
             "Vaciados y mantenimiento eficientes para septic y RV, con personal profesional y respuesta rápida.",
-          href: "/es/services/#septic-rv-pump-out",
+          href: "/es/services?section=septic-rv-pump-out",
           image: "service-3",
         },
       ],
@@ -513,7 +513,7 @@ export default {
         subtitle: "Servicio de calidad, siempre.",
         title: "Servicios de Baños Portátiles y Alquiler en Orlando",
         description:
-          "Quality Portable Rental Service ofrece soluciones fiables de baños portátiles y residuos en Orlando, apoyando obras, proyectos comerciales, eventos y necesidades municipales. Incluimos unidades estándar y ADA, opciones para altura, lavamanos, tanques de retención, contenedores de 10 y 20 yardas, y servicios de vaciado para septic y RV. <br/> <br/>Desde 2011, entregamos equipos limpios, programación fiable y precios transparentes sin cargos ocultos. Nuestro equipo local de Orlando garantiza entregas puntuales, coordinación eficiente y atención al cliente ágil, facilitando el éxito de proyectos de cualquier tamaño.",
+          "Quality Portable Rental Service ofrece soluciones fiables de baños portátiles y residuos en Orlando, apoyando obras, proyectos comerciales, eventos y necesidades municipales. Incluimos unidades estándar y ADA, opciones para altura, lavamanos, tanques de retención, contenedores de 20 y 30 yardas, y servicios de vaciado para septic y RV. <br/> <br/>Desde 2011, entregamos equipos limpios, programación fiable y precios transparentes sin cargos ocultos. Nuestro equipo local de Orlando garantiza entregas puntuales, coordinación eficiente y atención al cliente ágil, facilitando el éxito de proyectos de cualquier tamaño.",
       },
       equipment: {
         subtitle: "Soluciones de Saneamiento y Gestión de Residuos Portátiles",
@@ -741,7 +741,7 @@ export default {
         subtitle: "Servicio de calidad, siempre.",
         title: "Servicios de Saneamiento Portátil en Tampa",
         description:
-          "Quality Portable Rental Service ofrece servicios fiables de saneamiento y gestión de residuos en Tampa, apoyando proyectos de construcción, trabajos comerciales y eventos especiales. Ofrecemos unidades estándar y ADA, opciones para altura, lavamanos, tanques de retención, contenedores de 10 y 20 yardas, y servicios de vaciado para septic y RV. <br/> <br/> Desde 2011, garantizamos equipos limpios, logística puntual y soporte al cliente confiable, ayudando a completar proyectos con eficiencia y transparencia.",
+          "Quality Portable Rental Service ofrece servicios fiables de saneamiento y gestión de residuos en Tampa, apoyando proyectos de construcción, trabajos comerciales y eventos especiales. Ofrecemos unidades estándar y ADA, opciones para altura, lavamanos, tanques de retención, contenedores de 20 y 30 yardas, y servicios de vaciado para septic y RV. <br/> <br/> Desde 2011, garantizamos equipos limpios, logística puntual y soporte al cliente confiable, ayudando a completar proyectos con eficiencia y transparencia.",
       },
       equipment: {
         subtitle: "Soluciones de Saneamiento y Gestión de Residuos Portátiles",
@@ -1187,9 +1187,9 @@ export default {
           title:
             "Soluciones eficientes de residuos para proyectos de cualquier tamaño",
           description:
-            "Nuestro servicio de alquiler de contenedores incluye modelos de 10 y 20 yardas, ideales para escombros de construcción, limpiezas y residuos generados durante eventos o proyectos. Coordinamos entrega y recogida para mantener tu sitio organizado y eficiente.",
+            "Nuestro servicio de alquiler de contenedores incluye modelos de 20 y 30 yardas, ideales para escombros de construcción, limpiezas y residuos generados durante eventos o proyectos. Coordinamos entrega y recogida para mantener tu sitio organizado y eficiente.",
           image: "service-2",
-          list: ["Contenedores de 10 yardas", "Contenedores de 20 yardas"],
+          list: ["Contenedores de 20 yardas", "Contenedores de 30 yardas"],
         },
       },
       {
