@@ -69,7 +69,7 @@ export default {
           label: "Agendar Ya",
           href: "/es/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -81,7 +81,7 @@ export default {
           title: "Alquiler de Baños Portátiles",
           description: "Comodidad y servicio donde lo necesites.",
           description2:
-            "Alquiler de baños portátiles para obra y eventos, con unidades limpias y económicas, incluyendo ADA, para altura y soluciones con lavado de manos.",
+            "Soluciones limpias y rentables de baños portátiles para sitios de construcción, eventos, proyectos comerciales y trabajos gubernamentales.",
           href: "/es/services?section=portable-toilet-rental",
           image: "service-1",
         },
@@ -306,7 +306,7 @@ export default {
           label: "Reservar",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -317,7 +317,7 @@ export default {
         "Seleccione una ubicación para obtener precios y disponibilidad locales.",
       items: [
         {
-          title: "Áreas de Servicio en Florida",
+          title: "Áreas Servicio Florida",
           areas: [
             {
               label: "Orlando",
@@ -346,59 +346,23 @@ export default {
           ],
         },
         {
-          title: "Áreas de Servicio en Georgia",
+          title: "Áreas Servicio Georgia",
           areas: [
             {
-              label: "Orlando",
-              href: "orlando-fl",
-            },
-            {
-              label: "Tampa",
-              href: "tampa-fl",
-            },
-            {
-              label: "Melbourne",
-              href: "melbourne-fl",
-            },
-            {
-              label: "Fort Myers",
-              href: "fort-myers-fl",
-            },
-            {
-              label: "Jacksonville",
+              label: "Atlanta",
               href: "#",
             },
             {
-              label: "Ocala",
+              label: "Oakwood",
               href: "#",
             },
           ],
         },
         {
-          title: "Áreas de Servicio en Alabama",
+          title: "Áreas Servicio Alabama",
           areas: [
             {
-              label: "Orlando",
-              href: "orlando-fl",
-            },
-            {
-              label: "Tampa",
-              href: "tampa-fl",
-            },
-            {
-              label: "Melbourne",
-              href: "melbourne-fl",
-            },
-            {
-              label: "Fort Myers",
-              href: "fort-myers-fl",
-            },
-            {
-              label: "Jacksonville",
-              href: "#",
-            },
-            {
-              label: "Ocala",
+              label: "Muy Pronto!",
               href: "#",
             },
           ],
@@ -504,7 +468,7 @@ export default {
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -556,6 +520,7 @@ export default {
         title: "Lo Que Dicen Nuestros Clientes",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Alquileres Completados",
@@ -618,7 +583,7 @@ export default {
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -670,6 +635,7 @@ export default {
         title: "Lo Que Dicen Nuestros Clientes",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Alquileres Completados",
@@ -732,7 +698,7 @@ export default {
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -784,6 +750,7 @@ export default {
         title: "Lo Que Dicen Nuestros Clientes",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Alquileres Completados",
@@ -846,7 +813,7 @@ export default {
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -899,6 +866,7 @@ export default {
         title: "Lo Que Dicen Nuestros Clientes",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Alquileres Completados",
@@ -953,6 +921,7 @@ export default {
         title: "Lo Que Dicen Nuestros Clientes",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Clientes Actuales",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Alquileres Completados",
@@ -1016,7 +985,7 @@ export default {
           label: "Agendar Ya",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -1152,10 +1121,10 @@ export default {
         },
         {
           icon: "calendar",
-          label: "Reserva Ahora",
+          label: "Reserva",
           href: "#",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90     dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -1245,13 +1214,13 @@ export default {
           label: "Reserva Ahora",
           href: "#",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
     types: [
       {
-        back: "bg-white",
+        back: "bg-white dark:bg-back-dark",
         image: "construction-2",
         subtitle: "Apoyamos proyectos de construcción de todos los tamaños",
         id: "construction",
@@ -1267,7 +1236,7 @@ export default {
         ],
       },
       {
-        back: "bg-back",
+        back: "bg-back dark:bg-[#11152A]",
         image: "events-2",
         subtitle: "Comodidad y limpieza en cada reunión",
         id: "events-festivals",
@@ -1283,7 +1252,7 @@ export default {
         ],
       },
       {
-        back: "bg-white",
+        back: "bg-white dark:bg-back-dark",
         image: "commercial-2",
         subtitle: "Saneamiento confiable para proyectos comerciales",
         id: "commercial",
@@ -1299,7 +1268,7 @@ export default {
         ],
       },
       {
-        back: "bg-back",
+        back: "bg-back dark:bg-[#11152A]",
         image: "government-2",
         subtitle: "Socio confiable para operaciones municipales",
         id: "government-municipal",

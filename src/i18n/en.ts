@@ -68,7 +68,7 @@ export default {
           label: "Book Now",
           href: "/en/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -80,7 +80,7 @@ export default {
           title: "Port O Potty Rental",
           description: "Comfort and convenience, wherever you are.",
           description2:
-            "Portable toilet rentals for construction sites and events, offering clean, affordable units including ADA, high-rise, and hand wash solutions.",
+            "Clean, cost-effective portable restroom solutions for construction sites, events, commercial projects, and government jobs.",
           href: "/en/services?section=portable-toilet-rental",
           image: "service-1",
         },
@@ -132,14 +132,14 @@ export default {
       buttons: [
         {
           label: "View Service Areas",
-          back: "bg-primary dark:bg-primary-dark",
+          back: "bg-primary dark:bg-primary-dark hover:bg-primary/90 hover:dark:bg-primary-dark/90",
           text: "text-white",
           href: "/en/locations",
         },
         {
           icon: "phone",
           label: "Call Now",
-          back: "bg-accent",
+          back: "bg-accent hover:bg-accent/90",
           text: "text-paragraph",
           href: "#",
         },
@@ -305,7 +305,7 @@ export default {
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -347,27 +347,11 @@ export default {
           title: "Georgia Service Areas",
           areas: [
             {
-              label: "Orlando",
-              href: "orlando-fl",
-            },
-            {
-              label: "Tampa",
-              href: "tampa-fl",
-            },
-            {
-              label: "Melbourne",
-              href: "melbourne-fl",
-            },
-            {
-              label: "Fort Myers",
-              href: "fort-myers-fl",
-            },
-            {
-              label: "Jacksonville",
+              label: "Atlanta",
               href: "#",
             },
             {
-              label: "Ocala",
+              label: "Oakwood",
               href: "#",
             },
           ],
@@ -376,27 +360,7 @@ export default {
           title: "Alabama Service Areas",
           areas: [
             {
-              label: "Orlando",
-              href: "orlando-fl",
-            },
-            {
-              label: "Tampa",
-              href: "tampa-fl",
-            },
-            {
-              label: "Melbourne",
-              href: "melbourne-fl",
-            },
-            {
-              label: "Fort Myers",
-              href: "fort-myers-fl",
-            },
-            {
-              label: "Jacksonville",
-              href: "#",
-            },
-            {
-              label: "Ocala",
+              label: "Very soon!",
               href: "#",
             },
           ],
@@ -432,14 +396,14 @@ export default {
       buttons: [
         {
           label: "View Service Areas",
-          back: "bg-primary",
+          back: "bg-primary dark:bg-primary-dark hover:bg-primary/90 hover:dark:bg-primary-dark/90",
           text: "text-white",
           href: "services",
         },
         {
           icon: "phone",
           label: "Call Now",
-          back: "bg-accent",
+          back: "bg-accent hover:bg-accent/90",
           text: "text-paragraph",
           href: "#",
         },
@@ -502,7 +466,7 @@ export default {
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -554,6 +518,7 @@ export default {
         title: "What Our Customers Say",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -616,7 +581,7 @@ export default {
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -668,6 +633,7 @@ export default {
         title: "What Our Customers Say",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -730,7 +696,7 @@ export default {
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -782,6 +748,7 @@ export default {
         title: "What Our Customers Say",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -844,7 +811,7 @@ export default {
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
           },
         ],
       },
@@ -896,6 +863,7 @@ export default {
         title: "What Our Customers Say",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -950,6 +918,7 @@ export default {
         title: "What Our Customers Say",
         metric: {
           icon: "customer",
+          iconDark: "customer-dark",
           title: "Current Customers",
           text: '<span class="font-bold text-[40px] leading-[120%]">10,000+</span> ',
           description: "Rentals Completed",
@@ -1013,7 +982,7 @@ export default {
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -1151,7 +1120,7 @@ export default {
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
@@ -1240,13 +1209,13 @@ export default {
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
         },
       ],
     },
     types: [
       {
-        back: "bg-white",
+        back: "bg-white dark:bg-back-dark",
         image: "construction-2",
         subtitle: "Supporting construction projects of all sizes",
         id: "construction",
@@ -1262,7 +1231,7 @@ export default {
         ],
       },
       {
-        back: "bg-back",
+        back: "bg-back dark:bg-[#11152A]",
         image: "events-2",
         subtitle: "Comfort and cleanliness for every gathering",
         id: "events-festivals",
@@ -1278,7 +1247,7 @@ export default {
         ],
       },
       {
-        back: "bg-white",
+        back: "bg-white dark:bg-back-dark",
         image: "commercial-2",
         subtitle: "Reliable sanitation for commercial projects",
         id: "commercial",
@@ -1294,7 +1263,7 @@ export default {
         ],
       },
       {
-        back: "bg-back",
+        back: "bg-back dark:bg-[#11152A]",
         image: "government-2",
         subtitle: "Trusted partner for municipal operations",
         id: "government-municipal",

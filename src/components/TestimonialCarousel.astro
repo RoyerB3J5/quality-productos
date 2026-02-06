@@ -10,8 +10,22 @@ const { content } = Astro.props as Props;
 <style>
   .carousel-track {
     gap: 24px;
+    will-change: transform;
+    transform: translateY(0);
   }
-  
+
+  /* clase que activa la animación con la duración que ponemos desde JS */
+  .carousel-track.scrolling {
+    animation: scroll var(--scroll-duration, 10000ms) linear infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes scroll {
+    from { transform: translateY(0); }
+    /* -50% = mover exactamente la mitad del track (tu original + copy) */
+    to   { transform: translateY(-50%); }
+  }
+
   .carousel-item {
     flex: 0 0 auto;
   }
@@ -24,21 +38,20 @@ const { content } = Astro.props as Props;
     overflow: hidden;
   }
 </style>
-
 <div class="carousel-viewport relative w-full max-w-184.25 animation-left">
-  <div class="h-[25%] w-full shadow-testimony absolute top-0 right-0 z-10"></div>
-  <div class="h-[25%] w-full shadow-testimony absolute bottom-0 right-0 z-10 rotate-180"></div>
+  <div class="h-[25%] w-full shadow-testimony absolute top-0 right-0 z-10 "></div>
+  <div class="h-[25%] w-full shadow-testimony absolute bottom-0 right-0 z-10 rotate-180 "></div>
   <div class="carousel-container flex justify-center items-center w-full">
     <div class="carousel-track flex flex-col justify-center items-center w-full max-w-184.25">
       {/* Triplicar items para loop infinito sin saltos */}
       {content.map((item) => (
-        <div class="carousel-item flex flex-col justify-center items-center rounded-2xl bg-back gap-4 py-22.5 w-full">
+        <div class="carousel-item flex flex-col justify-center items-center rounded-2xl bg-back dark:bg-secondary-dark gap-4 py-22.5 w-full">
           <div class="flex flex-col justify-center items-start gap-4">
             <div class="flex justify-center items-center gap-4">
               <img src={`/images/${item.image}.svg`} alt={item.name} width="80" height="80" decoding="async" loading="lazy" class="w-24 h-auto"/>
               <div class="flex flex-col justify-center items-start gap-1.75">
-                <p class="text-primary text-center text-[18px] font-bold leading-[155%]">{item.name}</p>
-                <p class="text-[14px] font-normal leading-[155%] text-[#808080]">{item.time}</p>
+                <p class="text-primary dark:text-paragraph-dark text-center text-[18px] font-bold leading-[155%]">{item.name}</p>
+                <p class="text-[14px] font-normal leading-[155%] text-[#808080] dark:text-paragraph-dark">{item.time}</p>
                 <div class="flex justify-center items-center gap-2">
                   {
                     Array.from({ length: 5 }).map((_, index) => (
@@ -48,18 +61,18 @@ const { content } = Astro.props as Props;
                 </div>
               </div>
             </div>
-            <p class="text-paragraph text-start text-[18px] font-normal leading-[155%] max-w-90.75">{item.description}</p>
+            <p class="text-paragraph dark:text-paragraph-dark text-start text-[18px] font-normal leading-[155%] max-w-90.75">{item.description}</p>
           </div>
         </div>
       ))}
       {content.map((item) => (
-        <div class="carousel-item flex flex-col justify-center items-center rounded-2xl bg-back gap-4 py-22.5 w-full">
+        <div class="carousel-item flex flex-col justify-center items-center rounded-2xl bg-back dark:bg-secondary-dark gap-4 py-22.5 w-full">
           <div class="flex flex-col justify-center items-start gap-4">
             <div class="flex justify-center items-center gap-4">
               <img src={`/images/${item.image}.svg`} alt={item.name} width="80" height="80" decoding="async" loading="lazy" class="w-24 h-auto"/>
               <div class="flex flex-col justify-center items-start gap-1.75">
-                <p class="text-primary text-center text-[18px] font-bold leading-[155%]">{item.name}</p>
-                <p class="text-[14px] font-normal leading-[155%] text-[#808080]">{item.time}</p>
+                <p class="text-primary dark:text-paragraph-dark text-center text-[18px] font-bold leading-[155%]">{item.name}</p>
+                <p class="text-[14px] font-normal leading-[155%] text-[#808080] dark:text-paragraph-dark">{item.time}</p>
                 <div class="flex justify-center items-center gap-2">
                   {
                     Array.from({ length: 5 }).map((_, index) => (
@@ -69,7 +82,7 @@ const { content } = Astro.props as Props;
                 </div>
               </div>
             </div>
-            <p class="text-paragraph text-start text-[18px] font-normal leading-[155%] max-w-90.75">{item.description}</p>
+            <p class="text-paragraph dark:text-paragraph-dark text-start text-[18px] font-normal leading-[155%] max-w-90.75">{item.description}</p>
           </div>
         </div>
       ))}
@@ -78,72 +91,79 @@ const { content } = Astro.props as Props;
 </div>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const track = document.querySelector('.carousel-track');
   const viewport = document.querySelector('.carousel-viewport');
-
   if (!track || !viewport) return;
 
-  let anim = null;
-  const speedPxPerSec = 50;
+  const speedPxPerSec = 50; // el que tenías
   const visibleItems = 3;
 
-  function startAnim() {
-    if (anim) anim.cancel();
+  // esperar a que imágenes terminen de decodificarse (evita medidas incorrectas)
+  const imgs = Array.from(track.querySelectorAll('img'));
+  await Promise.all(imgs.map(img => {
+    // decode() no está disponible en todos, así que atrapamos errores
+    return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+  }));
+
+  function startCSSAnimation() {
+    // quitar animación previa si existe
+    track.classList.remove('scrolling');
+    track.style.removeProperty('--scroll-duration');
 
     const items = Array.from(track.querySelectorAll('.carousel-item'));
     if (items.length < 2) return;
 
-    const originalCount = items.length / 2;
+    // asumimos que duplicaste content 2 veces -> originalCount = mitad
+    const originalCount = Math.floor(items.length / 2);
     if (!originalCount) return;
 
-    const firstItem = items[0];
-    const itemHeight = firstItem.offsetHeight;
-
+    // medir la altura de un item (pueden variar; computamos total sumando originales)
     const trackStyle = getComputedStyle(track);
     const gap = parseFloat(trackStyle.gap || '0') || 0;
 
-    const viewportHeight =
-      itemHeight * visibleItems +
-      gap * (visibleItems - 1);
-
+    // calculamos viewport height (igual que antes para mantener layout)
+    const firstItem = items[0];
+    const itemHeight = firstItem.offsetHeight;
+    const viewportHeight = itemHeight * visibleItems + gap * (visibleItems - 1);
     viewport.style.height = `${viewportHeight}px`;
 
+    // sumar alturas de los originales para totalHeight (incluye gaps)
     let totalHeight = 0;
     for (let i = 0; i < originalCount; i++) {
       totalHeight += items[i].offsetHeight;
     }
     totalHeight += gap * (originalCount - 1);
 
-    const duration = Math.max(
-      4000,
-      (totalHeight / speedPxPerSec) * 1000
-    );
+    // duración basada en totalHeight y velocidad
+    const duration = Math.max(4000, (totalHeight / speedPxPerSec) * 1000);
 
-    anim = track.animate(
-      [
-        { transform: 'translateY(0)' },
-        { transform: `translateY(-${totalHeight}px)` }
-      ],
-      {
-        duration,
-        iterations: Infinity,
-        easing: 'linear'
-      }
-    );
-
-    if (viewport.dataset.hoverBound !== '1') {
-      viewport.addEventListener('mouseenter', () => anim?.pause());
-      viewport.addEventListener('mouseleave', () => anim?.play());
-      viewport.dataset.hoverBound = '1';
-    }
+    // ponemos la duración como variable CSS y activamos la animación
+    track.style.setProperty('--scroll-duration', `${duration}ms`);
+    // usamos la clase para activar la animación CSS
+    // forzamos un reflow mínimo para garantizar el reinicio limpio
+    void track.offsetHeight;
+    track.classList.add('scrolling');
   }
 
-  startAnim();
+  // pausar/reanudar al hover usando animation-play-state
+  if (viewport.dataset.hoverBound !== '1') {
+    viewport.addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+    viewport.addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+    });
+    viewport.dataset.hoverBound = '1';
+  }
 
+  startCSSAnimation();
+
+  // recalcular en resize (cancela y reinicia)
   window.addEventListener('resize', () => {
-    if (anim) anim.cancel();
-    startAnim();
+    // quitar animación para recalcular medidas correctamente
+    track.classList.remove('scrolling');
+    startCSSAnimation();
   });
 });
 </script>

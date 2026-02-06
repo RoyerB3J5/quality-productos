@@ -29,20 +29,20 @@ const t = translations[lang];
             </div>
             <div class={`w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-2 animation-left' : 'order-1 services-header'}`} >
               <div class="flex justify-start items-center gap-2">
-                <div class="w-2 h-2 bg-primary"></div>
-                <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+                <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+                <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
                     {type.subtitle}
                 </p>
               </div>
               <div class="flex flex-col justify-center items-start gap-12">
-                <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{type.title}</h2>
-                <p class="text-paragraph text-[16px] font-normal leading-[150%]">{type.description}</p>
+                <h2 class="text-primary dark:text-paragraph-dark text-[56px] font-semibold leading-[114%]">{type.title}</h2>
+                <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{type.description}</p>
               </div>
-              <p class="text-paragraph text-[16px] font-bold leading-[150%]">{type.common}</p>
+              <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-bold leading-[150%]">{type.common}</p>
               <ul class="flex flex-col justify-center items-start gap-4">
                 {
                   type.items.map((item)=>(
-                    <li class={`flex p-2 justify-center items-center ${isParity ? 'bg-back' : 'bg-white'} rounded-lg text-paragraph text-[16px] font-normal leading-[150%]`}>
+                    <li class={`flex p-2 justify-center items-center ${isParity ? 'bg-back ' : 'bg-white'} dark:bg-secondary-dark rounded-lg text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]`}>
                       {item}
                     </li>
                   ))

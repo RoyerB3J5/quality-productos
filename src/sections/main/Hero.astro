@@ -10,7 +10,7 @@ const { content } = Astro.props as Props;
 
 // Detectar si estamos en la página de industries
 const isIndustriesPage = Astro.url.pathname.includes('/industries');
-const objectPosition = isIndustriesPage ? 'object-center' : 'object-bottom';
+const objectPosition = isIndustriesPage ? 'md:object-center' : 'md:object-bottom';
 ---
 
 <section class="w-full flex items-center justify-center relative overflow-hidden">
@@ -19,36 +19,25 @@ const objectPosition = isIndustriesPage ? 'object-center' : 'object-bottom';
     alt={content.title}
     width="2500"
     height="1563"
-    class={`absolute inset-0 w-auto md:w-full h-full object-cover -z-20 md:${objectPosition} 3xl:object-[50%_60%] hidden md:block`}
+    class={`absolute inset-0 w-full h-full object-cover -z-20 object-[68%_50%] sm:object-center ${objectPosition} 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
     loading="eager"
     decoding="async"
     id="hero-bg"
   />
-  {/*
-    
-  <img
-    src={`/images/${content.image}-sm.webp`}
-    alt="Fondo de soluciones"
-    width="375"
-    height="900"
-    class="absolute inset-0 w-full h-full object-cover -z-20 md:hidden block object-center"
-    loading="eager"
-    decoding="async"
-  />
-  */}
+  <div class="absolute h-full w-full -z-15 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_49.08%,#000_80.39%)] sm:bg-none"></div>
   
   <div
-    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-end sm:items-center md:items-start gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[90vh] lg:h-screen 3xl:h-[95vh] pt-0 md:pt-[7%] lg:pt-[5%] pb-16 md:pb-0 hero-content"
+    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-end sm:items-center md:items-start gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[90vh] lg:h-screen 3xl:h-[95vh] pt-0 md:pt-[7%] lg:pt-[5%] pb-10 md:pb-0 hero-content"
   >
     <div
       class="flex flex-col items-start justify-center w-full max-w-none lg:max-w-[60%] gap-8 md:gap-4 md:translate-y-10"
     >
       <h1
-        class="text-primary dark:text-primary-dark text-[36px] md:text-[64px] font-extrabold leading-[122%] md:leading-[114%]"
+        class="text-white sm:text-primary dark:text-paragraph-dark dark:sm:text-secondary-dark text-[36px] md:text-[64px] font-extrabold leading-[122%] md:leading-[114%]"
         set:html={content.title}
       >
       </h1>
-      <p class="text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] max-w-100.25" set:html={content.description}></p>
+      <p class="text-white sm:text-paragraph text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] max-w-100.25" set:html={content.description}></p>
       <div class="flex justify-between md:justify-start items-center gap-4 w-full md:w-auto">
         {
           content.buttons.map((item)=>( 

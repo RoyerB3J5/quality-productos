@@ -27,7 +27,7 @@ const lang = match ? match[1] : 'en';
   style="background-color: rgba(var(--color-primary-rgb), 0); transition: background-color 0.1s ease-out, transform 0.3s ease-out;"
 >
   <div
-    class={`w-[calc(100%-40px)] xl:w-full sm:max-w-7xl flex justify-between items-center relative  py-3.75 px-5 xl:px-0`}
+    class={`w-[calc(100%-40px)] xl:w-full sm:max-w-7xl flex justify-between items-center relative  py-3.75 px-0 sm:px-5 xl:px-0`}
   >
     <a
         href={`/${lang}`}
@@ -39,14 +39,14 @@ const lang = match ? match[1] : 'en';
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-43.75 h-auto block dark:hidden"
+          class="cursor-pointer w-30 sm:w-43.75 h-auto block dark:hidden"
         />
         <img
           src="/images/logo-dark.svg"
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-43.75 h-auto hidden dark:block"
+          class="cursor-pointer w-30 sm:w-43.75 h-auto hidden dark:block"
         />
       </a>
     <!-- Menú desktop (lg y arriba) -->

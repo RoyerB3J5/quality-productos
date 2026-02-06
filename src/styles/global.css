@@ -100,6 +100,10 @@
 .shadow-testimony {
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
+
+.dark .shadow-testimony {
+  background: linear-gradient(180deg, #0b0e1a 0%, rgba(11, 14, 26, 0) 100%);
+}
 .gradient-overlay {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, #000 100%);
 }
@@ -205,7 +209,9 @@
 }
 .map-pin {
   cursor: pointer;
-  transition: transform 0.25s ease, fill 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    fill 0.25s ease;
   transform-origin: center;
   transform-box: fill-box;
   fill: #ff9191;
@@ -218,7 +224,9 @@
 .ubi-card {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   transform: translateY(8px);
 }
 
@@ -226,4 +234,10 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+@media (max-width: 639px) {
+  .img-hero {
+    mask-image: linear-gradient(black 95%, transparent 100%);
+  }
 }

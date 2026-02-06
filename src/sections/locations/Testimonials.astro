@@ -8,25 +8,28 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start py-30">
-  <div class="flex flex-col justify-center items-start max-w-102.75 gap-87.5">
-    <div class="flex flex-col justify-center items-start gap-4 services-header" >
-      <div class="flex justify-start items-center gap-2">
-        <div class="w-2 h-2 bg-primary"></div>
-        <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
-            {content.subtitle}
-        </p>
+<section class="w-full flex justify-center items-center dark:bg-back-dark">
+  <div class=" w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start py-30">
+    <div class="flex flex-col justify-center items-start max-w-102.75 gap-87.5">
+      <div class="flex flex-col justify-center items-start gap-4 services-header" >
+        <div class="flex justify-start items-center gap-2">
+          <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+          <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
+              {content.subtitle}
+          </p>
+        </div>
+        <h2 class="text-primary dark:text-primary-dark text-[56px] font-semibold leading-[114%]">{content.title}</h2>
       </div>
-      <h2 class="text-primary text-[56px] font-semibold leading-[114%]">{content.title}</h2>
+      <div class="flex flex-col justify-center items-start gap-2 services-header"> 
+              <div class="flex justify-start items-center gap-4">
+                <img src={`/images/${content.metric.icon}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 block dark:hidden"/>
+                <img src={`/images/${content.metric.iconDark}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 hidden dark:block"/>
+                <h3 class="text-paragraph dark:text-paragraph-dark text-[32px] font-normal leading-[125%]">{content.metric.title}</h3>
+              </div>
+              <p set:html={content.metric.text} class="text-[16px] font-normal leading-[150%] text-paragraph dark:text-paragraph-dark capitalize"></p>
+              <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-semibold leading-[150%] uppercase">{content.metric.description}</p>
+      </div>
     </div>
-    <div class="flex flex-col justify-center items-start gap-2 services-header"> 
-            <div class="flex justify-start items-center gap-4">
-              <img src={`/images/${content.metric.icon}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8"/>
-              <h3 class="text-paragraph text-[32px] font-normal leading-[125%]">{content.metric.title}</h3>
-            </div>
-            <p set:html={content.metric.text} class="text-[16px] font-normal leading-[150%] text-paragraph capitalize"></p>
-            <p class="text-paragraph text-[16px] font-semibold leading-[150%] uppercase">{content.metric.description}</p>
-    </div>
+    <TestimonialCarousel content={content.items} />
   </div>
-  <TestimonialCarousel content={content.items} />
 </section>

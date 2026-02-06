@@ -123,7 +123,7 @@ export default function Services({ content }: ServicesProps) {
                     alt="Fondo de soluciones"
                     width="2500"
                     height="1563"
-                    className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform ${
+                    className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform hidden sm:block ${
                       currentItem === index
                         ? "translate-y-0"
                         : "translate-y-full"
@@ -132,13 +132,13 @@ export default function Services({ content }: ServicesProps) {
                     decoding="async"
                   />
                   <div
-                    className={`absolute w-full h-full bg-black/70 md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
+                    className={`absolute w-full h-full bg-secondary  sm:bg-black/70 md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
                       currentItem === index
                         ? "translate-y-0"
                         : "translate-y-full"
                     }`}
                   ></div>
-                  <h3 className="text-white dark:text-paragraph-dark text-[20px] md:text-[24px] font-semibold leading-[133%] z-5 text-center">
+                  <h3 className="text-white dark:text-paragraph-dark text-[14px] md:text-[24px] font-semibold leading-[143%] md:leading-[133%] z-5 text-center">
                     {item.title}
                   </h3>
                   <p className="text-white dark:text-paragraph-dark text-[14px] font-normal leading-[143%] z-5 hidden lg:block">
