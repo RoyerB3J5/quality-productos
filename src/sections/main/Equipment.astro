@@ -15,17 +15,17 @@ const normalized =
 const isLocation = normalized === '/locations';
 ---
 
-<section class={`w-full flex flex-col gap-20 lg:gap-30 justify-center items-center py-20 lg:py-30 relative isolate ${isLocation ? 'bg-white dark:bg-[#0B0E1A] equipment' : 'bg-primary dark:bg-[#11152A] equipment'} `} >
+<section class={`w-full flex flex-col gap-16 md:gap-20 lg:gap-30 justify-center items-center py-20 lg:py-30 relative isolate ${isLocation ? 'bg-white dark:bg-[#0B0E1A] equipment' : 'bg-primary dark:bg-[#11152A] equipment'} `} >
   
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-30 z-10 services-header" >
     <div class="flex flex-col justify-center items-center gap-4">
       <div class="flex justify-start items-center gap-2">
         <div class={`w-2 h-2 ${isLocation ? 'bg-primary dark:bg-primary-dark' : 'bg-white dark:bg-primary-dark'}`}></div>
-        <p class={`${isLocation ? 'text-paragraph dark:text-paragraph-dark' : 'text-white dark:text-white'} text-[16px] font-normal leading-[150%] uppercase`}>
+        <p class={`${isLocation ? 'text-paragraph dark:text-paragraph-dark' : 'text-white dark:text-white'} text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase`}>
             {content.subtitle}
         </p>
       </div>
-      <h2 class={`${isLocation ? 'text-primary dark:text-paragraph-dark' : 'text-white dark:text-paragraph-dark'} text-[56px] font-semibold leading-[114%] text-center`}>{content.title}</h2>
+      <h2 class={`${isLocation ? 'text-primary dark:text-paragraph-dark' : 'text-white dark:text-paragraph-dark'} text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] text-center`}>{content.title}</h2>
     </div>
   </div>
   <CarouselEquipment items={content.list} isLocation={isLocation}/>

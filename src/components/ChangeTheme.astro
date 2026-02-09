@@ -42,12 +42,26 @@ import { Icon } from "astro-icon/components";
 
   if (toggle) {
     toggle.addEventListener('click', () => {
-      if (html.classList.contains('dark')) {
-        localStorage.theme = 'light'
-        html.classList.remove('dark')
-      } else {
-        localStorage.theme = 'dark'
+      const isDark = html.classList.contains('dark')
+
+      if (!isDark) {
         html.classList.add('dark')
+        localStorage.theme = 'dark'
+
+        document.dispatchEvent(
+          new CustomEvent('theme-change', {
+            detail: { theme: 'dark' }
+          })
+        )
+      } else {
+        html.classList.remove('dark')
+        localStorage.theme = 'light'
+
+        document.dispatchEvent(
+          new CustomEvent('theme-change', {
+            detail: { theme: 'light' }
+          })
+        )
       }
     })
   }

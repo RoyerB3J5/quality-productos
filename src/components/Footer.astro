@@ -31,11 +31,11 @@ const icons = [
 
 <footer class="flex flex-col justify-center items-center w-full">
   <div
-    class="bg-paragraph dark:bg-[#11152A] flex justify-center items-center px-5 xl:px-0 py-17 lg:pb-20 pt-60 w-full relative"
+    class="bg-paragraph dark:bg-[#11152A] flex justify-center items-center px-5 xl:px-0 pt-22 pb-17 lg:pb-20 lg:pt-60 w-full relative"
   >
-    <img src="/images/back-footer.webp" alt="Imagen de Fondo Footer" width="1440" height="630" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-center opacity-5 z-0"/>
+    <img src="/images/back-footer.webp" alt="Imagen de Fondo Footer" width="1440" height="630" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-auto md:w-full md:h-full object-cover object-center opacity-5 z-0"/>
     <div
-      class="w-full max-w-screen xl:max-w-7xl flex flex-col justify-center items-start gap-10 sm:max-w-[70%] z-5"
+      class="w-full max-w-screen xl:max-w-7xl flex flex-col justify-center items-start gap-10  z-5"
     >
       <a
         href={`/${lang}`}
@@ -58,11 +58,11 @@ const icons = [
         />
       </a>
       <div
-        class="w-full flex flex-col md:flex-row justify-center md:justify-between items-start gap-20 md:gap-0"
+        class="w-full flex flex-col lg:flex-row justify-center md:justify-between items-start gap-10 lg:gap-0"
       >
-        <div class="flex flex-col justify-center items-start gap-8 max-w-81.75">
+        <div class="flex flex-col justify-center items-start gap-8 max-w-none lg:max-w-81.75">
           <p
-            class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%]"
+            class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]"
             set:html={content?.description}
           />
           <div class="flex justify-center items-center gap-4.75">
@@ -82,7 +82,7 @@ const icons = [
         </div>
         <div class="flex flex-col justify-center items-start gap-4">
             <h4
-              class="text-accent text-[16px] font-bold leading-[150%]"
+              class="text-accent text-[16px] font-bold leading-[143%] md:leading-[150%]"
             >
               {content?.contact.title}
             </h4>
@@ -93,7 +93,7 @@ const icons = [
                     <Icon name={item.icon} class="w-6 h-6 " />
                     <a
                       href={item.href}
-                      class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%] hover:font-medium hover:text-accent transition-all duration-300 ease-in-out"
+                      class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] hover:font-medium hover:text-accent transition-all duration-300 ease-in-out"
                     >
                       {item.text}
                     </a>
@@ -104,7 +104,7 @@ const icons = [
         </div>
         <div class="flex flex-col justify-center items-start gap-4">
             <h4
-              class="text-accent text-[16px] font-bold leading-[150%]"
+              class="text-accent text-[16px] font-bold leading-[143%] md:leading-[150%]"
             >
               {content?.nav.title}
             </h4>
@@ -113,7 +113,7 @@ const icons = [
                 content?.nav.items.map((item) => (
                   <a
                     href={`/${lang}/${item.href}`}
-                    class="text-[16px] leading-[120%] font-normal hover:font-medium text-white dark:text-paragraph-dark hover:text-accent transition-all duration-300 ease-in-out"
+                    class="text-[14px] md:text-[16px] leading-[143%] md:leading-[150%] font-normal hover:font-medium text-white dark:text-paragraph-dark hover:text-accent transition-all duration-300 ease-in-out"
                   >
                     {item.label}
                   </a>
@@ -123,7 +123,7 @@ const icons = [
         </div>
           <div class="flex flex-col justify-center items-start gap-4">
             <h4
-              class="text-accent text-[16px] font-bold leading-[150%]"
+              class="text-accent text-[16px] font-bold leading-[143%] md:leading-[150%]"
             >
               {content?.service.title}
             </h4>
@@ -132,7 +132,7 @@ const icons = [
                 content?.service.items.map((item) => (
                   <a
                     href={`/${lang}/services/${item.href}`}
-                    class="text-[16px] leading-[120%] font-normal hover:font-medium text-white dark:text-paragraph-dark hover:text-accent transition-all duration-300 ease-in-out"
+                    class="text-[14px] md:text-[16px] leading-[143%] md:leading-[150%] font-normal hover:font-medium text-white dark:text-paragraph-dark hover:text-accent transition-all duration-300 ease-in-out"
                   >
                     {item.title}
                   </a>
@@ -147,7 +147,7 @@ const icons = [
     class="bg-[#E5E5E5] dark:bg-back-dark w-full py-6 md:py-7.75 flex justify-center items-center px-5 xl:px-0"
   >
     <div
-      class="w-full max-w-screen md:max-w-7xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 md:gap-4"
+      class="w-full max-w-screen md:max-w-7xl flex flex-col md:flex-row justify-center md:justify-between items-center gap-2 md:gap-4"
     >
       <a href="https://inkshapegroup.com/en/">
         <img
@@ -155,11 +155,18 @@ const icons = [
           alt=" Logo de Inkshape Group"
           width="208"
           height="40"
-          class="w-52 h-auto"
+          class="w-27.25 md:w-52 h-auto block dark:hidden"
+        />
+        <img
+          src="/images/inkshape-dark.svg"
+          alt=" Logo de Inkshape Group"
+          width="208"
+          height="40"
+          class="w-27.25 md:w-52 h-auto hidden dark:block"
         />
       </a>
       <p
-        class="text-[16px] leading-[120%] text-[#404040] dark:text-paragraph-dark font-normal text-center"
+        class="text-[10px] md:text-[12px] lg:text-[16px] leading-[170%] md:leading-[120%] text-[#404040] dark:text-paragraph-dark font-normal text-center"
       >
         Copyright © 2026 by <a href="https://inkshapegroup.com"
           >Inkshape Group</a

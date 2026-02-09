@@ -11,17 +11,17 @@ const { content } = Astro.props as Props;
 <section class="w-full flex justify-center items-center relative" id="quote-section">
   <img src="/images/back-form.webp" alt="Imagen de Fondo Quality Port" width="1500" height="1144" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-[50%_80%] inset-0 z-0"/>
   <div class="w-full h-full z-5 bg-black/40 absolute"></div>
-  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex justify-between items-start gap-18.75 py-30 z-10 relative" data-quote-section>
-    <div class="w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col md:flex-row justify-between items-start gap-10 lg:gap-18.75 py-20 md:py-30 z-10 relative" data-quote-section>
+    <div class="w-full md:w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
       <div class="flex justify-start items-center gap-2 services-header" >
-        <div class="w-2 h-2 bg-white dark:bg-paragraph-dark"></div>
-        <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
+        <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+        <p class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.subtitle}
         </p>
       </div>
       <div class="flex flex-col justify-center items-start gap-10 services-header">
-        <h2 class="text-white dark:text-paragraph-dark text-[56px] font-semibold leading-[114%]">{content.title}</h2>
-        <p class="text-white dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{content.description}</p>
+        <h2 class="text-white dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%]">{content.title}</h2>
+        <p class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]">{content.description}</p>
         <Button
               text={content.buttons[0].label}
               textClass={'text-paragraph'}
@@ -32,7 +32,7 @@ const { content } = Astro.props as Props;
             />
       </div>
     </div>
-    <div class="w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric animation-left" >
+    <div class="w-full md:w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric animation-left" >
     </div>
   </div>
 </section>
@@ -45,6 +45,9 @@ const { content } = Astro.props as Props;
     quotesSections.forEach((parent) => {
       const content = parent.querySelector('[data-quote-content]');
       if (!content) return;
+
+      // Solo activar la animación si el ancho de la ventana es md (768px) o superior
+      if (window.innerWidth < 768) return;
 
       let maxTranslate = 0;
       let animationFrameId = null;

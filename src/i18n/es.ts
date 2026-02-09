@@ -312,7 +312,8 @@ export default {
     },
     service: {
       subtitle: "Área de Servicio",
-      title: "Ofrecemos servicio de alquiler en <br/> Florida y Georgia.",
+      title:
+        "Ofrecemos servicio de alquiler en <br class='hidden md:block'/> Florida y Georgia.",
       description:
         "Seleccione una ubicación para obtener precios y disponibilidad locales.",
       items: [
@@ -1306,24 +1307,16 @@ export default {
       title: "Servicios",
       items: [
         {
-          title: "Orlando, FL",
-          href: "orlando-fl",
+          title: "Alquiler Baños Portátiles",
+          href: "/es/services?section=portable-toilet-rental",
         },
         {
-          title: "Melbourne, FL",
-          href: "melbourne-fl",
+          title: "Alquiler Contenedores",
+          href: "/es/services?section=dumpster-rental",
         },
         {
-          title: "Tampa, FL",
-          href: "tampa-fl",
-        },
-        {
-          title: "Fort Myers, FL",
-          href: "fort-myers-fl",
-        },
-        {
-          title: "Alabama",
-          href: "alabama",
+          title: "Vaciado Septic y RV",
+          href: "/es/services?section=septic-rv-pump-out",
         },
       ],
     },

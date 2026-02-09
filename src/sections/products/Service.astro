@@ -8,39 +8,41 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 ---
-<section class="w-full flex flex-col justify-center items-center bg-back dark:bg-back-dark py-30 gap-16">
+<section class="w-full flex flex-col justify-center items-center bg-back dark:bg-back-dark py-16 md:py-30 gap-16">
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-start gap-16">
     <div class="w-full flex flex-col justify-center items-start gap-4">
       <div class="flex justify-start items-center gap-2 services-header">
         <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
-        <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
+        <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.subtitle}
         </p>
       </div>
-      <div class="flex flex-col justify-center items-start gap-12 services-header">
-        <h2 class="text-primary dark:text-paragraph-dark text-[56px] font-semibold leading-[114%]" set:html={content.title}></h2>
-        <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]" set:html={content.description}></p>
+      <div class="flex flex-col justify-center items-start gap-8 md:gap-12 services-header">
+        <h2 class="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%]" set:html={content.title}></h2>
+        <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]" set:html={content.description}></p>
       </div>
     </div>
-    <div class="grid grid-cols-2 justify-center items-center gap-4 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-4 w-full">
       {
         content.items.map((item, index)=>{
           const isPartEven = index % 2 === 0;
+          const isSpecialImage = ['product-5', 'product-6', 'product-7', 'product-8'].includes(item.image);
+          const isSmallSpecial = ['product-6', 'product-7'].includes(item.image);
           return (
-            <div class={`w-full aspect-629/452 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-stretch gap-6 bg-white dark:bg-secondary-dark animation-zoom`}  id={item.id}>
-              <div class="h-full md:flex-1 flex flex-col justify-center items-start gap-4 w-full md:w-auto max-w-57.75">
-                <h3 class="text-paragraph dark:text-paragraph-dark text-[20px] md:text-[24px] font-semibold leading-[133%]" set:html={item.title}></h3>
+            <div class={`w-full aspect-auto md:aspect-629/452 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-stretch gap-6 bg-white dark:bg-secondary-dark animation-zoom`}  id={item.id}>
+              <div class="h-full md:flex-1 flex flex-col justify-center items-start gap-6 md:gap-4 w-full md:w-auto max-w-none md:max-w-57.75">
+                <h3 class="text-paragraph dark:text-paragraph-dark text-[20px] md:text-[24px] font-semibold leading-[140%] md:leading-[133%]" set:html={item.title}></h3>
                 <ul class="flex flex-col gap-2">
                   {item.lists.map((list)=>(
                     <li class="flex items-start gap-2">
                       <img src="/images/check-2.svg" alt="Check" width="24" height="24" decoding="async" loading="lazy" class="w-6 h-6"/>
-                      <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{list}</p>
+                      <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]">{list}</p>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div class="h-full w-auto aspect-302/404  rounded-lg relative overflow-hidden">
-                <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="404" decoding="async" loading="lazy" class="w-full h-full object-cover object-center absolute top-0 left-0 inset-0"/>
+              <div class="w-full h-auto md:h-full md:w-auto aspect-302/199 md:aspect-302/404  rounded-lg relative overflow-hidden ">
+                <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="404" decoding="async" loading="lazy" class={`${isSpecialImage ? (isSmallSpecial ? 'scale-75 translate-y-[-20%]' : 'w-full h-full') : 'h-[90%] w-auto'} md:w-full md:h-full object-cover object-center md:object-bottom absolute top-0 left-1/2 -translate-x-1/2 inset-0`}/>
               </div>
             </div>
           )

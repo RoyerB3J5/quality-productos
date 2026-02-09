@@ -28,10 +28,10 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
           items.map((item) => (
             <div class="shrink-0 w-full md:w-1/2 lg:w-1/3 px-3 flex flex-col">
               <div class={`${isLocation ? 'bg-back dark:bg-secondary-dark' : 'bg-white dark:bg-secondary-dark'} w-full p-6 rounded-2xl flex flex-col justify-between items-start relative gap-8 flex-1`}>
-                <div class="w-full h-auto aspect-344/246 rounded-lg relative overflow-hidden flex justify-center items-center bg-white">
+                <div class="w-full h-auto aspect-278/199 md:aspect-344/246 rounded-lg relative overflow-hidden flex justify-center items-center bg-white">
                   <img src={`/images/${item.image}.webp`} alt="Equipment Image" width="344" height="246" decoding="async" loading="lazy" class={` object-cover object-center pointer-events-none select-none ${item.image =='equipment-3' ? 'h-full w-auto' : 'w-full h-full'}`} draggable="false"/>
                 </div>
-                <h3 class="text-paragraph dark:text-paragraph-dark text-[20px] font-medium leading-[140%] text-start flex-1">{item.title}</h3>
+                <h3 class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[20px] font-medium leading-[143%] md:leading-[140%] text-start flex-1">{item.title}</h3>
                 <a href={item.href} class="text-primary dark:text-[#8E93C8] text-start text-[12px] font-semibold leading-[133%] underline uppercase hover:text-accent transition-colors duration-300 ease-in-out cursor-pointer">
                   {item.label}
                 </a>

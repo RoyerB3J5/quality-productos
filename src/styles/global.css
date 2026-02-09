@@ -105,7 +105,7 @@
   background: linear-gradient(180deg, #0b0e1a 0%, rgba(11, 14, 26, 0) 100%);
 }
 .gradient-overlay {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, #000 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.93%, #000 103.74%);
 }
 @media (min-width: 768px) {
   .gradient-overlay {

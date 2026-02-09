@@ -12,9 +12,9 @@ const { content } = Astro.props as Props;
   <img src="/images/back-started.webp" alt="Imagen de Fondo Quality Port" width="2000" height="1575" decoding="async" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover object-[50%_60%] z-2 inset-0"/>
   <div class="absolute inset-0 top-0 left-0 w-full h-full bg-black/50 lg:bg-black/30 z-4"></div>
   <div class="flex flex-col justify-center items-center gap-10 z-5" data-aos="zoom-in">
-    <div class="flex flex-col justify-center items-center gap-8 max-w-[50%]">
-      <h2 class="text-white text-center text-[56px] font-semibold leading-[114%]">{content.title}</h2>
-      <p class="text-white dark:text-paragraph-dark text-center text-[16px] font-normal leading-[150%]">{content.description}</p>
+    <div class="flex flex-col justify-center items-center gap-8 max-w-[70%] md:max-w-[50%]">
+      <h2 class="text-white text-center text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%]">{content.title}</h2>
+      <p class="text-white dark:text-paragraph-dark text-center text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]">{content.description}</p>
     </div>
     <Button
         text={content.button}

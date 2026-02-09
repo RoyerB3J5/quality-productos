@@ -311,7 +311,8 @@ export default {
     },
     service: {
       subtitle: "Service Area",
-      title: "We provide rental service across <br/> Florida and Georgia.",
+      title:
+        "We provide rental service across <br class='hidden md:block'/> Florida and Georgia.",
       description: "Select a location to get local pricing and availability.",
       items: [
         {
@@ -1298,27 +1299,19 @@ export default {
     description:
       "Trusted since 2011, we provide portable sanitation and waste solutions across Florida and Georgia, delivering clean units, on-time service, and reliable support for construction, events, and commercial projects.",
     service: {
-      title: " Services",
+      title: "Services",
       items: [
         {
-          title: "Orlando, FL",
-          href: "orlando-fl",
+          title: "Port O Potty Rental",
+          href: "/en/services?section=portable-toilet-rental",
         },
         {
-          title: "Melbourne, FL",
-          href: "melbourne-fl",
+          title: "Dumpster Rental",
+          href: "/en/services?section=dumpster-rental",
         },
         {
-          title: "Tampa, FL",
-          href: "tampa-fl",
-        },
-        {
-          title: "Fort Myers, FL",
-          href: "fort-myers-fl",
-        },
-        {
-          title: "Alabama",
-          href: "alabama",
+          title: "Septic & RV Pump-Out",
+          href: "/en/services?section=septic-rv-pump-out",
         },
       ],
     },

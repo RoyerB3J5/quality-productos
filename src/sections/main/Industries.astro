@@ -9,18 +9,18 @@ interface Props {
 const { content } = Astro.props as Props;
 ---
 <section class="w-full flex justify-center items-center dark:bg-back-dark">
-  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-35.5">
+  <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 py-30 flex flex-col justify-center items-center gap-8 lg:gap-35.5">
     <div class="flex flex-col justify-center items-start gap-4 w-full services-header" >
       <div class="flex justify-start items-center gap-2">
         <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
-        <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%] uppercase">
+        <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
               {content.description}
         </p>
       </div>
-      <h2 class="text-primary dark:text-paragraph-dark text-[56px] font-semibold leading-[114%] max-w-180">
+      <h2 class="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-180">
             {content.title}
       </h2>
-      <p class="text-paragraph dark:text-paragraph-dark text-[16px] leading-[150%] " set:html={content.paragraph}></p>
+      <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] leading-[143%] md:leading-[150%] " set:html={content.paragraph}></p>
       <Button
           text={content.button.label}
           textClass="text-white"
@@ -29,19 +29,19 @@ const { content } = Astro.props as Props;
           extraBtnClass={`bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90`}
         />
     </div>
-    <div class="w-full flex flex-col justify-center items-center industries-list animation-zoom" >
+    <div class="w-full flex flex-col justify-center items-center industries-list animation-zoom gap-6 md:gap-0" >
       {
         content.items.map((item,index)=>( 
-          <a href={item.button.href} data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'bg-back dark:bg-secondary-dark rounded-2xl px-6 active' : ''}`}>
-            <div class="w-full max-w-211.5 flex justify-between items-center">
-              <h3 class={`${index == 0 ? 'text-primary dark:text-primary-dark' : 'text-paragraph dark:text-paragraph-dark'} transition-all duration-300 ease-in-out text-[32px] font-semibold leading-[125%]`}>{item.title}</h3>
+          <a href={item.button.href} data-index={index} class={`cursor-pointer industries-item w-full flex justify-start items-center py-4 md:py-10 relative transition-all duration-300 ease-in-out ${index == 0 ? 'lg:bg-back dark:lg:bg-secondary-dark rounded-2xl lg:px-6 active' : ''}`}>
+            <div class="w-full max-w-211.5 flex flex-col md:flex-row justify-between  items-start md:items-center gap-4 md:gap-0">
+              <h3 class={`${index == 0 ? 'text-paragraph dark:text-paragraph-dark lg:text-primary dark:lg:text-primary-dark' : 'text-paragraph dark:text-paragraph-dark'} transition-all duration-300 ease-in-out text-[20px] md:text-[32px] font-semibold leading-[140%] md:leading-[125%]`}>{item.title}</h3>
               <div class="flex flex-col justify-center items-start gap-4 max-w-102.75 industries-info">
-                <p class="text-paragraph dark:text-paragraph-dark text-[16px] font-normal leading-[150%]">{item.description}</p>
-                <a href={item.button.href} class="text-primary dark:text-[#8E93C8] hover:text-accent transition-all duration-300 ease-in-out text-[12px] font-semibold leading-[133%] underline uppercase">{item.button.label}</a>
+                <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]">{item.description}</p>
+                <span class="text-primary dark:text-[#8E93C8] hover:text-accent transition-all duration-300 ease-in-out text-[12px] font-semibold leading-[133%] underline uppercase cursor-pointer">{item.button.label}</span>
               </div>
             </div>
             
-            <div class={`aspect-square w-75.5 rounded-t-2xl absolute bottom-0 right-6 transition-all duration-300 ease-in-out box-border border-t-8 border-r-8 border-l-8 border-paragraph dark:border-paragraph-dark ${index == 0 ? 'opacity-100 translate-y-0 active' : 'opacity-0 translate-y-[8%]'}`} style="transform-style: preserve-3d;">
+            <div class={`hidden lg:block aspect-square w-75.5 rounded-t-2xl absolute bottom-0 right-6 transition-all duration-300 ease-in-out box-border border-t-8 border-r-8 border-l-8 border-paragraph dark:border-paragraph-dark ${index == 0 ? 'opacity-100 translate-y-0 active' : 'opacity-0 translate-y-[8%]'}`} style="transform-style: preserve-3d;">
               <div class="relative w-full h-full overflow-hidden rounded-t-lg ">
                 <img src={`/images/${item.image}.webp`} alt={item.title} width="302" height="302" decoding="async" loading="lazy" class="w-full h-full object-cover object-center absolute inset-0 "/>
               </div>
@@ -59,68 +59,94 @@ const { content } = Astro.props as Props;
       
       const isDark = () => document.documentElement.classList.contains('dark');
       
-      items.forEach(item => {
-        const idx = Number(item.dataset.index);
-        item.addEventListener('mouseenter', (e) => {
-          items.forEach(i => {
-            const isActive = Number(i.dataset.index) === idx;
-            const dark = isDark();
-            
-            // Toggle background
-            i.classList.toggle('bg-back', isActive && !dark);
-            i.classList.toggle('dark:bg-secondary-dark', isActive && dark);
-            i.classList.toggle('rounded-2xl', isActive);
-            i.classList.toggle('px-6', isActive);
-            i.classList.toggle('active', isActive);
-            
-            const hh3 = i.querySelector('h3');
-            if (hh3) {
-              hh3.classList.toggle('text-primary', isActive && !dark);
-              hh3.classList.toggle('dark:text-primary-dark', isActive && dark);
-              hh3.classList.toggle('text-paragraph', !isActive && !dark);
-              hh3.classList.toggle('dark:text-paragraph-dark', !isActive && dark);
-            }
-            
-            const deco = i.querySelector('.aspect-square');
-            if (deco) {
-              deco.classList.toggle('translate-y-0', isActive);
-              deco.classList.toggle('translate-y-[8%]', !isActive);
-              deco.classList.toggle('opacity-100', isActive);
-              deco.classList.toggle('opacity-0', !isActive);
-            }
+      // Función para agregar los event listeners
+      const addHoverListeners = () => {
+        items.forEach(item => {
+          const idx = Number(item.dataset.index);
+          item.addEventListener('mouseenter', (e) => {
+            items.forEach(i => {
+              const isActive = Number(i.dataset.index) === idx;
+              const dark = isDark();
+              
+              // Toggle background
+              i.classList.toggle('bg-back', isActive && !dark);
+              i.classList.toggle('dark:bg-secondary-dark', isActive && dark);
+              i.classList.toggle('rounded-2xl', isActive);
+              i.classList.toggle('px-6', isActive);
+              i.classList.toggle('active', isActive);
+              
+              const hh3 = i.querySelector('h3');
+              if (hh3) {
+                hh3.classList.toggle('text-primary', isActive && !dark);
+                hh3.classList.toggle('dark:text-primary-dark', isActive && dark);
+                hh3.classList.toggle('text-paragraph', !isActive && !dark);
+                hh3.classList.toggle('dark:text-paragraph-dark', !isActive && dark);
+              }
+              
+              const deco = i.querySelector('.aspect-square');
+              if (deco) {
+                deco.classList.toggle('translate-y-0', isActive);
+                deco.classList.toggle('translate-y-[8%]', !isActive);
+                deco.classList.toggle('opacity-100', isActive);
+                deco.classList.toggle('opacity-0', !isActive);
+              }
+            });
+          });
+          
+          item.addEventListener('mouseleave', (e) => {
+            const to = e.relatedTarget;
+            if (to && to.closest && to.closest('.industries-item')) return;
+            items.forEach(i => {
+              const isFirst = Number(i.dataset.index) === 0;
+              const dark = isDark();
+              
+              i.classList.toggle('bg-back', isFirst && !dark);
+              i.classList.toggle('dark:bg-secondary-dark', isFirst && dark);
+              i.classList.toggle('rounded-2xl', isFirst);
+              i.classList.toggle('px-6', isFirst);
+              i.classList.toggle('active', isFirst);
+              
+              const hh3 = i.querySelector('h3');
+              if (hh3) {
+                hh3.classList.toggle('text-primary', isFirst && !dark);
+                hh3.classList.toggle('dark:text-primary-dark', isFirst && dark);
+                hh3.classList.toggle('text-paragraph', !isFirst && !dark);
+                hh3.classList.toggle('dark:text-paragraph-dark', !isFirst && dark);
+              }
+              
+              const deco = i.querySelector('.aspect-square');
+              if (deco) {
+                deco.classList.toggle('translate-y-0', isFirst);
+                deco.classList.toggle('translate-y-[8%]', !isFirst);
+                deco.classList.toggle('opacity-100', isFirst);
+                deco.classList.toggle('opacity-0', !isFirst);
+              }
+            });
           });
         });
-        
-        item.addEventListener('mouseleave', (e) => {
-          const to = e.relatedTarget;
-          if (to && to.closest && to.closest('.industries-item')) return;
-          items.forEach(i => {
-            const isFirst = Number(i.dataset.index) === 0;
-            const dark = isDark();
-            
-            i.classList.toggle('bg-back', isFirst && !dark);
-            i.classList.toggle('dark:bg-secondary-dark', isFirst && dark);
-            i.classList.toggle('rounded-2xl', isFirst);
-            i.classList.toggle('px-6', isFirst);
-            i.classList.toggle('active', isFirst);
-            
-            const hh3 = i.querySelector('h3');
-            if (hh3) {
-              hh3.classList.toggle('text-primary', isFirst && !dark);
-              hh3.classList.toggle('dark:text-primary-dark', isFirst && dark);
-              hh3.classList.toggle('text-paragraph', !isFirst && !dark);
-              hh3.classList.toggle('dark:text-paragraph-dark', !isFirst && dark);
-            }
-            
-            const deco = i.querySelector('.aspect-square');
-            if (deco) {
-              deco.classList.toggle('translate-y-0', isFirst);
-              deco.classList.toggle('translate-y-[8%]', !isFirst);
-              deco.classList.toggle('opacity-100', isFirst);
-              deco.classList.toggle('opacity-0', !isFirst);
-            }
-          });
+      };
+      
+      // Función para remover los event listeners (si es necesario)
+      const removeHoverListeners = () => {
+        items.forEach(item => {
+          item.removeEventListener('mouseenter', () => {});
+          item.removeEventListener('mouseleave', () => {});
         });
-      });
+      };
+      
+      // Verificar y aplicar según el ancho de la ventana
+      const checkAndApply = () => {
+        if (window.innerWidth >= 1024) {
+          addHoverListeners();
+        } else {
+          removeHoverListeners();
+        }
+      };
+      
+      // Aplicar al cargar
+      checkAndApply();
+      
+      // Escuchar cambios de tamaño de ventana
+      window.addEventListener('resize', checkAndApply);
     }
   </script>

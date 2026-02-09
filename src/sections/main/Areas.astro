@@ -151,13 +151,13 @@ const { content } = Astro.props as Props;
   
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col justify-center items-center gap-10 md:gap-20 z-20 pointer-events-none" >
     <div class="flex flex-col justify-center items-center md:items-start gap-4 w-full services-header" >
-        <div class="flex justify-start items-center gap-2" >
+        <div class="flex justify-start items-center gap-2 max-w-none md:max-w-[30%] lg:max-w-none" >
           <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
           <p class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.description}
           </p>
         </div>
-        <h2 class="text-primary dark:text-paragraph-dark text-[28px] md:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-100">
+        <h2 class="text-primary dark:text-paragraph-dark text-[28px] md:text-[42px] lg:text-[56px] font-semibold leading-[129%] md:leading-[114%] max-w-none md:max-w-[40%] lg:max-w-100">
           {content.title}
         </h2>
       </div>

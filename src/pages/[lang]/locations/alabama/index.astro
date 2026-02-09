@@ -22,37 +22,26 @@ const t = translations[lang];
       alt={t.locations.alabama.hero.title}
       width="2500"
       height="1563"
-      class={`absolute inset-0 w-auto md:w-full h-full object-cover -z-20 md:object-bottom hidden md:block`}
+      class={`absolute inset-0 w-full h-full object-cover -z-20 object-[30%_50%] sm:object-center md:object-bottom 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
       loading="eager"
       decoding="async"
       id="hero-bg"
     />
-    {/*
-    <img
-      src="/main/hero-main-sm.webp"
-      alt="Fondo de soluciones"
-      width="375"
-      height="900"
-      class="absolute inset-0 w-full h-full object-cover -z-20 md:hidden block object-center"
-      loading="eager"
-      decoding="async"
-    />
-    */}
-    
+    <div class="absolute h-full w-full -z-15 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_49.08%,#000_80.39%)] sm:bg-none"></div>
     <div
-      class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-start sm:items-center lg:items-center gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[55vh] lg:h-screen 3xl:h-[95vh] animation-zoom"
+      class="w-full max-w-screen md:max-w-7xl flex flex-row justify-center md:justify-start items-end md:items-start sm:items-center lg:items-center gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[55vh] lg:h-screen 3xl:h-[95vh] animation-zoom"
     >
       <div
         class="flex flex-col items-center justify-center w-full gap-3 3xl:gap-4 -translate-y-30"
       >
         <div class="flex justify-start items-center gap-2">
           <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
-          <p class="text-paragraph text-[16px] font-normal leading-[150%] uppercase">
+          <p class="text-white md:text-paragraph text-[14px] md:text-[16px] font-normal leading-[150%] uppercase">
               {t.locations.alabama.hero.subtitle}
           </p>
         </div>
         <h1
-          class="text-primary dark:text-secondary-dark text-[72px] font-extrabold leading-[114%] text-center"
+          class="text-white md:text-primary dark:text-paragraph-dark  dark:md:text-secondary-dark text-[36px] md:text-[72px] font-extrabold leading-[122%] md:leading-[114%] text-center"
           set:html={t.locations.alabama.hero.title}
         >
         </h1>

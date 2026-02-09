@@ -11,6 +11,28 @@ const { content } = Astro.props as Props;
 // Detectar si estamos en la página de industries
 const isIndustriesPage = Astro.url.pathname.includes('/industries');
 const objectPosition = isIndustriesPage ? 'md:object-center' : 'md:object-bottom';
+
+// Personalizar object-position para sm para abajo basado en el sufijo de la URL
+const pathname = Astro.url.pathname;
+const objectPositions = {
+  '/locations': 'object-[62%_50%]',
+  '/orlando-fl': 'object-[50%_50%]',
+  '/melbourne-fl': 'object-[60%_50%]',
+  '/tampa-fl': 'object-[56%_50%]',
+  '/fort-myers-fl': 'object-[55%_50%]',
+  '/products': 'object-[50%_50%]',
+  '/services': 'object-[100%_50%]',
+  '/industries': 'object-[75%_50%]', 
+  '/': 'object-[68%_50%]', // ejemplo para la página raíz
+  // Agrega más sufijos según necesites, por ejemplo '/services': 'object-[XX%_YY%]'
+};
+let smallObjectPosition = 'object-[68%_50%]'; // default para otras páginas
+for (const [suffix, position] of Object.entries(objectPositions)) {
+  if (pathname.endsWith(suffix)) {
+    smallObjectPosition = position;
+    break;
+  }
+}
 ---
 
 <section class="w-full flex items-center justify-center relative overflow-hidden">
@@ -19,7 +41,7 @@ const objectPosition = isIndustriesPage ? 'md:object-center' : 'md:object-bottom
     alt={content.title}
     width="2500"
     height="1563"
-    class={`absolute inset-0 w-full h-full object-cover -z-20 object-[68%_50%] sm:object-center ${objectPosition} 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
+    class={`absolute inset-0 w-full h-full object-cover -z-20 ${smallObjectPosition} sm:object-center ${objectPosition} 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
     loading="eager"
     decoding="async"
     id="hero-bg"

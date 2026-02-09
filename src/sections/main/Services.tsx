@@ -167,7 +167,7 @@ export default function Services({ content }: ServicesProps) {
               gradient-overlay
             "
             ></div>
-            <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center p-4 lg:p-8 z-20 relative gap-4 md:gap-0">
+            <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center px-4 pb-8 sm:p-4 lg:p-8 z-20 relative gap-4 md:gap-0">
               <p className="text-white text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] text-start max-w-none md:max-w-[75%] lg:max-w-154.75">
                 {content.items[currentItem].description2}
               </p>

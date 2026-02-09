@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import Chatbot from '../components/Chatbot.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import DarkInfoOverlay from '../components/DarkInfoOverlay.astro';
 
 type Translations = typeof import('../i18n/en').default;
 
@@ -125,6 +126,7 @@ const { lang, t } = Astro.props;
       <slot />
     </main>
     <Chatbot />
+    <DarkInfoOverlay />
     <Footer content={t?.footer} />
 
     <script>

@@ -1,0 +1,74 @@
+<div
+  id="dark-info"
+  class="fixed inset-0 z-50
+         flex items-center justify-center
+
+         translate-y-full opacity-0
+         transition-all duration-500 ease-out
+         pointer-events-none"
+>
+  <div
+    class="relative bg-white dark:bg-[#1F2437]
+           text-gray-900 dark:text-white
+           rounded-2xl p-8 max-w-md w-[90%]
+           shadow-xl"
+  >
+    <!-- Close button -->
+    <button
+      id="dark-info-close"
+      aria-label="Cerrar"
+      class="absolute top-3 right-3
+             text-gray-400 hover:text-gray-700
+             dark:hover:text-gray-200
+             transition-colors cursor-pointer"
+    >
+      ✕
+    </button>
+
+    <h2 class="text-xl font-semibold mb-2">
+      Modo oscuro activado 
+    </h2>
+
+    <p class="text-sm opacity-80">
+      Esta interfaz se adapta para ofrecerte una experiencia más cómoda en ambientes con poca luz.
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  const overlay = document.getElementById('dark-info')
+  const closeBtn = document.getElementById('dark-info-close')
+
+  function showOverlay() {
+    overlay?.classList.remove('translate-y-full', 'opacity-0')
+    overlay?.classList.add('translate-y-0', 'opacity-100')
+    overlay?.classList.remove('pointer-events-none')
+  }
+
+  function hideOverlay() {
+    overlay?.classList.add('translate-y-full', 'opacity-0')
+    overlay?.classList.remove('translate-y-0', 'opacity-100')
+    overlay?.classList.add('pointer-events-none')
+  }
+
+  // Rastrear el tema anterior
+  let previousTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+
+  // Escuchar cambios de tema
+  document.addEventListener('theme-change', (e) => {
+    const detail = e.detail
+    const theme = detail?.theme
+
+    // Solo mostrar el overlay si cambia de light a dark
+    if (previousTheme === 'light' && theme === 'dark') {
+      showOverlay()
+    } else if (theme === 'light') {
+      hideOverlay()
+    }
+
+    // Actualizar el tema anterior
+    previousTheme = theme
+  })
+
+  closeBtn?.addEventListener('click', hideOverlay)
+</script>
