@@ -19,12 +19,15 @@
     bottom: 20px;
     z-index: 9999;
   }
+
   .chatbot-wrapper.hidden-mobile {
     display: none;
   }
+
   .chatbot-wrapper.visible-mobile {
     display: block;
   }
+
   .chatbot-button {
     width: 56px;
     height: 56px;
@@ -37,14 +40,17 @@
     align-items: center;
     justify-content: center;
   }
+
   @media (max-width: 640px) {
     .chatbot-wrapper {
       display: none;
     }
+
     .chatbot-wrapper.visible-mobile {
       display: block;
     }
   }
+
   .chatbot-loading {
     position: fixed;
     left: 86px;
@@ -55,6 +61,7 @@
     border-radius: 8px;
     font-size: 14px;
   }
+
   .chatbot-noscript {
     position: fixed;
     left: 20px;
@@ -78,6 +85,7 @@
     const wrapper = document.querySelector('.chatbot-wrapper');
     let idleTimer: any;
     let scrollDetected = false;
+    let lastScrollPosition = 0;
     const isMobile = window.innerWidth <= 640;
 
     function insertScript() {
@@ -111,15 +119,20 @@
     }
 
     function onScroll() {
-      if (isMobile && !scrollDetected) {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Solo mostrar si se hizo scroll hacia ABAJO (scrollPosition > 0)
+      if (isMobile && !scrollDetected && currentScroll > 200) {
         scrollDetected = true;
         if (wrapper) {
+          wrapper.classList.remove('hidden-mobile');
           wrapper.classList.add('visible-mobile');
         }
         // Comienza a cargar el widget cuando aparece en móvil
         insertScript();
         window.removeEventListener('scroll', onScroll);
       }
+      lastScrollPosition = currentScroll;
     }
 
     // Si es móvil, ocultar chatbot hasta que haga scroll

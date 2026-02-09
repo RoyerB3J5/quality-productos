@@ -50,7 +50,35 @@ export default {
   },
   main: {
     hero: {
-      image: "hero-main",
+      imagesLoop: [
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+      ],
       title:
         "Portable Toilet & <br class='hidden md:block'/> Rental Solutions <br class='hidden md:block'/> You Can Rely On",
       description:
@@ -288,7 +316,35 @@ export default {
   },
   locationsPage: {
     hero: {
-      image: "location-hero",
+      imagesLoop: [
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+      ],
       title: "Locations",
       description:
         "We proudly serve multiple locations across Florida <br class='hidden md:block'/> and Georgia, offering fast delivery, local pricing, <br class='hidden md:block'/> and reliable rental availability for every project",
@@ -450,7 +506,35 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
-        image: "orlando-hero",
+        imagesLoop: [
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+        ],
         title: "Orlando, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Orlando, delivering clean equipment and on-time service since 2011.",
@@ -565,7 +649,35 @@ export default {
     },
     "melbourne-fl": {
       hero: {
-        image: "melbourne-hero",
+        imagesLoop: [
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+        ],
         title: "Melbourne, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Melbourne, delivering clean equipment and on-time service since 2011.",
@@ -680,7 +792,35 @@ export default {
     },
     "tampa-fl": {
       hero: {
-        image: "tampa-hero",
+        imagesLoop: [
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+        ],
         title: "Tampa, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Tampa, delivering clean equipment and on-time service since 2011.",
@@ -795,7 +935,35 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
-        image: "fort-hero",
+        imagesLoop: [
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+        ],
         title: "Fort Myers, Florida",
         description:
           "Reliable portable toilet, dumpster, and pump-out services in Fort Myers, delivering clean equipment and dependable service since 2011.",
@@ -966,7 +1134,35 @@ export default {
   },
   products: {
     hero: {
-      image: "products-hero",
+      imagesLoop: [
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+      ],
       title: "Products",
       description:
         "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment <br class='hidden md:block'/> and dependable service since 2011.",
@@ -1104,7 +1300,35 @@ export default {
   },
   services: {
     hero: {
-      image: "services-hero",
+      imagesLoop: [
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+      ],
       title: "Services",
       description:
         "Reliable portable sanitation, waste, and pump-out <br class='hidden md:block' /> solutions for construction sites, events, and <br class='hidden md:block' /> commercial projects, delivered clean, on time, and <br class='hidden md:block' /> hassle-free.",
@@ -1193,7 +1417,35 @@ export default {
   },
   industries: {
     hero: {
-      image: "industries-hero",
+      imagesLoop: [
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+      ],
       title: "Industries We Serve",
       description:
         "Reliable sanitation and waste solutions for <br/ class='hidden md:block' /> construction, events, commercial, and government  <br/ class='hidden md:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden md:block' />  service, and professional coordination.",

@@ -51,7 +51,35 @@ export default {
   },
   main: {
     hero: {
-      image: "hero-main",
+      imagesLoop: [
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+      ],
       title:
         "Baños Portátiles  <br class='hidden md:block'/>  & Alquiler de <br class='hidden md:block'/> Confianza",
       description:
@@ -289,7 +317,35 @@ export default {
   },
   locationsPage: {
     hero: {
-      image: "location-hero",
+      imagesLoop: [
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+      ],
       title: "Ubicaciones",
       description:
         "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y disponibilidad confiable para cada proyecto",
@@ -452,7 +508,35 @@ export default {
   locations: {
     "orlando-fl": {
       hero: {
-        image: "orlando-hero",
+        imagesLoop: [
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+        ],
         title: "Orlando, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Orlando, con equipo limpio y servicio puntual desde 2011.",
@@ -567,7 +651,35 @@ export default {
     },
     "melbourne-fl": {
       hero: {
-        image: "melbourne-hero",
+        imagesLoop: [
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+        ],
         title: "Melbourne, Florida",
         description:
           "Servicios confiables de baños portátiles, contenedores y vaciado en Melbourne, con equipo limpio y servicio puntual desde 2011.",
@@ -682,7 +794,35 @@ export default {
     },
     "tampa-fl": {
       hero: {
-        image: "tampa-hero",
+        imagesLoop: [
+          {
+            img: "tampa-hero",
+          },
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+        ],
         title: "Tampa, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Tampa, con equipo limpio y servicio puntual desde 2011.",
@@ -797,7 +937,35 @@ export default {
     },
     "fort-myers-fl": {
       hero: {
-        image: "fort-hero",
+        imagesLoop: [
+          {
+            img: "fort-hero",
+          },
+          {
+            img: "products-hero",
+          },
+          {
+            img: "services-hero",
+          },
+          {
+            img: "industries-hero",
+          },
+          {
+            img: "hero-main",
+          },
+          {
+            img: "location-hero",
+          },
+          {
+            img: "orlando-hero",
+          },
+          {
+            img: "melbourne-hero",
+          },
+          {
+            img: "tampa-hero",
+          },
+        ],
         title: "Fort Myers, Florida",
         description:
           "Servicios fiables de baños portátiles, contenedores y vaciado en Fort Myers, con equipos limpios y servicio constante desde 2011.",
@@ -969,7 +1137,35 @@ export default {
   },
   products: {
     hero: {
-      image: "products-hero",
+      imagesLoop: [
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+      ],
       title: "Productos",
       description:
         "Servicios fiables de baños portátiles, contenedores y vaciado <br class='hidden md:block'/> en Fort Myers, con equipos limpios <br class='hidden md:block'/> y servicio confiable desde 2011.",
@@ -1108,7 +1304,35 @@ export default {
   },
   services: {
     hero: {
-      image: "services-hero",
+      imagesLoop: [
+        {
+          img: "services-hero",
+        },
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+      ],
       title: "Servicios",
       description:
         "Soluciones confiables de saneamiento portátil, residuos y vaciado <br class='hidden md:block' /> para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo y <br class='hidden md:block' /> sin inconvenientes.",
@@ -1198,7 +1422,35 @@ export default {
   },
   industries: {
     hero: {
-      image: "industries-hero",
+      imagesLoop: [
+        {
+          img: "industries-hero",
+        },
+        {
+          img: "hero-main",
+        },
+        {
+          img: "location-hero",
+        },
+        {
+          img: "orlando-hero",
+        },
+        {
+          img: "melbourne-hero",
+        },
+        {
+          img: "tampa-hero",
+        },
+        {
+          img: "fort-hero",
+        },
+        {
+          img: "products-hero",
+        },
+        {
+          img: "services-hero",
+        },
+      ],
       title: "Industrias que Atendemos",
       description:
         "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden md:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden md:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden md:block' /> dependable y coordinación profesional.",

@@ -16,13 +16,13 @@ const translations = { es, en };
 const t = translations[lang];
 ---
 <Layout lang={lang} t={t}>
-  <section class="w-full flex items-center justify-center relative">
+  <section class="w-full flex items-center justify-center relative overflow-hidden">
     <img
       src={`/images/${t.locations.alabama.hero.image}.webp`}
       alt={t.locations.alabama.hero.title}
       width="2500"
       height="1563"
-      class={`absolute inset-0 w-full h-full object-cover -z-20 object-[30%_50%] sm:object-center md:object-bottom 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
+      class={`absolute inset-0 w-full h-full object-cover -z-20 object-[30%_50%] sm:object-center md:object-bottom 3xl:object-[50%_60%] img-hero `}
       loading="eager"
       decoding="async"
       id="hero-bg"
@@ -48,6 +48,43 @@ const t = translations[lang];
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    // Efecto Parallax para la sección Hero de locations
+    (() => {
+      const heroBg = document.getElementById('hero-bg');
+      if (!heroBg) return;
+
+      let ticking = false;
+      
+      function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const heroSection = heroBg.closest('section');
+        
+        if (heroSection) {
+          const heroRect = heroSection.getBoundingClientRect();
+          
+          // Solo aplicar parallax mientras la sección es visible
+          if (heroRect.bottom > 0) {
+            // Mayor intensidad en mobile para que se vea mejor el efecto
+            const isMobile = window.innerWidth < 640
+            const parallaxMultiplier = isMobile ? 0.75 : 0.5
+            const parallaxValue = scrolled * parallaxMultiplier;
+            heroBg.style.transform = `translateY(${parallaxValue}px)`;
+          }
+        }
+        
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
   <Testimonials content={t.locations.alabama.testimonials} />
   <Quote content={t.locations.alabama.form} />
 </Layout>

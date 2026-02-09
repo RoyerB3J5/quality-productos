@@ -8,23 +8,18 @@ interface Props {
 }
 const { content } = Astro.props as Props;
 
-// Detectar si estamos en la página de industries
-const isIndustriesPage = Astro.url.pathname.includes('/industries');
-const objectPosition = isIndustriesPage ? 'md:object-center' : 'md:object-bottom';
-
 // Personalizar object-position para sm para abajo basado en el sufijo de la URL
 const pathname = Astro.url.pathname;
-const objectPositions = {
-  '/locations': 'object-[62%_50%]',
-  '/orlando-fl': 'object-[50%_50%]',
-  '/melbourne-fl': 'object-[60%_50%]',
-  '/tampa-fl': 'object-[56%_50%]',
-  '/fort-myers-fl': 'object-[55%_50%]',
-  '/products': 'object-[50%_50%]',
-  '/services': 'object-[100%_50%]',
-  '/industries': 'object-[75%_50%]', 
-  '/': 'object-[68%_50%]', // ejemplo para la página raíz
-  // Agrega más sufijos según necesites, por ejemplo '/services': 'object-[XX%_YY%]'
+const objectPositions: { [key: string]: string } = {
+  'hero-main': 'object-[68%_50%]', 
+  'locations-hero': 'object-[62%_50%]',
+  'orlando-hero': 'object-[50%_50%]',
+  'melbourne-hero': 'object-[60%_50%]',
+  'tampa-hero': 'object-[56%_50%]',
+  'fort-myers-hero': 'object-[55%_50%]',
+  'products-hero': 'object-[50%_50%]',
+  'services-hero': 'object-[100%_50%]',
+  'industries-hero': 'object-[75%_50%]', 
 };
 let smallObjectPosition = 'object-[68%_50%]'; // default para otras páginas
 for (const [suffix, position] of Object.entries(objectPositions)) {
@@ -37,25 +32,27 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
 
 <section class="w-full flex items-center justify-center relative overflow-hidden">
   <img
-    src={`/images/${content.image}.webp`}
+    src={`/images/${content.imagesLoop[0].img}.webp`}
     alt={content.title}
     width="2500"
     height="1563"
-    class={`absolute inset-0 w-full h-full object-cover -z-20 ${smallObjectPosition} sm:object-center ${objectPosition} 3xl:object-[50%_60%] translate-y-[-20%] sm:translate-y-0 img-hero `}
+    class={`absolute inset-0 w-full h-full object-cover -z-20 sm:object-[50%_65%] 3xl:object-bottom translate-y-[-20%] sm:translate-y-0 img-hero transition-opacity duration-500 ease-in-out`}
     loading="eager"
     decoding="async"
     id="hero-bg"
+    data-images={JSON.stringify(content.imagesLoop.map(img => img.img))}
+    data-positions={JSON.stringify(objectPositions)}
   />
   <div class="absolute h-full w-full -z-15 bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_49.08%,#000_80.39%)] sm:bg-none"></div>
   
   <div
-    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-end sm:items-center md:items-start gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[90vh] lg:h-screen 3xl:h-[95vh] pt-0 md:pt-[7%] lg:pt-[5%] pb-10 md:pb-0 hero-content"
+    class="w-full max-w-screen md:max-w-7xl flex flex-row justify-start items-end sm:items-center md:items-start gap-4 md:gap-10 px-5 xl:px-0 h-dvh md:h-[90vh] lg:h-screen 3xl:h-[95vh] pt-0 md:pt-[7%] lg:pt-[3%] pb-10 md:pb-0 hero-content"
   >
     <div
       class="flex flex-col items-start justify-center w-full max-w-none lg:max-w-[60%] gap-8 md:gap-4 md:translate-y-10"
     >
       <h1
-        class="text-white sm:text-primary dark:text-paragraph-dark dark:sm:text-secondary-dark text-[36px] md:text-[64px] font-extrabold leading-[122%] md:leading-[114%]"
+        class="text-white sm:text-primary dark:text-paragraph-dark dark:sm:text-secondary-dark text-[36px] md:text-[60px] 3xl:text-[64px] font-extrabold leading-[122%] md:leading-[114%]"
         set:html={content.title}
       >
       </h1>
@@ -78,6 +75,79 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
 </section>
 
 <script is:inline>
+  const heroBg = document.getElementById('hero-bg')
+  const imagesDataAttr = heroBg?.getAttribute('data-images')
+  const positionsDataAttr = heroBg?.getAttribute('data-positions')
+  const imagesArray = imagesDataAttr ? JSON.parse(imagesDataAttr) : ['hero-main']
+  const positionsMap = positionsDataAttr ? JSON.parse(positionsDataAttr) : {}
+
+  let currentImageIndex = 0
+  let isTransitioning = false
+
+  // Convertir clase Tailwind object-[X%_Y%] a CSS válido (X% Y%)
+  function convertTailwindToCSS(tailwindClass) {
+    if (!tailwindClass) return 'center'
+    const match = tailwindClass.match(/object-\[(.*?)\]/)
+    if (match) {
+      // Convertir 'object-[68%_50%]' → '68% 50%'
+      return match[1].replace(/_/g, ' ')
+    }
+    return 'center'
+  }
+
+  // Función para aplicar object-position solo en mobile (sm para abajo)
+  function applyObjectPositionIfMobile() {
+    const isMobile = window.innerWidth < 640
+    if (isMobile && heroBg) {
+      const currentImage = imagesArray[currentImageIndex]
+      const tailwindPosition = positionsMap[currentImage]
+      if (tailwindPosition) {
+        const cssPosition = convertTailwindToCSS(tailwindPosition)
+        heroBg.style.objectPosition = cssPosition
+      }
+    } else if (!isMobile && heroBg) {
+      // Remover estilos inline en breakpoints grandes para usar clases CSS
+      heroBg.style.objectPosition = ''
+    }
+  }
+
+  // Aplicar object-position en la carga inicial
+  applyObjectPositionIfMobile()
+
+  // Cambiar imagen cada 10 segundos
+  setInterval(() => {
+    if (heroBg && !isTransitioning && imagesArray.length > 0) {
+      isTransitioning = true
+      
+      // Desvanecer la imagen
+      heroBg.style.opacity = '0'
+      
+      // Cambiar la imagen después de que desaparezca
+      setTimeout(() => {
+        // Incrementar índice PRIMERO
+        currentImageIndex = (currentImageIndex + 1) % imagesArray.length
+        const newImage = imagesArray[currentImageIndex]
+        
+        // Cambiar la imagen
+        heroBg.src = `/images/${newImage}.webp`
+        
+        // Aplicar la posición correcta basada en el índice actualizado
+        applyObjectPositionIfMobile()
+        
+        // Mostrar la nueva imagen
+        heroBg.style.opacity = '1'
+        
+        // Fin de transición
+        isTransitioning = false
+      }, 250)
+    }
+  }, 10000)
+
+  // Detectar cambios de tamaño y actualizar object-position accordingly
+  window.addEventListener('resize', () => {
+    applyObjectPositionIfMobile()
+  })
+
   // Efecto Parallax para la sección Hero
   document.addEventListener('DOMContentLoaded', () => {
     const heroBg = document.getElementById('hero-bg');
@@ -91,8 +161,10 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
       
       // Solo aplicar parallax mientras la sección es visible
       if (heroRect.bottom > 0) {
-        // El parallax se calcula restando el scroll, multiplicado por 0.5 para que sea más lento
-        const parallaxValue = scrolled * 0.5;
+        // Mayor intensidad en mobile para que se vea mejor el efecto
+        const isMobile = window.innerWidth < 640
+        const parallaxMultiplier = isMobile ? 0.75 : 0.6
+        const parallaxValue = scrolled * parallaxMultiplier;
         heroBg.style.transform = `translateY(${parallaxValue}px)`;
       }
     });
