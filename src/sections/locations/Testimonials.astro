@@ -22,8 +22,7 @@ const { content } = Astro.props as Props;
       </div>
       <div class="md:flex flex-col justify-center items-start gap-2 services-header hidden "> 
               <div class="flex justify-start items-center gap-4">
-                <img src={`/images/${content.metric.icon}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 block dark:hidden"/>
-                <img src={`/images/${content.metric.iconDark}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 hidden dark:block"/>
+                <img src={`/images/${content.metric.icon}.svg`} alt={content.metric.title} width="64" height="64" decoding="async" loading="lazy" class="w-8 h-8 "/>
                 <h3 class="text-paragraph dark:text-paragraph-dark text-[32px] font-normal leading-[125%]">{content.metric.title}</h3>
               </div>
               <p set:html={content.metric.text} class="text-[16px] font-normal leading-[150%] text-paragraph dark:text-paragraph-dark capitalize"></p>

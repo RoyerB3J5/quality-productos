@@ -1,7 +1,6 @@
 ---
 // Imports optimizados - solo lo esencial al inicio
 import '../styles/global.css';
-import 'aos/dist/aos.css';
 import Chatbot from '../components/Chatbot.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -130,37 +129,14 @@ const { lang, t } = Astro.props;
     <Footer content={t?.footer} />
 
     <script>
-      import AOS from 'aos';
-
-      // Función simplificada para inicializar AOS
-      function initAOS() {
-        try {
-          AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-            delay: 100,
-            disable: false, // Habilitar en todos los dispositivos
-          });
-          console.log('AOS inicializado correctamente');
-        } catch (error) {
-          console.error('Error al inicializar AOS:', error);
-        }
-      }
-
       function showContent() {
         document.body.classList.add('visible');
       }
 
-      // Inicialización optimizada pero funcional
+      // Inicialización optimizada
       function initializeApp() {
         // Mostrar contenido inmediatamente
         showContent();
-
-        // Inicializar AOS con un pequeño delay
-        setTimeout(() => {
-          initAOS();
-        }, 100);
       }
 
       // Inicialización según el estado del documento

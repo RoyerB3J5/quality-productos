@@ -16,7 +16,7 @@ interface Props {
 const { items, interval = 8000, isLocation = false } = Astro.props as Props;
 ---
 
-<div class="relative w-full hero-carousel flex flex-col justify-center items-center gap-10 " data-interval={interval} data-aos="fade-left" >
+<div class="relative w-full hero-carousel flex flex-col justify-center items-center gap-10 animation-left" data-interval={interval}  >
   <div class="w-full flex justify-center items-center ">
     <!-- Prev arrow -->
     <!-- Viewport -->

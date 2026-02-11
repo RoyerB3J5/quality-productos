@@ -126,6 +126,40 @@ const { content } = Astro.props as Props;
           }
         });
       };
+
+      // Función para resetear a estilos básicos (mobile)
+      const resetToBasicStyles = () => {
+        items.forEach(i => {
+          // Remover todas las clases especiales del item
+          i.classList.remove('bg-back');
+          i.classList.remove('dark:bg-secondary-dark');
+          i.classList.remove('rounded-2xl');
+          i.classList.remove('lg:px-6');
+          i.classList.remove('active');
+          i.classList.remove('lg:bg-transparent');
+          i.classList.remove('dark:lg:bg-transparent');
+          
+          // Resetear h3 a estilo básico
+          const h3 = i.querySelector('h3');
+          if (h3) {
+            h3.classList.remove('text-primary');
+            h3.classList.remove('dark:text-accent');
+            h3.classList.remove('lg:text-primary');
+            h3.classList.remove('dark:lg:text-accent');
+            h3.classList.add('text-paragraph');
+            h3.classList.add('dark:text-paragraph-dark');
+          }
+          
+          // Resetear decoración a invisible
+          const deco = i.querySelector('.aspect-square');
+          if (deco) {
+            deco.classList.remove('translate-y-0');
+            deco.classList.add('translate-y-[8%]');
+            deco.classList.remove('opacity-100');
+            deco.classList.add('opacity-0');
+          }
+        });
+      };
       
       // Función para agregar los event listeners
       const addHoverListeners = () => {
@@ -173,8 +207,8 @@ const { content } = Astro.props as Props;
           addHoverListeners();
         } else {
           removeHoverListeners();
-          // Restaurar estilos del primer item en mobile
-          setActiveItem(0);
+          // En mobile, resetear a estilos básicos sin efectos
+          resetToBasicStyles();
         }
       };
       
