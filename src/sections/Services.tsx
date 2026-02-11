@@ -156,7 +156,7 @@ export default function Services({ content, hash }: ServicesProps) {
               className={`w-full flex flex-col md:flex-row justify-between items-start gap-6 md:gap-0`}
             >
               <div className="flex  md:hidden justify-start items-center gap-2">
-                <div className="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+                <div className="w-2 h-2 bg-accent"></div>
                 <p className="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[150%] uppercase">
                   {content[currentItem].section.subtitle}
                 </p>
@@ -188,7 +188,7 @@ export default function Services({ content, hash }: ServicesProps) {
                   decoding="async"
                 />
               </div>
-              <div className="w-full md:w-[30%] lg:w-[20%] flex flex-col justify-center items-start gap-10">
+              <div className="w-full md:w-[30%] lg:w-[20%] flex flex-col justify-center items-start gap-10 order-1 md:order-2">
                 <ul className="flex flex-col justify-center items-start gap-4">
                   {content[currentItem].section.list.map((point, idx) => (
                     <li className="flex items-start gap-2" key={idx}>
@@ -209,7 +209,7 @@ export default function Services({ content, hash }: ServicesProps) {
                 </ul>
                 <a
                   href="tel:+1234567890"
-                  className="flex justify-center items-center py-3.5 cursor-pointer gap-2.5 hover:-translate-y-0.5 transition-all duration-300 ease-in-out z-10 px-7 hover:scale-[1.02] rounded-lg bg-accent hover:bg-accent/90 text-paragraph font-medium leading-[150%] text-[16px]"
+                  className="flex justify-center items-center py-3.5 cursor-pointer gap-2.5 hover:-translate-y-0.5 transition-all duration-300 ease-in-out z-10 px-7 hover:scale-[1.02] rounded-lg bg-accent hover:bg-accent/90 text-white font-medium leading-[150%] text-[16px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +220,7 @@ export default function Services({ content, hash }: ServicesProps) {
                   >
                     <path
                       d="M17 1.01L7 1C5.9 1 5 1.9 5 3V21C5 22.1 5.9 23 7 23H17C18.1 23 19 22.1 19 21V3C19 1.9 18.1 1.01 17 1.01ZM17 19H7V5H17V19Z"
-                      fill="#303030"
+                      fill="#FFFFFF"
                     />
                   </svg>
                   Call Now

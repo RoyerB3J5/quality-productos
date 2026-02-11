@@ -14,7 +14,7 @@ const { content } = Astro.props as Props;
   <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col md:flex-row justify-between items-start gap-10 lg:gap-18.75 py-20 md:py-30 z-10 relative" data-quote-section>
     <div class="w-full md:w-[40%] flex flex-col justify-center items-start gap-4 transform" data-quote-content>
       <div class="flex justify-start items-center gap-2 services-header" >
-        <div class="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+        <div class="w-2 h-2 bg-accent"></div>
         <p class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
             {content.subtitle}
         </p>
@@ -24,7 +24,7 @@ const { content } = Astro.props as Props;
         <p class="text-white dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%]">{content.description}</p>
         <Button
               text={content.buttons[0].label}
-              textClass={'text-paragraph'}
+              textClass={'text-white'}
               href={content.buttons[0].href}
               target="_blank"
               extraBtnClass={'bg-accent hover:bg-accent/90'}

@@ -32,7 +32,7 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
                   <img src={`/images/${item.image}.webp`} alt="Equipment Image" width="344" height="246" decoding="async" loading="lazy" class={` object-cover object-center pointer-events-none select-none ${item.image =='equipment-3' ? 'h-full w-auto' : 'w-full h-full'}`} draggable="false"/>
                 </div>
                 <h3 class="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[20px] font-medium leading-[143%] md:leading-[140%] text-start flex-1">{item.title}</h3>
-                <a href={item.href} class="text-primary dark:text-[#8E93C8] text-start text-[12px] font-semibold leading-[133%] underline uppercase hover:text-accent transition-colors duration-300 ease-in-out cursor-pointer">
+                <a href={item.href} class="text-accent  text-start text-[12px] font-semibold leading-[133%] underline uppercase hover:text-secondary transition-colors duration-300 ease-in-out cursor-pointer">
                   {item.label}
                 </a>
               </div>
@@ -46,18 +46,18 @@ const { items, interval = 8000, isLocation = false } = Astro.props as Props;
   </div>
   <div class="flex justify-center items-center gap-4">
     <button
-      class={`w-14 h-14 flex justify-center items-center rounded-full dark:bg-paragraph-dark ${isLocation ? 'bg-primary hover:bg-accent' : 'bg-white hover:bg-accent'} transition-all duration-300 ease-in-out cursor-pointer hero-carousel-prev`}
+      class={`w-14 h-14 flex justify-center items-center rounded-full  bg-accent hover:bg-accent/90 transition-all duration-300 ease-in-out cursor-pointer hero-carousel-prev`}
       aria-label="Previous slide"
     >
-      <Icon name="arrow-r" class={`${isLocation?'text-white':'text-paragraph'} dark:text-back-dark w-3.25 h-auto rotate-180`}/>
+      <Icon name="arrow-r" class={`text-white  dark:text-back-dark w-4 h-auto rotate-180`}/>
     </button>
 
     <!-- Next arrow -->
     <button
-      class={`w-14 h-14 flex justify-center items-center rounded-full dark:bg-paragraph-dark ${isLocation ? 'bg-primary hover:bg-accent' : 'bg-white hover:bg-accent'} transition-all duration-300 ease-in-out cursor-pointer hero-carousel-next`}
+      class={`w-14 h-14 flex justify-center items-center rounded-full  bg-accent hover:bg-accent/90 transition-all duration-300 ease-in-out cursor-pointer hero-carousel-next`}
       aria-label="Next slide"
     >
-      <Icon name="arrow-r" class={`${isLocation?'text-white':'text-paragraph'} dark:text-back-dark w-3.25 h-auto`}/>
+      <Icon name="arrow-r" class={`text-white  dark:text-back-dark w-4 h-auto`}/>
     </button>
   </div>
 

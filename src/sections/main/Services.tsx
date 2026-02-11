@@ -95,7 +95,7 @@ export default function Services({ content }: ServicesProps) {
               ref={headerRef}
             >
               <div className="flex justify-start items-center gap-2">
-                <div className="w-2 h-2 bg-primary dark:bg-primary-dark"></div>
+                <div className="w-2 h-2 bg-accent"></div>
                 <p className="text-paragraph dark:text-paragraph-dark text-[14px] md:text-[16px] font-normal leading-[143%] md:leading-[150%] uppercase">
                   {content.description}
                 </p>
@@ -138,7 +138,11 @@ export default function Services({ content }: ServicesProps) {
                         : "translate-y-full"
                     }`}
                   ></div>
-                  <h3 className="text-white dark:text-paragraph-dark text-[14px] md:text-[24px] font-semibold leading-[143%] md:leading-[133%] z-5 text-center">
+                  <h3 className={`text-white  text-[14px] md:text-[24px] font-semibold leading-[143%] md:leading-[133%] z-5 text-center ${
+                      currentItem === index
+                        ? "dark:text-paragraph-dark"
+                        : "dark:text-accent"
+                    }`}>
                     {item.title}
                   </h3>
                   <p className="text-white dark:text-paragraph-dark text-[14px] font-normal leading-[143%] z-5 hidden lg:block">
