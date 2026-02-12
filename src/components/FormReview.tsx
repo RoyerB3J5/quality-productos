@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useState } from "react";
 
 export default function NuvisionForm() {
   const [loaded, setLoaded] = useState(false);
@@ -6,20 +6,21 @@ export default function NuvisionForm() {
 
   useEffect(() => {
     // Only run in the browser
-    if (typeof window === 'undefined' || typeof document === 'undefined')
+    if (typeof window === "undefined" || typeof document === "undefined")
       return;
 
-    const SRC = 'https://link.arcosremodelingservices.com/js/form_embed.js';
+    const SRC =
+      "https://link.qualityportablerentalservice.com/js/form_embed.js";
     // Avoid injecting the script multiple times
     let addedByUs = false;
     let script = document.querySelector(
-      `script[src="${SRC}"]`
+      `script[src="${SRC}"]`,
     ) as HTMLScriptElement | null;
     if (!script) {
-      script = document.createElement('script');
+      script = document.createElement("script");
       script.src = SRC;
       script.async = true;
-      script.setAttribute('data-capitile-embed', '1');
+      script.setAttribute("data-qualityport-embed", "1");
       document.body.appendChild(script);
       addedByUs = true;
     }
@@ -34,46 +35,46 @@ export default function NuvisionForm() {
   return (
     <div
       style={{
-        position: 'relative',
-        width: '350px',
-        height: '510px', // Altura específica basada en data-height
+        position: "relative",
+        width: "350px",
+        height: "510px", // Altura específica basada en data-height
         padding: 0,
-        overflow: 'hidden',
+        overflow: "hidden",
         // Oculta cualquier contenido que se desborde
       }}
-      className="bg-secondary "
+      className="bg-accent "
     >
       {!loaded && (
         <div
           style={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#bec01b',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#F45D23",
           }}
         >
           Cargando…
         </div>
       )}
       <iframe
-        id="inline-K5Fzz7DfDu6sczDx5Tw7"
-        src="https://link.arcosremodelingservices.com/widget/form/K5Fzz7DfDu6sczDx5Tw7"
+        id="inline-8xGDq1UEOdYd1kaI1OtR"
+        src="https://link.qualityportablerentalservice.com/widget/form/8xGDq1UEOdYd1kaI1OtR"
         title="Form Reviews"
         loading="lazy"
         onLoad={() => setLoaded(true)}
         style={{
-          width: '100%',
-          height: '466px',
-          border: 'none',
+          width: "100%",
+          height: "466px",
+          border: "none",
           borderRadius: 3,
-          background: 'transparent',
+          background: "transparent",
           padding: 0,
-          overflow: 'hidden', // Oculta el scroll interno del iframe
+          overflow: "hidden", // Oculta el scroll interno del iframe
         }}
         // Note: 'scrolling' is non-standard and can cause React warnings; use CSS overflow to control scroll
         data-layout="{'id':'INLINE'}"
@@ -82,8 +83,8 @@ export default function NuvisionForm() {
         data-deactivation-type="neverDeactivate"
         data-form-name="Form Reviews"
         data-height="466"
-        data-layout-iframe-id="inline-K5Fzz7DfDu6sczDx5Tw7"
-        data-form-id="K5Fzz7DfDu6sczDx5Tw7"
+        data-layout-iframe-id="inline-8xGDq1UEOdYd1kaI1OtR"
+        data-form-id="8xGDq1UEOdYd1kaI1OtR"
       />
     </div>
   );
