@@ -1,5 +1,6 @@
 ---
 import Button from '../../components/Button.astro';
+import FormQuote from '../../components/FormQuote.astro';
 
 type Translations = typeof import('../../i18n/en').default;
 type FormContent = Translations['main']['form'];
@@ -32,8 +33,7 @@ const { content } = Astro.props as Props;
             />
       </div>
     </div>
-    <div class="w-full md:w-[60%] aspect-737/860 h-auto rounded-2xl bg-primary-electric animation-left" >
-    </div>
+    <FormQuote />
   </div>
 </section>
 
