@@ -42,7 +42,7 @@ export default {
     ],
     buttons: [
       {
-        label: "Llamar Ahora",
+        label: "Llamar Ya",
         href: "tel:+13212179445",
         icon: "phone",
         background: "bg-primary",
@@ -81,7 +81,15 @@ export default {
         },
       ],
       title:
-        "Baños Portátiles  <br class='hidden md:block'/>  & Alquiler de <br class='hidden md:block'/> Confianza",
+        "Baños Portátiles <br class='block'/> #1 en Florida <br class='hidden md:block'/>  para",
+      services: [
+        "Construcción",
+        "Eventos",
+        "Festivales",
+        "Comercial",
+        "Gubernamental",
+        "Municipal",
+      ],
       description:
         "Unidades limpias, entrega y recogida puntuales, y <br class='hidden md:block'/> precios competitivos para obras y eventos en <br class='hidden md:block'/> Florida y Georgia.",
       buttons: [
@@ -89,7 +97,7 @@ export default {
           icon: "phone",
           label: "Llamar Ya",
           href: "tel:+13212179445",
-          text: "text-paragraph",
+          text: "text-white",
           back: "bg-accent hover:bg-accent/90",
         },
         {
@@ -169,7 +177,7 @@ export default {
           icon: "phone",
           label: "Llamar Ahora",
           back: "bg-accent",
-          text: "text-paragraph",
+          text: "text-white",
           href: "#",
         },
       ],

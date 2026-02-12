@@ -5,6 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import Areas from '../../sections/main/Areas.astro';
 import Equipment from '../../sections/main/Equipment.astro';
 import Hero from '../../sections/main/Hero.astro';
+import HeroMove from '../../sections/main/HeroMove.astro';
 import Industries from '../../sections/main/Industries.astro';
 import Quote from '../../sections/main/Quote.astro';
 import Services from '../../sections/main/Services';
@@ -22,7 +23,7 @@ const translations = { es, en };
 const t = translations[lang];
 ---
 <Layout lang={lang} t={t}>
-  <Hero content={t.main.hero} />
+  <HeroMove content={t.main.hero} />
   <Services client:idle content={t.main.services}  />
   <Areas content={t.main.areas} />
   <Why content={t.main.why} />

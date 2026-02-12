@@ -80,7 +80,15 @@ export default {
         },
       ],
       title:
-        "Portable Toilet & <br class='hidden md:block'/> Rental Solutions <br class='hidden md:block'/> You Can Rely On",
+        "Florida’s #1 <br class='block'/> Port-O-Potty Service <br class='hidden md:block'/>  for",
+      services:[
+        'Construction',
+        'Events',
+        'Festivals',
+        'Commercial',
+        'Government',
+        'Municipal'
+      ],
       description:
         "Clean units, on-time delivery and pickup, and <br class='hidden md:block'/> competitive pricing for job sites and events across <br class='hidden md:block'/> Florida and Georgia.",
       buttons: [

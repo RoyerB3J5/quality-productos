@@ -2,42 +2,48 @@
   id="dark-info"
   class="fixed inset-0 z-50
          flex items-center justify-center
-
-         translate-y-full opacity-0
+         translate-y-full
          transition-all duration-500 ease-out
-         pointer-events-none"
+         before:absolute before:inset-0 before:bg-black/20 before:backdrop-blur-[2px] before:-z-10 px-5 sm:px-0"
 >
   <div
-    class="relative bg-white dark:bg-[#1F2437]
-           text-gray-900 dark:text-white
-           rounded-2xl p-8 max-w-md w-[90%]
-           shadow-xl"
+    class="relative bg-white px-8 pb-8 pt-16 flex flex-col justify-center items-start gap-10 max-w-196"
   >
     <!-- Close button -->
     <button
       id="dark-info-close"
       aria-label="Cerrar"
-      class="absolute top-3 right-3
-             text-gray-400 hover:text-gray-700
-             dark:hover:text-gray-200
-             transition-colors cursor-pointer"
+      class="absolute top-8 right-8
+             text-black
+             transition-colors cursor-pointer "
     >
       ✕
     </button>
 
-    <h2 class="text-xl font-semibold mb-2">
-      Modo oscuro activado 
-    </h2>
-
-    <p class="text-sm opacity-80">
-      Esta interfaz se adapta para ofrecerte una experiencia más cómoda en ambientes con poca luz.
+    <div class="flex flex-col justify-center items-start gap-6"> 
+      <img src="/images/plant.svg" alt="Plant icon" width="32" height="32" class="w-8 h-8">
+      <h2 class="text-primary text-[24px] font-medium leading-[125%]">Responsibility That Protects Your Community</h2>
+    </div>
+    <p class="text-paragraph text-[16px] font-normal leading-[150%]">We operate with social responsibility and full compliance.Our waste is handled and discharged only at authorized facilities, Where treatment removes 85% of organic pollution and suspended solids before release.
     </p>
+    <div class="flex justify-center items-center gap-4">
+      <input type="checkbox" id="responsibility-checkbox" class="w-6 h-6 cursor-pointer">
+      <label for="responsibility-checkbox" class="text-paragraph text-[12px] font-normal leading-[150%]">Do not show again.</label>
+    </div>
   </div>
 </div>
 
 <script is:inline>
   const overlay = document.getElementById('dark-info')
   const closeBtn = document.getElementById('dark-info-close')
+  const checkbox = document.getElementById('responsibility-checkbox')
+  const STORAGE_KEY = 'hideResponsibilityOverlay'
+
+  // Restaurar el estado del checkbox desde sessionStorage
+  const isHidden = sessionStorage.getItem(STORAGE_KEY) === 'true'
+  if (checkbox && isHidden) {
+    checkbox.checked = true
+  }
 
   function showOverlay() {
     overlay?.classList.remove('translate-y-full', 'opacity-0')
@@ -51,6 +57,12 @@
     overlay?.classList.add('pointer-events-none')
   }
 
+  // Escuchar cambios del checkbox
+  checkbox?.addEventListener('change', (e) => {
+    const isChecked = e.target.checked
+    sessionStorage.setItem(STORAGE_KEY, isChecked ? 'true' : 'false')
+  })
+
   // Rastrear el tema anterior
   let previousTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 
@@ -59,10 +71,10 @@
     const detail = e.detail
     const theme = detail?.theme
 
-    // Solo mostrar el overlay si cambia de light a dark
-    if (previousTheme === 'light' && theme === 'dark') {
+    // Solo mostrar el overlay si cambia de dark a light Y el checkbox no está marcado
+    if (previousTheme === 'dark' && theme === 'light' && !checkbox?.checked) {
       showOverlay()
-    } else if (theme === 'light') {
+    } else if (theme === 'dark') {
       hideOverlay()
     }
 
