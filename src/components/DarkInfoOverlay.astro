@@ -4,6 +4,7 @@
          flex items-center justify-center
          translate-y-full
          transition-all duration-500 ease-out
+         pointer-events-none
          before:absolute before:inset-0 before:bg-black/20 before:backdrop-blur-[2px] before:-z-10 px-5 sm:px-0"
 >
   <div
@@ -46,15 +47,13 @@
   }
 
   function showOverlay() {
-    overlay?.classList.remove('translate-y-full', 'opacity-0')
+    overlay?.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none')
     overlay?.classList.add('translate-y-0', 'opacity-100')
-    overlay?.classList.remove('pointer-events-none')
   }
 
   function hideOverlay() {
-    overlay?.classList.add('translate-y-full', 'opacity-0')
+    overlay?.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none')
     overlay?.classList.remove('translate-y-0', 'opacity-100')
-    overlay?.classList.add('pointer-events-none')
   }
 
   // Escuchar cambios del checkbox

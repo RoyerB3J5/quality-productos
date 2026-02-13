@@ -177,7 +177,7 @@ export default {
           label: "Call Now",
           back: "bg-accent hover:bg-accent/90",
           text: "text-white",
-          href: "#",
+          href: "tel:+13212179445",
         },
       ],
     },
@@ -426,7 +426,7 @@ export default {
           areas: [
             {
               label: "Very soon!",
-              href: "#",
+              href: "/en/locations/alabama",
             },
           ],
         },
@@ -470,7 +470,7 @@ export default {
           label: "Call Now",
           back: "bg-accent hover:bg-accent/90",
           text: "text-white",
-          href: "#",
+          href: "tel:+13212179445",
         },
       ],
     },
@@ -1563,15 +1563,15 @@ export default {
       items: [
         {
           title: "Port O Potty Rental",
-          href: "/en/services?section=portable-toilet-rental",
+          href: "en/services?section=portable-toilet-rental",
         },
         {
           title: "Dumpster Rental",
-          href: "/en/services?section=dumpster-rental",
+          href: "en/services?section=dumpster-rental",
         },
         {
           title: "Septic & RV Pump-Out",
-          href: "/en/services?section=septic-rv-pump-out",
+          href: "en/services?section=septic-rv-pump-out",
         },
       ],
     },
@@ -1580,15 +1580,15 @@ export default {
       items: [
         {
           label: "Locations",
-          href: "/locations",
+          href: "locations",
         },
         {
           label: "Products",
-          href: "/products",
+          href: "products",
         },
         {
           label: "Industries",
-          href: "/industries",
+          href: "industries",
         },
       ],
     },
@@ -1597,8 +1597,8 @@ export default {
       items: [
         {
           icon: "mail-1",
-          text: "qualityportablerental@gmail.com",
-          href: "https://mail.google.com/mail/?view=cm&fs=1&to=qualityportablerental@gmail.com",
+          text: "info@qualityportablerentalservice.com",
+          href: "https://mail.google.com/mail/?view=cm&fs=1&to=info@qualityportablerentalservice.com",
         },
         {
           icon: "phone-1",

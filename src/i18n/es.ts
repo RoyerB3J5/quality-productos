@@ -175,10 +175,10 @@ export default {
         },
         {
           icon: "phone",
-          label: "Llamar Ahora",
+          label: "Llamar Ya",
           back: "bg-accent",
           text: "text-white",
-          href: "#",
+          href: "tel:+13212179445",
         },
       ],
     },
@@ -310,13 +310,13 @@ export default {
     },
     form: {
       subtitle: "Reserva Ahora",
-      title: "Obtén una Cotización Gratis en Orlando",
+      title: "Obtén Cotización Gratis ",
       description:
         "Contacta a nuestro equipo hoy para precios, disponibilidad y opciones de alquiler adaptadas a tu proyecto o evento.",
       buttons: [
         {
           icon: "phone",
-          label: "Llamar Ahora",
+          label: "Llamar Ya",
           href: "tel:+13212179445",
         },
       ],
@@ -428,7 +428,7 @@ export default {
           areas: [
             {
               label: "Muy Pronto!",
-              href: "#",
+              href: "/es/services/alabama",
             },
           ],
         },
@@ -472,7 +472,7 @@ export default {
           label: "Llamar Ahora",
           back: "bg-accent",
           text: "text-white",
-          href: "#",
+          href: "tel:+13212179445",
         },
       ],
     },
@@ -650,7 +650,7 @@ export default {
         buttons: [
           {
             icon: "phone",
-            label: "Llamar Ahora",
+            label: "Llamar Ya",
             href: "tel:+13212179445",
           },
         ],
@@ -793,7 +793,7 @@ export default {
         buttons: [
           {
             icon: "phone",
-            label: "Llamar Ahora",
+            label: "Llamar Ya",
             href: "tel:+13212179445",
           },
         ],
@@ -936,7 +936,7 @@ export default {
         buttons: [
           {
             icon: "phone",
-            label: "Llamar Ahora",
+            label: "Llamar Ya",
             href: "tel:+13212179445",
           },
         ],
@@ -1080,7 +1080,7 @@ export default {
         buttons: [
           {
             icon: "phone",
-            label: "Llamar Ahora",
+            label: "Llamar Ya",
             href: "tel:+13212179445",
           },
         ],
@@ -1135,7 +1135,7 @@ export default {
         buttons: [
           {
             icon: "phone",
-            label: "Llamar Ahora",
+            label: "Llamar Ya",
             href: "tel:+13212179445",
           },
         ],
@@ -1421,7 +1421,7 @@ export default {
       buttons: [
         {
           icon: "phone",
-          label: "Llamar Ahora",
+          label: "Llamar Ya",
           href: "tel:+13212179445",
         },
       ],
@@ -1465,15 +1465,15 @@ export default {
       buttons: [
         {
           icon: "phone",
-          label: "Llamar Ahora",
+          label: "Llamar Ya",
           href: "tel:+13212179445",
           text: "text-white",
           back: "bg-accent hover:bg-accent/90",
         },
         {
           icon: "calendar",
-          label: "Reserva Ahora",
-          href: "#",
+          label: "Reserva Ya",
+          href: "#quote-section",
           text: "text-white",
           back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
         },
@@ -1553,7 +1553,7 @@ export default {
       buttons: [
         {
           icon: "phone",
-          label: "Llamar Ahora",
+          label: "Llamar Ya",
           href: "tel:+13212179445",
         },
       ],
@@ -1568,15 +1568,15 @@ export default {
       items: [
         {
           title: "Alquiler Baños Portátiles",
-          href: "/es/services?section=portable-toilet-rental",
+          href: "es/services?section=portable-toilet-rental",
         },
         {
           title: "Alquiler Contenedores",
-          href: "/es/services?section=dumpster-rental",
+          href: "es/services?section=dumpster-rental",
         },
         {
           title: "Vaciado Septic y RV",
-          href: "/es/services?section=septic-rv-pump-out",
+          href: "es/services?section=septic-rv-pump-out",
         },
       ],
     },
@@ -1585,15 +1585,15 @@ export default {
       items: [
         {
           label: "Ubicaciones",
-          href: "/locations",
+          href: "locations",
         },
         {
           label: "Productos",
-          href: "/products",
+          href: "products",
         },
         {
           label: "Industrias",
-          href: "/industries",
+          href: "industries",
         },
       ],
     },
@@ -1602,8 +1602,8 @@ export default {
       items: [
         {
           icon: "mail-1",
-          text: "qualityportablerental@gmail.com",
-          href: "https://mail.google.com/mail/?view=cm&fs=1&to=qualityportablerental@gmail.com",
+          text: "info@qualityportablerentalservice.com",
+          href: "https://mail.google.com/mail/?view=cm&fs=1&to=info@qualityportablerentalservice.com",
         },
         {
           icon: "phone-1",

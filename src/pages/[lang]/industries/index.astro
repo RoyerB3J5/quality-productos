@@ -24,7 +24,7 @@ const t = translations[lang];
       return(
         <section class={`w-full flex justify-center items-center py-20 md:py-30 overflow-hidden ${type.back}`} id={type.id}>
           <div class="w-full max-w-screen xl:max-w-7xl px-5 xl:px-0 flex flex-col md:flex-row justify-between items-center gap-10 lg:gap-16">
-            <div class={`w-full md:w-[58%] h-auto aspect-697/577 rounded-2xl animation-zoom ${isParity ? 'order-2 md:order-1' : 'order-2'}`} >
+            <div class={`w-full md:w-[58%] h-auto aspect-697/577 rounded-2xl animation-zoom relative ${isParity ? 'order-2 md:order-1' : 'order-2'}`} >
               <img src={`/images/${type.image}.webp`} alt={type.title} width="697" height="577" class="absolute w-full h-full object-cover rounded-2xl inset-0"/>
             </div>
             <div class={`w-full md:w-[42%] flex flex-col justify-center items-start gap-4 ${isParity ? 'order-1 md:order-2 animation-left' : 'order-1 services-header'}`} >
