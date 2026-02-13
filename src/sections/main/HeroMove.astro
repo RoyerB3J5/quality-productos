@@ -52,7 +52,7 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
       class="flex flex-col items-start justify-center w-full max-w-none lg:max-w-[70%] gap-8 md:gap-4 md:translate-y-10"
     >
       <h1
-        class={`text-white sm:text-primary dark:text-paragraph-dark dark:sm:text-primary 
+        class={`text-white sm:text-primary dark:text-paragraph-dark dark:sm:text-primary-dark 
         text-[36px] md:text-[60px] 3xl:text-[64px] 
         font-extrabold leading-[122%] md:leading-[114%] `}
         id="hero-title-main"
@@ -62,7 +62,7 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
         <span class="inline-block overflow-hidden align-top h-[1.2em]" id="service-carousel-container">
           <div id="services-list" class="transition-transform" style="transform: translateY(0)">
             {content.services?.map((service) => (
-              <div class="h-[1.2em] leading-[122%] md:leading-[114%] text-primary sm:text-paragraph">
+              <div class="h-[1.2em] leading-[122%] md:leading-[114%] text-accent ">
                 {service}
               </div>
             ))}
@@ -203,7 +203,7 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
       currentServiceIndex = (currentServiceIndex + 1) % services.length
       // Trasladar el contenedor hacia arriba
       servicesList.style.transform = `translateY(-${currentServiceIndex * lineHeight}px)`
-    }, 4000)
+    }, 2000)
   })
 
 </script>
