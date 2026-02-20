@@ -20,7 +20,7 @@
     data-deactivation-type="neverDeactivate"
     data-deactivation-value=""
     data-form-name="Form Pagina Web"
-    data-height="925"
+    data-height="500"
     data-layout-iframe-id="inline-5V2wd9H1CgEyPGd967PA"
     data-form-id="5V2wd9H1CgEyPGd967PA"
     title="Form Pagina Web"
@@ -29,3 +29,73 @@
   >
   </iframe>
 </div>
+
+<script is:inline>
+  (function(){
+    const wrapper = document.getElementById('form-5V2wd9H1CgEyPGd967PA-wrapper');
+    const iframe = document.getElementById('inline-5V2wd9H1CgEyPGd967PA');
+    const placeholder = wrapper ? wrapper.querySelector('.form-placeholder') : null;
+    if(!iframe || !wrapper) return;
+
+    const initialHeight = parseInt(iframe.getAttribute('data-height') || '700', 10);
+    // aplicar altura inicial como min-height para evitar layout shift
+    wrapper.style.minHeight = initialHeight + 'px';
+    iframe.style.height = initialHeight + 'px';
+    iframe.style.transition = 'opacity 300ms ease, height 300ms ease';
+    iframe.style.opacity = '0';
+
+    // Mostrar iframe cuando recibamos mensaje con altura desde dentro (postMessage)
+    function onMessage(e){
+      // validar origen del mensaje (ajusta al dominio del widget)
+      const allowed = ['https://link.qualityportablerentalservice.com'];
+      if(!allowed.includes(e.origin)) return;
+      const d = e.data || {};
+      // soported payload: { type: 'height', height: number }
+      if(d && (d.type === 'height' || d.action === 'setHeight')){
+        const h = parseInt(d.height, 10);
+        if(!Number.isNaN(h)){
+          iframe.style.height = h + 'px';
+          wrapper.style.minHeight = h + 'px';
+        }
+        iframe.style.display = 'block';
+        iframe.style.opacity = '1';
+        if(placeholder) placeholder.style.display = 'none';
+      }
+    }
+    window.addEventListener('message', onMessage, false);
+
+    // Intentar solicitar altura al iframe (si el widget la soporta)
+    function requestHeight(){
+      try{
+        iframe.contentWindow.postMessage({ type: 'requestHeight' }, 'https://link.qualityportablerentalservice.com');
+      }catch(err){ /* ignore */ }
+    }
+
+    // Fallbacks: mostrar iframe tras carga o tras timeout
+    iframe.addEventListener('load', () => {
+      requestHeight();
+      setTimeout(() => {
+        iframe.style.display = 'block';
+        iframe.style.opacity = '1';
+        if(placeholder) placeholder.style.display = 'none';
+      }, 300);
+    });
+
+    // Si no recibimos mensaje en 6s, mostrar con altura inicial
+    const fallback = setTimeout(() => {
+      iframe.style.display = 'block';
+      iframe.style.opacity = '1';
+      if(placeholder) placeholder.style.display = 'none';
+    }, 6000);
+
+    // Limpiar timeout cuando se reciba la primera altura válida
+    function cleanupOnHeight(e){
+      const d = e.data || {};
+      if(d && (d.type === 'height' || d.action === 'setHeight')){
+        clearTimeout(fallback);
+        window.removeEventListener('message', cleanupOnHeight);
+      }
+    }
+    window.addEventListener('message', cleanupOnHeight, false);
+  })();
+</script>
