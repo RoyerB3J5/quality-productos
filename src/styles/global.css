@@ -10,7 +10,7 @@
   --color-primary-dark: #4f6bff;
   --color-secondary: #0a0ba4;
   --color-secondary-dark: #1e2452;
-  --color-accent: #F45D23;
+  --color-accent: #f45d23;
   --color-primary-electric: #2548eb;
   --color-primary-intense: #0f32d5;
   --color-paragraph: #303030;
@@ -242,4 +242,11 @@ html {
   .img-hero {
     mask-image: linear-gradient(black 95%, transparent 100%);
   }
+}
+
+/* Mejora de rendimiento para parallax: activar composición GPU */
+.img-hero {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }

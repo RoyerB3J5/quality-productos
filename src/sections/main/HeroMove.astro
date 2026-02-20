@@ -165,22 +165,59 @@ for (const [suffix, position] of Object.entries(objectPositions)) {
   document.addEventListener('DOMContentLoaded', () => {
     const heroBg = document.getElementById('hero-bg');
     const heroSection = heroBg?.closest('section');
-    
+
     if (!heroBg || !heroSection) return;
 
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroRect = heroSection.getBoundingClientRect();
-      
-      // Solo aplicar parallax mientras la sección es visible
-      if (heroRect.bottom > 0) {
-        // Mayor intensidad en mobile para que se vea mejor el efecto
-        const isMobile = window.innerWidth < 640
-        const parallaxMultiplier = isMobile ? 0.75 : 0.6
-        const parallaxValue = scrolled * parallaxMultiplier;
-        heroBg.style.transform = `translateY(${parallaxValue}px)`;
+    // Mejora de rendimiento: usar requestAnimationFrame + listener passive
+    heroBg.style.willChange = 'transform';
+
+    let ticking = false;
+    let parallaxActive = true;
+
+    function updateParallax() {
+      if (!heroBg || !heroSection || !parallaxActive) {
+        ticking = false;
+        return;
       }
-    });
+
+      const rect = heroSection.getBoundingClientRect();
+      // Si no está visible, no actualizar
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+        ticking = false;
+        return;
+      }
+
+      // Calcular desplazamiento relativo a la sección para suavizar el efecto
+      const scrolled = Math.max(0, window.pageYOffset - heroSection.offsetTop);
+      const isMobile = window.innerWidth < 640;
+      const parallaxMultiplier = isMobile ? 0.75 : 0.6;
+      const parallaxValue = scrolled * parallaxMultiplier;
+
+      // Usar translate3d para activar la GPU y mejorar fluidez
+      heroBg.style.transform = `translate3d(0, ${parallaxValue}px, 0)`;
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // IntersectionObserver para pausar cuando la sección no está en pantalla
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        parallaxActive = entry.isIntersecting;
+      });
+    }, { threshold: 0 });
+
+    io.observe(heroSection);
+
+    // Aplicar una vez al cargar
+    requestAnimationFrame(updateParallax);
   });
 
   document.addEventListener('DOMContentLoaded', () => {
