@@ -28,7 +28,9 @@
     font-family: var(--font-family);
   }
 }
-
+html {
+  -webkit-text-size-adjust: 100%;
+}
 @keyframes shake {
   0%,
   100% {
