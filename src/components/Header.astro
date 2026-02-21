@@ -39,14 +39,14 @@ const lang = match ? match[1] : 'en';
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-30 sm:w-43.75 h-auto block dark:hidden"
+          class="cursor-pointer w-30 sm:w-35 xl:w-43.75 h-auto block dark:hidden"
         />
         <img
           src="/images/logo-dark.svg"
           alt="Logo de Quality Portable"
           width="120"
           height="26"
-          class="cursor-pointer w-30 sm:w-43.75 h-auto hidden dark:block"
+          class="cursor-pointer w-30 sm:w-35 xl:w-43.75 h-auto hidden dark:block"
         />
       </a>
     <!-- Menú desktop (lg y arriba) -->
@@ -55,7 +55,7 @@ const lang = match ? match[1] : 'en';
     >
       
       <nav
-        class="hidden relative lg:flex items-center flex-row justify-center w-auto gap-4 p-2"
+        class="hidden relative lg:flex items-center flex-row justify-center w-auto gap-2 xl:gap-4 p-2"
       >
         {
           content?.nav.map((item, index) => {
@@ -66,7 +66,7 @@ const lang = match ? match[1] : 'en';
             const isLocations = index === 0;
             return (
               <div
-                class={`flex flex-row items-center justify-center group hover:text-accent w-auto py-2 px-4 text-center ${isLocations ? 'relative dropdown-parent' : ''} ${isActive ? 'bg-transparent ' : ''}`}
+                class={`flex flex-row items-center justify-center group hover:text-accent w-auto py-2 px-2 xl:px-4 text-center ${isLocations ? 'relative dropdown-parent' : ''} ${isActive ? 'bg-transparent ' : ''}`}
                 id={`locations-${index}`}
               >
                 <a
@@ -101,7 +101,9 @@ const lang = match ? match[1] : 'en';
         }
       </nav>
     </div>
-    <div class="flex justify-center items-center gap-6 xl:gap-8">
+    <div class="flex justify-center items-center gap-4 xl:gap-8">
+      <ChangeLanguage />
+      <ChangeTheme />
       <Button
         text={content?.buttons[0].label}
         textClass="text-white"
@@ -110,8 +112,6 @@ const lang = match ? match[1] : 'en';
         extraBtnClass={`bg-accent hover:bg-accent/90 hidden lg:flex`}
         iconName={content?.buttons[0].icon}
       />
-      <ChangeLanguage />
-      <ChangeTheme />
       <div class="flex lg:hidden justify-center items-center gap-7">
         <button
           type="button"
@@ -131,7 +131,7 @@ const lang = match ? match[1] : 'en';
 
 <!-- Menú móvil independiente (lg para abajo) -->
 <div
-  class="fixed top-0 right-0 bottom-0 lg:hidden flex items-center bg-primary-intense dark:bg-back-dark text-white dark:text-paragraph-dark flex-col justify-center h-[70%] w-full z-60 py-6 gap-12 transform -translate-y-full transition-transform duration-300 ease-out"
+  class="fixed top-0 right-0 bottom-0 lg:hidden flex items-center bg-white dark:bg-back-dark text-primary dark:text-paragraph-dark flex-col justify-center h-[85%] w-full z-60 py-6 gap-12 transform -translate-y-full transition-transform duration-300 ease-out"
   id="mobile-menu"
 >
   <img
@@ -152,7 +152,7 @@ const lang = match ? match[1] : 'en';
         title="Quality Portable - Inicio"
       >
         <img
-          src="/images/logo.svg"
+          src="/images/logo-cel.svg"
           alt="Logo de Quality Portable"
           width="120"
           height="26"
@@ -176,7 +176,7 @@ const lang = match ? match[1] : 'en';
         const isLocations = index === 0;
         return (
           <div
-            class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-white dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-white dark:text-paragraph-dark uppercase' : ''}`}
+            class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-primary dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-primary dark:text-paragraph-dark uppercase' : ''}`}
             id={`mobile-locations-${index}`}
           >
             <a
@@ -190,7 +190,7 @@ const lang = match ? match[1] : 'en';
             </a>
             {isLocations && (
               <div
-                class="flex-col justify-center items-center w-full bg-white divide-y divide-secondary hidden absolute z-20 top-0 translate-y-12.5"
+                class="flex-col justify-center items-center w-full bg-accent divide-y divide-secondary hidden absolute z-20 top-0 translate-y-12.5"
                 id="sub-menu-locations"
               >
                 {content.locations.map((sub) => (

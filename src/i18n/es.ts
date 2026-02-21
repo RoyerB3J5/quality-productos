@@ -2,10 +2,6 @@ export default {
   header: {
     nav: [
       {
-        label: 'Ubicaciones <span class="text-[16px] ml-px">▾</span>',
-        href: "/locations",
-      },
-      {
         label: "Productos",
         href: "/products",
       },
@@ -16,6 +12,14 @@ export default {
       {
         label: "Industrias",
         href: "/industries",
+      },
+      {
+        label: 'Ubicaciones <span class="text-[16px] ml-px">▾</span>',
+        href: "/locations",
+      },
+      {
+        label: "Nosotros",
+        href: "#why-us",
       },
     ],
     locations: [
@@ -98,14 +102,14 @@ export default {
           label: "Llamar Ya",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Agendar Ya",
           href: "/es/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-secondary-dark hover:dark:bg-secondary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -169,14 +173,14 @@ export default {
       buttons: [
         {
           label: "Áreas Servicio",
-          back: "bg-primary dark:bg-primary-dark",
+          back: "bg-primary dark:bg-primary-dark hover:bg-primary/90 hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           text: "text-white",
           href: "/es/locations",
         },
         {
           icon: "phone",
           label: "Llamar Ya",
-          back: "bg-accent",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           text: "text-white",
           href: "tel:+13212179445",
         },
@@ -220,8 +224,8 @@ export default {
       list: [
         {
           image: "equipment-1",
-          title: "Baño Portátil Regular",
-          href: "/es/products/#regular-portable-toilet",
+          title: "Baño Portátil-Eventos",
+          href: "/es/products/#event-portable-toilet",
           label: "Más Info",
         },
         {
@@ -363,14 +367,14 @@ export default {
           label: "Llamar Ya",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Reservar",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -482,8 +486,8 @@ export default {
       list: [
         {
           image: "equipment-1",
-          title: "Baño Portátil Regular",
-          href: "/es/products/#regular-portable-toilet",
+          title: "Baño Portátil-Eventos",
+          href: "/es/products/#event-portable-toilet",
           label: "Más Info",
         },
         {
@@ -554,14 +558,14 @@ export default {
             label: "Llamar Ya",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -578,8 +582,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Baño Portátil Regular",
-            href: "/es/products/#regular-portable-toilet",
+            title: "Baño Portátil-Eventos",
+            href: "/es/products/#event-portable-toilet",
             label: "Más Info",
           },
           {
@@ -697,14 +701,14 @@ export default {
             label: "Llamar Ya",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -721,8 +725,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Baño Portátil Regular",
-            href: "/es/products/#regular-portable-toilet",
+            title: "Baño Portátil-Eventos",
+            href: "/es/products/#event-portable-toilet",
             label: "Más Info",
           },
           {
@@ -840,14 +844,14 @@ export default {
             label: "Llamar Ya",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -864,8 +868,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Baño Portátil Regular",
-            href: "/es/products/#regular-portable-toilet",
+            title: "Baño Portátil-Eventos",
+            href: "/es/products/#event-portable-toilet",
             label: "Más Info",
           },
           {
@@ -983,14 +987,14 @@ export default {
             label: "Llamar Ya",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Agendar Ya",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -1008,8 +1012,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Baño Portátil Regular",
-            href: "/es/products/#regular-portable-toilet",
+            title: "Baño Portátil-Eventos",
+            href: "/es/products/#event-portable-toilet",
             label: "Más Info",
           },
           {
@@ -1183,14 +1187,14 @@ export default {
           label: "Llamar Ya",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Agendar Ya",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -1202,8 +1206,8 @@ export default {
         'Quality Portable Rental Service ofrece alquileres fiables de baños para eventos y construcción <br class="hidden md:block"/> ofreciendo unidades eficientes, económicas y bien mantenidas para una amplia gama de necesidades. Desde obras <br class="hidden md:block"/> hasta grandes eventos, nuestras opciones de alquiler están diseñadas para proporcionar soluciones de saneamiento confiables <br class="hidden md:block"/> con entrega y recogida puntuales.',
       items: [
         {
-          title: "Baño Portátil Regular",
-          id: "regular-portable-toilet",
+          title: "Baño Portátil-Eventos",
+          id: "event-portable-toilet",
           lists: [
             "Ideal para obras de construcción",
             "Muy rentable",
@@ -1350,14 +1354,14 @@ export default {
           label: "Llama Ya",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Reserva",
           href: "#",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -1468,14 +1472,14 @@ export default {
           label: "Llamar Ya",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Reserva Ya",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },

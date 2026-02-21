@@ -2,10 +2,6 @@ export default {
   header: {
     nav: [
       {
-        label: 'Locations <span class="text-[16px] ml-px">▾</span>',
-        href: "/locations",
-      },
-      {
         label: "Products",
         href: "/products",
       },
@@ -16,6 +12,14 @@ export default {
       {
         label: "Industries",
         href: "/industries",
+      },
+      {
+        label: 'Locations <span class="text-[16px] ml-px">▾</span>',
+        href: "/locations",
+      },
+      {
+        label: "Why Us",
+        href: "#why-us",
       },
     ],
     locations: [
@@ -81,13 +85,13 @@ export default {
       ],
       title:
         "Florida’s #1 <br class='block'/> Port-O-Potty Service <br class='hidden md:block'/>  for",
-      services:[
-        'Construction',
-        'Events',
-        'Festivals',
-        'Commercial',
-        'Government',
-        'Municipal'
+      services: [
+        "Construction",
+        "Events",
+        "Festivals",
+        "Commercial",
+        "Government",
+        "Municipal",
       ],
       description:
         "Clean units, on-time delivery and pickup, and <br class='hidden md:block'/> competitive pricing for job sites and events across <br class='hidden md:block'/> Florida and Georgia.",
@@ -97,14 +101,14 @@ export default {
           label: "Call Now",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Book Now",
           href: "/en/#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -168,14 +172,14 @@ export default {
       buttons: [
         {
           label: "View Service Areas",
-          back: "bg-primary dark:bg-primary-dark hover:bg-primary/90 hover:dark:bg-primary-dark/90",
+          back: "bg-primary dark:bg-primary-dark hover:bg-primary/90 hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           text: "text-white",
           href: "/en/locations",
         },
         {
           icon: "phone",
           label: "Call Now",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           text: "text-white",
           href: "tel:+13212179445",
         },
@@ -219,8 +223,8 @@ export default {
       list: [
         {
           image: "equipment-1",
-          title: "Regular Portable Toilet",
-          href: "/en/products/#regular-portable-toilet",
+          title: "Event Portable Toilet",
+          href: "/en/products/#event-portable-toilet",
           label: "Learn More",
         },
         {
@@ -362,14 +366,14 @@ export default {
           label: "Call Now",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -480,8 +484,8 @@ export default {
       list: [
         {
           image: "equipment-1",
-          title: "Regular Portable Toilet",
-          href: "/en/products/#regular-portable-toilet",
+          title: "Event Portable Toilet",
+          href: "/en/products/#event-portable-toilet",
           label: "Learn More",
         },
         {
@@ -552,14 +556,14 @@ export default {
             label: "Call Now",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -576,8 +580,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Regular Portable Toilet",
-            href: "/en/products/#regular-portable-toilet",
+            title: "Event Portable Toilet",
+            href: "/en/products/#event-portable-toilet",
             label: "Learn More",
           },
           {
@@ -695,14 +699,14 @@ export default {
             label: "Call Now",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -719,8 +723,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Regular Portable Toilet",
-            href: "/en/products/#regular-portable-toilet",
+            title: "Event Portable Toilet",
+            href: "/en/products/#event-portable-toilet",
             label: "Learn More",
           },
           {
@@ -838,14 +842,14 @@ export default {
             label: "Call Now",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -862,8 +866,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Regular Portable Toilet",
-            href: "/en/products/#regular-portable-toilet",
+            title: "Event Portable Toilet",
+            href: "/en/products/#event-portable-toilet",
             label: "Learn More",
           },
           {
@@ -981,14 +985,14 @@ export default {
             label: "Call Now",
             href: "tel:+13212179445",
             text: "text-white",
-            back: "bg-accent hover:bg-accent/90",
+            back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
           },
           {
             icon: "calendar",
             label: "Book Now",
             href: "#quote-section",
             text: "text-white",
-            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+            back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
           },
         ],
       },
@@ -1005,8 +1009,8 @@ export default {
         list: [
           {
             image: "equipment-1",
-            title: "Regular Portable Toilet",
-            href: "/en/products/#regular-portable-toilet",
+            title: "Event Portable Toilet",
+            href: "/en/products/#event-portable-toilet",
             label: "Learn More",
           },
           {
@@ -1180,14 +1184,14 @@ export default {
           label: "Call Now",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -1198,8 +1202,8 @@ export default {
         'Quality Portable Rental Service provides reliable event and construction toilet rentals <br class="hidden md:block"/> offering lean, cost-effective, and well-maintained units for a wide range of needs. From construction <br class="hidden md:block"/> sites to large events, our rental options are designed to deliver dependable sanitation solutions <br class="hidden md:block"/> with on-time delivery and pickup.',
       items: [
         {
-          title: "Regular Portable Toilet",
-          id: "regular-portable-toilet",
+          title: "Event Portable Toilet",
+          id: "event-portable-toilet",
           lists: [
             "Ideal for construction sites",
             "Very cost-effective",
@@ -1346,14 +1350,14 @@ export default {
           label: "Call Now",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
@@ -1463,14 +1467,14 @@ export default {
           label: "Call Now",
           href: "tel:+13212179445",
           text: "text-white",
-          back: "bg-accent hover:bg-accent/90",
+          back: "bg-accent hover:bg-accent/90 w-full sm:w-auto",
         },
         {
           icon: "calendar",
           label: "Book Now",
           href: "#quote-section",
           text: "text-white",
-          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90",
+          back: "bg-primary hover:bg-primary/90 dark:bg-primary-dark hover:dark:bg-primary-dark/90 w-full sm:w-auto",
         },
       ],
     },
