@@ -63,7 +63,7 @@ const lang = match ? match[1] : 'en';
             const isActive =
               normalized === itemPathWithoutHash ||
               (index === 0 && normalized.startsWith('/locations'));
-            const isLocations = index === 0;
+            const isLocations = index === 3;
             return (
               <div
                 class={`flex flex-row items-center justify-center group hover:text-accent w-auto py-2 px-2 xl:px-4 text-center ${isLocations ? 'relative dropdown-parent' : ''} ${isActive ? 'bg-transparent ' : ''}`}
@@ -173,7 +173,7 @@ const lang = match ? match[1] : 'en';
         const isActive =
           normalized === itemPathWithoutHash ||
           (index === 0 && normalized.startsWith('/locations'));
-        const isLocations = index === 0;
+        const isLocations = index === 3;
         return (
           <div
             class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-primary dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-primary dark:text-paragraph-dark uppercase' : ''}`}
