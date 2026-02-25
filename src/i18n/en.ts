@@ -549,7 +549,7 @@ export default {
         ],
         title: "Orlando, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out services in Orlando, delivering clean equipment and on-time service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Orlando, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -692,7 +692,7 @@ export default {
         ],
         title: "Melbourne, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out services in Melbourne, delivering clean equipment and on-time service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Melbourne, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -835,7 +835,7 @@ export default {
         ],
         title: "Tampa, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out services in Tampa, delivering clean equipment and on-time service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Tampa, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -978,7 +978,7 @@ export default {
         ],
         title: "Fort Myers, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out services in Fort Myers, delivering clean equipment and dependable service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",

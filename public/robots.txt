@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.qualityportablerentalservice.com/sitemap.xml

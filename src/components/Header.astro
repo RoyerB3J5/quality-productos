@@ -54,51 +54,51 @@ const lang = match ? match[1] : 'en';
       class="relative bg-transparent flex flex-row justify-start items-center h-auto w-auto z-10 py-0 transform translate-x-0 transition-transform duration-300 ease-out"
     >
       
-      <nav
-        class="hidden relative lg:flex items-center flex-row justify-center w-auto gap-2 xl:gap-4 p-2"
-      >
-        {
-          content?.nav.map((item, index) => {
-            const itemPathWithoutHash = item.href.split('#')[0];
-            const isActive =
-              normalized === itemPathWithoutHash ||
-              (index === 0 && normalized.startsWith('/locations'));
-            const isLocations = index === 3;
-            return (
-              <div
-                class={`flex flex-row items-center justify-center group hover:text-accent w-auto py-2 px-2 xl:px-4 text-center ${isLocations ? 'relative dropdown-parent' : ''} ${isActive ? 'bg-transparent ' : ''}`}
-                id={`locations-${index}`}
-              >
-                <a
-                  href={`/${lang}${item.href}`}
-                  class=" relative transition-colors duration-300 flex justify-center items-center"
+      <nav>
+        <ul class="hidden relative lg:flex items-center flex-row justify-center w-auto gap-2 xl:gap-4 p-2">
+          {
+            content?.nav.map((item, index) => {
+              const itemPathWithoutHash = item.href.split('#')[0];
+              const isActive =
+                normalized === itemPathWithoutHash ||
+                (index === 3 && normalized.startsWith('/locations'));
+              const isLocations = index === 3;
+              return (
+                <li
+                  class={`flex flex-row items-center justify-center group hover:text-accent w-auto py-2 px-2 xl:px-4 text-center ${isLocations ? 'relative dropdown-parent' : ''} ${isActive ? 'bg-transparent ' : ''}`}
+                  id={`locations-${index}`}
                 >
-                  <p
-                    class="text-[16px] font-normal leading-[150%] text-white dark:text-paragraph-dark transition-all duration-300 ease-in-out"
-                    set:html={item.label}
-                  />
-                  <span
-                    class={`absolute -bottom-2 left-1/2 h-0.5 bg-accent transition-all duration-300 ease-out -translate-x-1/2 ${isActive ? 'w-8' : 'w-0 group-hover:w-8 group-hover:bg-accent'}`}
-                  />
-                </a>
-                {isLocations && (
-                  <div class="dropdown-menu absolute top-9 left-0 mt-0 w-50 flex-col items-center bg-white dark:bg-secondary z-40 hidden group-hover:flex opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 ease-out -translate-x-[20%] shadow-lg overflow-hidden rounded-lg">
-                    {content.locations.map((sub) => (
-                      <div class="text-[16px] font-medium text-primary-electric dark:text-white py-2 hover:bg-primary hover:text-accent transition-colors duration-200 ease-in-out cursor-pointer px-6 w-full text-center">
-                        <a
-                          href={`/${lang}/locations/${sub.href}`}
-                          class="block w-full h-full"
-                        >
-                          {sub.label}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })
-        }
+                  <a
+                    href={`/${lang}${item.href}`}
+                    class=" relative transition-colors duration-300 flex justify-center items-center"
+                  >
+                    <p
+                      class="text-[16px] font-normal leading-[150%] text-white dark:text-paragraph-dark transition-all duration-300 ease-in-out"
+                      set:html={item.label}
+                    />
+                    <span
+                      class={`absolute -bottom-2 left-1/2 h-0.5 bg-accent transition-all duration-300 ease-out -translate-x-1/2 ${isActive ? 'w-8' : 'w-0 group-hover:w-8 group-hover:bg-accent'}`}
+                    />
+                  </a>
+                  {isLocations && (
+                    <div class="dropdown-menu absolute top-9 left-0 mt-0 w-50 flex-col items-center bg-white dark:bg-secondary z-40 hidden group-hover:flex opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 ease-out -translate-x-[20%] shadow-lg overflow-hidden rounded-lg">
+                      {content.locations.map((sub) => (
+                        <div class="text-[16px] font-medium text-primary-electric dark:text-white py-2 hover:bg-primary hover:text-accent transition-colors duration-200 ease-in-out cursor-pointer px-6 w-full text-center">
+                          <a
+                            href={`/${lang}/locations/${sub.href}`}
+                            class="block w-full h-full"
+                          >
+                            {sub.label}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              );
+            })
+          }
+        </ul> 
       </nav>
     </div>
     <div class="flex justify-center items-center gap-4 xl:gap-8">
@@ -166,47 +166,49 @@ const lang = match ? match[1] : 'en';
           class="cursor-pointer w-30 h-auto hidden dark:block"
         />
       </a>
-  <nav class="relative flex items-center flex-col justify-center w-full">
-    {
-      content?.nav.map((item, index) => {
-        const itemPathWithoutHash = item.href.split('#')[0];
-        const isActive =
-          normalized === itemPathWithoutHash ||
-          (index === 0 && normalized.startsWith('/locations'));
-        const isLocations = index === 3;
-        return (
-          <div
-            class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-primary dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-primary dark:text-paragraph-dark uppercase' : ''}`}
-            id={`mobile-locations-${index}`}
-          >
-            <a
-              href={`/${lang}${item.href}`}
-              class="relative transition-colors duration-300 flex justify-center items-center "
+  <nav >
+    <ul class="relative flex items-center flex-col justify-center w-full">
+      {
+        content?.nav.map((item, index) => {
+          const itemPathWithoutHash = item.href.split('#')[0];
+          const isActive =
+            normalized === itemPathWithoutHash ||
+            (index === 3 && normalized.startsWith('/locations'));
+          const isLocations = index === 3;
+          return (
+            <li
+              class={`flex flex-col items-center justify-center group gap-3.5 px-0 w-full py-5 text-center text-primary dark:text-paragraph-dark ${isLocations ? 'relative' : ''} ${isActive ? 'bg-accent text-primary dark:text-paragraph-dark uppercase' : ''}`}
+              id={`mobile-locations-${index}`}
             >
-              <p
-                class="text-[18px] font-medium leading-[120%] "
-                set:html={item.label}
-              />
-            </a>
-            {isLocations && (
-              <div
-                class="flex-col justify-center items-center w-full bg-accent divide-y divide-secondary hidden absolute z-20 top-0 translate-y-12.5"
-                id="sub-menu-locations"
+              <a
+                href={`/${lang}${item.href}`}
+                class="relative transition-colors duration-300 flex justify-center items-center "
               >
-                {content.locations.map((sub) => (
-                  <a
-                    href={`/${lang}/locations/${sub.href}`}
-                    class="text-[16px] font-medium text-primary-electric py-4 transition-colors duration-300 ease-in-out cursor-pointer px-6 w-full text-center"
-                  >
-                    {sub.label}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        );
-      })
-    }
+                <p
+                  class="text-[18px] font-medium leading-[120%] "
+                  set:html={item.label}
+                />
+              </a>
+              {isLocations && (
+                <div
+                  class="flex-col justify-center items-center w-full bg-accent divide-y divide-secondary hidden absolute z-20 top-0 translate-y-12.5"
+                  id="sub-menu-locations"
+                >
+                  {content.locations.map((sub) => (
+                    <a
+                      href={`/${lang}/locations/${sub.href}`}
+                      class="text-[16px] font-medium text-primary-electric py-4 transition-colors duration-300 ease-in-out cursor-pointer px-6 w-full text-center"
+                    >
+                      {sub.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </li>
+          );
+        })
+      }
+    </ul>
   </nav>
 
   <div class="flex flex-col justify-center items-center gap-5">

@@ -360,7 +360,7 @@ export default {
       ],
       title: "Ubicaciones",
       description:
-        "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y disponibilidad confiable para cada proyecto",
+        "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y <br class='hidden md:block'/> disponibilidad confiable para cada proyecto",
       buttons: [
         {
           icon: "phone",
@@ -551,7 +551,7 @@ export default {
         ],
         title: "Orlando, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores y vaciado en Orlando, con equipo limpio y servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Orlando, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -694,7 +694,7 @@ export default {
         ],
         title: "Melbourne, Florida",
         description:
-          "Servicios confiables de baños portátiles, contenedores y vaciado en Melbourne, con equipo limpio y servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Melbourne, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -837,7 +837,7 @@ export default {
         ],
         title: "Tampa, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores y vaciado en Tampa, con equipo limpio y servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Tampa, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -980,7 +980,7 @@ export default {
         ],
         title: "Fort Myers, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores y vaciado en Fort Myers, con equipos limpios y servicio constante desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Fort Myers, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -1347,7 +1347,7 @@ export default {
       ],
       title: "Servicios",
       description:
-        "Soluciones confiables de saneamiento portátil, residuos y vaciado <br class='hidden md:block' /> para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo y <br class='hidden md:block' /> sin inconvenientes.",
+        "Soluciones confiables de saneamiento portátil, <br class='hidden md:block' /> residuos  y vaciado  para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo <br class='hidden md:block' /> y sin inconvenientes.",
       buttons: [
         {
           icon: "phone",
