@@ -108,12 +108,11 @@ const { lang, t } = Astro.props;
       }
     </script>
     <script is:inline>
+      // Prefer explicit user preference. Default to light when no saved theme.
       document.documentElement.classList.toggle(
         'dark',
-        localStorage.theme === 'dark' ||
-          (!('theme' in localStorage) &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches),
-      )
+        sessionStorage.getItem('theme') === 'dark'
+      );
     </script>
 
   </head>

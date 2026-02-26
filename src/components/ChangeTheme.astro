@@ -46,7 +46,7 @@ import { Icon } from "astro-icon/components";
 
       if (!isDark) {
         html.classList.add('dark')
-        localStorage.theme = 'dark'
+        sessionStorage.setItem('theme', 'dark')
 
         document.dispatchEvent(
           new CustomEvent('theme-change', {
@@ -55,7 +55,7 @@ import { Icon } from "astro-icon/components";
         )
       } else {
         html.classList.remove('dark')
-        localStorage.theme = 'light'
+        sessionStorage.setItem('theme', 'light')
 
         document.dispatchEvent(
           new CustomEvent('theme-change', {
