@@ -1572,20 +1572,20 @@ export default {
       items: [
         {
           title: "Alquiler Baños Portátiles",
-          href: "es/services?section=portable-toilet-rental",
+          href: "services?section=portable-toilet-rental",
         },
         {
           title: "Alquiler Contenedores",
-          href: "es/services?section=dumpster-rental",
+          href: "services?section=dumpster-rental",
         },
         {
           title: "Vaciado Septic y RV",
-          href: "es/services?section=septic-rv-pump-out",
+          href: "services?section=septic-rv-pump-out",
         },
       ],
     },
     nav: {
-      title: "Menú Principal",
+      title: "Menú",
       items: [
         {
           label: "Ubicaciones",

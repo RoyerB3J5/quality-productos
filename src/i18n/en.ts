@@ -121,7 +121,7 @@ export default {
           description: "Comfort and convenience, wherever you are.",
           description2:
             "Clean, cost-effective portable restroom solutions for construction sites, events, commercial projects, and government jobs.",
-          href: "/en/services?section=portable-toilet-rental",
+          href: "services?section=portable-toilet-rental",
           image: "service-1",
         },
         {
@@ -129,7 +129,7 @@ export default {
           description: "Clean spaces start with the right solution.",
           description2:
             "Efficient dumpster rental solutions with 20- and 30-yard options for construction, cleanouts, and events.",
-          href: "/en/services?section=dumpster-rental",
+          href: "services?section=dumpster-rental",
           image: "service-2",
         },
         {
@@ -137,7 +137,7 @@ export default {
           description: "Efficient and dependable pump-out services.",
           description2:
             "Reliable septic and RV pump-out services ensuring proper sanitation and uninterrupted operations across all job sites.",
-          href: "/en/services?section=septic-rv-pump-out",
+          href: "services?section=septic-rv-pump-out",
           image: "service-3",
         },
       ],
