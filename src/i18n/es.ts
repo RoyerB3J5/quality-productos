@@ -85,7 +85,7 @@ export default {
         },
       ],
       title:
-        "Baños Portátiles <br class='block'/> #1 en Florida <br class='hidden md:block'/>  para",
+        "Baños Portátiles <br class='block'/> #1 en Florida <br class='hidden sm:block'/>  para",
       services: [
         "Construcción",
         "Eventos",

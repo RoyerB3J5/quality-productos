@@ -84,7 +84,7 @@ export default {
         },
       ],
       title:
-        "Florida’s #1 <br class='block'/> Port-O-Potty Service <br class='hidden md:block'/>  for",
+        "Florida’s #1 <br class='block'/> Port-O-Potty Service <br class='hidden sm:block'/>  for",
       services: [
         "Construction",
         "Events",
