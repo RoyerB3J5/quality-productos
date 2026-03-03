@@ -4,9 +4,38 @@
 >
   <div
     class="form-placeholder"
-    style="display:flex;align-items:center;justify-content:center;"
+    style="display:flex;align-items:center;justify-content:center; margin:30p 30px"
+    aria-hidden="true"
   >
-    <small>Cargando formulario…</small>
+    <svg
+      class="loader"
+      width="48"
+      height="48"
+      viewBox="0 0 50 50"
+      role="img"
+      aria-label="Cargando"
+    >
+      <circle
+        cx="25"
+        cy="25"
+        r="20"
+        fill="none"
+        stroke="#6B7280"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-dasharray="31.4 31.4"
+        transform="rotate(-90 25 25)"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 25 25"
+          to="360 25 25"
+          dur="1s"
+          repeatCount="indefinite"
+        />
+      </circle>
+    </svg>
   </div>
   <iframe
     data-src="https://link.qualityportablerentalservice.com/widget/form/5V2wd9H1CgEyPGd967PA"

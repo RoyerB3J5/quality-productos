@@ -95,7 +95,7 @@ export default {
         "Municipal",
       ],
       description:
-        "Unidades limpias, entrega y recogida puntuales, y <br class='hidden md:block'/> precios competitivos para obras y eventos en <br class='hidden md:block'/> Florida y Georgia.",
+        "Unidades limpias, entrega y recogida puntuales, y <br class='hidden sm:block'/> precios competitivos para obras y eventos en <br class='hidden sm:block'/> Florida y Georgia.",
       buttons: [
         {
           icon: "phone",
@@ -360,7 +360,7 @@ export default {
       ],
       title: "Ubicaciones",
       description:
-        "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden md:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y <br class='hidden md:block'/> disponibilidad confiable para cada proyecto",
+        "Atendemos con orgullo múltiples ubicaciones en Florida <br class='hidden sm:block'/> y Georgia, ofreciendo entregas rápidas, precios locales y <br class='hidden sm:block'/> disponibilidad confiable para cada proyecto",
       buttons: [
         {
           icon: "phone",
@@ -551,7 +551,7 @@ export default {
         ],
         title: "Orlando, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Orlando, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden sm:block'/> y vaciado  en Orlando, con equipo limpio y <br class='hidden sm:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -694,7 +694,7 @@ export default {
         ],
         title: "Melbourne, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Melbourne, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles <br class='hidden sm:block'/> y vaciado  en Melbourne, con equipo limpio y <br class='hidden sm:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -837,7 +837,7 @@ export default {
         ],
         title: "Tampa, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Tampa, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles, contenedores <br class='hidden sm:block'/> y vaciado  en Tampa, con equipo limpio y <br class='hidden sm:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -980,7 +980,7 @@ export default {
         ],
         title: "Fort Myers, Florida",
         description:
-          "Servicios fiables de baños portátiles, contenedores <br class='hidden md:block'/> y vaciado  en Fort Myers, con equipo limpio y <br class='hidden md:block'/> servicio puntual desde 2011.",
+          "Servicios fiables de baños portátiles <br class='hidden sm:block'/> y vaciado  en Fort Myers, con equipo limpio y <br class='hidden sm:block'/> servicio puntual desde 2011.",
         buttons: [
           {
             icon: "phone",
@@ -1180,7 +1180,7 @@ export default {
       ],
       title: "Productos",
       description:
-        "Servicios fiables de baños portátiles, contenedores y vaciado <br class='hidden md:block'/> en Fort Myers, con equipos limpios <br class='hidden md:block'/> y servicio confiable desde 2011.",
+        "Servicios fiables de baños portátiles, contenedores y vaciado <br class='hidden sm:block'/> en Fort Myers, con equipos limpios <br class='hidden sm:block'/> y servicio confiable desde 2011.",
       buttons: [
         {
           icon: "phone",
@@ -1347,7 +1347,7 @@ export default {
       ],
       title: "Servicios",
       description:
-        "Soluciones confiables de saneamiento portátil, <br class='hidden md:block' /> residuos  y vaciado  para obras, eventos y proyectos <br class='hidden md:block' /> comerciales, entregadas limpias, a tiempo <br class='hidden md:block' /> y sin inconvenientes.",
+        "Soluciones confiables de saneamiento portátil, <br class='hidden sm:block' /> residuos  y vaciado  para obras, eventos y proyectos <br class='hidden sm:block' /> comerciales, entregadas limpias, a tiempo <br class='hidden sm:block' /> y sin inconvenientes.",
       buttons: [
         {
           icon: "phone",
@@ -1465,7 +1465,7 @@ export default {
       ],
       title: "Industrias que Atendemos",
       description:
-        "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden md:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden md:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden md:block' /> dependable y coordinación profesional.",
+        "Soluciones confiables de saneamiento y gestión de residuos para <br/ class='hidden sm:block' /> construcción, eventos, comercio y proyectos <br/ class='hidden sm:block' /> gubernamentales, entregando equipos limpios, servicio <br/ class='hidden sm:block' /> dependable y coordinación profesional.",
       buttons: [
         {
           icon: "phone",

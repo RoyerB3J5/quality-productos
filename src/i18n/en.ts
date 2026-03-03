@@ -94,7 +94,7 @@ export default {
         "Municipal",
       ],
       description:
-        "Clean units, on-time delivery and pickup, and <br class='hidden md:block'/> competitive pricing for job sites and events across <br class='hidden md:block'/> Florida and Georgia.",
+        "Clean units, on-time delivery and pickup, and <br class='hidden sm:block'/> competitive pricing for job sites and events across <br class='hidden sm:block'/> Florida and Georgia.",
       buttons: [
         {
           icon: "phone",
@@ -359,7 +359,7 @@ export default {
       ],
       title: "Locations",
       description:
-        "We proudly serve multiple locations across Florida <br class='hidden md:block'/> and Georgia, offering fast delivery, local pricing, <br class='hidden md:block'/> and reliable rental availability for every project",
+        "We proudly serve multiple locations across Florida <br class='hidden sm:block'/> and Georgia, offering fast delivery, local pricing, <br class='hidden sm:block'/> and reliable rental availability for every project",
       buttons: [
         {
           icon: "phone",
@@ -549,7 +549,7 @@ export default {
         ],
         title: "Orlando, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Orlando, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden sm:block'/> services in Orlando, delivering clean equipment and <br class='hidden sm:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -692,7 +692,7 @@ export default {
         ],
         title: "Melbourne, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Melbourne, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
+          "Reliable portable toilet and pump-out <br class='hidden sm:block'/> services in Melbourne, delivering clean equipment and <br class='hidden sm:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -835,7 +835,7 @@ export default {
         ],
         title: "Tampa, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Tampa, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
+          "Reliable portable toilet, dumpster, and pump-out <br class='hidden sm:block'/> services in Tampa, delivering clean equipment and <br class='hidden sm:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -978,7 +978,7 @@ export default {
         ],
         title: "Fort Myers, Florida",
         description:
-          "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment and <br class='hidden md:block'/> on-time service since 2011.",
+          "Reliable portable toilet and pump-out <br class='hidden sm:block'/> services in Fort Myers, delivering clean equipment and <br class='hidden sm:block'/> on-time service since 2011.",
         buttons: [
           {
             icon: "phone",
@@ -1177,7 +1177,7 @@ export default {
       ],
       title: "Products",
       description:
-        "Reliable portable toilet, dumpster, and pump-out <br class='hidden md:block'/> services in Fort Myers, delivering clean equipment <br class='hidden md:block'/> and dependable service since 2011.",
+        "Reliable portable toilet, dumpster, and pump-out <br class='hidden sm:block'/> services in Fort Myers, delivering clean equipment <br class='hidden sm:block'/> and dependable service since 2011.",
       buttons: [
         {
           icon: "phone",
@@ -1343,7 +1343,7 @@ export default {
       ],
       title: "Services",
       description:
-        "Reliable portable sanitation, waste, and pump-out <br class='hidden md:block' /> solutions for construction sites, events, and <br class='hidden md:block' /> commercial projects, delivered clean, on time, and <br class='hidden md:block' /> hassle-free.",
+        "Reliable portable sanitation, waste, and pump-out <br class='hidden sm:block' /> solutions for construction sites, events, and <br class='hidden sm:block' /> commercial projects, delivered clean, on time, and <br class='hidden sm:block' /> hassle-free.",
       buttons: [
         {
           icon: "phone",
@@ -1460,7 +1460,7 @@ export default {
       ],
       title: "Industries We Serve",
       description:
-        "Reliable sanitation and waste solutions for <br/ class='hidden md:block' /> construction, events, commercial, and government  <br/ class='hidden md:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden md:block' />  service, and professional coordination.",
+        "Reliable sanitation and waste solutions for <br/ class='hidden sm:block' /> construction, events, commercial, and government  <br/ class='hidden sm:block' /> projects, delivering clean equipment, dependable  <br/ class='hidden sm:block' />  service, and professional coordination.",
       buttons: [
         {
           icon: "phone",

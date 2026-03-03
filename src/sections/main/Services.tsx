@@ -123,7 +123,7 @@ export default function Services({ content }: ServicesProps) {
                     alt="Fondo de soluciones"
                     width="2500"
                     height="1563"
-                    className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform hidden sm:block ${
+                    className={`absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 ease-in-out transform hidden md:block ${
                       currentItem === index
                         ? "translate-y-0"
                         : "translate-y-full"
@@ -132,7 +132,7 @@ export default function Services({ content }: ServicesProps) {
                     decoding="async"
                   />
                   <div
-                    className={`absolute w-full h-full bg-secondary  sm:bg-black/70 md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
+                    className={`absolute w-full h-full bg-secondary  md:bg-black/50 top-0 left-0 rounded-2xl z-1 transition-transform duration-300 ease-in-out transform ${
                       currentItem === index
                         ? "translate-y-0"
                         : "translate-y-full"
