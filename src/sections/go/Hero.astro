@@ -1,0 +1,44 @@
+---
+type Translations = typeof import('../../i18n/en').default;
+type HeroContent = Translations['landingFirst']['hero'];
+interface Props {
+  content: HeroContent;
+}
+const { content } = Astro.props as Props;
+---
+<section class="w-full flex flex-col items-center justify-center relative overflow-hidden h-dvh md:h-[90vh] lg:h-screen">
+  <div class="w-full relative overflow-hidden flex justify-center items-center h-full">
+    <img src="/images/back-started.webp" alt="Fondo de Hero Landing" width="1500" height="705" class="absolute inset-0 w-full h-full object-cover object-center -z-20">
+    <div class="absolute h-full w-full -z-15 bg-[linear-gradient(0deg,rgba(0,0,0,0.70)_0%,rgba(0,0,0,0.70)_100%)] "></div>
+    <div
+      class="container-full flex flex-col justify-end items-center gap-8 3xl:gap-16  text-white h-full pb-10 3xl:pb-20"
+    >
+      <div class="flex flex-col justify-center items-center gap-6">
+        <h1 class="text-[46px] 3xl:text-[53px] font-extrabold leading-[110%] text-center" set:html={content.title}></h1>
+        <p class="text-[26px] font-bold leading-[100%]">{content.description}</p>
+      </div>
+      <div class="flex flex-col justify-center items-center gap-10">
+        <div class="flex flex-col justify-center items-start gap-4">
+          {
+            content.items.map((item)=>( 
+              <div class="flex justify-start items-center gap-4">
+                <img src="/images/check-o.svg" alt="Check" width="32" height="32" class="w-8 h-8">
+                <p class="text-[24px] 3xl:text-[28px] font-bold leading-normal">{item}</p>
+              </div>
+            ))
+          }
+        </div>
+        <button class="bg-accent py-1 px-8 rounded-lg flex justify-center items-center text-white text-[26px] 3xl:text-[32px] font-bold leading-[187%] hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer">
+          {content.button}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-primary flex flex-col justify-center items-center gap-2 text-white py-6 3xl:py-8 w-full">
+    <h2 class="text-[28px] 3xl:text-[32px] font-bold leading-[106%]">{content.callAction.title}</h2>
+    <div class="flex justify-center items-center gap-2.5">
+      <img src={`/images/${content.callAction.icon}.svg`} alt="Icono de telefono" class="w-auto h-auto">
+      <a href="tel:+13212179445" class="text-[24px] font-bold leading-[150%] cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-in-out">{content.callAction.number}</a>
+    </div>
+  </div>
+</section>

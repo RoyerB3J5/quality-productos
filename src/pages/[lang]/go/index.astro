@@ -1,0 +1,24 @@
+---
+import en from '../../../i18n/en';
+import es from '../../../i18n/es';
+import LayoutLanding from '../../../layouts/LayoutLanding.astro';
+import CallAction from '../../../sections/go/CallAction.astro';
+import Hero from '../../../sections/go/Hero.astro';
+import Solutions from '../../../sections/go/Solutions.astro';
+import type { Language } from '../../../types/language.type';
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/en';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+<LayoutLanding lang={lang} t={t}>
+  <Hero content={t.landingFirst.hero}/>
+  <Solutions content={t.landingFirst.solutions} second={false}/>
+  <CallAction content={t.landingFirst.callAction} />
+  <Solutions content={t.landingFirst.solutions} second={true}/>
+</LayoutLanding>

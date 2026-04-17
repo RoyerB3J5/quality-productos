@@ -85,7 +85,7 @@ export default {
         },
       ],
       title:
-        "Baños Portátiles <br class='block'/> #1 en Florida <br class='hidden sm:block'/>  para",
+        "Baños Portátiles #1 en <br class='hidden xl:block'/> Florida para",
       services: [
         "Construcción",
         "Eventos",
@@ -1620,6 +1620,220 @@ export default {
           href: "#",
         },
       ],
+    },
+  },
+  landingFirst: {
+    header: {
+      nav: [
+        {
+          label: "Private Events",
+          href: "#private-events",
+        },
+        {
+          label: "Construction",
+          href: "#construction",
+        },
+        {
+          label: "Public Events",
+          href: "#public-events",
+        },
+      ],
+      locations: [],
+      buttons: [
+        {
+          label: "(321) 217-9445",
+          href: "tel:+13212179445",
+          icon: "phone",
+        },
+      ],
+    },
+    hero: {
+      title: "Portable Restroom Rentals <br/> In Florida & Georgia",
+      description: "Multiple Service Locations in Florida & Georgia",
+      items: [
+        "Locally Owned And Operated",
+        "Reliable And Guaranteed Service",
+        "Full Cleaning Service Regularly",
+      ],
+      button: "Get A Free Quote Here",
+      callAction: {
+        title: "Call Now For A Free Quote!",
+        number: "(321) 217-9445",
+        icon: "phone",
+      },
+    },
+    solutions: {
+      title: "Our Porta Potty Solutions",
+      title2: "Need Porta Potties? Give Us A Call.",
+      items: [
+        {
+          title: "Portable Restroom",
+          image: "equipment-1",
+          concept: "Perfect For:",
+          items: [
+            "Parties & Events",
+            "Construction Sites",
+            "Remodels",
+            "Fairs & Concerts",
+            "Weddings",
+          ],
+          description: "Starting At: (Call For Best Pricing)",
+          button: "Click For a Quote",
+          phone: 'Call: <a href="tel:+13212179445"> (321) 217-9445 </a> ',
+        },
+        {
+          title: "Hand Washing Station",
+          image: "product-6",
+          concept: "Perfect For:",
+          items: [
+            "Parties & Events",
+            "Construction Sites",
+            "Remodels",
+            "Fairs & Concerts",
+            "Weddings",
+          ],
+          description: "Starting At: (Call For Best Pricing)",
+          button: "Click For a Quote",
+          phone: 'Call: <a href="tel:+13212179445"> (321) 217-9445 </a> ',
+        },
+      ],
+    },
+    reviews: {
+      title: "Read Our Reviews",
+      title2: "What Our Customers Are Saying",
+      items: [
+        {
+          image: "customer-1",
+          title: "City Automotive Group",
+          date: "2 week ago",
+          description:
+            "Always a great experience doing business here. Always Clean and on time.",
+        },
+        {
+          image: "customer-3",
+          title: "Tech Store",
+          date: "3 week ago",
+          description:
+            "Great service every time. Thank you so much for helping me with my event.",
+        },
+        {
+          image: "customer-2",
+          title: "Aqua Venue & Studio",
+          date: "1 week ago",
+          description:
+            "Very professional work. They cleaned the toilets periodically. I liked that!",
+        },
+        {
+          image: "customer-1",
+          title: "City Automotive Group",
+          date: "2 week ago",
+          description:
+            "Always a great experience doing business here. Always Clean and on time.",
+        },
+        {
+          image: "customer-3",
+          title: "Tech Store",
+          date: "3 week ago",
+          description:
+            "Great service every time. Thank you so much for helping me with my event.",
+        },
+        {
+          image: "customer-2",
+          title: "Aqua Venue & Studio",
+          date: "1 week ago",
+          description:
+            "Very professional work. They cleaned the toilets periodically. I liked that!",
+        },
+      ],
+      button: "Get A Free Quote Here",
+    },
+    callAction: {
+      title: "Call Now For A Quote",
+      description: "Need Help With A Crazy Special Event? Give Us A Call.",
+      buttons: {
+        label: "(321) 217-9445",
+        href: "tel:+13212179445",
+        icon: "phone",
+      },
+    },
+    private: {
+      title: "Private/Small Events",
+      images: ["private_1", "private_2", "private_3"],
+      descriptions: [
+        "Renting potties and sinks for your small event is easy. Clean porta potties and sinks will be delivered, set up with fresh water, fragrant treatment, toilet paper, paper towels, and soap. And when you're done, we'll arrange a final clean and pick up.",
+        "Want a nicer experience, or need a little more room? Be sure to ask about our oversized units that also satisfy ADA demands.",
+      ],
+      button: "Get A Free Quote Here",
+    },
+    icons: [
+      {
+        icon: "cleaning",
+        title: "Exceptionally Clean & Fresh",
+      },
+      {
+        icon: "lock",
+        title: "Locking Doors",
+      },
+      {
+        icon: "bulb",
+        title: "LED Interior Lights Avail.",
+      },
+      {
+        icon: "notes",
+        title: "Guaranteed Service",
+      },
+    ],
+    public: {
+      title: "Public/Large Events",
+      images: ["private_4", "private_5", "private_6"],
+      descriptions: [
+        "Locally owned in Salem, we know that public events have unique demands. 10-200 potties and sinks can all be managed through Oregon Portable Toilets. On-time delivery, on-time services, and on-time removal will make things go smoothly.",
+        "With standard units, ADA units, and double-sided sinks, all of your guests' needs will be handled.",
+        "Let our dedicated crew and trucks service your event perfectly so you can focus on more important things.",
+      ],
+      button: "Get A Free Quote Here",
+    },
+    construction: {
+      title: "Public/Large Events",
+      items: [
+        {
+          image: "large_1",
+          items: [
+            "Guaranteed Service",
+            "Locally Owned",
+            "Meet OSHA Requirements",
+          ],
+        },
+        {
+          image: "location-hero",
+          items: [
+            "Weekly Cleaning Service",
+            "Locking Door",
+            "Always Clean & Fresh",
+          ],
+        },
+        {
+          image: "large_3",
+          items: [
+            "Paper Towel Dispenser",
+            "Double Sided Wash Sink",
+            "Soap Dispenser",
+          ],
+        },
+      ],
+      description: [
+        "For construction or long-term personal rentals, Oregon Portable Toilets can help.If your current vendor is missing services, getting billing wrong, or treating you like a number we can make it better.",
+        "Locally owned means we care about our customers and will work to keep you happy. Standard, ADA units, and hand wash stations are available.",
+      ],
+      button: "Get A Free Quote Here",
+    },
+    footer: {
+      title: "Call Now For A Free Quote!",
+      button: {
+        label: "(321) 217-9445",
+        href: "tel:+13212179445",
+        icon: "phone",
+      },
     },
   },
 };

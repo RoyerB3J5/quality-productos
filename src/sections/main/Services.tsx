@@ -138,11 +138,13 @@ export default function Services({ content }: ServicesProps) {
                         : "translate-y-full"
                     }`}
                   ></div>
-                  <h3 className={`text-white  text-[14px] md:text-[24px] font-semibold leading-[143%] md:leading-[133%] z-5 text-center ${
+                  <h3
+                    className={`text-white  text-[14px] md:text-[24px] font-semibold leading-[143%] md:leading-[133%] z-5 text-center ${
                       currentItem === index
                         ? "dark:text-paragraph-dark"
                         : "dark:text-paragraph-dark"
-                    }`}>
+                    }`}
+                  >
                     {item.title}
                   </h3>
                   <p className="text-white dark:text-paragraph-dark text-[14px] font-normal leading-[143%] z-5 hidden lg:block">

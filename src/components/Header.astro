@@ -8,8 +8,9 @@ type Translations = typeof import('../i18n/en').default;
 type HeaderContent = Translations['header'];
 interface Props {
   content?: HeaderContent;
+  landing: boolean
 }
-const { content } = Astro.props as Props;
+const { content, landing } = Astro.props as Props;
 
 // Obtener la ruta actual y normalizar el path sin prefijo de idioma
 const currentPath = Astro.url.pathname;
@@ -103,7 +104,9 @@ const lang = match ? match[1] : 'en';
     </div>
     <div class="flex justify-center items-center gap-4 xl:gap-8">
       <ChangeLanguage />
-      <ChangeTheme />
+      {
+        landing ? null : <ChangeTheme />
+      }
       <Button
         text={content?.buttons[0].label}
         textClass="text-white"

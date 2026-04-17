@@ -1,13 +1,14 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-
+import sitemap from '@astrojs/sitemap';
 import icon from "astro-icon";
 
 import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.qualityportablerentalservice.com',
   vite: {
     plugins: [tailwindcss()],
   },
@@ -19,5 +20,5 @@ export default defineConfig({
       redirectToDefaultLocale: false,
     },
   },
-  integrations: [icon(), react()],
+  integrations: [icon(), react(), sitemap()],
 });

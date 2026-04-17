@@ -1,0 +1,26 @@
+---
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type HeroContent = Translations['landingFirst']['callAction'];
+interface Props {
+  content: HeroContent;
+}
+const { content} = Astro.props as Props;
+---
+<div class="w-full bg-primary flex justify-center items-center">
+  <div class="container-full py-8 flex justify-between items-center ">
+    <div class="flex flex-col justify-center items-start gap-2 text-white">
+      <h2 class="text-[32px] font-bold leading-[106%]">{content.title}</h2>
+      <p class="text-[24px] font-normal leading-[150%]">{content.description}</p>
+    </div>
+    <Button
+        text={content.buttons.label}
+        textClass="text-white"
+        href={content.buttons.href}
+        target="_blank"
+        extraBtnClass={`bg-accent hover:bg-accent/90 hidden lg:flex`}
+        iconName={content.buttons.icon}
+      />
+  </div>
+</div>
