@@ -1,0 +1,42 @@
+---
+type Translations = typeof import('../../i18n/en').default;
+type ConstructionContent = Translations['landingFirst']['construction'];
+interface Props {
+  content: ConstructionContent;
+}
+const { content} = Astro.props as Props;
+---
+<section class="container-full flex flex-col justify-center items-center gap-10 md:gap-16 py-10 md:py-20">
+  <h2 class="text-[32px] md:text-[56px] text-primary font-bold leading-[114%] text-center">{content.title}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 w-full justify-center items-stretch gap-4 lg:gap-8">
+    {content.items.map((item)=>( 
+      <div class="flex flex-col justify-start items-start gap-6 p-4 lg:p-6 border border-[#E6E6E6] rounded-2xl shadow-solution bg-[#F9F8FD]">
+        <div class="relative aspect-square w-full h-auto overflow-hidden rounded-2xl">
+          <img src={`/images/${item.image}.webp`} alt={item.image} width="363" height="363" class="w-full h-full absolute object-cover object-center inset-0 " />
+        </div>
+        <div class="flex flex-col justify-center items-start gap-4">
+          {
+            item.items.map((i)=>(
+              <div class="flex justify-start items-center gap-4">
+                <img src={`/images/check-3.svg`} alt={"check"} width="24" height="24" class="w-6 h-6 " />
+                <p class="text-[19px] md:text-[20px] text-paragraph font-normal leading-[155%]">{i}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="flex flex-col justify-center items-center gap-10 w-full">
+    <div class="flex flex-col justify-center items-start md:items-center gap-6">
+      {
+        content.description.map((description) => (
+          <p set:html={description} class="text-paragraph text-[19px] md:text-[20px] font-normal leading-[155%] text-start md:text-center"></p>
+        ))
+      }
+    </div>
+    <button class="bg-accent py-1 px-8 rounded-lg flex justify-center items-center text-white text-[26px] 3xl:text-[32px] font-bold leading-[187%] hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer">
+          {content.button}
+        </button>
+  </div>
+</section>

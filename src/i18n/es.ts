@@ -1626,6 +1626,222 @@ export default {
     header: {
       nav: [
         {
+          label: "Eventos Privados",
+          href: "#private-events",
+        },
+        {
+          label: "Construcción",
+          href: "#construction",
+        },
+        {
+          label: "Eventos Públicos",
+          href: "#public-events",
+        },
+      ],
+      locations: [],
+      buttons: [
+        {
+          label: "(321) 217-9445",
+          href: "tel:+13212179445",
+          icon: "phone-2",
+        },
+      ],
+    },
+    hero: {
+      title: "Alquiler de Baños Portátiles <br/> en Florida y Georgia",
+      description: "Múltiples Ubicaciones de Servicio en Florida y Georgia",
+      items: [
+        "Propiedad y Operación Local",
+        "Servicio Confiable y Garantizado",
+        "Servicio de Limpieza Completo Regularmente",
+      ],
+      button: "Cotización Gratuita",
+      callAction: {
+        title: "¡Llama Ahora para una Cotización Gratuita!",
+        number: "(321) 217-9445",
+        icon: "phone-2",
+      },
+    },
+    solutions: {
+      title: "Nuestras Soluciones de Baños Portátiles",
+      title2: "¿Necesitas Baños Portátiles? Llámanos",
+      items: [
+        {
+          title: "Baño Portátil",
+          image: "equipment-1",
+          concept: "Perfecto Para:",
+          items: [
+            "Fiestas y Eventos",
+            "Sitios de Construcción",
+            "Remodelaciones",
+            "Ferias y Conciertos",
+            "Bodas",
+          ],
+          description: "Comenzando en: (Llama para el Mejor Precio)",
+          button: "Cotización",
+          phone:
+            'Llamar: <a href="tel:+13212179445" class="text-primary"> (321) 217-9445 </a> ',
+        },
+        {
+          title: "Estación de Lavado de Manos",
+          image: "product-6",
+          concept: "Perfecto Para:",
+          items: [
+            "Fiestas y Eventos",
+            "Sitios de Construcción",
+            "Remodelaciones",
+            "Ferias y Conciertos",
+            "Bodas",
+          ],
+          description: "Comenzando en: (Llama para el Mejor Precio)",
+          button: "Cotización",
+          phone:
+            'Llamar: <a href="tel:+13212179445" class="text-primary"> (321) 217-9445 </a> ',
+        },
+      ],
+    },
+    reviews: {
+      title: "Lee Nuestras Reseñas",
+      title2: "Lo Que Dicen Nuestros Clientes",
+      items: [
+        {
+          image: "customer-1",
+          title: "City Automotive Group",
+          date: "Hace 2 semanas",
+          description:
+            "Siempre una gran experiencia haciendo negocios aquí. Siempre limpio y a tiempo.",
+        },
+        {
+          image: "customer-3",
+          title: "Tech Store",
+          date: "Hace 3 semanas",
+          description:
+            "Excelente servicio siempre. Muchas gracias por ayudarme con mi evento.",
+        },
+        {
+          image: "customer-2",
+          title: "Aqua Venue & Studio",
+          date: "Hace 1 semana",
+          description:
+            "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó eso!",
+        },
+        {
+          image: "customer-1",
+          title: "City Automotive Group",
+          date: "Hace 2 semanas",
+          description:
+            "Siempre una gran experiencia haciendo negocios aquí. Siempre limpio y a tiempo.",
+        },
+        {
+          image: "customer-3",
+          title: "Tech Store",
+          date: "Hace 3 semanas",
+          description:
+            "Excelente servicio siempre. Muchas gracias por ayudarme con mi evento.",
+        },
+        {
+          image: "customer-2",
+          title: "Aqua Venue & Studio",
+          date: "Hace 1 semana",
+          description:
+            "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó eso!",
+        },
+      ],
+      button: "Cotización Gratuita",
+    },
+    callAction: {
+      title: "Llama Ahora para una Cotización",
+      description: "¿Necesitas Ayuda con un Evento Especial? Llámanos",
+      buttons: {
+        label: "(321) 217-9445",
+        href: "tel:+13212179445",
+        icon: "phone-2",
+      },
+    },
+    private: {
+      title: "Eventos Privados/Pequeños",
+      images: ["private_1", "private_2", "private_3"],
+      descriptions: [
+        "Alquilar baños portátiles y lavamanos para tu evento pequeño es fácil. Se entregarán baños portátiles y lavamanos limpios, configurados con agua fresca, tratamiento fragante, papel higiénico, toallas de papel y jabón. Y cuando hayas terminado, nos encargaremos de la limpieza final y recogida.",
+        "¿Quieres una experiencia más agradable o necesitas un poco más de espacio? Asegúrate de preguntar sobre nuestras unidades de tamaño extra que también satisfacen los requisitos de la ADA.",
+      ],
+      button: "Cotización Gratuita",
+    },
+    icons: [
+      {
+        icon: "cleaning",
+        title: "Excepcionalmente Limpio y Fresco",
+      },
+      {
+        icon: "lock",
+        title: "Puertas Cerradas",
+      },
+      {
+        icon: "bulb",
+        title: "Luces Interiores LED Disponibles",
+      },
+      {
+        icon: "notes",
+        title: "Servicio Garantizado",
+      },
+    ],
+    public: {
+      title: "Eventos Públicos/Grandes",
+      images: ["private_4", "private_5", "private_6"],
+      descriptions: [
+        "Siendo de propiedad local, sabemos que los eventos públicos tienen demandas únicas. Se pueden manejar 10-200 baños portátiles y lavamanos con facilidad. La entrega puntual, los servicios puntuales y la recogida oportuna harán que todo funcione sin problemas.",
+        "Con unidades estándar, unidades ADA y lavamanos de doble cara, se manejarán todas las necesidades de tus huéspedes.",
+        "Deja que nuestro equipo dedicado y camiones sirvan tu evento perfectamente para que puedas enfocarte en cosas más importantes.",
+      ],
+      button: "Cotización Gratuita",
+    },
+    construction: {
+      title: "Eventos Públicos/Grandes",
+      items: [
+        {
+          image: "large_1",
+          items: [
+            "Servicio Garantizado",
+            "Propiedad Local",
+            "Cumplir con Requisitos de OSHA",
+          ],
+        },
+        {
+          image: "location-hero",
+          items: [
+            "Servicio de Limpieza Semanal",
+            "Puerta Cerrada",
+            "Siempre Limpio y Fresco",
+          ],
+        },
+        {
+          image: "large_3",
+          items: [
+            "Dispensador de Toallas de Papel",
+            "Lavamanos de Doble Lado",
+            "Dispensador de Jabón",
+          ],
+        },
+      ],
+      description: [
+        "Para alquileres de construcción o a largo plazo, podemos ayudarte. Si tu proveedor actual está perdiendo servicios, facturación incorrecta o te trata como un número, podemos mejorarlo.",
+        "Ser de propiedad local significa que nos importan nuestros clientes y trabajaremos para mantenerte feliz. Están disponibles unidades estándar, ADA y estaciones de lavado de manos.",
+      ],
+      button: "Cotización Gratuita",
+    },
+    footer: {
+      title: "¡Llama Ahora para una Cotización Gratuita!",
+      button: {
+        label: "(321) 217-9445",
+        href: "tel:+13212179445",
+        icon: "phone",
+      },
+    },
+  },
+  landingSecond: {
+    header: {
+      nav: [
+        {
           label: "Private Events",
           href: "#private-events",
         },
@@ -1643,197 +1859,322 @@ export default {
         {
           label: "(321) 217-9445",
           href: "tel:+13212179445",
-          icon: "phone",
+          icon: "phone-2",
         },
       ],
     },
     hero: {
       title: "Portable Restroom Rentals <br/> In Florida & Georgia",
-      description: "Multiple Service Locations in Florida & Georgia",
-      items: [
-        "Locally Owned And Operated",
-        "Reliable And Guaranteed Service",
-        "Full Cleaning Service Regularly",
-      ],
+      description: "Proudly, Locally Owned and Operated",
+      items: [],
       button: "Get A Free Quote Here",
       callAction: {
-        title: "Call Now For A Free Quote!",
-        number: "(321) 217-9445",
-        icon: "phone",
+        title: "",
+        number: "",
+        icon: "",
       },
     },
-    solutions: {
-      title: "Our Porta Potty Solutions",
-      title2: "Need Porta Potties? Give Us A Call.",
+    products: {
+      title: "We are Quality Portable Rental Service",
+      description:
+        "Trusted since 2011, we provide portable sanitation and waste solutions across Florida and Georgia, delivering clean units, on-time service, and reliable support for construction, events, and commercial projects.",
       items: [
         {
-          title: "Portable Restroom",
-          image: "equipment-1",
-          concept: "Perfect For:",
+          title: "Event Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-1",
+            width: "170",
+          },
+        },
+        {
+          title: "Construction Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-2",
+            width: "159",
+          },
+        },
+        {
+          title: "Bathroom Trailers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-3",
+            width: "218",
+          },
+        },
+        {
+          title: "ADA / Deluxe Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-4",
+            width: "168",
+          },
+        },
+        {
+          title: "Trailer Portable Toilets",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-5",
+            width: "170",
+          },
+        },
+        {
+          title: "Shower trailers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-6",
+            width: "347",
+          },
+        },
+        {
+          title: "Water Barriers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-7",
+            width: "170",
+          },
+        },
+      ],
+    },
+    services: {
+      title: "Our Services",
+      items: [
+        {
+          icon: "construction",
+          title: "Construction",
+          description: null,
           items: [
-            "Parties & Events",
-            "Construction Sites",
-            "Remodels",
-            "Fairs & Concerts",
-            "Weddings",
+            {
+              icon: "landscape",
+              label: "Commercial Landscape",
+            },
+            {
+              icon: "sites",
+              label: "Construction Sites",
+            },
+            {
+              icon: "home",
+              label: "Home Remodels",
+            },
+            {
+              icon: "landfills",
+              label: "Landfills",
+            },
+            {
+              icon: "parking",
+              label: "Parking Lots",
+            },
           ],
-          description: "Starting At: (Call For Best Pricing)",
-          button: "Click For a Quote",
-          phone: 'Call: <a href="tel:+13212179445"> (321) 217-9445 </a> ',
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
         },
         {
-          title: "Hand Washing Station",
-          image: "product-6",
-          concept: "Perfect For:",
+          icon: "events",
+          title: "Events",
+          description: null,
           items: [
-            "Parties & Events",
-            "Construction Sites",
-            "Remodels",
-            "Fairs & Concerts",
-            "Weddings",
+            {
+              icon: "concerts",
+              label: "Concerts",
+            },
+            {
+              icon: "fairs",
+              label: "Fairs",
+            },
+            {
+              icon: "marathons",
+              label: "Marathons",
+            },
+            {
+              icon: "sporting",
+              label: "Sporting Events",
+            },
+            {
+              icon: "weddings",
+              label: "Weddings",
+            },
           ],
-          description: "Starting At: (Call For Best Pricing)",
-          button: "Click For a Quote",
-          phone: 'Call: <a href="tel:+13212179445"> (321) 217-9445 </a> ',
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+        },
+        {
+          icon: "tank",
+          title: "Septic Tank Pumping",
+          description:
+            "We’re your one-stop shop for your portable toilet and septic service needs.",
+          items: null,
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
         },
       ],
     },
-    reviews: {
-      title: "Read Our Reviews",
-      title2: "What Our Customers Are Saying",
+    areas: {
+      title: "Our service Areas",
       items: [
         {
-          image: "customer-1",
-          title: "City Automotive Group",
-          date: "2 week ago",
-          description:
-            "Always a great experience doing business here. Always Clean and on time.",
+          label: "Tampa, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
         {
-          image: "customer-3",
-          title: "Tech Store",
-          date: "3 week ago",
-          description:
-            "Great service every time. Thank you so much for helping me with my event.",
+          label: "Flot Myers, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
         {
-          image: "customer-2",
-          title: "Aqua Venue & Studio",
-          date: "1 week ago",
-          description:
-            "Very professional work. They cleaned the toilets periodically. I liked that!",
+          label: "Melbourne, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
         {
-          image: "customer-1",
-          title: "City Automotive Group",
-          date: "2 week ago",
-          description:
-            "Always a great experience doing business here. Always Clean and on time.",
+          label: "Ocala, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
         {
-          image: "customer-3",
-          title: "Tech Store",
-          date: "3 week ago",
-          description:
-            "Great service every time. Thank you so much for helping me with my event.",
+          label: "Orlando, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
         {
-          image: "customer-2",
-          title: "Aqua Venue & Studio",
-          date: "1 week ago",
-          description:
-            "Very professional work. They cleaned the toilets periodically. I liked that!",
+          label: "Jacksonville, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Atlanta, Georgia",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Oakwood, Georgia",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
         },
       ],
-      button: "Get A Free Quote Here",
     },
-    callAction: {
-      title: "Call Now For A Quote",
-      description: "Need Help With A Crazy Special Event? Give Us A Call.",
-      buttons: {
-        label: "(321) 217-9445",
-        href: "tel:+13212179445",
-        icon: "phone",
-      },
-    },
-    private: {
-      title: "Private/Small Events",
-      images: ["private_1", "private_2", "private_3"],
-      descriptions: [
-        "Renting potties and sinks for your small event is easy. Clean porta potties and sinks will be delivered, set up with fresh water, fragrant treatment, toilet paper, paper towels, and soap. And when you're done, we'll arrange a final clean and pick up.",
-        "Want a nicer experience, or need a little more room? Be sure to ask about our oversized units that also satisfy ADA demands.",
-      ],
-      button: "Get A Free Quote Here",
-    },
-    icons: [
-      {
-        icon: "cleaning",
-        title: "Exceptionally Clean & Fresh",
-      },
-      {
-        icon: "lock",
-        title: "Locking Doors",
-      },
-      {
-        icon: "bulb",
-        title: "LED Interior Lights Avail.",
-      },
-      {
-        icon: "notes",
-        title: "Guaranteed Service",
-      },
-    ],
-    public: {
-      title: "Public/Large Events",
-      images: ["private_4", "private_5", "private_6"],
-      descriptions: [
-        "Locally owned in Salem, we know that public events have unique demands. 10-200 potties and sinks can all be managed through Oregon Portable Toilets. On-time delivery, on-time services, and on-time removal will make things go smoothly.",
-        "With standard units, ADA units, and double-sided sinks, all of your guests' needs will be handled.",
-        "Let our dedicated crew and trucks service your event perfectly so you can focus on more important things.",
-      ],
-      button: "Get A Free Quote Here",
-    },
-    construction: {
-      title: "Public/Large Events",
+    reasons: {
+      title: "How our portable restroom <br/> rentals Work",
       items: [
+        {
+          image: "alabama-hero",
+          title: "Schedule Your Drop Off",
+          description:
+            "Contact us today to discuss your event or project needs and experience top-notch porta potty service that ensures clean and convenient sanitation for your guests or workers.",
+        },
+        {
+          image: "private_6",
+          title: "Delivery",
+          description:
+            "We take pride in our reliable service, punctuality, and efficiency in delivering clean units, managing service schedules, and ensuring a hassle-free and hygienic experience for all our clients.",
+        },
         {
           image: "large_1",
-          items: [
-            "Guaranteed Service",
-            "Locally Owned",
-            "Meet OSHA Requirements",
-          ],
-        },
-        {
-          image: "location-hero",
-          items: [
-            "Weekly Cleaning Service",
-            "Locking Door",
-            "Always Clean & Fresh",
-          ],
-        },
-        {
-          image: "large_3",
-          items: [
-            "Paper Towel Dispenser",
-            "Double Sided Wash Sink",
-            "Soap Dispenser",
-          ],
+          title: "Removal",
+          description:
+            "After your event or project concludes, we promptly clean and remove the units, leaving your location clean and tidy as if we were never there, providing you with a seamless and stress-free experience from start to finish.",
         },
       ],
-      description: [
-        "For construction or long-term personal rentals, Oregon Portable Toilets can help.If your current vendor is missing services, getting billing wrong, or treating you like a number we can make it better.",
-        "Locally owned means we care about our customers and will work to keep you happy. Standard, ADA units, and hand wash stations are available.",
+    },
+    choose: {
+      title: "Why Choose Quality Portable Rental Service?",
+      description:
+        "With 15+ years of experience, we provide quality service and offer a variety of portable toilets, trailers, and hand wash stations. We are flexible with business hours and available on short notice to meet all your expectations.",
+      button: "Request a Quote",
+      icons: [
+        {
+          icon: "stock",
+          title: "Always Stocked",
+        },
+        {
+          icon: "schedule",
+          title: "Flexible Schedule",
+        },
+        {
+          icon: "clean",
+          title: "Always Clean",
+        },
+        {
+          icon: "pricing",
+          title: "Transparent Pricing",
+        },
       ],
-      button: "Get A Free Quote Here",
+    },
+    customers: {
+      title: "What Our Customers Are Saying",
+      items: [
+        {
+          title: "City Automotive Group",
+          date: "2 week ago",
+          description:
+            "Always a great experience doing business here. Always Clean and on time.",
+        },
+        {
+          title: "Tech Store",
+          date: "3 week ago",
+          description:
+            "Great service every time. Thank you so much for helping me with my event.",
+        },
+        {
+          title: "Aqua Venue & Studio",
+          date: "1 week ago",
+          description:
+            "Very professional work. They cleaned the toilets periodically. I liked that!",
+        },
+      ],
+      button: "Read More Reviews",
     },
     footer: {
-      title: "Call Now For A Free Quote!",
-      button: {
-        label: "(321) 217-9445",
-        href: "tel:+13212179445",
-        icon: "phone",
-      },
+      title: "About Quality Portable Rental Service ",
+      descriptions: [
+        "We love what we do and it shows. With more than 15 years of experience in the Portable Toilets field, we know our industry like the back of our hands. There’s no challenge too big or too small, and we dedicate our utmost energy to every project we take on.",
+        "Every customer is unique. That’s why we customize every one of our service to fit your needs exactly. Whether it’s a small project or a comprehensive effort, we’ll sit down with you, listen to your requests, and prepare a customized plan.",
+      ],
+      button: "Get a Free Quote Here",
     },
   },
 };

@@ -1,0 +1,38 @@
+---
+type Translations = typeof import('../../i18n/en').default;
+type ProductsContent = Translations['landingSecond']['products'];
+interface Props {
+  content: ProductsContent;
+}
+const { content} = Astro.props as Props;
+---
+<section class="flex flex-col justify-center items-center bg-[#F9F8FD] w-full">
+  <div class="container-full flex flex-col justify-center items-start gap-10 md:gap-20 py-10 md:py-20">
+    <h2 class="text-[32px] md:text-[48px] lg:text-[56px] font-bold leading-[114%] text-primary">{content.title}</h2>
+    <p class="text-[19px] md:text-[20px] font-normal leading-[150%] text-paragraph">{content.description}</p>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-stretch gap-8 md:gap-6">
+      {
+        content.items.map((item)=>{
+          const width = parseInt(item.image.width);
+          const aspectRatio = width / 206;
+          return (
+            <div class="w-full h-auto flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center px-6 py-8 rounded-2xl shadow-solution aspect-628/254 bg-white grow gap-8 md:gap-0">
+              <div class="flex flex-col justify-center items-start gap-6 md:gap-5">
+                <h3 class="text-[24px] lg:text-[32px] text-primary leading-[120%] font-bold">{item.title}</h3>
+                <a href={item.link.href} class="flex justify-center items-center gap-2 cursor-pointer group">
+                  <img src="/images/circle-a.svg" alt="Arrow circle" width="24" height="24" class="w-10 h-10"/>
+                  <p class="text-[20px] font-normal leading-[150%] text-paragraph group-hover:text-primary transition-all duration-300 ease-in-out">{item.link.label}</p>
+                </a>
+              </div>
+              <div class="relative w-[45%] h-auto md:w-auto md:h-full overflow-hidden" style={`aspect-ratio: ${aspectRatio}`}>
+                <img src={`/images/${item.image.src}.webp`} alt={item.title} width={width} height={206} class="w-full h-full object-cover object-center">
+              </div>
+            </div>
+          )
+        }
+          
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -122,7 +122,7 @@ const { lang, t } = Astro.props;
   <body
     class="font-family antialiased overflow-x-hidden bg-[#FFFFFF] flex flex-col justify-center items-center w-full"
   >
-    <Header content={t?.header} />
+    <Header content={t?.header} landing={false}/>
     <main class="flex flex-col w-full items-center">
       <slot />
     </main>

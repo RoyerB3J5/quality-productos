@@ -1834,4 +1834,343 @@ export default {
       },
     },
   },
+  landingSecond: {
+    header: {
+      nav: [
+        {
+          label: "Private Events",
+          href: "#private-events",
+        },
+        {
+          label: "Construction",
+          href: "#construction",
+        },
+        {
+          label: "Public Events",
+          href: "#public-events",
+        },
+      ],
+      locations: [],
+      buttons: [
+        {
+          label: "(321) 217-9445",
+          href: "tel:+13212179445",
+          icon: "phone-2",
+        },
+      ],
+    },
+    hero: {
+      title: "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
+      description: "Proudly, Locally Owned and <br class='block md:hidden'/> Operated",
+      items: [],
+      button: "Get A Free Quote Here",
+      callAction: {
+        title:'',
+        number: "",
+        icon: "",
+      },
+    },
+    products: {
+      title: "We are Quality Portable Rental Service",
+      description:
+        "Trusted since 2011, we provide portable sanitation and waste solutions across Florida and Georgia, delivering clean units, on-time service, and reliable support for construction, events, and commercial projects.",
+      items: [
+        {
+          title: "Event Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-1",
+            width: "170",
+          },
+        },
+        {
+          title: "Construction Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-2",
+            width: "159",
+          },
+        },
+        {
+          title: "Bathroom Trailers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-3",
+            width: "218",
+          },
+        },
+        {
+          title: "ADA / Deluxe Porta Potty",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-4",
+            width: "168",
+          },
+        },
+        {
+          title: "Trailer Portable Toilets",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-5",
+            width: "170",
+          },
+        },
+        {
+          title: "Shower trailers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-6",
+            width: "347",
+          },
+        },
+        {
+          title: "Water Barriers",
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+          image: {
+            src: "serv-l-7",
+            width: "170",
+          },
+        },
+      ],
+    },
+    services: {
+      title: "Our Services",
+      items: [
+        {
+          icon: "construction",
+          title: "Construction",
+          description: null,
+          items: [
+            {
+              icon: "landscape",
+              label: "Commercial Landscape",
+            },
+            {
+              icon: "sites",
+              label: "Construction Sites",
+            },
+            {
+              icon: "home",
+              label: "Home Remodels",
+            },
+            {
+              icon: "landfills",
+              label: "Landfills",
+            },
+            {
+              icon: "parking",
+              label: "Parking Lots",
+            },
+          ],
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+        },
+        {
+          icon: "events",
+          title: "Events",
+          description: null,
+          items: [
+            {
+              icon: "concerts",
+              label: "Concerts",
+            },
+            {
+              icon: "fairs",
+              label: "Fairs",
+            },
+            {
+              icon: "marathons",
+              label: "Marathons",
+            },
+            {
+              icon: "sporting",
+              label: "Sporting Events",
+            },
+            {
+              icon: "weddings",
+              label: "Weddings",
+            },
+          ],
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+        },
+        {
+          icon: "tank",
+          title: "Septic Tank Pumping",
+          description:
+            "We’re your one-stop shop for your portable toilet and septic service needs.",
+          items: null,
+          link: {
+            href: "#",
+            label: "Learn more",
+          },
+        },
+      ],
+    },
+    areas: {
+      title: "Our service Areas",
+      items: [
+        {
+          label: "Tampa, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Flot Myers, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Melbourne, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Ocala, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Orlando, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Jacksonville, Florida",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Atlanta, Georgia",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+        {
+          label: "Oakwood, Georgia",
+          link: {
+            label: "Call Now For a Quote",
+            href: "#",
+          },
+        },
+      ],
+    },
+    reasons: {
+      title: "How our portable restroom <br/> rentals Work",
+      items: [
+        {
+          image: "alabama-hero",
+          title: "Schedule Your Drop Off",
+          description:
+            "Contact us today to discuss your event or project needs and experience top-notch porta potty service that ensures clean and convenient sanitation for your guests or workers.",
+        },
+        {
+          image: "private_6",
+          title: "Delivery",
+          description:
+            "We take pride in our reliable service, punctuality, and efficiency in delivering clean units, managing service schedules, and ensuring a hassle-free and hygienic experience for all our clients.",
+        },
+        {
+          image: "large_1",
+          title: "Removal",
+          description:
+            "After your event or project concludes, we promptly clean and remove the units, leaving your location clean and tidy as if we were never there, providing you with a seamless and stress-free experience from start to finish.",
+        },
+      ],
+    },
+    choose: {
+      title: "Why Choose Quality Portable Rental Service?",
+      description:
+        "With 15+ years of experience, we provide quality service and offer a variety of portable toilets, trailers, and hand wash stations. We are flexible with business hours and available on short notice to meet all your expectations.",
+      button: "Request a Quote",
+      icons: [
+        {
+          icon: "stock",
+          title: "Always Stocked",
+        },
+        {
+          icon: "schedule",
+          title: "Flexible Schedule",
+        },
+        {
+          icon: "clean",
+          title: "Always Clean",
+        },
+        {
+          icon: "pricing",
+          title: "Transparent Pricing",
+        },
+      ],
+    },
+    customers: {
+      title: "What Our Customers Are Saying",
+      items: [
+        {
+          title: "City Automotive Group",
+          date: "2 week ago",
+          description:
+            "Always a great experience doing business here. Always Clean and on time.",
+        },
+        {
+          title: "Tech Store",
+          date: "3 week ago",
+          description:
+            "Great service every time. Thank you so much for helping me with my event.",
+        },
+        {
+          title: "Aqua Venue & Studio",
+          date: "1 week ago",
+          description:
+            "Very professional work. They cleaned the toilets periodically. I liked that!",
+        },
+      ],
+      button: "Read More Reviews",
+    },
+    footer: {
+      title: "About Quality Portable Rental Service ",
+      descriptions: [
+        "We love what we do and it shows. With more than 15 years of experience in the Portable Toilets field, we know our industry like the back of our hands. There’s no challenge too big or too small, and we dedicate our utmost energy to every project we take on.",
+        "Every customer is unique. That’s why we customize every one of our service to fit your needs exactly. Whether it’s a small project or a comprehensive effort, we’ll sit down with you, listen to your requests, and prepare a customized plan.",
+      ],
+      button: "Get a Free Quote Here",
+    },
+  },
 };

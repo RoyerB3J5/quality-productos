@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../../components/Button.astro';
+
+type Translations = typeof import('../../i18n/en').default;
+type FooterContent = Translations['landingFirst']['footer'];
+interface Props {
+  content?: FooterContent;
+}
+const { content } = Astro.props as Props;
+// Obtener la ruta actual y normalizar el path sin prefijo de idioma
+const currentPath = Astro.url.pathname;
+// Normalizar: remover idioma y trailing slash
+const normalized =
+  currentPath.replace(/^\/(en|es)/, '').replace(/\/$/, '') || '/';
+// Detectar el idioma actual ('en' o 'es')
+const match = currentPath.match(/^\/(en|es)/);
+const lang = match ? match[1] : 'en';
+---
+
+
+  <div class="w-full bg-primary flex justify-center items-center">
+    <div class="container-full flex flex-col justify-center items-center gap-10 py-16">
+      <a
+        href={`/${lang}`}
+        aria-label="Ir a la página principal"
+        title="Quality Portable - Inicio"
+      >
+        <img
+          src="/images/logo-landing.svg"
+          alt="Logo de Quality Portable"
+          width="239"
+          height="72"
+          class="cursor-pointer w-60 h-auto "
+        />
+      </a>
+      <p class="text-white text-[32px] font-bold leading-[106%] text-center">{content?.title}</p>
+      <Button
+        text={content?.button.label}
+        textClass="text-white"
+        href={content?.button.href}
+        target="_blank"
+        extraBtnClass={`bg-accent hover:bg-accent/90 `}
+        iconName={content?.button.icon}
+      />
+    </div>
+  </div>
+

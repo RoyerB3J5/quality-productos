@@ -3,7 +3,12 @@ import en from '../../../i18n/en';
 import es from '../../../i18n/es';
 import LayoutLanding from '../../../layouts/LayoutLanding.astro';
 import CallAction from '../../../sections/go/CallAction.astro';
+import Construction from '../../../sections/go/Construction.astro';
+import Footer from '../../../sections/go/Footer.astro';
 import Hero from '../../../sections/go/Hero.astro';
+import Icons from '../../../sections/go/Icons.astro';
+import Reviews from '../../../sections/go/Reviews.astro';
+import Services from '../../../sections/go/Services.astro';
 import Solutions from '../../../sections/go/Solutions.astro';
 import type { Language } from '../../../types/language.type';
 export function getStaticPaths() {
@@ -19,6 +24,14 @@ const t = translations[lang];
 <LayoutLanding lang={lang} t={t}>
   <Hero content={t.landingFirst.hero}/>
   <Solutions content={t.landingFirst.solutions} second={false}/>
+  <Reviews content={t.landingFirst.reviews} second={false}/>
   <CallAction content={t.landingFirst.callAction} />
+  <Services content={t.landingFirst.private} />
+  <Icons content={t.landingFirst.icons} />
+  <Services content={t.landingFirst.public} />
+  <Icons content={t.landingFirst.icons} />
+  <Construction content={t.landingFirst.construction} />
+  <Reviews content={t.landingFirst.reviews} second={true}/>
   <Solutions content={t.landingFirst.solutions} second={true}/>
+  <Footer content={t.landingFirst.footer}/>
 </LayoutLanding>

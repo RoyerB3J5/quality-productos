@@ -2,6 +2,7 @@
 // Imports optimizados - solo lo esencial al inicio
 import '../styles/global.css';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 type Translations = typeof import('../i18n/en').default;
 
@@ -123,6 +124,7 @@ const { lang, t } = Astro.props;
     <main class="flex flex-col w-full items-center">
       <slot />
     </main>
+    <Footer content={t?.footer} landing={true}/>
     <script>
       function showContent() {
         document.body.classList.add('visible');
