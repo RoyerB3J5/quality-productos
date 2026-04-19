@@ -2144,18 +2144,21 @@ export default {
       title: "What Our Customers Are Saying",
       items: [
         {
+          id:1,
           title: "City Automotive Group",
           date: "2 week ago",
           description:
             "Always a great experience doing business here. Always Clean and on time.",
         },
         {
+          id:2,
           title: "Tech Store",
           date: "3 week ago",
           description:
             "Great service every time. Thank you so much for helping me with my event.",
         },
         {
+          id:3,
           title: "Aqua Venue & Studio",
           date: "1 week ago",
           description:

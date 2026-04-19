@@ -10,6 +10,7 @@ import type { Language } from '../../../types/language.type';
 import Reasons from '../../../sections/go-2/Reasons.astro';
 import Choose from '../../../sections/go-2/Choose.astro';
 import Footer from '../../../sections/go-2/Footer.astro';
+import Customers from '../../../sections/go-2/Customers.astro';
 export function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
 }
@@ -27,5 +28,6 @@ const t = translations[lang];
   <Map content={t.landingSecond.areas}/>
   <Reasons content={t.landingSecond.reasons}/>
   <Choose content={t.landingSecond.choose}/>
+  <Customers content={t.landingSecond.customers}/>
   <Footer content={t.landingSecond.footer}/>
 </LayoutLanding>

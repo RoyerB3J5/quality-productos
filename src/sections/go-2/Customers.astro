@@ -1,0 +1,29 @@
+---
+import InfiniteCarousel from '../../components/InfiniteCarousel';
+
+type Translations = typeof import('../../i18n/en').default;
+type CustomersContent = Translations['landingSecond']['customers'];
+interface Props {
+  content: CustomersContent;
+}
+const { content} = Astro.props as Props;
+---
+<section class="flex flex-col justify-center items-center gap-10 md:gap-20 pt-10 pb-10 md:pb-20 container-full">
+  <h2 class="text-[32px] md:text-[56px] font-bold leading-[114%] text-primary text-center">
+    {content.title}
+  </h2>
+  <div class="w-full flex flex-col md:flex-row justify-center items-center gap-8">
+    <div class="relative rounded-2xl overflow-hidden w-full md:w-[30%] h-auto aspect-358/379">
+      <img src="/images/customer.webp" alt="Curstomer Quality" class="w-full h-full absolute inset-0 object-cover object-center">
+    </div>
+    <div class="flex flex-col justify-center items-center gap-10 w-full md:w-[70%]">
+      <InfiniteCarousel 
+        client:load
+        items={content.items} 
+      />
+      <button class="bg-accent p-4 md:p-3 xl:p-4 rounded-lg flex justify-center items-center text-white text-[20px] md:text-[16px] xl:text-[20px] font-bold leading-normal hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer">
+                {content.button}
+      </button>
+    </div>
+  </div>
+</section>

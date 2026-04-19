@@ -25,7 +25,7 @@ const { content} = Astro.props as Props;
               <div class="flex flex-col justify-center items-start gap-6">
                 {item.items && item.items.map((i)=>( 
                   <div class="flex justify-center items-center gap-2">
-                    <img src={`/images/${i.icon}.svg`} alt={i.icon} class="w-6.75 h-auto md:h-7.5 md:w-auto">
+                    <img src={`/images/${i.icon}.svg`} alt={i.icon} class="w-6.75 h-auto ">
                     <p class="text-[20px] font-normal leading-[100%] text-paragraph">{i.label}</p>
                   </div>
                 ))}

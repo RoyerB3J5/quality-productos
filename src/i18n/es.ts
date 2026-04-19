@@ -1842,15 +1842,15 @@ export default {
     header: {
       nav: [
         {
-          label: "Private Events",
+          label: "Eventos Privados",
           href: "#private-events",
         },
         {
-          label: "Construction",
+          label: "Construcción",
           href: "#construction",
         },
         {
-          label: "Public Events",
+          label: "Eventos Públicos",
           href: "#public-events",
         },
       ],
@@ -1864,10 +1864,10 @@ export default {
       ],
     },
     hero: {
-      title: "Portable Restroom Rentals <br/> In Florida & Georgia",
-      description: "Proudly, Locally Owned and Operated",
+      title: "Alquiler de Baños Portátiles <br/> en Florida y Georgia",
+      description: "Con Orgullo, Propiedad Local y Operada",
       items: [],
-      button: "Get A Free Quote Here",
+      button: "Cotización Gratuita",
       callAction: {
         title: "",
         number: "",
@@ -1875,15 +1875,15 @@ export default {
       },
     },
     products: {
-      title: "We are Quality Portable Rental Service",
+      title: "Somos Quality Portable Rental Service",
       description:
-        "Trusted since 2011, we provide portable sanitation and waste solutions across Florida and Georgia, delivering clean units, on-time service, and reliable support for construction, events, and commercial projects.",
+        "Confiables desde 2011, proporcionamos soluciones de saneamiento portátil y gestión de residuos en Florida y Georgia, entregando unidades limpias, servicio puntual y soporte confiable para construcción, eventos y proyectos comerciales.",
       items: [
         {
-          title: "Event Porta Potty",
+          title: "Baño Portátil para Eventos",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-1",
@@ -1891,10 +1891,10 @@ export default {
           },
         },
         {
-          title: "Construction Porta Potty",
+          title: "Baño Portátil para Construcción",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-2",
@@ -1902,10 +1902,10 @@ export default {
           },
         },
         {
-          title: "Bathroom Trailers",
+          title: "Remolques de Baños",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-3",
@@ -1913,10 +1913,10 @@ export default {
           },
         },
         {
-          title: "ADA / Deluxe Porta Potty",
+          title: "Baño Portátil ADA / Deluxe",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-4",
@@ -1924,10 +1924,10 @@ export default {
           },
         },
         {
-          title: "Trailer Portable Toilets",
+          title: "Baños Portátiles en Remolque",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-5",
@@ -1935,10 +1935,10 @@ export default {
           },
         },
         {
-          title: "Shower trailers",
+          title: "Remolques de Duchas",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-6",
@@ -1946,10 +1946,10 @@ export default {
           },
         },
         {
-          title: "Water Barriers",
+          title: "Barreras de Agua",
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
           image: {
             src: "serv-l-7",
@@ -1959,222 +1959,225 @@ export default {
       ],
     },
     services: {
-      title: "Our Services",
+      title: "Nuestros Servicios",
       items: [
         {
           icon: "construction",
-          title: "Construction",
+          title: "Construcción",
           description: null,
           items: [
             {
               icon: "landscape",
-              label: "Commercial Landscape",
+              label: "Paisajismo Comercial",
             },
             {
               icon: "sites",
-              label: "Construction Sites",
+              label: "Sitios de Construcción",
             },
             {
               icon: "home",
-              label: "Home Remodels",
+              label: "Remodelaciones de Hogar",
             },
             {
               icon: "landfills",
-              label: "Landfills",
+              label: "Rellenos Sanitarios",
             },
             {
               icon: "parking",
-              label: "Parking Lots",
+              label: "Estacionamientos",
             },
           ],
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
         },
         {
           icon: "events",
-          title: "Events",
+          title: "Eventos",
           description: null,
           items: [
             {
               icon: "concerts",
-              label: "Concerts",
+              label: "Conciertos",
             },
             {
               icon: "fairs",
-              label: "Fairs",
+              label: "Ferias",
             },
             {
               icon: "marathons",
-              label: "Marathons",
+              label: "Maratones",
             },
             {
               icon: "sporting",
-              label: "Sporting Events",
+              label: "Eventos Deportivos",
             },
             {
               icon: "weddings",
-              label: "Weddings",
+              label: "Bodas",
             },
           ],
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Más información",
           },
         },
         {
           icon: "tank",
-          title: "Septic Tank Pumping",
+          title: "Vaciado de Tanque Séptico",
           description:
-            "We’re your one-stop shop for your portable toilet and septic service needs.",
+            "Somos tu tienda de ventanilla única para tus necesidades de baños portátiles y servicios sépticos.",
           items: null,
           link: {
             href: "#",
-            label: "Learn more",
+            label: "Ver más",
           },
         },
       ],
     },
     areas: {
-      title: "Our service Areas",
+      title: "Nuestras Áreas de Servicio",
       items: [
         {
           label: "Tampa, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora",
             href: "#",
           },
         },
         {
-          label: "Flot Myers, Florida",
+          label: "Fort Myers, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora ",
             href: "#",
           },
         },
         {
           label: "Melbourne, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora ",
             href: "#",
           },
         },
         {
           label: "Ocala, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora",
             href: "#",
           },
         },
         {
           label: "Orlando, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora",
             href: "#",
           },
         },
         {
           label: "Jacksonville, Florida",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora ",
             href: "#",
           },
         },
         {
           label: "Atlanta, Georgia",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora",
             href: "#",
           },
         },
         {
           label: "Oakwood, Georgia",
           link: {
-            label: "Call Now For a Quote",
+            label: "Llama Ahora",
             href: "#",
           },
         },
       ],
     },
     reasons: {
-      title: "How our portable restroom <br/> rentals Work",
+      title: "Cómo Funcionan Nuestros Alquileres <br/> de Baños Portátiles",
       items: [
         {
           image: "alabama-hero",
-          title: "Schedule Your Drop Off",
+          title: "Programa tu Entrega",
           description:
-            "Contact us today to discuss your event or project needs and experience top-notch porta potty service that ensures clean and convenient sanitation for your guests or workers.",
+            "Contáctanos hoy para discutir tus necesidades de evento o proyecto y experimenta un servicio de baños portátiles de primera clase que garantiza saneamiento limpio y conveniente para tus invitados o trabajadores.",
         },
         {
           image: "private_6",
-          title: "Delivery",
+          title: "Entrega",
           description:
-            "We take pride in our reliable service, punctuality, and efficiency in delivering clean units, managing service schedules, and ensuring a hassle-free and hygienic experience for all our clients.",
+            "Nos enorgullece nuestro servicio confiable, puntualidad y eficiencia en entregar unidades limpias, gestionar calendarios de servicio y garantizar una experiencia sin complicaciones e higiénica para todos nuestros clientes.",
         },
         {
           image: "large_1",
-          title: "Removal",
+          title: "Retiro",
           description:
-            "After your event or project concludes, we promptly clean and remove the units, leaving your location clean and tidy as if we were never there, providing you with a seamless and stress-free experience from start to finish.",
+            "Después de que tu evento o proyecto concluya, limpiamos y retiramos rápidamente las unidades, dejando tu ubicación limpia y ordenada como si nunca estuviéramos allí, proporcionándote una experiencia sin problemas y sin estrés de principio a fin.",
         },
       ],
     },
     choose: {
-      title: "Why Choose Quality Portable Rental Service?",
+      title: "¿Por Qué Elegir Quality Portable Rental Service?",
       description:
-        "With 15+ years of experience, we provide quality service and offer a variety of portable toilets, trailers, and hand wash stations. We are flexible with business hours and available on short notice to meet all your expectations.",
-      button: "Request a Quote",
+        "Con más de 15 años de experiencia, proporcionamos servicio de calidad y ofrecemos una variedad de baños portátiles, remolques y estaciones de lavado de manos. Somos flexibles con horarios comerciales y disponibles con poco aviso para cumplir todas tus expectativas.",
+      button: "Solicita una Cotización",
       icons: [
         {
           icon: "stock",
-          title: "Always Stocked",
+          title: "Siempre en Stock",
         },
         {
           icon: "schedule",
-          title: "Flexible Schedule",
+          title: "Horario Flexible",
         },
         {
           icon: "clean",
-          title: "Always Clean",
+          title: "Siempre Limpio",
         },
         {
           icon: "pricing",
-          title: "Transparent Pricing",
+          title: "Precios Transparentes",
         },
       ],
     },
     customers: {
-      title: "What Our Customers Are Saying",
+      title: "Lo Que Dicen Nuestros Clientes",
       items: [
         {
+          id: 1,
           title: "City Automotive Group",
-          date: "2 week ago",
+          date: "Hace 2 semanas",
           description:
-            "Always a great experience doing business here. Always Clean and on time.",
+            "Siempre una gran experiencia hacer negocios aquí. Siempre limpio y a tiempo.",
         },
         {
+          id: 2,
           title: "Tech Store",
-          date: "3 week ago",
+          date: "Hace 3 semanas",
           description:
-            "Great service every time. Thank you so much for helping me with my event.",
+            "Excelente servicio siempre. Muchas gracias por ayudarme con mi evento.",
         },
         {
+          id: 3,
           title: "Aqua Venue & Studio",
-          date: "1 week ago",
+          date: "Hace 1 semana",
           description:
-            "Very professional work. They cleaned the toilets periodically. I liked that!",
+            "Trabajo muy profesional. Limpiaban los baños periódicamente. ¡Me gustó eso!",
         },
       ],
-      button: "Read More Reviews",
+      button: "Leer Más Reseñas",
     },
     footer: {
-      title: "About Quality Portable Rental Service ",
+      title: "Acerca de Quality Portable Rental Service ",
       descriptions: [
-        "We love what we do and it shows. With more than 15 years of experience in the Portable Toilets field, we know our industry like the back of our hands. There’s no challenge too big or too small, and we dedicate our utmost energy to every project we take on.",
-        "Every customer is unique. That’s why we customize every one of our service to fit your needs exactly. Whether it’s a small project or a comprehensive effort, we’ll sit down with you, listen to your requests, and prepare a customized plan.",
+        "Nos encanta lo que hacemos y se ve. Con más de 15 años de experiencia en el campo de Baños Portátiles, conocemos nuestra industria como la palma de nuestra mano. No hay desafío demasiado grande o demasiado pequeño, y dedicamos toda nuestra energía a cada proyecto que emprendemos.",
+        "Cada cliente es único. Por eso personalizamos cada uno de nuestros servicios para adaptarse exactamente a tus necesidades. Ya sea un proyecto pequeño o un esfuerzo integral, nos sentaremos contigo, escucharemos tus solicitudes y prepararemos un plan personalizado.",
       ],
-      button: "Get a Free Quote Here",
+      button: "Obtén una Cotización Gratuita Aquí",
     },
   },
 };
