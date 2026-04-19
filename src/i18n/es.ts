@@ -1882,7 +1882,7 @@ export default {
         {
           title: "Baño Portátil para Eventos",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1893,7 +1893,7 @@ export default {
         {
           title: "Baño Portátil para Construcción",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1904,7 +1904,7 @@ export default {
         {
           title: "Remolques de Baños",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1915,7 +1915,7 @@ export default {
         {
           title: "Baño Portátil ADA / Deluxe",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1926,7 +1926,7 @@ export default {
         {
           title: "Baños Portátiles en Remolque",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1937,7 +1937,7 @@ export default {
         {
           title: "Remolques de Duchas",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1948,7 +1948,7 @@ export default {
         {
           title: "Barreras de Agua",
           link: {
-            href: "#",
+            href: "/es/products",
             label: "Más información",
           },
           image: {
@@ -1988,8 +1988,8 @@ export default {
             },
           ],
           link: {
-            href: "#",
-            label: "Más información",
+            href: "/es/services",
+            label: "Ver más",
           },
         },
         {
@@ -2019,8 +2019,8 @@ export default {
             },
           ],
           link: {
-            href: "#",
-            label: "Más información",
+            href: "/es/services",
+            label: "Ver más",
           },
         },
         {
@@ -2030,7 +2030,7 @@ export default {
             "Somos tu tienda de ventanilla única para tus necesidades de baños portátiles y servicios sépticos.",
           items: null,
           link: {
-            href: "#",
+            href: "/es/services",
             label: "Ver más",
           },
         },
@@ -2043,56 +2043,56 @@ export default {
           label: "Tampa, Florida",
           link: {
             label: "Llama Ahora",
-            href: "#",
+            href: "tel:+18138534334",
           },
         },
         {
           label: "Fort Myers, Florida",
           link: {
             label: "Llama Ahora ",
-            href: "#",
+            href: "tel:+12391884464",
           },
         },
         {
           label: "Melbourne, Florida",
           link: {
             label: "Llama Ahora ",
-            href: "#",
+            href: "tel:+13212179445",
           },
         },
         {
           label: "Ocala, Florida",
           link: {
             label: "Llama Ahora",
-            href: "#",
+            href: "tel:+13212179445",
           },
         },
         {
           label: "Orlando, Florida",
           link: {
             label: "Llama Ahora",
-            href: "#",
+            href: "tel:+13212179445",
           },
         },
         {
           label: "Jacksonville, Florida",
           link: {
             label: "Llama Ahora ",
-            href: "#",
+            href: "tel:+19041186009",
           },
         },
         {
           label: "Atlanta, Georgia",
           link: {
             label: "Llama Ahora",
-            href: "#",
+            href: "tel:+14104460767",
           },
         },
         {
           label: "Oakwood, Georgia",
           link: {
             label: "Llama Ahora",
-            href: "#",
+            href: "tel:+13212179445",
           },
         },
       ],
