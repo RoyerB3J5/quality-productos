@@ -6,7 +6,7 @@ interface Props {
 }
 const { content} = Astro.props as Props;
 ---
-<section class="container-full flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20">
+<section class="container-full flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20" id={content.id}>
   <h2 class="text-primary font-bold leading-[114%] text-[32px] md:text-[56px]">{content.title}</h2>
   <div class="w-full flex flex-col md:flex-row justify-center items-center gap-10 md:gap-8">
     <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-6 w-full md:w-[48%]">
@@ -28,7 +28,7 @@ const { content} = Astro.props as Props;
           ))
         }
       </div>
-      <button class="bg-accent py-1 px-8 rounded-lg flex justify-center items-center text-white text-[20px] md:text-[26px] 3xl:text-[32px] font-bold leading-[300%] md:leading-[187%] hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer self-start">
+      <button class="open-popup bg-accent py-1 px-8 rounded-lg flex justify-center items-center text-white text-[20px] md:text-[26px] 3xl:text-[32px] font-bold leading-[300%] md:leading-[187%] hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer self-start">
             {content.button}
           </button>
     </div>

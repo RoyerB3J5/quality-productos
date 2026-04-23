@@ -1627,15 +1627,15 @@ export default {
       nav: [
         {
           label: "Eventos Privados",
-          href: "#private-events",
+          href: "/go/#private-events",
         },
         {
           label: "Construcción",
-          href: "#construction",
+          href: "/go/#construction",
         },
         {
           label: "Eventos Públicos",
-          href: "#public-events",
+          href: "/go/#public-events",
         },
       ],
       locations: [],
@@ -1766,6 +1766,7 @@ export default {
         "¿Quieres una experiencia más agradable o necesitas un poco más de espacio? Asegúrate de preguntar sobre nuestras unidades de tamaño extra que también satisfacen los requisitos de la ADA.",
       ],
       button: "Cotización Gratuita",
+      id: "private-events",
     },
     icons: [
       {
@@ -1794,6 +1795,7 @@ export default {
         "Deja que nuestro equipo dedicado y camiones sirvan tu evento perfectamente para que puedas enfocarte en cosas más importantes.",
       ],
       button: "Cotización Gratuita",
+      id: "public-events",
     },
     construction: {
       title: "Eventos Públicos/Grandes",

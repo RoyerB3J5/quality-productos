@@ -1623,15 +1623,15 @@ export default {
       nav: [
         {
           label: "Private Events",
-          href: "#private-events",
+          href: "/go/#private-events",
         },
         {
           label: "Construction",
-          href: "#construction",
+          href: "/go/#construction",
         },
         {
           label: "Public Events",
-          href: "#public-events",
+          href: "/go/#public-events",
         },
       ],
       locations: [],
@@ -1762,6 +1762,7 @@ export default {
         "Want a nicer experience, or need a little more room? Be sure to ask about our oversized units that also satisfy ADA demands.",
       ],
       button: "Get A Free Quote Here",
+      id: "private-events",
     },
     icons: [
       {
@@ -1790,6 +1791,7 @@ export default {
         "Let our dedicated crew and trucks service your event perfectly so you can focus on more important things.",
       ],
       button: "Get A Free Quote Here",
+      id: "public-events",
     },
     construction: {
       title: "Public/Large Events",
@@ -1860,12 +1862,14 @@ export default {
       ],
     },
     hero: {
-      title: "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
-      description: "Proudly, Locally Owned and <br class='block md:hidden'/> Operated",
+      title:
+        "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
+      description:
+        "Proudly, Locally Owned and <br class='block md:hidden'/> Operated",
       items: [],
       button: "Get A Free Quote Here",
       callAction: {
-        title:'',
+        title: "",
         number: "",
         icon: "",
       },
@@ -2144,21 +2148,21 @@ export default {
       title: "What Our Customers Are Saying",
       items: [
         {
-          id:1,
+          id: 1,
           title: "City Automotive Group",
           date: "2 week ago",
           description:
             "Always a great experience doing business here. Always Clean and on time.",
         },
         {
-          id:2,
+          id: 2,
           title: "Tech Store",
           date: "3 week ago",
           description:
             "Great service every time. Thank you so much for helping me with my event.",
         },
         {
-          id:3,
+          id: 3,
           title: "Aqua Venue & Studio",
           date: "1 week ago",
           description:
