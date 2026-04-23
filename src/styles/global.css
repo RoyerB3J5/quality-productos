@@ -301,3 +301,34 @@ html {
     0 9px 9px 0 rgba(0, 0, 0, 0.03),
     0 2px 5px 0 rgba(0, 0, 0, 0.03);
 }
+
+/* Animación Bounce para Botones */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 0.8s ease-in-out infinite;
+}
+
+/* Variante: Bounce una sola vez */
+.animate-bounce-once {
+  animation: bounce 0.8s ease-in-out;
+}
+
+/* Variante: Bounce al hover */
+.button-bounce:hover {
+  animation: bounce 0.8s ease-in-out;
+}
