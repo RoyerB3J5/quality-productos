@@ -1648,7 +1648,8 @@ export default {
       ],
     },
     hero: {
-      title: "Alquiler de Baños Portátiles <br/> en Florida y Georgia",
+      title:
+        "Alquiler de Baños Portátiles <br class='hidden md:block'/> en Florida y Georgia",
       description: "Múltiples Ubicaciones de Servicio en Florida y Georgia",
       items: [
         "Propiedad y Operación Local",
@@ -1867,7 +1868,8 @@ export default {
       ],
     },
     hero: {
-      title: "Alquiler de Baños Portátiles <br/> en Florida y Georgia",
+      title:
+        "Alquiler de Baños Portátiles <br class='hidden md:block'/> en Florida y Georgia",
       description: "Con Orgullo, Propiedad Local y Operada",
       items: [],
       button: "Cotización Gratuita",
@@ -2090,7 +2092,8 @@ export default {
       ],
     },
     reasons: {
-      title: "Cómo Funcionan Nuestros Alquileres <br/> de Baños Portátiles",
+      title:
+        "Cómo Funcionan Nuestros Alquileres <br class='hidden md:block'/> de Baños Portátiles",
       items: [
         {
           image: "alabama-hero",

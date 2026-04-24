@@ -1644,7 +1644,8 @@ export default {
       ],
     },
     hero: {
-      title: "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
+      title:
+        "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
       description: "Multiple Service Locations in Florida & Georgia",
       items: [
         "Locally Owned And Operated",
@@ -1865,8 +1866,7 @@ export default {
     hero: {
       title:
         "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
-      description:
-        "Proudly, Locally Owned and  Operated",
+      description: "Proudly, Locally Owned and  Operated",
       items: [],
       button: "Get A Free Quote Here",
       callAction: {
@@ -2088,7 +2088,8 @@ export default {
       ],
     },
     reasons: {
-      title: "How our portable restroom <br class='hidden md:block'/> rentals Work",
+      title:
+        "How our portable restroom <br class='hidden md:block'/> rentals Work",
       items: [
         {
           image: "alabama-hero",
