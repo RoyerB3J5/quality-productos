@@ -303,32 +303,32 @@ html {
 }
 
 /* Animación Bounce para Botones */
-@keyframes bounce {
+@keyframes bounce-subtle {
   0%,
   100% {
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
   }
   50% {
     transform: translateY(0);
   }
   75% {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 }
 
-.animate-bounce {
-  animation: bounce 0.8s ease-in-out infinite;
+.animate-bounce-subtle {
+  animation: bounce-subtle 0.8s ease-in-out infinite;
 }
 
 /* Variante: Bounce una sola vez */
-.animate-bounce-once {
-  animation: bounce 0.8s ease-in-out;
+.animate-bounce-subtle-once {
+  animation: bounce-subtle 0.8s ease-in-out;
 }
 
 /* Variante: Bounce al hover */
 .button-bounce:hover {
-  animation: bounce 0.8s ease-in-out;
+  animation: bounce-subtle 0.8s ease-in-out;
 }

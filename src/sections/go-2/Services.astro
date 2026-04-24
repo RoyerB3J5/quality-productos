@@ -6,7 +6,7 @@ interface Props {
 }
 const { content} = Astro.props as Props;
 ---
-<section class="w-full flex justify-center items-center bg-primary">
+<section class="w-full flex justify-center items-center bg-primary" id="services">
   <div class="container-full flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20">
     <h2 class="text-[32px] md:text-[56px] text-white font-bold leading-[114%]">{content.title}</h2>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-stretch gap-4 ld:gap-8">
@@ -14,17 +14,17 @@ const { content} = Astro.props as Props;
         content.items.map((item)=> {
           const different = item.description === null ? false : true
           return (
-            <div class={`${different ? 'bg-black/40' : 'bg-white'} flex flex-col justify-atart items-start gap-6 px-6 py-10 rounded-2xl`}>
-              <div class={`w-22 h-22 flex justify-center items-center rounded-2xl border border-[#E6E6E6]  ${different ? 'bg-black/40' : 'bg-[#F9F8FD]'}`}>
-                <img src={`/images/${item.icon}.svg`} alt={item.title} class="w-10 h-auto">
+            <div class={`${different ? 'bg-black/40' : 'bg-white'} flex flex-col justify-start items-center md:items-start gap-6 px-6 py-10 rounded-2xl`}>
+              <div class={`w-24 h-24 flex justify-center items-center rounded-2xl border border-[#E6E6E6]  ${different ? 'bg-black/40' : 'bg-[#F9F8FD]'}`}>
+                <img src={`/images/${item.icon}.svg`} alt={item.title} class="w-12 h-auto">
               </div>
               <h3 class={` text-[32px] font-bold leading-[130%] ${different ? 'text-white' : 'text-primary'}`}>{item.title}</h3>
               {
-                different && <p class={`text-[20px] leading-[155%]  text-white`}>{item.description}</p>
+                different && <p class={`text-[20px] leading-[155%]  text-white text-center md:text-start`}>{item.description}</p>
               }
               <div class="flex flex-col justify-center items-start gap-6">
                 {item.items && item.items.map((i)=>( 
-                  <div class="flex justify-center items-center gap-2">
+                  <div class="flex justify-center items-center gap-5 md:gap-2">
                     <img src={`/images/${i.icon}.svg`} alt={i.icon} class="w-6.75 h-auto ">
                     <p class="text-[20px] font-normal leading-[100%] text-paragraph">{i.label}</p>
                   </div>

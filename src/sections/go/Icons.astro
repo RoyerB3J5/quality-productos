@@ -11,7 +11,7 @@ const { content} = Astro.props as Props;
     {
       content.map((item)=>( 
         <div class="flex flex-col justify-center items-center gap-6 md:px-7">
-          <img src={`/images/${item.icon}.svg`} alt={item.title} width="60" height="60" class="w-10 md:w-15 h-10 md:h-15">
+          <img src={`/images/${item.icon}.svg`} alt={item.title} width="60" height="60" class="w-15 md:w-15 h-15 md:h-15">
           <p class="text-[20px] leading-[117%] font-bold text-white text-center">{item.title}</p>
         </div>
       ))

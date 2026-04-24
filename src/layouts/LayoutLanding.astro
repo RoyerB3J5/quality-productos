@@ -13,6 +13,13 @@ export interface Props {
 }
 
 const { lang, t } = Astro.props;
+// Obtener la ruta actual y normalizar el path sin prefijo de idioma
+const currentPath = Astro.url.pathname;
+// Normalizar: remover idioma y trailing slash
+const normalized =
+  currentPath.replace(/^\/(en|es)/, '').replace(/\/$/, '') || '/';
+// Detectar el idioma actual ('en' o 'es')
+const match = currentPath.match(/^\/(en|es)/);
 ---
 
 <!doctype html>
@@ -121,7 +128,12 @@ const { lang, t } = Astro.props;
   <body
     class="font-family antialiased overflow-x-hidden bg-[#FFFFFF] flex flex-col justify-center items-center w-full"
   >
-    <Header content={t?.landingFirst.header} landing={true}/>
+    {
+      normalized == '/go-2' ? <Header content={t?.landingSecond.header} landing={true} /> :
+      <Header content={t?.landingFirst.header} landing={true} />
+    }
+    
+    
     <main class="flex flex-col w-full items-center">
       <slot />
     </main>

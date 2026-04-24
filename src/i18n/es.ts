@@ -1641,7 +1641,7 @@ export default {
       locations: [],
       buttons: [
         {
-          label: "(321) 217-9445",
+          label: "Llámanos",
           href: "tel:+13212179445",
           icon: "phone-2",
         },
@@ -1798,7 +1798,7 @@ export default {
       id: "public-events",
     },
     construction: {
-      title: "Eventos Públicos/Grandes",
+      title: "Construcciones",
       items: [
         {
           image: "large_1",
@@ -1830,6 +1830,7 @@ export default {
         "Ser de propiedad local significa que nos importan nuestros clientes y trabajaremos para mantenerte feliz. Están disponibles unidades estándar, ADA y estaciones de lavado de manos.",
       ],
       button: "Cotización Gratuita",
+      id: "construction",
     },
     footer: {
       title: "¡Llama Ahora para una Cotización Gratuita!",
@@ -1844,22 +1845,22 @@ export default {
     header: {
       nav: [
         {
-          label: "Eventos Privados",
-          href: "#private-events",
+          label: "Servicios",
+          href: "/go-2/#services",
         },
         {
-          label: "Construcción",
-          href: "#construction",
+          label: "Áreas",
+          href: "/go-2/#areas",
         },
         {
-          label: "Eventos Públicos",
-          href: "#public-events",
+          label: "Nosotros",
+          href: "/go-2/#about-us",
         },
       ],
       locations: [],
       buttons: [
         {
-          label: "(321) 217-9445",
+          label: "Llámanos",
           href: "tel:+13212179445",
           icon: "phone-2",
         },
@@ -1945,17 +1946,6 @@ export default {
           image: {
             src: "serv-l-6",
             width: "347",
-          },
-        },
-        {
-          title: "Barreras de Agua",
-          link: {
-            href: "/es/products",
-            label: "Más información",
-          },
-          image: {
-            src: "serv-l-7",
-            width: "170",
           },
         },
       ],

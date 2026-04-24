@@ -6,12 +6,12 @@ interface Props {
 }
 const { content} = Astro.props as Props;
 ---
-<section class="flex flex-col justify-center items-center gap-20 py-20 container-full">
+<section class="flex flex-col justify-center items-center gap-20 pt-20 pb-10 md:py-20 container-full">
   <div class="w-full flex flex-col md:flex-row justify-center items-center gap-8">
-    <div class="flex flex-col justify-center items-start gap-10 w-full md:w-[65%] lg:w-[40%] order-2 md:order-1">
-      <h2 class="text-[32px] md:text-[56px] text-primary font-bold leading-[114%]">{content.title}</h2>
-      <p class="text-paragraph text-[19px] md:text-[20px] leading-[150%] font-normal">{content.description}</p>
-      <button class="animate-bounce open-popup bg-accent p-4 md:p-3 xl:p-4 rounded-lg flex justify-center items-center text-white text-[20px] md:text-[16px] xl:text-[20px] font-bold leading-normal hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer">
+    <div class="flex flex-col justify-center items-center md:items-start gap-10 w-full md:w-[65%] lg:w-[40%] order-2 md:order-1">
+      <h2 class="text-[32px] md:text-[56px] text-primary font-bold leading-[114%] text-center md:text-start">{content.title}</h2>
+      <p class="text-paragraph text-[19px] md:text-[20px] leading-[150%] font-normal text-center md:text-start">{content.description}</p>
+      <button class="animate-bounce-subtle open-popup bg-accent p-4 md:p-3 xl:p-4 rounded-lg flex justify-center items-center text-white text-[20px] md:text-[16px] xl:text-[20px] font-bold leading-normal hover:bg-primary transition-all duration-300 ease-in-out cursor-pointer">
                 {content.button}
       </button>
     </div>
@@ -34,12 +34,12 @@ const { content} = Astro.props as Props;
       </div>
     </div>
   </div>
-  <div class="w-full md:flex justify-between items-center hidden ">
+  <div class="w-full flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0">
     {
       content.icons.map((icon)=>( 
-        <div class="flex flex-col justify-center items-center gap-6">
-          <img src={`/images/${icon.icon}.svg`} alt={icon.title} width="48" height="48" class="h-7.25 w-auto"/>
-          <p class="text-[20px] text-primary leading-[117%] font-bold">{icon.title}</p>
+        <div class="flex flex-col justify-center items-center gap-8 md:gap-6">
+          <img src={`/images/${icon.icon}.svg`} alt={icon.title} width="48" height="48" class="h-8.5 md:h-7.25 w-auto"/>
+          <p class="text-[20px] text-primary leading-[117%] font-bold uppercase md:capitalize">{icon.title}</p>
         </div>
       ))
     }

@@ -1637,14 +1637,14 @@ export default {
       locations: [],
       buttons: [
         {
-          label: "(321) 217-9445",
+          label: "Contact Us",
           href: "tel:+13212179445",
           icon: "phone-2",
         },
       ],
     },
     hero: {
-      title: "Portable Restroom Rentals <br/> In Florida & Georgia",
+      title: "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
       description: "Multiple Service Locations in Florida & Georgia",
       items: [
         "Locally Owned And Operated",
@@ -1755,11 +1755,11 @@ export default {
       },
     },
     private: {
-      title: "Private/Small Events",
+      title: "Private / Small Events",
       images: ["private_1", "private_2", "private_3"],
       descriptions: [
         "Renting potties and sinks for your small event is easy. Clean porta potties and sinks will be delivered, set up with fresh water, fragrant treatment, toilet paper, paper towels, and soap. And when you're done, we'll arrange a final clean and pick up.",
-        "Want a nicer experience, or need a little more room? Be sure to ask about our oversized units that also satisfy ADA demands.",
+        "Want a nice experience, or need a little more room? Be sure to ask about our oversized units that also satisfy ADA demands.",
       ],
       button: "Get A Free Quote Here",
       id: "private-events",
@@ -1783,7 +1783,7 @@ export default {
       },
     ],
     public: {
-      title: "Public/Large Events",
+      title: "Public / Large Events",
       images: ["private_4", "private_5", "private_6"],
       descriptions: [
         "Locally owned in Salem, we know that public events have unique demands. 10-200 potties and sinks can all be managed through Oregon Portable Toilets. On-time delivery, on-time services, and on-time removal will make things go smoothly.",
@@ -1794,7 +1794,7 @@ export default {
       id: "public-events",
     },
     construction: {
-      title: "Public/Large Events",
+      title: "Construction",
       items: [
         {
           image: "large_1",
@@ -1826,6 +1826,7 @@ export default {
         "Locally owned means we care about our customers and will work to keep you happy. Standard, ADA units, and hand wash stations are available.",
       ],
       button: "Get A Free Quote Here",
+      id: "construction",
     },
     footer: {
       title: "Call Now For A Free Quote!",
@@ -1840,22 +1841,22 @@ export default {
     header: {
       nav: [
         {
-          label: "Private Events",
-          href: "#private-events",
+          label: "Services",
+          href: "/go-2/#services",
         },
         {
-          label: "Construction",
-          href: "#construction",
+          label: "Areas",
+          href: "/go-2/#areas",
         },
         {
-          label: "Public Events",
-          href: "#public-events",
+          label: "About Us",
+          href: "/go-2/#about-us",
         },
       ],
       locations: [],
       buttons: [
         {
-          label: "(321) 217-9445",
+          label: "Contac Us",
           href: "tel:+13212179445",
           icon: "phone-2",
         },
@@ -1865,7 +1866,7 @@ export default {
       title:
         "Portable Restroom Rentals <br class='hidden md:block'/> In Florida & Georgia",
       description:
-        "Proudly, Locally Owned and <br class='block md:hidden'/> Operated",
+        "Proudly, Locally Owned and  Operated",
       items: [],
       button: "Get A Free Quote Here",
       callAction: {
@@ -1943,17 +1944,6 @@ export default {
           image: {
             src: "serv-l-6",
             width: "347",
-          },
-        },
-        {
-          title: "Water Barriers",
-          link: {
-            href: "/en/products",
-            label: "Learn more",
-          },
-          image: {
-            src: "serv-l-7",
-            width: "170",
           },
         },
       ],
@@ -2047,7 +2037,7 @@ export default {
           },
         },
         {
-          label: "Flot Myers, Florida",
+          label: "Fort Myers, Florida",
           link: {
             label: "Call Now For a Quote",
             href: "tel:+12391884464",
@@ -2098,7 +2088,7 @@ export default {
       ],
     },
     reasons: {
-      title: "How our portable restroom <br/> rentals Work",
+      title: "How our portable restroom <br class='hidden md:block'/> rentals Work",
       items: [
         {
           image: "alabama-hero",

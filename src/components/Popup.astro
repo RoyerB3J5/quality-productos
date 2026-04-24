@@ -2,6 +2,9 @@
 // Popup.astro
 ---
 
+<link rel="preconnect" href="https://link.qualityportablerentalservice.com" />
+<link rel="dns-prefetch" href="https://link.qualityportablerentalservice.com" />
+
 <div
   id="popup-overlay"
   class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
@@ -10,7 +13,7 @@
 >
   <div
     id="popup-box"
-    class="bg-[#F9F8FD] rounded-2xl p-6 3xl:p-8 relative shadow-2xl flex flex-col justify-center items-center gap-0 3xl:gap-4 translate-y-5 transition-transform duration-200 max-h-[95%] 3xl:max-h-[90%] w-[95%] md:w-[75%] lg:w-[65%] xl:w-[50%] 3xl:w-[40%]"
+    class="bg-[#F9F8FD] rounded-2xl p-6 3xl:p-8 relative shadow-2xl flex flex-col justify-center items-center gap-0 3xl:gap-4 translate-y-5 transition-transform duration-200 max-h-[95%] 3xl:max-h-[90%] w-[95%] md:w-[75%] lg:w-[65%] xl:w-[50%] 3xl:w-[40%] border-4 border-primary overflow-hidden"
   >
     <button
       class="popup-close absolute top-4 right-4 text-2xl leading-none text-gray-400 hover:text-gray-900 transition-colors cursor-pointer bg-transparent border-none"
@@ -25,10 +28,10 @@
           height="55"
           class="cursor-pointer w-25 sm:w-30 3xl:w-45 h-auto block lg:hidden 3xl:block "
         />
-    <div class="flex justify-center items-center flex-col gap-2 text-primary mt-2 sm:mt-3 lg:mt-0">
+    <div class="flex justify-center items-center flex-col gap-2 text-black mt-2 sm:mt-3 lg:mt-0">
       <h3 class="text-[24px] md:text-[36px] 3xl:text-[60px] font-bold leading-[125%] text-center ">Wait!</h3>
       <p class="text-[16px] md:text-[18px] 3xl:text-[34px] font-bold leading-[125%] text-center ">Don't Leave Without Your FREE Quote!</p>
-      <p class="text-[14px] md:text-[16px] 3xl:text-[21px] font-bold leading-[125%] block lg:hidden text-center">Fill Out The Form Below To Get Your Free Quote</p>
+      <p class="text-[14px] md:text-[16px] 3xl:text-[21px] font-normal leading-[125%] block lg:hidden text-center">Fill Out The Form Below To Get Your Free Quote</p>
     </div>
     <div class="relative w-full h-auto max-h-[530px] 3xl:max-h-[500px]">
       <div id="spinner" class="absolute inset-0 z-10 flex items-center justify-center">
