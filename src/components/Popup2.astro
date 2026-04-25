@@ -6,13 +6,13 @@
 <link rel="dns-prefetch" href="https://link.qualityportablerentalservice.com" />
 
 <div
-  id="popup-overlay-click"
+  id="popup-overlay-popup2"
   class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
   aria-modal="true"
   role="dialog"
 >
   <div
-    id="popup-box-click"
+    id="popup-box-popup2"
     class="bg-[#F9F8FD] rounded-2xl p-6 3xl:p-8 relative shadow-2xl flex flex-col justify-center items-center gap-0 3xl:gap-4 translate-y-5 transition-transform duration-200 max-h-[95%] 3xl:max-h-[90%] w-[95%] md:w-[75%] lg:w-[65%] xl:w-[50%] 3xl:w-[40%] border-4 border-accent overflow-hidden"
   >
     <button
@@ -21,18 +21,22 @@
     >
       &times;
     </button>
-    <img
+    <div class="flex flex-col md:flex-col justify-center items-center gap-2 lg:gap-6">
+      <img
           src="/images/logo-popup.svg"
           alt="Logo de Quality Portable"
           width="180"
           height="55"
-          class="cursor-pointer w-25 sm:w-26 lg:w-30 3xl:w-45 h-auto hidden"
+          class="cursor-pointer w-25 sm:w-30 3xl:w-45 h-auto block 3xl:block "
         />
-    <div class="flex justify-center items-center flex-col gap-2 text-black mt-2 sm:mt-3 lg:mt-0">
-      <h3 class="text-[24px] md:text-[36px] 3xl:text-[60px] font-bold leading-[125%] text-center ">Request a FREE Quote!</h3>
+      <div class="flex justify-center items-center flex-col gap-2 text-black mt-2 sm:mt-3 lg:mt-0">
+        <h3 class="text-[24px] md:text-[32px] 3xl:text-[48px] font-bold leading-[125%] text-center ">Wait!</h3>
+        <p class="text-[16px] md:text-[18px] 3xl:text-[34px] font-bold leading-[125%] text-center block  3xl:block">Don't Leave Without Your FREE Quote!</p>
+        <p class="text-[14px] md:text-[16px] 3xl:text-[21px] font-normal leading-[125%] block lg:hidden text-center">Fill Out The Form Below To Get Your Free Quote</p>
+      </div>
     </div>
-    <div class="relative w-full h-auto max-h-[480px] 3xl:max-h-[500px]">
-      <div id="spinner-click" class="absolute inset-0 z-10 flex items-center justify-center">
+    <div class="relative w-full h-auto max-h-[520px] 3xl:max-h-[550px]">
+      <div id="spinner-popup2" class="absolute inset-0 z-10 flex items-center justify-center">
         <svg
           class="animate-spin h-8 w-8 text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +48,9 @@
         </svg>
       </div>
       <iframe
-        src="https://link.qualityportablerentalservice.com/widget/form/2aXuZk5Wy7dXLBKlkre2"
+        src="https://link.qualityportablerentalservice.com/widget/form/QU9mcPE1mJoH27gio5jI"
         class="w-full border-none relative z-40"
-        id="inline-2aXuZk5Wy7dXLBKlkre2"
+        id="inline-QU9mcPE1mJoH27gio5jI"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""
@@ -56,11 +60,11 @@
         data-deactivation-value=""
         data-form-name="Form Landing Page"
         data-height="539"
-        data-layout-iframe-id="inline-2aXuZk5Wy7dXLBKlkre2"
-        data-form-id="2aXuZk5Wy7dXLBKlkre2"
+        data-layout-iframe-id="inline-QU9mcPE1mJoH27gio5jI"
+        data-form-id="QU9mcPE1mJoH27gio5jI"
         title="Form Landing Page"
         style="height: 539px;"
-        onload="document.getElementById('spinner-click')?.style.setProperty('display','none')"
+        onload="document.getElementById('spinner-popup2')?.style.setProperty('display','none')"
         sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation-by-user-activation"
       ></iframe>
       <script src="https://link.qualityportablerentalservice.com/js/form_embed.js"></script>
@@ -69,8 +73,8 @@
 </div>
 
 <script>
-  const overlay = document.getElementById('popup-overlay-click')!;
-  const box = document.getElementById('popup-box-click')!;
+  const overlay = document.getElementById('popup-overlay-popup2')!;
+  const box = document.getElementById('popup-box-popup2')!;
   const closeBtn = overlay.querySelector('.popup-close')!;
 
   function openPopup() {
@@ -90,7 +94,7 @@
   }
 
   document.addEventListener('click', (e) => {
-    const btn = (e.target as Element).closest('.open-popup');
+    const btn = (e.target as Element).closest('.open-popup-2');
     if (btn) openPopup();
   });
 
