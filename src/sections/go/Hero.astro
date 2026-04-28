@@ -7,12 +7,12 @@ interface Props {
 }
 const { content, second } = Astro.props as Props;
 ---
-<section class="w-full flex flex-col items-center justify-center relative overflow-hidden h-[55vh] md:h-[95vh] lg:h-[90vh] xl:h-screen">
+<section class="w-full flex flex-col items-center justify-center relative overflow-hidden h-[70vh] md:h-[95vh] lg:h-[90vh] xl:h-screen">
   <div class="w-full relative overflow-hidden flex justify-center items-center h-full">
     <img src="/images/back-started.webp" alt="Fondo de Hero Landing" width="1500" height="705" class="absolute inset-0 w-full h-full object-cover object-[60%_100%]  xl:object-right -z-20">
     <div class={`absolute h-full w-full -z-15 ${second ? 'bg-[linear-gradient(0deg,rgba(0,0,0,0.20)_0%,rgba(0,0,0,0.20)_100%)]' : 'bg-[linear-gradient(0deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.55)_100%)]'}  `}></div>
     <div
-      class={`container-full flex flex-col md:justify-center items-center   text-white h-full  3xl:pb-20  ${second ? 'justify-end gap-10 md:gap-4  pb-13 translate-y-[0%] lg:translate-y-[6%]' : 'gap-6 justify-end md:justify-center md:gap-8 3xl:gap-16 xl:justify-end translate-y-0 md:translate-y-[3%] lg:translate-y-[-12%] pb-10'}`}
+      class={`container-full flex flex-col md:justify-center items-center   text-white h-full  3xl:pb-20  ${second ? 'justify-end xs:justify-center gap-6 md:gap-4  pb-6 md:pb-13 translate-y-0 xs:translate-y-[8%] md:translate-y-[0%] lg:translate-y-[6%]' : 'gap-6 justify-end md:justify-center md:gap-8 3xl:gap-16 xl:justify-end translate-y-0 md:translate-y-[3%] lg:translate-y-[-12%] pb-10'}`}
     >
       <div class={`flex flex-col justify-center items-center  ${second ? 'gap-6 md:gap-15' : 'gap-6'}`}>
         <h1 class={` font-bold md:font-extrabold leading-[110%] text-center ${second ? 'text-[30px] md:text-[64px] ' : 'text-[25px] md:text-[46px] 3xl:text-[53px]'} `} set:html={content.title}> </h1>

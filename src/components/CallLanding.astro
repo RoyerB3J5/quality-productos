@@ -11,7 +11,7 @@ const { content, second } = Astro.props as Props;
 <div class="bg-primary flex flex-col justify-center items-center gap-1 md:gap-2 text-white py-3 md:py-4 3xl:py-5 w-full fixed bottom-0 left-0 right-0 z-40">
   <div class="flex justify-center items-center gap-2.5">
           <img src={`/images/${content.callAction.icon}.svg`} alt="Icono de telefono" class="w-auto h-auto">
-          <a href="tel:+13212179445" class="text-[24px] font-bold leading-[150%] cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-in-out text-accent">{content.callAction.number}</a>
+          <a href="tel:+13212179445" class="text-[24px] font-bold leading-[150%] cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-in-out text-white">{content.callAction.number}</a>
         </div>
         <h2 class="text-[24px] md:text-[28px] 3xl:text-[32px] font-bold leading-[140%] md:leading-[106%]">{content.callAction.title}</h2>
         
